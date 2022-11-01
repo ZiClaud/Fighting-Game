@@ -26,10 +26,10 @@ public class Player extends GameObject {
 
     private void animatePlayer(PlayerAnimationType playerAnimationType){
         Timer timer = new Timer(200, e -> {
-            if (i >= PlayerImg.PlayerImg(playerAnimationType).size()) {
+            if (i >= PlayerImg.getPlayerImg(playerAnimationType).size()) {
                 i = 0;
             }
-            img = PlayerImg.PlayerImg(playerAnimationType).get(i);
+            img = PlayerImg.getPlayerImg(playerAnimationType).get(i);
             i++;
         });
         timer.setRepeats(true);

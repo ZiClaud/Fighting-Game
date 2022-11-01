@@ -8,7 +8,7 @@ import java.util.LinkedList;
 
 public class PlayerImg {
 
-    public static LinkedList<BufferedImage> PlayerImg(PlayerAnimationType playerAnimationType) {
+    public static LinkedList<BufferedImage> getPlayerImg(PlayerAnimationType playerAnimationType) {
         if (playerAnimationType == PlayerAnimationType.Idle)
             return PlayerImgIdle();
         else if (playerAnimationType == PlayerAnimationType.Run)
