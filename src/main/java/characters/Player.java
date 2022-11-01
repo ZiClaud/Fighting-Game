@@ -14,6 +14,15 @@ public class Player extends GameObject {
     int hp;
     BufferedImage img;
     int i = 0;
+    PlayerAnimationType playerAnimationType = PlayerAnimationType.Idle;
+
+    public PlayerAnimationType getPlayerAnimationType() {
+        return playerAnimationType;
+    }
+
+    public void setPlayerAnimationType(PlayerAnimationType playerAnimationType) {
+        this.playerAnimationType = playerAnimationType;
+    }
 
     public Player(int x, int y, ID id, int playerWidth, int playerHeight, int hp) {
         super(x, y, id);
@@ -21,10 +30,10 @@ public class Player extends GameObject {
         this.playerHeight = playerHeight;
         this.hp = hp;
 
-        animatePlayer(PlayerAnimationType.Idle);
+        animatePlayer();
     }
 
-    private void animatePlayer(PlayerAnimationType playerAnimationType){
+    private void animatePlayer(){
         Timer timer = new Timer(200, e -> {
             if (i >= PlayerImg.getPlayerImg(playerAnimationType).size()) {
                 i = 0;

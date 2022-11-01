@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Idle animation animated">
-      <change afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerAnimationType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="N/A">
       <change beforePath="$PROJECT_DIR$/src/main/java/characters/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerImg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerImg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +128,7 @@
       <workItem from="1667295813600" duration="5059000" />
       <workItem from="1667304669303" duration="610000" />
       <workItem from="1667305829892" duration="1664000" />
-      <workItem from="1667309519017" duration="2090000" />
+      <workItem from="1667309519017" duration="2412000" />
     </task>
     <task id="LOCAL-00001" summary="Fist commit - Window with basic functions that works">
       <created>1667246690426</created>
@@ -174,7 +172,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667310474758</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added images for Run aniamtion">
+      <created>1667311644912</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1667311644912</updated>
+    </task>
+    <task id="LOCAL-00008" summary="N/A">
+      <created>1667311680773</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1667311680773</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +210,8 @@
     <MESSAGE value="Added Character image all by myself u.u" />
     <MESSAGE value="Tried to animate character - WIP" />
     <MESSAGE value="Idle animation animated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Idle animation animated" />
+    <MESSAGE value="Added images for Run aniamtion" />
+    <MESSAGE value="N/A" />
+    <option name="LAST_COMMIT_MESSAGE" value="N/A" />
   </component>
 </project>

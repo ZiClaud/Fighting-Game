@@ -1,5 +1,8 @@
 package window;
 
+import characters.Player;
+import characters.PlayerAnimationType;
+
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
@@ -20,7 +23,10 @@ public class KeyInput extends KeyAdapter {
                 if (key == KeyEvent.VK_W) tempObject.setVelY(-5);
                 if (key == KeyEvent.VK_S) tempObject.setVelY(5);
                 if (key == KeyEvent.VK_A) tempObject.setVelX(-5);
-                if (key == KeyEvent.VK_D) tempObject.setVelX(5);
+                if (key == KeyEvent.VK_D) {
+                    tempObject.setVelX(5);
+                    ((Player)tempObject).setPlayerAnimationType(PlayerAnimationType.Run);
+                }
             }
 
             if (tempObject.getId() == ID.Enemy) {
@@ -42,7 +48,10 @@ public class KeyInput extends KeyAdapter {
                 if (key == KeyEvent.VK_W) tempObject.setVelY(0);
                 if (key == KeyEvent.VK_S) tempObject.setVelY(0);
                 if (key == KeyEvent.VK_A) tempObject.setVelX(0);
-                if (key == KeyEvent.VK_D) tempObject.setVelX(0);
+                if (key == KeyEvent.VK_D) {
+                    tempObject.setVelX(0);
+                    ((Player)tempObject).setPlayerAnimationType(PlayerAnimationType.Idle);
+                }
             }
 
             if (tempObject.getId() == ID.Enemy) {
