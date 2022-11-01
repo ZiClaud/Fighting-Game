@@ -5,8 +5,6 @@ import window.ID;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
 public class Player extends GameObject {
@@ -23,11 +21,15 @@ public class Player extends GameObject {
         this.playerHeight = playerHeight;
         this.hp = hp;
 
+        animatePlayer(PlayerAnimationType.Idle);
+    }
+
+    private void animatePlayer(PlayerAnimationType playerAnimationType){
         Timer timer = new Timer(200, e -> {
-            if (i >= PlayerImg.PlayerImgIdle().size()) {
+            if (i >= PlayerImg.PlayerImg(playerAnimationType).size()) {
                 i = 0;
             }
-            img = PlayerImg.PlayerImgIdle().get(i);
+            img = PlayerImg.PlayerImg(playerAnimationType).get(i);
             i++;
         });
         timer.setRepeats(true);
