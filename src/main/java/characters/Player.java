@@ -6,10 +6,9 @@ import window.ID;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
-import java.awt.image.ImageProducer;
 import java.io.File;
 import java.io.IOException;
+import java.util.Timer;
 
 public class Player extends GameObject {
 
@@ -52,9 +51,18 @@ public class Player extends GameObject {
 
     @Override
     public void render(Graphics g) {
+
+        if (id == ID.Player) {
+            for (BufferedImage img :
+                    PlayerImg.PlayerImgIdle()) {
+                g.drawImage(img, x, y, null);
+            }
+        }
+        /*
         if (id == ID.Player) {
             g.drawImage(img, x, y, null);
         }
+         */
 //        if (id == ID.Player) g.setColor(Color.WHITE);
         else if (id == ID.Enemy) {
             g.setColor(Color.RED);
