@@ -8,6 +8,7 @@ public enum PlayerAnimationType {
     Fall(),
     Jump(),
     Run(),
+    RunLeft(),
     TakeHit(),
     TakeHitC();
 }

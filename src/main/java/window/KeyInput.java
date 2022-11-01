@@ -30,7 +30,7 @@ public class KeyInput extends KeyAdapter {
                 }
                 if (key == KeyEvent.VK_A) {
                     tempObject.setVelX(-5);
-                    ((Player) tempObject).setPlayerAnimationType(PlayerAnimationType.Run);
+                    ((Player) tempObject).setPlayerAnimationType(PlayerAnimationType.RunLeft);
                 }
                 if (key == KeyEvent.VK_D) {
                     tempObject.setVelX(5);

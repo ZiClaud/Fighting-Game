@@ -1,6 +1,9 @@
 package characters;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -13,6 +16,8 @@ public class PlayerImg {
             return PlayerImgIdle();
         else if (playerAnimationType == PlayerAnimationType.Run)
             return PlayerImgRun();
+        else if (playerAnimationType == PlayerAnimationType.RunLeft)
+            return PlayerImgRunLeft();
         else if (playerAnimationType == PlayerAnimationType.Jump)
             return PlayerImgJump();
         else if (playerAnimationType == PlayerAnimationType.Fall)
@@ -59,6 +64,18 @@ public class PlayerImg {
         return imageList;
     }
 
+    private static LinkedList<BufferedImage> PlayerImgRunLeft() {
+        LinkedList<BufferedImage> images = PlayerImgRun();
+        LinkedList<BufferedImage> imageList = new LinkedList<>();
+        for (BufferedImage image : images) {
+            AffineTransform tx = AffineTransform.getScaleInstance(-1, 1);
+            tx.translate(-image.getWidth(null), 0);
+            AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
+            imageList.add(op.filter(image, null));
+        }
+        return imageList;
+    }
+
     private static LinkedList<BufferedImage> PlayerImgAttack1() {
         LinkedList<BufferedImage> imageList = new LinkedList<>();
         try {
@@ -99,6 +116,7 @@ public class PlayerImg {
         }
         return imageList;
     }
+
     private static LinkedList<BufferedImage> PlayerImgFall() {
         LinkedList<BufferedImage> imageList = new LinkedList<>();
         try {
