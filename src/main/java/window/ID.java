@@ -2,5 +2,7 @@ package window;
 
 public enum ID {
     Player(),
-    Enemy();
+    Enemy(),
+
+    HealthBarPlayer();
 }

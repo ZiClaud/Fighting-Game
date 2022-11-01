@@ -1,5 +1,6 @@
 package window;
 
+import UI.Healthbar;
 import characters.Player;
 
 import java.awt.*;
@@ -10,7 +11,7 @@ public class Game extends Canvas implements Runnable {
     private Thread thread;
     private boolean running = false;
 
-    private MyHandler handler;
+    private final MyHandler handler;
 
     public Game() {
         handler = new MyHandler();
@@ -18,8 +19,10 @@ public class Game extends Canvas implements Runnable {
 
         new MyWindow(WIDTH, HEIGHT, "Let's build a game!", this);
 
-        handler.addObject(new Player(3, 3, ID.Player));
-        handler.addObject(new Player(32, 32, ID.Enemy));
+        handler.addObject(new Player(200, 200, ID.Player, 32, 32, 100));
+        handler.addObject(new Player(400, 200, ID.Enemy, 20, 20, 100));
+        handler.addObject(new Healthbar(50, 50, ID.HealthBarPlayer, handler));
+        handler.addObject(new Healthbar(HEIGHT - 50, WIDTH - 50, ID.HealthBarPlayer, handler));
     }
 
     public synchronized void start() {
@@ -51,7 +54,7 @@ public class Game extends Canvas implements Runnable {
         double ns = 1000000000 / amountOfTicks;
         double delta = 0;
         long timer = System.currentTimeMillis();
-        int frames = 0;
+        int frames = 0; // Its use is commented
 
         while (running) {
             long now = System.nanoTime();
@@ -94,9 +97,5 @@ public class Game extends Canvas implements Runnable {
 
         g.dispose();
         bs.show();
-    }
-
-    public static void main(String[] args) {
-        new Game();
     }
 }

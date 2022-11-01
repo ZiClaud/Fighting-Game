@@ -8,7 +8,7 @@ public class MyHandler {
      * Loops through all the objects in the game and individually update them and render them to the screen
      */
 
-    LinkedList<GameObject> objects = new LinkedList<>();
+    public LinkedList<GameObject> objects = new LinkedList<>();
 
     public void tick() {
         for (GameObject tempObject : objects) {
