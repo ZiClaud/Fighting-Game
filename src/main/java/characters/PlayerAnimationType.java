@@ -10,5 +10,5 @@ public enum PlayerAnimationType {
     Run(),
     RunLeft(),
     TakeHit(),
-    TakeHitC();
+    TakeHitC()
 }

@@ -7,11 +7,9 @@ import java.awt.*;
 import java.awt.image.BufferStrategy;
 
 public class Game extends Canvas implements Runnable {
-    public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9;
+    private final MyHandler handler;    public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9;
     private Thread thread;
     private boolean running = false;
-
-    private final MyHandler handler;
 
     public Game() {
         handler = new MyHandler();
@@ -101,4 +99,6 @@ public class Game extends Canvas implements Runnable {
         g.dispose();
         bs.show();
     }
+
+
 }

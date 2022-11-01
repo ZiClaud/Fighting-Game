@@ -1,6 +1,7 @@
 package movement;
 
-public interface Jump {
-    double getJumpSpeed();
-    double getJumpHeight();
+public abstract class Jump {
+    abstract double getJumpSpeed();
+
+    abstract double getJumpHeight();
 }

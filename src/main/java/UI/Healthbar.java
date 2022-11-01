@@ -21,10 +21,10 @@ public class Healthbar extends GameObject {
         for (GameObject player : handler.objects) {
             for (GameObject enemy : handler.objects) {
                 if (player.getId() == ID.Player && enemy.getId() == ID.Enemy && player.getX() == enemy.getX()) {
-                    if (((Player)player).getHp() < 0){
+                    if (((Player) player).getHp() < 0) {
                         System.out.println("Enemy won!");
                     }
-                    ((Player)player).setHp(((Player)player).getHp() - 1);
+                    ((Player) player).setHp(((Player) player).getHp() - 1);
                 }
             }
 
@@ -38,7 +38,7 @@ public class Healthbar extends GameObject {
 
         for (GameObject player : handler.objects) {
             if (player.getId() == ID.Player) {
-                g.fillRect(x, y, ((Player)player).getHp(), 10);
+                g.fillRect(x, y, ((Player) player).getHp(), 10);
             }
         }
     }

@@ -16,14 +16,6 @@ public class Player extends GameObject {
     int i = 0;
     PlayerAnimationType playerAnimationType = PlayerAnimationType.Idle;
 
-    public PlayerAnimationType getPlayerAnimationType() {
-        return playerAnimationType;
-    }
-
-    public void setPlayerAnimationType(PlayerAnimationType playerAnimationType) {
-        this.playerAnimationType = playerAnimationType;
-    }
-
     public Player(int x, int y, ID id, int playerWidth, int playerHeight, int hp) {
         super(x, y, id);
         this.playerWidth = playerWidth;
@@ -33,7 +25,15 @@ public class Player extends GameObject {
         animatePlayer();
     }
 
-    private void animatePlayer(){
+    public PlayerAnimationType getPlayerAnimationType() {
+        return playerAnimationType;
+    }
+
+    public void setPlayerAnimationType(PlayerAnimationType playerAnimationType) {
+        this.playerAnimationType = playerAnimationType;
+    }
+
+    private void animatePlayer() {
         Timer timer = new Timer(200, e -> {
             if (i >= PlayerImg.getPlayerImg(playerAnimationType).size()) {
                 i = 0;
