@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="N/A">
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Player.java" afterDir="false" />
+    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Player now changes animation when he goes right">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerImg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerImg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/movement/Movement.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +130,9 @@
       <workItem from="1667295813600" duration="5059000" />
       <workItem from="1667304669303" duration="610000" />
       <workItem from="1667305829892" duration="1664000" />
-      <workItem from="1667309519017" duration="2412000" />
+      <workItem from="1667309519017" duration="2591000" />
+      <workItem from="1667323358269" duration="222000" />
+      <workItem from="1667323675187" duration="607000" />
     </task>
     <task id="LOCAL-00001" summary="Fist commit - Window with basic functions that works">
       <created>1667246690426</created>
@@ -186,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667311680773</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Player now changes animation when he goes right">
+      <created>1667312045154</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1667312045154</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +223,7 @@
     <MESSAGE value="Idle animation animated" />
     <MESSAGE value="Added images for Run aniamtion" />
     <MESSAGE value="N/A" />
-    <option name="LAST_COMMIT_MESSAGE" value="N/A" />
+    <MESSAGE value="Player now changes animation when he goes right" />
+    <option name="LAST_COMMIT_MESSAGE" value="Player now changes animation when he goes right" />
   </component>
 </project>

@@ -13,8 +13,16 @@ public class PlayerImg {
             return PlayerImgIdle();
         else if (playerAnimationType == PlayerAnimationType.Run)
             return PlayerImgRun();
-        else
+        else if (playerAnimationType == PlayerAnimationType.Jump)
+            return PlayerImgJump();
+        else if (playerAnimationType == PlayerAnimationType.Fall)
+            return PlayerImgFall();
+        else if (playerAnimationType == PlayerAnimationType.Attack1)
             return PlayerImgAttack1();
+        else if (playerAnimationType == PlayerAnimationType.Attack2)
+            return PlayerImgAttack2();
+        else
+            return PlayerImgIdle();
     }
 
     private static LinkedList<BufferedImage> PlayerImgIdle() {
@@ -60,6 +68,42 @@ public class PlayerImg {
             imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Attack1/Attack1_4.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Attack1/Attack1_5.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Attack1/Attack1_6.png")));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return imageList;
+    }
+
+    private static LinkedList<BufferedImage> PlayerImgAttack2() {
+        LinkedList<BufferedImage> imageList = new LinkedList<>();
+        try {
+            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Attack2/Attack2_1.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Attack2/Attack2_2.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Attack2/Attack2_3.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Attack2/Attack2_4.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Attack2/Attack2_5.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Attack2/Attack2_6.png")));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return imageList;
+    }
+
+    private static LinkedList<BufferedImage> PlayerImgJump() {
+        LinkedList<BufferedImage> imageList = new LinkedList<>();
+        try {
+            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Jump/Jump_1.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Jump/Jump_2.png")));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return imageList;
+    }
+    private static LinkedList<BufferedImage> PlayerImgFall() {
+        LinkedList<BufferedImage> imageList = new LinkedList<>();
+        try {
+            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Fall/Fall_1.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Fall/Fall_2.png")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

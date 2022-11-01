@@ -20,12 +20,21 @@ public class KeyInput extends KeyAdapter {
         for (GameObject tempObject : handler.objects) {
             if (tempObject.getId() == ID.Player) {
                 // KEY EVENTS FOR PLAYER
-                if (key == KeyEvent.VK_W) tempObject.setVelY(-5);
-                if (key == KeyEvent.VK_S) tempObject.setVelY(5);
-                if (key == KeyEvent.VK_A) tempObject.setVelX(-5);
+                if (key == KeyEvent.VK_W) {
+                    tempObject.setVelY(-5);
+                    ((Player) tempObject).setPlayerAnimationType(PlayerAnimationType.Jump);
+                }
+                if (key == KeyEvent.VK_S) {
+                    tempObject.setVelY(5);
+                    ((Player) tempObject).setPlayerAnimationType(PlayerAnimationType.Fall);
+                }
+                if (key == KeyEvent.VK_A) {
+                    tempObject.setVelX(-5);
+                    ((Player) tempObject).setPlayerAnimationType(PlayerAnimationType.Run);
+                }
                 if (key == KeyEvent.VK_D) {
                     tempObject.setVelX(5);
-                    ((Player)tempObject).setPlayerAnimationType(PlayerAnimationType.Run);
+                    ((Player) tempObject).setPlayerAnimationType(PlayerAnimationType.Run);
                 }
             }
 
@@ -45,12 +54,13 @@ public class KeyInput extends KeyAdapter {
         for (GameObject tempObject : handler.objects) {
             if (tempObject.getId() == ID.Player) {
                 // KEY EVENTS FOR PLAYER
-                if (key == KeyEvent.VK_W) tempObject.setVelY(0);
-                if (key == KeyEvent.VK_S) tempObject.setVelY(0);
-                if (key == KeyEvent.VK_A) tempObject.setVelX(0);
-                if (key == KeyEvent.VK_D) {
+                if (key == KeyEvent.VK_W || key == KeyEvent.VK_S) {
+                    tempObject.setVelY(0);
+                    ((Player) tempObject).setPlayerAnimationType(PlayerAnimationType.Idle);
+                }
+                if (key == KeyEvent.VK_A || key == KeyEvent.VK_D) {
                     tempObject.setVelX(0);
-                    ((Player)tempObject).setPlayerAnimationType(PlayerAnimationType.Idle);
+                    ((Player) tempObject).setPlayerAnimationType(PlayerAnimationType.Idle);
                 }
             }
 
