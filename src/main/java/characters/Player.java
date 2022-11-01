@@ -3,36 +3,36 @@ package characters;
 import window.GameObject;
 import window.ID;
 
-import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.Timer;
 
 public class Player extends GameObject {
 
-    int playerX;
-    int playerY;
+    int playerWidth;
+    int playerHeight;
     int hp;
-
     BufferedImage img;
+    int i = 0;
 
-    public Player(int x, int y, ID id, int playerX, int playerY, int hp) {
+    public Player(int x, int y, ID id, int playerWidth, int playerHeight, int hp) {
         super(x, y, id);
-        this.playerX = playerX;
-        this.playerY = playerY;
+        this.playerWidth = playerWidth;
+        this.playerHeight = playerHeight;
         this.hp = hp;
-        try {
-            this.img = ImageIO.read(new File("src/main/resources/Sprites/Attack1/Attack1_1.png"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        int w = img.getWidth(null);
-        int h = img.getHeight(null);
-        BufferedImage bi = new
-                BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
 
+        Timer timer = new Timer(200, e -> {
+            if (i >= PlayerImg.PlayerImgIdle().size()) {
+                i = 0;
+            }
+            img = PlayerImg.PlayerImgIdle().get(i);
+            i++;
+        });
+        timer.setRepeats(true);
+        timer.setCoalesce(true);
+        timer.start();
     }
 
     public int getHp() {
@@ -51,22 +51,19 @@ public class Player extends GameObject {
 
     @Override
     public void render(Graphics g) {
-
         if (id == ID.Player) {
-            for (BufferedImage img :
-                    PlayerImg.PlayerImgIdle()) {
-                g.drawImage(img, x, y, null);
-            }
+            g.drawImage(img, x, y, null);
+        } else if (id == ID.Enemy) {
+            g.setColor(Color.RED);
+            g.fillRect(x, y, playerWidth, playerHeight);
         }
+
         /*
         if (id == ID.Player) {
             g.drawImage(img, x, y, null);
         }
          */
 //        if (id == ID.Player) g.setColor(Color.WHITE);
-        else if (id == ID.Enemy) {
-            g.setColor(Color.RED);
-            g.fillRect(x, y, playerX, playerY);
-        }
+
     }
 }
