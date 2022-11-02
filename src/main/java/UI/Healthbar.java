@@ -8,7 +8,6 @@ import window.MyHandler;
 import java.awt.*;
 
 public class Healthbar extends GameObject {
-
     private final MyHandler handler;
 
     public Healthbar(int x, int y, ID id, MyHandler handler) {
@@ -34,7 +33,7 @@ public class Healthbar extends GameObject {
     @Override
     public void render(Graphics g) {
         if (id == ID.HealthBarPlayer) g.setColor(Color.GREEN);
-        else if (id == ID.HealthBarPlayer) g.setColor(Color.RED);
+        else if (id == ID.HealthBarEnemy) g.setColor(Color.RED);
 
         for (GameObject player : handler.objects) {
             if (player.getId() == ID.Player) {
