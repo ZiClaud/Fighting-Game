@@ -1,4 +1,6 @@
 package actions.fight;
 
-public class Fight {
+import actions.Action;
+
+public class Fight extends Action {
 }

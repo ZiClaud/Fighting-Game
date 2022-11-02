@@ -1,4 +1,7 @@
 package actions;
 
-public class Action {
+import window.ID;
+
+public abstract class Action {
+    protected ID id;
 }

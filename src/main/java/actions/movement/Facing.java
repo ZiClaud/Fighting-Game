@@ -1,6 +1,8 @@
 package actions.movement;
 
-public abstract class Facing {
+import actions.Action;
+
+public class Facing extends Action {
     Boolean facingRight;
 
     public Boolean getFacingRight() {
