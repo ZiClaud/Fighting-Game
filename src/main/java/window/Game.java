@@ -7,7 +7,8 @@ import java.awt.*;
 import java.awt.image.BufferStrategy;
 
 public class Game extends Canvas implements Runnable {
-    private final MyHandler handler;    public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9;
+    private final MyHandler handler;
+    public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9;
     private Thread thread;
     private boolean running = false;
 
@@ -18,7 +19,6 @@ public class Game extends Canvas implements Runnable {
         handler.addObject(new Player(200, 200, ID.Player, 200, 200, 100));
         handler.addObject(new Player(400, 200, ID.Enemy, 50, 20, 100));
         handler.addObject(new Healthbar(50, 50, ID.HealthBarPlayer, handler));
-        handler.addObject(new Healthbar(HEIGHT - 50, WIDTH - 50, ID.HealthBarPlayer, handler));
 
         /**
          * Keep always at the end!
