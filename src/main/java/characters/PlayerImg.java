@@ -1,5 +1,7 @@
 package characters;
 
+import utils.MyUtils;
+
 import javax.imageio.ImageIO;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
@@ -67,10 +69,7 @@ public class PlayerImg {
         LinkedList<BufferedImage> images = PlayerImgRun();
         LinkedList<BufferedImage> imageList = new LinkedList<>();
         for (BufferedImage image : images) {
-            AffineTransform tx = AffineTransform.getScaleInstance(-1, 1);
-            tx.translate(-image.getWidth(null), 0);
-            AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
-            imageList.add(op.filter(image, null));
+            imageList.add(MyUtils.mirrorImage(image));
         }
         return imageList;
     }
