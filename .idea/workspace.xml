@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Cleaned up code">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Added walls">
       <change beforePath="$PROJECT_DIR$/src/main/java/characters/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/window/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +129,7 @@
       <workItem from="1667305829892" duration="1664000" />
       <workItem from="1667309519017" duration="2591000" />
       <workItem from="1667323358269" duration="222000" />
-      <workItem from="1667323675187" duration="5576000" />
+      <workItem from="1667323675187" duration="5881000" />
     </task>
     <task id="LOCAL-00001" summary="Fist commit - Window with basic functions that works">
       <created>1667246690426</created>
@@ -218,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667325966797</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added walls">
+      <created>1667384073378</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1667384073378</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +252,7 @@
     <MESSAGE value="Added more animations" />
     <MESSAGE value="Added running left animation" />
     <MESSAGE value="Cleaned up code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up code" />
+    <MESSAGE value="Added walls" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added walls" />
   </component>
 </project>

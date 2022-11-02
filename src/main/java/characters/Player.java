@@ -34,6 +34,14 @@ public class Player extends GameObject {
         this.playerAnimationType = playerAnimationType;
     }
 
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
     private void animatePlayer() {
         Timer timer = new Timer(200, e -> {
             if (i >= PlayerImg.getPlayerImg(playerAnimationType).size()) {
@@ -47,36 +55,24 @@ public class Player extends GameObject {
         timer.start();
     }
 
-    public int getHp() {
-        return hp;
-    }
-
-    public void setHp(int hp) {
-        this.hp = hp;
-    }
-
     @Override
     public void tick() {
         x += velX;
         y += velY;
 
-        wall();
+        checkWall();
     }
 
-    private void wall() {
-        if (x <= -playerWidth / 2 || x >= Game.WIDTH - playerWidth / 2) {
+    private void checkWall() {
+        if (x <= 0 || x >= Game.WIDTH - playerWidth) {
             velX = 0;
-            if (x <= -playerWidth / 2)
-                x = -playerWidth / 2;
-            if (x >= Game.WIDTH - playerWidth / 2)
-                x = Game.WIDTH - playerWidth / 2;
+            if (x <= 0) x = 0;
+            if (x >= Game.WIDTH - playerWidth) x = Game.WIDTH - playerWidth;
         }
-        if (y <= -playerHeight / 2 || y >= Game.HEIGHT - playerHeight * 2 / 3) {
+        if (y <= 0 || y >= Game.HEIGHT - playerHeight) {
             velY = 0;
-            if (y <= -playerHeight / 2)
-                y = -playerHeight / 2;
-            if (y >= Game.HEIGHT - playerHeight * 2 / 3)    // TODO: CHECK
-                y = Game.HEIGHT - playerHeight * 2 / 3;
+            if (y <= 0) y = 0;
+            if (y >= Game.HEIGHT - playerHeight) y = Game.HEIGHT - playerHeight;
         }
     }
 
@@ -88,13 +84,5 @@ public class Player extends GameObject {
             g.setColor(Color.RED);
             g.fillRect(x, y, playerWidth, playerHeight);
         }
-
-        /*
-        if (id == ID.Player) {
-            g.drawImage(img, x, y, null);
-        }
-         */
-//        if (id == ID.Player) g.setColor(Color.WHITE);
-
     }
 }
