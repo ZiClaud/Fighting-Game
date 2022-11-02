@@ -15,7 +15,7 @@ public class Game extends Canvas implements Runnable {
         handler = new MyHandler();
         this.addKeyListener(new KeyInput(handler));
 
-        handler.addObject(new Player(200, 200, ID.Player, 32, 32, 100));
+        handler.addObject(new Player(200, 200, ID.Player, 200, 200, 100));
         handler.addObject(new Player(400, 200, ID.Enemy, 50, 20, 100));
         handler.addObject(new Healthbar(50, 50, ID.HealthBarPlayer, handler));
         handler.addObject(new Healthbar(HEIGHT - 50, WIDTH - 50, ID.HealthBarPlayer, handler));
@@ -44,12 +44,6 @@ public class Game extends Canvas implements Runnable {
 
     @Override
     public void run() {
-/*
-        long lastTime = System.nanoTime();
-        double amountOfTicks = 60.0;
-        double ns = 1
-*/
-
         long lastTime = System.nanoTime();
         final double amountOfTicks = 60.0;
         double ns = 1000000000 / amountOfTicks;

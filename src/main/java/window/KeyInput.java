@@ -36,6 +36,10 @@ public class KeyInput extends KeyAdapter {
                     tempObject.setVelX(5);
                     ((Player) tempObject).setPlayerAnimationType(PlayerAnimationType.Run);
                 }
+                if (key == KeyEvent.VK_SPACE) {
+//                    System.out.println("Attack! Or jump, idk yet");
+                    ((Player) tempObject).setPlayerAnimationType(PlayerAnimationType.Attack1);
+                }
             }
 
             if (tempObject.getId() == ID.Enemy) {
@@ -60,6 +64,9 @@ public class KeyInput extends KeyAdapter {
                 }
                 if (key == KeyEvent.VK_A || key == KeyEvent.VK_D) {
                     tempObject.setVelX(0);
+                    ((Player) tempObject).setPlayerAnimationType(PlayerAnimationType.Idle);
+                }
+                if (key == KeyEvent.VK_SPACE) {
                     ((Player) tempObject).setPlayerAnimationType(PlayerAnimationType.Idle);
                 }
             }

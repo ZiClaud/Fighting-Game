@@ -1,5 +1,6 @@
 package characters;
 
+import window.Game;
 import window.GameObject;
 import window.ID;
 
@@ -58,6 +59,25 @@ public class Player extends GameObject {
     public void tick() {
         x += velX;
         y += velY;
+
+        wall();
+    }
+
+    private void wall() {
+        if (x <= -playerWidth / 2 || x >= Game.WIDTH - playerWidth / 2) {
+            velX = 0;
+            if (x <= -playerWidth / 2)
+                x = -playerWidth / 2;
+            if (x >= Game.WIDTH - playerWidth / 2)
+                x = Game.WIDTH - playerWidth / 2;
+        }
+        if (y <= -playerHeight / 2 || y >= Game.HEIGHT - playerHeight * 2 / 3) {
+            velY = 0;
+            if (y <= -playerHeight / 2)
+                y = -playerHeight / 2;
+            if (y >= Game.HEIGHT - playerHeight * 2 / 3)    // TODO: CHECK
+                y = Game.HEIGHT - playerHeight * 2 / 3;
+        }
     }
 
     @Override
