@@ -31,6 +31,20 @@ public class Player extends GameObject {
 
     public void setPlayerAnimationType(PlayerAnimationType playerAnimationType) {
         this.playerAnimationType = playerAnimationType;
+        /*
+        // TODO: This fixes bug that stops animation if I both jump and go right, but can't attack
+        if (velX == 0 && velY == 0){
+            this.playerAnimationType = PlayerAnimationType.Idle;
+        } else if (velY < 0){
+            this.playerAnimationType = PlayerAnimationType.Jump;
+        } else if (velY > 0) {
+            this.playerAnimationType = PlayerAnimationType.Fall;
+        } else if (velX > 0){
+            this.playerAnimationType = PlayerAnimationType.Run;
+        } else if (velX < 0){
+            this.playerAnimationType = PlayerAnimationType.RunLeft;
+        }
+        */
     }
 
     public int getHp() {
@@ -54,7 +68,7 @@ public class Player extends GameObject {
         timer.start();
     }
 
-    private void loopAnimation(){
+    private void loopAnimation() {
 
     }
 
