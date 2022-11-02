@@ -9,13 +9,12 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Player extends GameObject {
-
-    int playerWidth;
-    int playerHeight;
-    int hp;
-    BufferedImage img;
-    int i = 0;
-    PlayerAnimationType playerAnimationType = PlayerAnimationType.Idle;
+    private final int playerWidth;
+    private final int playerHeight;
+    private int hp;
+    private BufferedImage img;
+    private int i = 0;
+    private PlayerAnimationType playerAnimationType = PlayerAnimationType.Idle;
 
     public Player(int x, int y, ID id, int playerWidth, int playerHeight, int hp) {
         super(x, y, id);
@@ -53,6 +52,10 @@ public class Player extends GameObject {
         timer.setRepeats(true);
         timer.setCoalesce(true);
         timer.start();
+    }
+
+    private void loopAnimation(){
+
     }
 
     @Override

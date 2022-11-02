@@ -4,11 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="improved walls" />
+    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="improved walls">
+      <change afterPath="$PROJECT_DIR$/src/main/java/actions/Action.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/actions/movement/Facing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerImg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerImg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fight/Fight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actions/fight/Fight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/movement/Jump.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actions/movement/Jump.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -19,8 +30,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -128,6 +139,8 @@
       <workItem from="1667309519017" duration="2591000" />
       <workItem from="1667323358269" duration="222000" />
       <workItem from="1667323675187" duration="6051000" />
+      <workItem from="1667391117608" duration="605000" />
+      <workItem from="1667424439456" duration="1279000" />
     </task>
     <task id="LOCAL-00001" summary="Fist commit - Window with basic functions that works">
       <created>1667246690426</created>

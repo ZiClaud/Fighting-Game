@@ -1,4 +1,4 @@
-package fight;
+package actions.fight;
 
 public class Fight {
 }
