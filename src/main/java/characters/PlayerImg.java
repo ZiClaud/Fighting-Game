@@ -8,6 +8,18 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Image stats: <p>
+ * ImgWidth: 200px <p>
+ * ImgHeight:200px <p>
+ * <p>
+ * ActualWidth: 37px <p>
+ * ActualHeight: 52px <p>
+ * <p>
+ * HeightToRemoveFromBottom: 78px <p>
+ * WidthToRemoveFromLeft: 76px (78px is fine too) <p>
+ * WidthToRemoveFromRight: 87px (78px is fine too) <p>
+ */
 public class PlayerImg {
 
     public static ArrayList<BufferedImage> getPlayerImg(PlayerAnimationType playerAnimationType) {
