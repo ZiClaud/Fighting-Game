@@ -18,6 +18,7 @@ public class Game extends Canvas implements Runnable {
 
         handler.addObject(new Player(200, 200, ID.Player, 200, 200, 100));
         handler.addObject(new Player(400, 200, ID.Enemy, 37, 52, 100));
+//        handler.addObject(new Player(500, 300, ID.Enemy, 200, 200, 100)); // TODO: FIX THIS BUG
         handler.addObject(new Healthbar(50, 50, ID.HealthBarPlayer, handler));
         handler.addObject(new Healthbar(Game.WIDTH - 50, 50, ID.HealthBarEnemy, handler));
 

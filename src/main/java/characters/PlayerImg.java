@@ -16,12 +16,12 @@ import java.util.ArrayList;
  * ActualWidth: 37px <p>
  * ActualHeight: 52px <p>
  * <p>
+ * WidthToRemoveFromLeft: 76px <p>
+ * WidthToRemoveFromRight: 87px <p>
  * HeightToRemoveFromBottom: 78px <p>
- * WidthToRemoveFromLeft: 76px (78px is fine too) <p>
- * WidthToRemoveFromRight: 87px (78px is fine too) <p>
+ * HeightToRemoveFromTop: 70px <p>
  */
 public class PlayerImg {
-
     public static ArrayList<BufferedImage> getPlayerImg(PlayerAnimationType playerAnimationType) {
         if (playerAnimationType == PlayerAnimationType.Idle)
             return PlayerImgIdle();
@@ -135,5 +135,4 @@ public class PlayerImg {
         }
         return imageList;
     }
-
 }

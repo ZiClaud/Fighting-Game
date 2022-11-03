@@ -8,17 +8,17 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Player extends GameObject {
-    private final int playerWidth;
-    private final int playerHeight;
     private int hp;
     private BufferedImage img;
     private PlayerAnimationType playerAnimationType = PlayerAnimationType.Idle;
 
+    private final PlayerSize size;
+
     public Player(int x, int y, ID id, int playerWidth, int playerHeight, int hp) {
         super(x, y, id);
-        this.playerWidth = playerWidth;
-        this.playerHeight = playerHeight;
         this.hp = hp;
+
+        this.size = new PlayerSize(playerWidth, playerHeight);
 
         new AnimatePlayer(this).animatePlayer();
     }
@@ -70,15 +70,21 @@ public class Player extends GameObject {
     }
 
     private void checkWall() {
-        if (x <= 0 || x >= Game.WIDTH - playerWidth) {
+        if (x <= -size.getWidthToRemoveFromLeft() || x >= Game.WIDTH - size.getImgWidth() - size.getWidthToAddFromRight()) {
             velX = 0;
-            if (x <= 0) x = 0;
-            if (x >= Game.WIDTH - playerWidth) x = Game.WIDTH - playerWidth;
+            if (x <= -size.getWidthToRemoveFromLeft()) {
+                x = -size.getWidthToRemoveFromLeft();
+            } else if (x >= Game.WIDTH - size.getImgWidth() - size.getWidthToAddFromRight()) {
+                x = Game.WIDTH - size.getImgWidth() - size.getWidthToAddFromRight();
+            }
         }
-        if (y <= 0 || y >= Game.HEIGHT - playerHeight) {
+        if (y <= -size.getHeightToAddFromTop() || y >= Game.HEIGHT - size.getImgHeight() - size.getHeightToRemoveFromBottom()) {
             velY = 0;
-            if (y <= 0) y = 0;
-            if (y >= Game.HEIGHT - playerHeight) y = Game.HEIGHT - playerHeight;
+            if (y <= -size.getHeightToAddFromTop()) {
+                y = -size.getHeightToAddFromTop();
+            } else if (y >= Game.HEIGHT - size.getImgHeight() - size.getHeightToRemoveFromBottom()) {
+                y = Game.HEIGHT - size.getImgHeight() - size.getHeightToRemoveFromBottom();
+            }
         }
     }
 
@@ -88,7 +94,12 @@ public class Player extends GameObject {
             g.drawImage(img, x, y, null);
         } else if (id == ID.Enemy) {
             g.setColor(Color.RED);
-            g.fillRect(x, y, playerWidth, playerHeight);
+            g.fillRect(x, y, size.getImgWidth(), size.getImgHeight());
+//            g.fillRect(x, y, size.getActualWidth(), size.getActualHeight());  // TODO: FIX THIS BUG
         }
+    }
+
+    public PlayerSize getSize() {
+        return size;
     }
 }

@@ -21,7 +21,12 @@ public class Healthbar extends GameObject {
             for (GameObject enemy : handler.objects) {
                 if (player.getId() == ID.Player && enemy.getId() == ID.Enemy && player.getX() == enemy.getX()) {
                     if (((Player) player).getHp() < 0) {
-                        System.out.println("Enemy won!");
+                        System.out.println("Enemy won!"); // TODO: Print this in game
+
+                        // TODO: Add countdown
+
+                        // TODO: Reset HPs - FIX
+                        ((Player) player).setHp(((Player) player).getHp() + 150);
                     }
                     ((Player) player).setHp(((Player) player).getHp() - 1);
                 }
