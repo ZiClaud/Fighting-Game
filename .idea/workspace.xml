@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Improved code">
+    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Minor improvements">
+      <change afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerSize.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/window/AddGameObjects.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/AnimatePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/AnimatePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UI/Healthbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI/Healthbar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerImg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerImg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/window/MyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/MyHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +29,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -138,7 +140,7 @@
       <workItem from="1667323675187" duration="6051000" />
       <workItem from="1667391117608" duration="605000" />
       <workItem from="1667424439456" duration="2806000" />
-      <workItem from="1667469063361" duration="1660000" />
+      <workItem from="1667469063361" duration="4890000" />
     </task>
     <task id="LOCAL-00001" summary="Fist commit - Window with basic functions that works">
       <created>1667246690426</created>
@@ -266,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667469651838</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Minor improvements">
+      <created>1667470936637</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1667470936637</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,6 +310,7 @@
     <MESSAGE value="improved frames by doing ArrayList instead of LinkedList and added minor classes" />
     <MESSAGE value="Minor changes" />
     <MESSAGE value="Improved code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved code" />
+    <MESSAGE value="Minor improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor improvements" />
   </component>
 </project>
