@@ -1,9 +1,12 @@
 package characters;
 
+import window.MyHandler;
+
 import javax.swing.*;
 
 public class AnimatePlayer {
     Player player;
+    MyHandler handler;
     int i = 0;
 
     public AnimatePlayer(Player player) {
@@ -27,7 +30,9 @@ public class AnimatePlayer {
         timer.start();
     }
 
-    private void actionAnimation(){
+    private void actionAnimation() {
 
     }
+
+
 }
