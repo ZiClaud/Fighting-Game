@@ -1,7 +1,13 @@
 package actions;
 
-import window.ID;
+import characters.Player;
 
 public abstract class Action {
-    protected ID id;
+    protected Player player;
+    protected ActionType actionType;
+
+    public Action(Player player, ActionType actionType) {
+        this.player = player;
+        this.actionType = actionType;
+    }
 }

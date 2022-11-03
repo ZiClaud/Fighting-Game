@@ -4,7 +4,6 @@ import window.Game;
 import window.GameObject;
 import window.ID;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
@@ -13,7 +12,6 @@ public class Player extends GameObject {
     private final int playerHeight;
     private int hp;
     private BufferedImage img;
-    private int i = 0;
     private PlayerAnimationType playerAnimationType = PlayerAnimationType.Idle;
 
     public Player(int x, int y, ID id, int playerWidth, int playerHeight, int hp) {
@@ -22,7 +20,7 @@ public class Player extends GameObject {
         this.playerHeight = playerHeight;
         this.hp = hp;
 
-        animatePlayer();
+        new AnimatePlayer(this).animatePlayer();
     }
 
     public PlayerAnimationType getPlayerAnimationType() {
@@ -55,21 +53,12 @@ public class Player extends GameObject {
         this.hp = hp;
     }
 
-    private void animatePlayer() {
-        Timer timer = new Timer(200, e -> {
-            if (i >= PlayerImg.getPlayerImg(playerAnimationType).size()) {
-                i = 0;
-            }
-            img = PlayerImg.getPlayerImg(playerAnimationType).get(i);
-            i++;
-        });
-        timer.setRepeats(true);
-        timer.setCoalesce(true);
-        timer.start();
+    public BufferedImage getImg() {
+        return img;
     }
 
-    private void loopAnimation() {
-
+    public void setImg(BufferedImage img) {
+        this.img = img;
     }
 
     @Override
