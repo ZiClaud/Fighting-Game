@@ -95,7 +95,7 @@ public class Player extends GameObject {
         } else if (id == ID.Enemy) {
             g.setColor(Color.RED);
             g.fillRect(x, y, size.getImgWidth(), size.getImgHeight());
-//            g.fillRect(x, y, size.getActualWidth(), size.getActualHeight());  // TODO: FIX THIS BUG
+//            g.fillRect(x, y, size.getActualWidth(), size.getActualHeight());  // TODO: USE TO CHECK -> THERE'S NO BUG
         }
     }
 
