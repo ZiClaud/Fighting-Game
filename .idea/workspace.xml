@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Improved player and enemy position">
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Player.java" afterDir="false" />
+    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="N/A">
+      <change beforePath="$PROJECT_DIR$/src/main/java/window/AddGameObjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/AddGameObjects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/window/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/window/ID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/ID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/window/MyWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/MyWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +141,7 @@
       <workItem from="1667424439456" duration="2806000" />
       <workItem from="1667469063361" duration="5248000" />
       <workItem from="1667491612609" duration="842000" />
-      <workItem from="1667553974855" duration="1776000" />
+      <workItem from="1667553974855" duration="2374000" />
     </task>
     <task id="LOCAL-00001" summary="Fist commit - Window with basic functions that works">
       <created>1667246690426</created>
@@ -301,7 +304,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667555554354</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="N/A">
+      <created>1667555763763</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1667555763763</updated>
+    </task>
+    <task id="LOCAL-00025" summary="N/A">
+      <created>1667555940660</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1667555940660</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,7 +343,6 @@
     <MESSAGE value="Tried to animate character - WIP" />
     <MESSAGE value="Idle animation animated" />
     <MESSAGE value="Added images for Run aniamtion" />
-    <MESSAGE value="N/A" />
     <MESSAGE value="Player now changes animation when he goes right" />
     <MESSAGE value="Added more animations" />
     <MESSAGE value="Added running left animation" />
@@ -342,6 +358,7 @@
     <MESSAGE value="Added background" />
     <MESSAGE value="Imrpoved player and enemy position" />
     <MESSAGE value="Improved player and enemy position" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved player and enemy position" />
+    <MESSAGE value="N/A" />
+    <option name="LAST_COMMIT_MESSAGE" value="N/A" />
   </component>
 </project>
