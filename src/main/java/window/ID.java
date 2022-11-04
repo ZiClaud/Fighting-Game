@@ -6,4 +6,4 @@ public enum ID {
 
     HealthBarPlayer(),
     HealthBarEnemy()
-    }
+}

@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MyWindow extends Canvas {
-
     GraphicsDevice gDevice;
 
     public MyWindow(int width, int height, String title, Game game) {
