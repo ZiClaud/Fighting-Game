@@ -15,7 +15,7 @@ public class Player extends GameObject {
     private final PlayerSize size;
 
     public Player(int x, int y, ID id, int playerWidth, int playerHeight, int hp) {
-        super(x, y, id);
+        super(x, y, id);     // TODO: x - size.removeWidth, y - size.removeHeight;
         this.hp = hp;
 
         this.size = new PlayerSize(playerWidth, playerHeight);
