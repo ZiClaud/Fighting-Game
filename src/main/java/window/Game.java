@@ -3,8 +3,11 @@ package window;
 import UI.Healthbar;
 import characters.Player;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
+import java.io.File;
+import java.io.IOException;
 
 public class Game extends Canvas implements Runnable {
     private final MyHandler handler;
@@ -16,11 +19,14 @@ public class Game extends Canvas implements Runnable {
         handler = new MyHandler();
         this.addKeyListener(new KeyInput(handler));
 
-        handler.addObject(new Player(200, 200, ID.Player, 200, 200, 100));
-        handler.addObject(new Player(400, 200, ID.Enemy, 37, 52, 100));
+        Player player = new Player(200, 200, ID.Player, 200, 200, 100);
+        Player enemy = new Player(400, 200, ID.Enemy, 37, 52, 100);
+
+        handler.addObject(player);
+        handler.addObject(enemy);
 //        handler.addObject(new Player(500, 300, ID.Enemy, 200, 200, 100));  // TODO: USE TO CHECK -> THERE'S NO BUG
         handler.addObject(new Healthbar(50, 50, ID.HealthBarPlayer, handler));
-        handler.addObject(new Healthbar(Game.WIDTH - 50, 50, ID.HealthBarEnemy, handler));
+        handler.addObject(new Healthbar(Game.WIDTH - 50 - enemy.getHp(), 50, ID.HealthBarEnemy, handler));
 
         /**
          * Keep always at the end!
@@ -87,8 +93,14 @@ public class Game extends Canvas implements Runnable {
 
         Graphics g = bs.getDrawGraphics();
 
-        g.setColor(Color.black);
-        g.fillRect(0, 0, WIDTH, HEIGHT);
+        try {
+            g.drawImage(ImageIO.read(new File("src/main/resources/Background/cyberpunk-street.png")), 0, 0, WIDTH, HEIGHT, null);
+//            g.fillRect(0, 0, WIDTH, HEIGHT);
+        } catch (IOException e) {
+            g.setColor(Color.black);
+            g.fillRect(0, 0, WIDTH, HEIGHT);
+            e.printStackTrace();
+        }
 
         handler.render(g);
 
