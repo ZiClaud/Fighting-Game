@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Added background">
-      <change beforePath="$PROJECT_DIR$/src/main/java/window/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/Game.java" afterDir="false" />
+    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Improved player and enemy position">
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +138,7 @@
       <workItem from="1667424439456" duration="2806000" />
       <workItem from="1667469063361" duration="5248000" />
       <workItem from="1667491612609" duration="842000" />
-      <workItem from="1667553974855" duration="1471000" />
+      <workItem from="1667553974855" duration="1776000" />
     </task>
     <task id="LOCAL-00001" summary="Fist commit - Window with basic functions that works">
       <created>1667246690426</created>
@@ -294,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667555304653</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Improved player and enemy position">
+      <created>1667555554354</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1667555554354</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,6 +340,8 @@
     <MESSAGE value="Improved position of Player - There's still a bug to fix : COMMENTED" />
     <MESSAGE value="There was no bug - commented" />
     <MESSAGE value="Added background" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added background" />
+    <MESSAGE value="Imrpoved player and enemy position" />
+    <MESSAGE value="Improved player and enemy position" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved player and enemy position" />
   </component>
 </project>
