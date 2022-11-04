@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="There was no bug - commented">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Background/cyberpunk-street.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/AnimatePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/AnimatePlayer.java" afterDir="false" />
+    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Added background">
       <change beforePath="$PROJECT_DIR$/src/main/java/window/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,7 +138,7 @@
       <workItem from="1667424439456" duration="2806000" />
       <workItem from="1667469063361" duration="5248000" />
       <workItem from="1667491612609" duration="842000" />
-      <workItem from="1667553974855" duration="1159000" />
+      <workItem from="1667553974855" duration="1471000" />
     </task>
     <task id="LOCAL-00001" summary="Fist commit - Window with basic functions that works">
       <created>1667246690426</created>
@@ -290,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667474268121</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added background">
+      <created>1667555304653</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1667555304653</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,6 +332,7 @@
     <MESSAGE value="Minor improvements" />
     <MESSAGE value="Improved position of Player - There's still a bug to fix : COMMENTED" />
     <MESSAGE value="There was no bug - commented" />
-    <option name="LAST_COMMIT_MESSAGE" value="There was no bug - commented" />
+    <MESSAGE value="Added background" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added background" />
   </component>
 </project>
