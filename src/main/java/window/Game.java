@@ -20,7 +20,7 @@ public class Game extends Canvas implements Runnable {
         this.addKeyListener(new KeyInput(handler));
 
         Player player = new Player(50, Game.HEIGHT, ID.Player, 200, 200, 100);
-        Player enemy = new Player(Game.WIDTH - 50, Game.HEIGHT, ID.Enemy, 37, 52, 100);
+        Player enemy = new Player(Game.WIDTH - 50 - 163, Game.HEIGHT, ID.Enemy, 37, 52, 100);
 
         handler.addObject(player);
         handler.addObject(enemy);
