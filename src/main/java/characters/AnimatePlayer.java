@@ -14,7 +14,7 @@ public class AnimatePlayer {
     }
 
     public void animatePlayer() {
-        if (player.getPlayerAnimationType() == PlayerAnimationType.Idle || player.getPlayerAnimationType() == PlayerAnimationType.Run || player.getPlayerAnimationType() == PlayerAnimationType.RunLeft || player.getPlayerAnimationType() == PlayerAnimationType.Jump || player.getPlayerAnimationType() == PlayerAnimationType.Fall) {
+        if (player.getPlayerImage().getPlayerAnimationType() == PlayerAnimationType.Idle || player.getPlayerImage().getPlayerAnimationType() == PlayerAnimationType.Run || player.getPlayerImage().getPlayerAnimationType() == PlayerAnimationType.RunLeft || player.getPlayerImage().getPlayerAnimationType() == PlayerAnimationType.Jump || player.getPlayerImage().getPlayerAnimationType() == PlayerAnimationType.Fall) {
             System.out.println("loop animation ActionCommand");
             loopAnimation();
         } else {
@@ -25,11 +25,11 @@ public class AnimatePlayer {
 
     private void loopAnimation() {
         Timer timer = new Timer(200, e -> {
-            if (i >= PlayerImg.getPlayerImg(player.getPlayerAnimationType()).size()) {
+            if (i >= ImagePlayer.getPlayerImg(player.getPlayerImage().getPlayerAnimationType()).size()) {
                 System.out.println("Loop Animation: " + i);
                 i = 0;
             }
-            player.setImg(PlayerImg.getPlayerImg(player.getPlayerAnimationType()).get(i));
+            player.getPlayerImage().setImg(ImagePlayer.getPlayerImg(player.getPlayerImage().getPlayerAnimationType()).get(i));
             i++;
         });
         timer.setRepeats(true);
@@ -40,11 +40,11 @@ public class AnimatePlayer {
     private void actionAnimation() {
         i = 0;
         Timer timer = new Timer(200, e -> {
-            if (i >= PlayerImg.getPlayerImg(player.getPlayerAnimationType()).size()) {
+            if (i >= ImagePlayer.getPlayerImg(player.getPlayerImage().getPlayerAnimationType()).size()) {
                 System.out.println("Animation: " + i);
                 i = 0;
             }
-            player.setImg(PlayerImg.getPlayerImg(player.getPlayerAnimationType()).get(i));
+            player.getPlayerImage().setImg(ImagePlayer.getPlayerImg(player.getPlayerImage().getPlayerAnimationType()).get(i));
             i++;
         });
         timer.setRepeats(true);

@@ -21,7 +21,7 @@ import java.util.ArrayList;
  * HeightToRemoveFromBottom: 78px <p>
  * HeightToRemoveFromTop: 70px <p>
  */
-public class PlayerImg {
+public class ImagePlayer {
     public static ArrayList<BufferedImage> getPlayerImg(PlayerAnimationType playerAnimationType) {
         if (playerAnimationType == PlayerAnimationType.Idle)
             return PlayerImgIdle();
