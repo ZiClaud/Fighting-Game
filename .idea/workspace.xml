@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="N/A">
+    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Tried to improve classes, maybe failed, maybe succeeded, idk it doesn't work as I wished it would">
+      <change afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerImage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/UI/Healthbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI/Healthbar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/AnimatePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/AnimatePlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/characters/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerSize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerSize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerImg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/ImagePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +144,7 @@
       <workItem from="1667469063361" duration="5248000" />
       <workItem from="1667491612609" duration="842000" />
       <workItem from="1667553974855" duration="2562000" />
-      <workItem from="1667644731425" duration="3005000" />
+      <workItem from="1667644731425" duration="4227000" />
     </task>
     <task id="LOCAL-00001" summary="Fist commit - Window with basic functions that works">
       <created>1667246690426</created>
@@ -326,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667556387578</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Tried to improve classes, maybe failed, maybe succeeded, idk it doesn't work as I wished it would">
+      <created>1667647821872</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1667647821872</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,6 +376,8 @@
     <MESSAGE value="Imrpoved player and enemy position" />
     <MESSAGE value="Improved player and enemy position" />
     <MESSAGE value="N/A" />
-    <option name="LAST_COMMIT_MESSAGE" value="N/A" />
+    <MESSAGE value="Tried to improve classes, maybe failed, maybe succeeded, idk it doesn't work as I wished" />
+    <MESSAGE value="Tried to improve classes, maybe failed, maybe succeeded, idk it doesn't work as I wished it would" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tried to improve classes, maybe failed, maybe succeeded, idk it doesn't work as I wished it would" />
   </component>
 </project>
