@@ -19,16 +19,21 @@ public class Healthbar extends GameObject {
     public void tick() {
         for (GameObject player : handler.objects) {
             for (GameObject enemy : handler.objects) {
-                if (player.getId() == ID.Player && enemy.getId() == ID.Enemy && player.getX() == enemy.getX()) {
-                    if (((Player) player).getHp() < 0) {
-                        System.out.println("Enemy won!"); // TODO: Print this in game
+                if (player.getId() == ID.Player && enemy.getId() == ID.Enemy) {
+                    if (((Player) player).getSize().getActualX(player.getX()) >= enemy.getX()
+                            /* ((Player) enemy).getSize().getActualLeftX(enemy.getX()) */
+                            && ((Player) player).getSize().getActualRightX(player.getX()) <= enemy.getX()
+                            /* ((Player) enemy).getSize().getActualRightX(enemy.getX()) */) {
+                        if (((Player) player).getHp() < 0) {
+                            System.out.println("Enemy won!"); // TODO: Print this in game
 
-                        // TODO: Add countdown
+                            // TODO: Add countdown
 
-                        // TODO: Reset HPs - FIX
-                        ((Player) player).setHp(((Player) player).getHp() + 150);
+                            // TODO: Reset HPs - FIX
+                            ((Player) player).setHp(((Player) player).getHp() + 150);
+                        }
+                        ((Player) player).setHp(((Player) player).getHp() - 1);
                     }
-                    ((Player) player).setHp(((Player) player).getHp() - 1);
                 }
             }
 

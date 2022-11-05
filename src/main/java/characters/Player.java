@@ -70,20 +70,26 @@ public class Player extends GameObject {
     }
 
     private void checkWall() {
-        if (x <= -size.getWidthToRemoveFromLeft() || x >= Game.WIDTH - size.getImgWidth() - size.getWidthToAddFromRight()) {
+        /**
+         * Right/Left Wall
+         */
+        if (size.getActualX(x) <= 0 || size.getActualRightX(x) >= Game.WIDTH) {
             velX = 0;
-            if (x <= -size.getWidthToRemoveFromLeft()) {
-                x = -size.getWidthToRemoveFromLeft();
-            } else if (x >= Game.WIDTH - size.getImgWidth() - size.getWidthToAddFromRight()) {
-                x = Game.WIDTH - size.getImgWidth() - size.getWidthToAddFromRight();
+            if (size.getActualX(x) <= 0) {
+                x = -size.getExcessiveLeft();
+            } else if (size.getActualRightX(x) >= Game.WIDTH) {
+                x = Game.WIDTH - size.getImgWidth() + size.getExcessiveRight();
             }
         }
-        if (y <= -size.getHeightToAddFromTop() || y >= Game.HEIGHT - size.getImgHeight() - size.getHeightToRemoveFromBottom()) {
+        /**
+         * Top/Bottom Wall
+         */
+        if (size.getActualY(y) <= 0 || size.getActualBottomY(y) >= Game.HEIGHT) {
             velY = 0;
-            if (y <= -size.getHeightToAddFromTop()) {
-                y = -size.getHeightToAddFromTop();
-            } else if (y >= Game.HEIGHT - size.getImgHeight() - size.getHeightToRemoveFromBottom()) {
-                y = Game.HEIGHT - size.getImgHeight() - size.getHeightToRemoveFromBottom();
+            if (size.getActualY(y) <= 0) {
+                y = -size.getExcessiveTop();
+            } else if (size.getActualBottomY(y) >= Game.HEIGHT) {
+                y = Game.HEIGHT - size.getImgHeight() + size.getExcessiveBottom();
             }
         }
     }
@@ -101,5 +107,20 @@ public class Player extends GameObject {
 
     public PlayerSize getSize() {
         return size;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "hp=" + hp +
+                ", img=" + img +
+                ", playerAnimationType=" + playerAnimationType +
+                ", size=" + size +
+                ", x=" + x +
+                ", y=" + y +
+                ", id=" + id +
+                ", velX=" + velX +
+                ", velY=" + velY +
+                '}';
     }
 }

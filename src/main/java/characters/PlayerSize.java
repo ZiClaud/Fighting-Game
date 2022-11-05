@@ -20,10 +20,10 @@ public class PlayerSize {
     private final int actualWidth;
     private final int actualHeight;
 
-    private int widthToRemoveFromLeft = 0;
-    private int widthToRemoveFromRight = 0;
-    private int heightToRemoveFromBottom = 0;
-    private int heightToRemoveFromTop = 0;
+    private int excessiveLeft = 0;
+    private int excessiveRight = 0;
+    private int excessiveBottom = 0;
+    private int excessiveTop = 0;
 
     public PlayerSize(int playerWidth, int playerHeight) {
         imgWidth = playerWidth;
@@ -32,10 +32,10 @@ public class PlayerSize {
             actualWidth = 37;
             actualHeight = 52;
 
-            widthToRemoveFromLeft = 76;
-            widthToRemoveFromRight = 87;
-            heightToRemoveFromBottom = 78;
-            heightToRemoveFromTop = 70;
+            excessiveLeft = 76;
+            excessiveRight = 87;
+            excessiveBottom = 78;
+            excessiveTop = 70;
         } else {
             actualWidth = imgWidth;
             actualHeight = imgHeight;
@@ -45,6 +45,7 @@ public class PlayerSize {
     public int getImgWidth() {
         return imgWidth;
     }
+
     public int getImgHeight() {
         return imgHeight;
     }
@@ -57,16 +58,49 @@ public class PlayerSize {
         return actualHeight;
     }
 
-    public int getWidthToRemoveFromLeft() {
-        return widthToRemoveFromLeft;
+    public int getExcessiveLeft() {
+        return excessiveLeft;
     }
-    public int getWidthToAddFromRight() {
-        return actualWidth - widthToRemoveFromRight;
+
+    public int getExcessiveRight() {
+        return excessiveRight;
     }
-    public int getHeightToRemoveFromBottom() {
-        return actualHeight - heightToRemoveFromBottom;
+
+    public int getExcessiveBottom() {
+        return excessiveBottom;
     }
-    public int getHeightToAddFromTop() {
-        return heightToRemoveFromTop;
+
+    public int getExcessiveTop() {
+        return excessiveTop;
+    }
+
+    public int getActualX(int x) {
+        return x + getExcessiveLeft();
+    }
+
+    public int getActualRightX(int x) {
+        return x + getImgWidth() - getExcessiveRight();
+    }
+
+    public int getActualY(int y) {
+        return y + getExcessiveTop();
+    }
+
+    public int getActualBottomY(int y) {
+        return  y + getImgHeight() - getExcessiveBottom();
+    }
+
+    @Override
+    public String toString() {
+        return "PlayerSize{" +
+                "imgWidth=" + imgWidth +
+                ", imgHeight=" + imgHeight +
+                ", actualWidth=" + actualWidth +
+                ", actualHeight=" + actualHeight +
+                ", widthToRemoveFromLeft=" + excessiveLeft +
+                ", widthToRemoveFromRight=" + excessiveRight +
+                ", heightToRemoveFromBottom=" + excessiveBottom +
+                ", heightToRemoveFromTop=" + excessiveTop +
+                '}';
     }
 }
