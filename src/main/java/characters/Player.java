@@ -1,5 +1,7 @@
 package characters;
 
+import actions.Action2;
+import actions.ActionType;
 import window.Game;
 import window.GameObject;
 import window.ID;
@@ -9,8 +11,8 @@ import java.awt.*;
 public class Player extends GameObject {
     private int hp;
     private final PlayerImage playerImage;
-
     private final PlayerSize size;
+    private Action2 action;
 
     public Player(int x, int y, ID id, int playerWidth, int playerHeight, int hp) {
         super(x, y, id);     // TODO: x - size.removeWidth, y - size.removeHeight;
@@ -18,6 +20,7 @@ public class Player extends GameObject {
 
         this.size = new PlayerSize(playerWidth, playerHeight);
         this.playerImage = new PlayerImage();
+        this.action = new Action2(this, ActionType.Face);
 
         new AnimatePlayer(this).animatePlayer();
     }
@@ -84,6 +87,15 @@ public class Player extends GameObject {
 
     @Override
     public String toString() {
-        return "";
+        return "Player{" +
+                "hp=" + hp +
+                ", playerImage=" + playerImage +
+                ", size=" + size +
+                ", x=" + x +
+                ", y=" + y +
+                ", id=" + id +
+                ", velX=" + velX +
+                ", velY=" + velY +
+                '}';
     }
 }
