@@ -1,7 +1,9 @@
 package actions;
 
 public enum ActionType {
-    Fight(),
-    Facing(),
-    Jump()
+    Face(),
+    Attack(),
+    Jump(),
+    Moving(),
+    Damage()
 }
