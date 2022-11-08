@@ -1,14 +1,14 @@
-package actions;
+package zGardbage.the_actions;
 
-import actions.fight.Damage;
-import actions.fight.Attack;
-import actions.movement.Facing;
-import actions.movement.Jump;
-import actions.movement.Moving;
+import zGardbage.the_actions.movement.Facing;
+import zGardbage.the_actions.movement.Moving;
+import zGardbage.the_actions.fight.Damage;
+import zGardbage.the_actions.fight.Attack;
+import zGardbage.the_actions.movement.Jump;
 import characters.Player;
 import window.ID;
 
-public class Action2 extends Action {
+public class TheAction2 extends TheAction {
     ID id;
     Attack attack;
     Facing facing;
@@ -16,7 +16,7 @@ public class Action2 extends Action {
     Moving moving;
     Damage damage;
 
-    public Action2(Player player, ActionType actionType) {
+    public TheAction2(Player player, ActionType actionType) {
         super(player, actionType);
         this.attack = new Attack(player, actionType);
         this.facing = new Facing(player, actionType);

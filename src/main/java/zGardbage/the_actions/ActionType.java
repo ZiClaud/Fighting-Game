@@ -1,4 +1,4 @@
-package actions;
+package zGardbage.the_actions;
 
 public enum ActionType {
     Face(),
