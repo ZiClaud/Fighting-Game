@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Improved classes, at least tried to">
-      <change afterPath="$PROJECT_DIR$/src/main/java/actions/Action2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/actions/fight/Damage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/actions/movement/Moving.java" afterDir="false" />
+    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Improved classes, or at least tried to">
+      <change afterPath="$PROJECT_DIR$/src/main/java/actions2/PlayerAnimationType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/actions2/SAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/actions/ActionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actions/ActionType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/actions/movement/Jump.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actions/movement/Jump.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/AnimatePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/AnimatePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/ImagePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/ImagePlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/characters/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +31,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -46,19 +48,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/claud/IdeaProjects/FightingGame/src/main/resources/Background&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "extract.method.default.visibility": "private",
+    "last_opened_file_path": "C:/Users/claud/IdeaProjects/FightingGame/src/main/resources/Background",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\claud\IdeaProjects\FightingGame\src\main\resources\Background" />
@@ -148,6 +151,10 @@
       <workItem from="1667668040521" duration="29000" />
       <workItem from="1667674751057" duration="1681000" />
       <workItem from="1667742715908" duration="165000" />
+      <workItem from="1667743422372" duration="343000" />
+      <workItem from="1667752317288" duration="13000" />
+      <workItem from="1667828500813" duration="107000" />
+      <workItem from="1667930137067" duration="3584000" />
     </task>
     <task id="LOCAL-00001" summary="Fist commit - Window with basic functions that works">
       <created>1667246690426</created>
@@ -345,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667659882771</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Improved classes, or at least tried to">
+      <created>1667743560907</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1667743560907</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,7 +377,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added Healthbar all by myself u.u" />
     <MESSAGE value="Added Character image all by myself u.u" />
     <MESSAGE value="Tried to animate character - WIP" />
     <MESSAGE value="Idle animation animated" />
@@ -388,6 +401,7 @@
     <MESSAGE value="Tried to improve classes, maybe failed, maybe succeeded, idk it doesn't work as I wished it would" />
     <MESSAGE value="Improved classes" />
     <MESSAGE value="Improved classes, at least tried to" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved classes, at least tried to" />
+    <MESSAGE value="Improved classes, or at least tried to" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved classes, or at least tried to" />
   </component>
 </project>

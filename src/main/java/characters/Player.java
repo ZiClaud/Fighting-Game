@@ -1,7 +1,6 @@
 package characters;
 
-import actions.Action2;
-import actions.ActionType;
+import actions2.SAction;
 import window.Game;
 import window.GameObject;
 import window.ID;
@@ -12,7 +11,8 @@ public class Player extends GameObject {
     private int hp;
     private final PlayerImage playerImage;
     private final PlayerSize size;
-    private Action2 action;
+    private final SAction action;
+    private final AnimatePlayer animatePlayer;
 
     public Player(int x, int y, ID id, int playerWidth, int playerHeight, int hp) {
         super(x, y, id);     // TODO: x - size.removeWidth, y - size.removeHeight;
@@ -20,9 +20,11 @@ public class Player extends GameObject {
 
         this.size = new PlayerSize(playerWidth, playerHeight);
         this.playerImage = new PlayerImage();
-        this.action = new Action2(this, ActionType.Face);
 
-        new AnimatePlayer(this).animatePlayer();
+        this.action = new SAction(this);
+        this.animatePlayer = new AnimatePlayer(this);
+
+        animatePlayer.animatePlayer();
     }
 
     public PlayerImage getPlayerImage() {
@@ -41,6 +43,8 @@ public class Player extends GameObject {
     public void tick() {
         x += velX;
         y += velY;
+
+        action.act();
 
         checkWall();
     }
@@ -83,6 +87,10 @@ public class Player extends GameObject {
 
     public PlayerSize getSize() {
         return size;
+    }
+
+    public SAction getAction() {
+        return action;
     }
 
     @Override
