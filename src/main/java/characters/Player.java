@@ -1,6 +1,6 @@
 package characters;
 
-import actions2.SAction;
+import actions.Action;
 import window.Game;
 import window.GameObject;
 import window.ID;
@@ -11,7 +11,7 @@ public class Player extends GameObject {
     private int hp;
     private final PlayerImage playerImage;
     private final PlayerSize size;
-    private final SAction action;
+    private final Action action;
     private final AnimatePlayer animatePlayer;
 
     public Player(int x, int y, ID id, int playerWidth, int playerHeight, int hp) {
@@ -21,7 +21,7 @@ public class Player extends GameObject {
         this.size = new PlayerSize(playerWidth, playerHeight);
         this.playerImage = new PlayerImage();
 
-        this.action = new SAction(this);
+        this.action = new Action(this);
         this.animatePlayer = new AnimatePlayer(this);
 
         animatePlayer.animatePlayer();
@@ -89,7 +89,7 @@ public class Player extends GameObject {
         return size;
     }
 
-    public SAction getAction() {
+    public Action getAction() {
         return action;
     }
 

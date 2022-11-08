@@ -1,10 +1,10 @@
-package actions.movement;
+package zGardbage.the_actions.movement;
 
-import actions.Action;
-import actions.ActionType;
+import zGardbage.the_actions.ActionType;
+import zGardbage.the_actions.TheAction;
 import characters.Player;
 
-public class Jump extends Action {
+public class Jump extends TheAction {
     double jumpSpeed;
     double jumpHeight;
 
