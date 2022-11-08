@@ -27,4 +27,8 @@ public class Jump extends Action {
     public void setJumpHeight(double jumpHeight) {
         this.jumpHeight = jumpHeight;
     }
+
+    public boolean isJumping() {
+        return player.getVelY() > 0;
+    }
 }

@@ -22,23 +22,44 @@ import java.util.ArrayList;
  * HeightToRemoveFromTop: 70px <p>
  */
 public class ImagePlayer {
-    public static ArrayList<BufferedImage> getPlayerImg(PlayerAnimationType playerAnimationType) {
-        if (playerAnimationType == PlayerAnimationType.Idle)
-            return PlayerImgIdle();
-        else if (playerAnimationType == PlayerAnimationType.Run)
-            return PlayerImgRun();
-        else if (playerAnimationType == PlayerAnimationType.RunLeft)
-            return PlayerImgRunLeft();
-        else if (playerAnimationType == PlayerAnimationType.Jump)
-            return PlayerImgJump();
-        else if (playerAnimationType == PlayerAnimationType.Fall)
-            return PlayerImgFall();
-        else if (playerAnimationType == PlayerAnimationType.Attack1)
-            return PlayerImgAttack1();
-        else if (playerAnimationType == PlayerAnimationType.Attack2)
-            return PlayerImgAttack2();
-        else
-            return PlayerImgIdle();
+
+    public static ArrayList<BufferedImage> getPlayerImg(PlayerAnimationType playerAnimationType, boolean facingRight) {
+        //System.out.println("isFacingRight()" + facingRight);
+        if (facingRight) {
+            if (playerAnimationType == PlayerAnimationType.Idle)
+                return PlayerImgIdle();
+            else if (playerAnimationType == PlayerAnimationType.Run)
+                return PlayerImgRun();
+            else if (playerAnimationType == PlayerAnimationType.RunLeft)
+                return PlayerImgRunLeft();
+            else if (playerAnimationType == PlayerAnimationType.Jump)
+                return PlayerImgJump();
+            else if (playerAnimationType == PlayerAnimationType.Fall)
+                return PlayerImgFall();
+            else if (playerAnimationType == PlayerAnimationType.Attack1)
+                return PlayerImgAttack1();
+            else if (playerAnimationType == PlayerAnimationType.Attack2)
+                return PlayerImgAttack2();
+            else
+                return PlayerImgIdle();
+        } else {
+            if (playerAnimationType == PlayerAnimationType.Idle)
+                return PlayerMirrorImages(PlayerImgIdle());
+            else if (playerAnimationType == PlayerAnimationType.Run)
+                return PlayerMirrorImages(PlayerImgRun());
+            else if (playerAnimationType == PlayerAnimationType.RunLeft)
+                return PlayerMirrorImages(PlayerImgRunLeft());
+            else if (playerAnimationType == PlayerAnimationType.Jump)
+                return PlayerMirrorImages(PlayerImgJump());
+            else if (playerAnimationType == PlayerAnimationType.Fall)
+                return PlayerMirrorImages(PlayerImgFall());
+            else if (playerAnimationType == PlayerAnimationType.Attack1)
+                return PlayerMirrorImages(PlayerImgAttack1());
+            else if (playerAnimationType == PlayerAnimationType.Attack2)
+                return PlayerMirrorImages(PlayerImgAttack2());
+            else
+                return PlayerMirrorImages(PlayerImgIdle());
+        }
     }
 
     private static ArrayList<BufferedImage> PlayerImgIdle() {
@@ -132,6 +153,14 @@ public class ImagePlayer {
             imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Fall/Fall_2.png")));
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+        return imageList;
+    }
+
+    private static ArrayList<BufferedImage> PlayerMirrorImages(ArrayList<BufferedImage> images) {
+        ArrayList<BufferedImage> imageList = new ArrayList<>();
+        for (BufferedImage image : images) {
+            imageList.add(MyUtils.mirrorImage(image));
         }
         return imageList;
     }
