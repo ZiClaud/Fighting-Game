@@ -1,6 +1,7 @@
 package UI;
 
 import characters.Player;
+import characters.PlayerAnimationType;
 import window.GameObject;
 import window.ID;
 import window.MyHandler;
@@ -20,11 +21,16 @@ public class Healthbar extends GameObject {
         for (GameObject player : handler.objects) {
             for (GameObject enemy : handler.objects) {
                 if (player.getId() == ID.Player && enemy.getId() == ID.Enemy) {
-                    if (((Player) player).getSize().getActualX(player.getX()) >= enemy.getX()
-                            /* ((Player) enemy).getSize().getActualLeftX(enemy.getX()) */
-                            && ((Player) player).getSize().getActualRightX(player.getX()) <= enemy.getX()
-                            /* ((Player) enemy).getSize().getActualRightX(enemy.getX()) */) {
+                    /*
+                    System.out.println("Player X: " + ((Player) player).getSize().getActualX(player.getX()) + ", " + ((Player) player).getSize().getActualRightX(player.getX()));
+                    System.out.println("Enemy X: " + ((Player) enemy).getSize().getActualX(enemy.getX()) + ", " + ((Player) enemy).getSize().getActualRightX(enemy.getX()));
+                    System.out.println("True/False: " + (((Player) player).getSize().getActualX(player.getX()) >= ((Player) enemy).getSize().getActualX(enemy.getX())) + ", " + (((Player) player).getSize().getActualRightX(player.getX()) <= ((Player) enemy).getSize().getActualRightX(enemy.getX())));
+                     */
+                    if (((Player) player).getSize().getActualX(player.getX()) <= ((Player) enemy).getSize().getActualRightX(enemy.getX())
+                            && ((Player) player).getSize().getActualRightX(player.getX()) >= ((Player) enemy).getSize().getActualX(enemy.getX())
+                    ) {
                         if (((Player) player).getHp() < 0) {
+                            ((Player) player).getAction().setActionType(PlayerAnimationType.Death);
                             System.out.println("Enemy won!"); // TODO: Print this in game
 
                             // TODO: Add countdown
