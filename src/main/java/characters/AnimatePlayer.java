@@ -11,13 +11,13 @@ public class AnimatePlayer {
     }
 
     public void animatePlayer() {
-        //if (player.getPlayerImage().getPlayerAnimationType() == PlayerAnimationType.Idle || player.getPlayerImage().getPlayerAnimationType() == PlayerAnimationType.Run || player.getPlayerImage().getPlayerAnimationType() == PlayerAnimationType.RunLeft || player.getPlayerImage().getPlayerAnimationType() == PlayerAnimationType.Jump || player.getPlayerImage().getPlayerAnimationType() == PlayerAnimationType.Fall) {
+        if (player.getPlayerImage().getPlayerAnimationType() == PlayerAnimationType.Idle || player.getPlayerImage().getPlayerAnimationType() == PlayerAnimationType.Run || player.getPlayerImage().getPlayerAnimationType() == PlayerAnimationType.RunLeft || player.getPlayerImage().getPlayerAnimationType() == PlayerAnimationType.Jump || player.getPlayerImage().getPlayerAnimationType() == PlayerAnimationType.Fall) {
             //System.out.println("loop animation ActionCommand");
             loopAnimation();
-        //} else {
-            //System.out.println("ActionCommand");
-        //    actionAnimation();
-        //}
+        } else {
+            //System.out.println("action animation ActionCommand");
+            actionAnimation();
+        }
     }
 
     private void loopAnimation() {
@@ -34,20 +34,18 @@ public class AnimatePlayer {
         timer.start();
     }
 
-    /*
     private void actionAnimation() {
         i = 0;
         Timer timer = new Timer(200, e -> {
-            if (i >= ImagePlayer.getPlayerImg(player.getPlayerImage().getPlayerAnimationType()).size()) {
+            if (i >= ImagePlayer.getPlayerImg(player.getPlayerImage().getPlayerAnimationType(), player.getAction().isFacingRight()).size()) {
                 System.out.println("Animation: " + i);
                 i = 0;
             }
-            player.getPlayerImage().setImg(ImagePlayer.getPlayerImg(player.getPlayerImage().getPlayerAnimationType()).get(i));
+            player.getPlayerImage().setImg(ImagePlayer.getPlayerImg(player.getPlayerImage().getPlayerAnimationType(), player.getAction().isFacingRight()).get(i));
             i++;
         });
         timer.setRepeats(true);
         timer.setCoalesce(true);
         timer.start();
     }
-    */
 }
