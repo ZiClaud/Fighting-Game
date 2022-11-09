@@ -31,7 +31,7 @@ public class Game extends Canvas implements Runnable {
         /**
          * Keep always at the end!
          */
-        new MyWindow(WIDTH, HEIGHT, "Let's build a game!", this);
+        new MyWindow(WIDTH, HEIGHT + 37, "Let's build a game!", this);
     }
 
     public synchronized void start() {
@@ -73,7 +73,7 @@ public class Game extends Canvas implements Runnable {
 
             if (System.currentTimeMillis() - timer > 1000) {
                 timer += 1000;
-                System.out.println("FPS: " + frames);
+//                System.out.println("FPS: " + frames);
                 frames = 0;
             }
         }
