@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Improved classes, or at least tried to">
-      <change afterPath="$PROJECT_DIR$/src/main/java/actions2/PlayerAnimationType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/actions2/SAction.java" afterDir="false" />
+    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Found a bug - moving character bugged">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/actions/movement/Jump.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actions/movement/Jump.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/AnimatePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/AnimatePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UI/Healthbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI/Healthbar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/characters/ImagePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/ImagePlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +21,23 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="FightingGame" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -51,6 +63,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ToolWindowPlantUML.ShowToolbar": "false",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
     "extract.method.default.visibility": "private",
@@ -154,7 +167,8 @@
       <workItem from="1667743422372" duration="343000" />
       <workItem from="1667752317288" duration="13000" />
       <workItem from="1667828500813" duration="107000" />
-      <workItem from="1667930137067" duration="3584000" />
+      <workItem from="1667930137067" duration="3849000" />
+      <workItem from="1667980334770" duration="1902000" />
     </task>
     <task id="LOCAL-00001" summary="Fist commit - Window with basic functions that works">
       <created>1667246690426</created>
@@ -359,7 +373,28 @@
       <option name="project" value="LOCAL" />
       <updated>1667743560907</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Tried some stuff, made code worse? Made it better? Idk&#10;Now player will look right/left">
+      <created>1667933780490</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1667933780490</updated>
+    </task>
+    <task id="LOCAL-00031" summary="N/A">
+      <created>1667933798132</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1667933798132</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Found a bug - moving character bugged">
+      <created>1667933977167</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1667933977167</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,9 +412,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added Character image all by myself u.u" />
-    <MESSAGE value="Tried to animate character - WIP" />
-    <MESSAGE value="Idle animation animated" />
     <MESSAGE value="Added images for Run aniamtion" />
     <MESSAGE value="Player now changes animation when he goes right" />
     <MESSAGE value="Added more animations" />
@@ -396,12 +428,15 @@
     <MESSAGE value="Added background" />
     <MESSAGE value="Imrpoved player and enemy position" />
     <MESSAGE value="Improved player and enemy position" />
-    <MESSAGE value="N/A" />
     <MESSAGE value="Tried to improve classes, maybe failed, maybe succeeded, idk it doesn't work as I wished" />
     <MESSAGE value="Tried to improve classes, maybe failed, maybe succeeded, idk it doesn't work as I wished it would" />
     <MESSAGE value="Improved classes" />
     <MESSAGE value="Improved classes, at least tried to" />
     <MESSAGE value="Improved classes, or at least tried to" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved classes, or at least tried to" />
+    <MESSAGE value="Tried some stuff, made code worse? Made it better? Idk&#10;Now character will look right/left" />
+    <MESSAGE value="Tried some stuff, made code worse? Made it better? Idk&#10;Now player will look right/left" />
+    <MESSAGE value="N/A" />
+    <MESSAGE value="Found a bug - moving character bugged" />
+    <option name="LAST_COMMIT_MESSAGE" value="Found a bug - moving character bugged" />
   </component>
 </project>

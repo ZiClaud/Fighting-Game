@@ -40,6 +40,10 @@ public class ImagePlayer {
                 return PlayerImgAttack1();
             else if (playerAnimationType == PlayerAnimationType.Attack2)
                 return PlayerImgAttack2();
+            else if (playerAnimationType == PlayerAnimationType.TakeHit)
+                return PlayerImgTakeHit();
+            else if (playerAnimationType == PlayerAnimationType.Death)
+                return PlayerImgDeath();
             else
                 return PlayerImgIdle();
         } else {
@@ -57,6 +61,10 @@ public class ImagePlayer {
                 return PlayerMirrorImages(PlayerImgAttack1());
             else if (playerAnimationType == PlayerAnimationType.Attack2)
                 return PlayerMirrorImages(PlayerImgAttack2());
+            else if (playerAnimationType == PlayerAnimationType.TakeHit)
+                return PlayerMirrorImages(PlayerImgTakeHit());
+            else if (playerAnimationType == PlayerAnimationType.Death)
+                return PlayerMirrorImages(PlayerImgDeath());
             else
                 return PlayerMirrorImages(PlayerImgIdle());
         }
@@ -151,6 +159,34 @@ public class ImagePlayer {
         try {
             imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Fall/Fall_1.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Fall/Fall_2.png")));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return imageList;
+    }
+
+    private static ArrayList<BufferedImage> PlayerImgDeath() {
+        ArrayList<BufferedImage> imageList = new ArrayList<>();
+        try {
+            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Death/Death_1.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Death/Death_2.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Death/Death_3.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Death/Death_4.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Death/Death_5.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Death/Death_6.png")));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return imageList;
+    }
+
+    private static ArrayList<BufferedImage> PlayerImgTakeHit() {
+        ArrayList<BufferedImage> imageList = new ArrayList<>();
+        try {
+            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/TakeHit/TakeHit_1.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/TakeHit/TakeHit_2.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/TakeHit/TakeHit_3.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/TakeHit/TakeHit_4.png")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
