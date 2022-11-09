@@ -2,6 +2,7 @@ package UI;
 
 import characters.Player;
 import characters.PlayerAnimationType;
+import window.Game;
 import window.GameObject;
 import window.ID;
 import window.MyHandler;
@@ -39,9 +40,13 @@ public class Healthbar extends GameObject {
                          */
                         if (((Player) player).getHp() < 0) {
                             ((Player) player).getAction().setActionType(PlayerAnimationType.Death);
+
                             System.out.println("Enemy won!"); // TODO: Print this in game
 
+                            player.setX(50);
+                            enemy.setX(Game.WIDTH - 50 - 163);
                             // TODO: Add countdown
+
 
                             // TODO: Reset HPs - FIX
                             ((Player) player).setHp(((Player) player).getHp() + 150);
