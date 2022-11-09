@@ -29,6 +29,10 @@ public class Healthbar extends GameObject {
                     if (((Player) player).getSize().getActualX(player.getX()) <= ((Player) enemy).getSize().getActualRightX(enemy.getX())
                             && ((Player) player).getSize().getActualRightX(player.getX()) >= ((Player) enemy).getSize().getActualX(enemy.getX())
                     ) {
+                        ((Player) player).getAction().setActionType(PlayerAnimationType.TakeHit);
+                        /**
+                         * Hit taken
+                         */
                         if (((Player) player).getHp() < 0) {
                             ((Player) player).getAction().setActionType(PlayerAnimationType.Death);
                             System.out.println("Enemy won!"); // TODO: Print this in game
