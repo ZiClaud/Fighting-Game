@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Now player takes damage only if there's collision between him and the enemy">
-      <change beforePath="$PROJECT_DIR$/src/main/java/UI/Healthbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI/Healthbar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/window/AddGameObjects.java" beforeDir="false" />
-    </list>
+    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Now enemy has his own HealthBar" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -429,7 +426,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668068460640</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Now enemy has his own HealthBar">
+      <created>1668069192960</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1668069192960</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,7 +451,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added running left animation" />
     <MESSAGE value="Cleaned up code" />
     <MESSAGE value="Added walls" />
     <MESSAGE value="improved walls" />
@@ -472,6 +475,7 @@
     <MESSAGE value="N/A" />
     <MESSAGE value="Minor improvements" />
     <MESSAGE value="Now player takes damage only if there's collision between him and the enemy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Now player takes damage only if there's collision between him and the enemy" />
+    <MESSAGE value="Now enemy has his own HealthBar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Now enemy has his own HealthBar" />
   </component>
 </project>
