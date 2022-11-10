@@ -20,7 +20,7 @@ public class Game extends Canvas implements Runnable {
         this.addKeyListener(new KeyInput(handler));
 
         Player player = new Player(50, Game.HEIGHT, ID.Player, 200, 200, 100);
-        Player enemy = new Player(Game.WIDTH - 50 - 163, Game.HEIGHT, ID.Enemy, 37, 52, 100);
+        Player enemy = new Player(Game.WIDTH - 50 - 163, Game.HEIGHT, ID.Enemy, 100, 100, 100);
 
         handler.addObject(player);
         handler.addObject(enemy);
@@ -31,7 +31,8 @@ public class Game extends Canvas implements Runnable {
         /**
          * Keep always at the end!
          */
-        new MyWindow(WIDTH + 14, HEIGHT + 37, "Let's build a game!", this);
+        // TODO: Remove +14 from WIDTH and +37 from HEIGHT - They're there for a temporary bug fix
+        new MyWindow(WIDTH + 14, HEIGHT + 37, "Fight!", this);
     }
 
     public synchronized void start() {

@@ -48,25 +48,44 @@ public class ImagePlayer {
                 return PlayerImgIdle();
         } else {
             if (playerAnimationType == PlayerAnimationType.Idle)
-                return PlayerMirrorImages(PlayerImgIdle());
+                return MirrorImages(PlayerImgIdle());
             else if (playerAnimationType == PlayerAnimationType.Run)
-                return PlayerMirrorImages(PlayerImgRun());
+                return MirrorImages(PlayerImgRun());
             else if (playerAnimationType == PlayerAnimationType.RunLeft)
-                return PlayerMirrorImages(PlayerImgRunLeft());
+                return MirrorImages(PlayerImgRunLeft());
             else if (playerAnimationType == PlayerAnimationType.Jump)
-                return PlayerMirrorImages(PlayerImgJump());
+                return MirrorImages(PlayerImgJump());
             else if (playerAnimationType == PlayerAnimationType.Fall)
-                return PlayerMirrorImages(PlayerImgFall());
+                return MirrorImages(PlayerImgFall());
             else if (playerAnimationType == PlayerAnimationType.Attack1)
-                return PlayerMirrorImages(PlayerImgAttack1());
+                return MirrorImages(PlayerImgAttack1());
             else if (playerAnimationType == PlayerAnimationType.Attack2)
-                return PlayerMirrorImages(PlayerImgAttack2());
+                return MirrorImages(PlayerImgAttack2());
             else if (playerAnimationType == PlayerAnimationType.TakeHit)
-                return PlayerMirrorImages(PlayerImgTakeHit());
+                return MirrorImages(PlayerImgTakeHit());
             else if (playerAnimationType == PlayerAnimationType.Death)
-                return PlayerMirrorImages(PlayerImgDeath());
+                return MirrorImages(PlayerImgDeath());
             else
-                return PlayerMirrorImages(PlayerImgIdle());
+                return MirrorImages(PlayerImgIdle());
+        }
+    }
+
+    public static ArrayList<BufferedImage> getEnemyImg(PlayerAnimationType playerAnimationType, boolean facingRight) {
+        //System.out.println("isFacingRight()" + facingRight);
+        if (facingRight) {
+            if (playerAnimationType == PlayerAnimationType.Idle)
+                return EnemyImgIdle();
+            else if (playerAnimationType == PlayerAnimationType.Attack1)
+                return EnemyImgAttack1();
+            else
+                return EnemyImgIdle();
+        } else {
+            if (playerAnimationType == PlayerAnimationType.Idle)
+                return MirrorImages(EnemyImgIdle());
+            else if (playerAnimationType == PlayerAnimationType.Attack1)
+                return MirrorImages(EnemyImgAttack1());
+            else
+                return MirrorImages(EnemyImgIdle());
         }
     }
 
@@ -193,7 +212,35 @@ public class ImagePlayer {
         return imageList;
     }
 
-    private static ArrayList<BufferedImage> PlayerMirrorImages(ArrayList<BufferedImage> images) {
+    private static ArrayList<BufferedImage> EnemyImgIdle() {
+        ArrayList<BufferedImage> imageList = new ArrayList<>();
+        try {
+            imageList.add(ImageIO.read(new File("src/main/resources/Death/Idle/Idle_1.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Death/Idle/Idle_2.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Death/Idle/Idle_3.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Death/Idle/Idle_4.png")));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return imageList;
+    }
+
+    private static ArrayList<BufferedImage> EnemyImgAttack1() {
+        ArrayList<BufferedImage> imageList = new ArrayList<>();
+        try {
+            imageList.add(ImageIO.read(new File("src/main/resources/Death/Attack1/Attack1_1.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Death/Attack1/Attack1_2.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Death/Attack1/Attack1_3.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Death/Attack1/Attack1_4.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Death/Attack1/Attack1_5.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Death/Attack1/Attack1_6.png")));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return imageList;
+    }
+
+    private static ArrayList<BufferedImage> MirrorImages(ArrayList<BufferedImage> images) {
         ArrayList<BufferedImage> imageList = new ArrayList<>();
         for (BufferedImage image : images) {
             imageList.add(MyUtils.mirrorImage(image));

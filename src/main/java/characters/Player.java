@@ -76,14 +76,21 @@ public class Player extends GameObject {
 
     @Override
     public void render(Graphics g) {
-        if (id == ID.Player) {
-            g.drawImage(playerImage.getImg(), x, y, null);
-        } else if (id == ID.Enemy) {
-            g.setColor(Color.RED);
-            g.fillRect(x, y, size.getImgWidth(), size.getImgHeight());
-//            g.fillRect(x, y, size.getActualWidth(), size.getActualHeight());  // TODO: USE TO CHECK -> THERE'S NO BUG
-        }
+        g.drawImage(playerImage.getImg(), x, y, null);
     }
+
+    /*
+//    WAS IN RENDER
+     if (id == ID.Player) {
+         g.drawImage(playerImage.getImg(), x, y, null);
+     } else if (id == ID.Enemy) {
+         g.drawImage(playerImage.getImg(), x, y, null);
+         // g.setColor(Color.RED);
+         // g.fillRect(x, y, size.getImgWidth(), size.getImgHeight());
+
+         // g.fillRect(x, y, size.getActualWidth(), size.getActualHeight());  // TODO: USE TO CHECK -> THERE'S NO BUG
+     }
+    */
 
     public PlayerSize getSize() {
         return size;
@@ -91,19 +98,5 @@ public class Player extends GameObject {
 
     public Action getAction() {
         return action;
-    }
-
-    @Override
-    public String toString() {
-        return "Player{" +
-                "hp=" + hp +
-                ", playerImage=" + playerImage +
-                ", size=" + size +
-                ", x=" + x +
-                ", y=" + y +
-                ", id=" + id +
-                ", velX=" + velX +
-                ", velY=" + velY +
-                '}';
     }
 }
