@@ -47,10 +47,27 @@ public class KeyInput extends KeyAdapter {
 
             if (tempObject.getId() == ID.Enemy) {
                 // KEY EVENTS FOR ENEMY
-                if (key == KeyEvent.VK_UP) tempObject.setVelY(-5);
-                if (key == KeyEvent.VK_DOWN) tempObject.setVelY(5);
-                if (key == KeyEvent.VK_LEFT) tempObject.setVelX(-5);
-                if (key == KeyEvent.VK_RIGHT) tempObject.setVelX(5);
+                if (key == KeyEvent.VK_UP) {
+                    tempObject.setVelY(-5);
+                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Idle);
+                }
+                if (key == KeyEvent.VK_DOWN) {
+                    tempObject.setVelY(5);
+                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Idle);
+                }
+                if (key == KeyEvent.VK_LEFT) {
+                    tempObject.setVelX(-5);
+                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Idle);
+                    ((Player) tempObject).getAction().setFacingRight(false);
+                }
+                if (key == KeyEvent.VK_RIGHT) {
+                    tempObject.setVelX(5);
+                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Idle);
+                    ((Player) tempObject).getAction().setFacingRight(true);
+                }
+                if (key == KeyEvent.VK_ENTER) {
+                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Attack1);
+                }
             }
         }
     }
@@ -76,10 +93,25 @@ public class KeyInput extends KeyAdapter {
 
             if (tempObject.getId() == ID.Enemy) {
                 // KEY EVENTS FOR ENEMY
-                if (key == KeyEvent.VK_UP) tempObject.setVelY(0);
-                if (key == KeyEvent.VK_DOWN) tempObject.setVelY(0);
-                if (key == KeyEvent.VK_LEFT) tempObject.setVelX(0);
-                if (key == KeyEvent.VK_RIGHT) tempObject.setVelX(0);
+                if (key == KeyEvent.VK_UP) {
+                    tempObject.setVelY(0);
+                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Idle);
+                }
+                if (key == KeyEvent.VK_DOWN) {
+                    tempObject.setVelY(0);
+                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Idle);
+                }
+                if (key == KeyEvent.VK_LEFT) {
+                    tempObject.setVelX(0);
+                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Idle);
+                }
+                if (key == KeyEvent.VK_RIGHT) {
+                    tempObject.setVelX(0);
+                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Idle);
+                }
+                if (key == KeyEvent.VK_ENTER) {
+                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Idle);
+                }
             }
         }
     }

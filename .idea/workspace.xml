@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Now enemy has his own HealthBar" />
+    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="When player dies, both player and enemy go back to starting position">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/AnimatePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/AnimatePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/ImagePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/ImagePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/window/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -433,7 +441,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668069192960</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Temporarily fixed width problem">
+      <created>1668069415334</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1668069415334</updated>
+    </task>
+    <task id="LOCAL-00040" summary="When player dies, both player and enemy go back to starting position">
+      <created>1668069759720</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1668069759720</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -451,8 +473,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Cleaned up code" />
-    <MESSAGE value="Added walls" />
     <MESSAGE value="improved walls" />
     <MESSAGE value="improved frames by doing ArrayList instead of LinkedList and added minor classes" />
     <MESSAGE value="Minor changes" />
@@ -476,6 +496,8 @@
     <MESSAGE value="Minor improvements" />
     <MESSAGE value="Now player takes damage only if there's collision between him and the enemy" />
     <MESSAGE value="Now enemy has his own HealthBar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Now enemy has his own HealthBar" />
+    <MESSAGE value="Temporarily fixed width problem" />
+    <MESSAGE value="When player dies, both player and enemy go back to starting position" />
+    <option name="LAST_COMMIT_MESSAGE" value="When player dies, both player and enemy go back to starting position" />
   </component>
 </project>
