@@ -22,7 +22,6 @@ import java.util.ArrayList;
  * HeightToRemoveFromTop: 70px <p>
  */
 public class ImagePlayer {
-
     public static ArrayList<BufferedImage> getPlayerImg(PlayerAnimationType playerAnimationType, boolean facingRight) {
         //System.out.println("isFacingRight()" + facingRight);
         if (facingRight) {
@@ -89,6 +88,9 @@ public class ImagePlayer {
         }
     }
 
+    /**
+     * Player
+     */
     private static ArrayList<BufferedImage> PlayerImgIdle() {
         ArrayList<BufferedImage> imageList = new ArrayList<>();
         try {
@@ -212,6 +214,9 @@ public class ImagePlayer {
         return imageList;
     }
 
+    /**
+     * Enemy
+     */
     private static ArrayList<BufferedImage> EnemyImgIdle() {
         ArrayList<BufferedImage> imageList = new ArrayList<>();
         try {
@@ -240,6 +245,9 @@ public class ImagePlayer {
         return imageList;
     }
 
+    /**
+     * Mirror
+     */
     private static ArrayList<BufferedImage> MirrorImages(ArrayList<BufferedImage> images) {
         ArrayList<BufferedImage> imageList = new ArrayList<>();
         for (BufferedImage image : images) {
