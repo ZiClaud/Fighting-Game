@@ -46,6 +46,10 @@ public class HealthBar extends GameObject {
 
                     player.setX(50);
                     enemy.setX(Game.WIDTH - 50 - 163);
+
+                    player.setY(Game.HEIGHT);
+                    enemy.setY(Game.HEIGHT);
+
                     // TODO: Add countdown
 
 
