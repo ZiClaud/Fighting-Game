@@ -9,10 +9,10 @@ import window.MyHandler;
 
 import java.awt.*;
 
-public class Healthbar extends GameObject {
+public class HealthBar extends GameObject {
     private final MyHandler handler;
 
-    public Healthbar(int x, int y, ID id, MyHandler handler) {
+    public HealthBar(int x, int y, ID id, MyHandler handler) {
         super(x, y, id);
         this.handler = handler;
     }
@@ -50,7 +50,7 @@ public class Healthbar extends GameObject {
 
 
                     // TODO: Reset HPs - FIX
-                    player.setHp(player.getHp() + 150);
+                    player.setHp(player.getHp() + 100);
                 }
                 player.setHp(player.getHp() - 1);
             }
@@ -71,12 +71,19 @@ public class Healthbar extends GameObject {
 
     @Override
     public void render(Graphics g) {
-        if (id == ID.HealthBarPlayer) g.setColor(Color.GREEN);
-        else if (id == ID.HealthBarEnemy) g.setColor(Color.RED);
 
         for (GameObject player : handler.objects) {
-            if (player.getId() == ID.Player) {
-                g.fillRect(x, y, ((Player) player).getHp(), 10);
+            if (id == ID.HealthBarPlayer) {
+                g.setColor(Color.GREEN);
+                if (player.getId() == ID.Player) {
+
+                    g.fillRect(x, y, ((Player) player).getHp(), 10);
+                }
+            } else if (id == ID.HealthBarEnemy){
+                g.setColor(Color.RED);
+                if (player.getId() == ID.Enemy) {
+                    g.fillRect(x, y, ((Player) player).getHp(), 10);
+                }
             }
         }
     }

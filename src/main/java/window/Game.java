@@ -1,6 +1,6 @@
 package window;
 
-import UI.Healthbar;
+import UI.HealthBar;
 import characters.Player;
 
 import javax.imageio.ImageIO;
@@ -25,8 +25,8 @@ public class Game extends Canvas implements Runnable {
         handler.addObject(player);
         handler.addObject(enemy);
 //        handler.addObject(new Player(500, 300, ID.Enemy, 200, 200, 100));  // TODO: USE TO CHECK -> THERE'S NO BUG
-        handler.addObject(new Healthbar(50, 50, ID.HealthBarPlayer, handler));
-        handler.addObject(new Healthbar(Game.WIDTH - 50 - enemy.getHp(), 50, ID.HealthBarEnemy, handler));
+        handler.addObject(new HealthBar(50, 50, ID.HealthBarPlayer, handler));
+        handler.addObject(new HealthBar(Game.WIDTH - 50 - enemy.getHp(), 50, ID.HealthBarEnemy, handler));
 
         /**
          * Keep always at the end!
