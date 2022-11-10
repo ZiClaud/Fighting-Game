@@ -31,7 +31,7 @@ public class Game extends Canvas implements Runnable {
         /**
          * Keep always at the end!
          */
-        new MyWindow(WIDTH, HEIGHT + 37, "Let's build a game!", this);
+        new MyWindow(WIDTH + 14, HEIGHT + 37, "Let's build a game!", this);
     }
 
     public synchronized void start() {
