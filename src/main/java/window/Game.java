@@ -31,8 +31,8 @@ public class Game extends Canvas implements Runnable {
         /**
          * Keep always at the end!
          */
-        // TODO: Remove +14 from WIDTH and +37 from HEIGHT - They're there for a temporary bug fix
-        new MyWindow(WIDTH + 14, HEIGHT + 37, "Fight!", this);
+        // TODO: Remove +37 from HEIGHT - It's there for a temporary bug fix
+        new MyWindow(WIDTH, HEIGHT + 37, "Fight!", this);
     }
 
     public synchronized void start() {
