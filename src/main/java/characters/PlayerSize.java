@@ -36,6 +36,14 @@ public class PlayerSize {
             excessiveRight = 87;
             excessiveBottom = 78;
             excessiveTop = 70;
+        } else if (imgWidth == 100 && imgHeight == 100) {
+            actualWidth = 45;
+            actualHeight = 62;
+
+            excessiveLeft = 34;
+            excessiveRight = 21;
+            excessiveBottom = 17;
+            excessiveTop = 21;
         } else {
             actualWidth = imgWidth;
             actualHeight = imgHeight;
