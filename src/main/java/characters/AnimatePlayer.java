@@ -5,18 +5,18 @@ import window.ID;
 import javax.swing.*;
 
 public class AnimatePlayer {
-    Player player;
+    PlayerData playerData;
     int i = 0;
     int j = 0;
 
-    public AnimatePlayer(Player player) {
-        this.player = player;
+    public AnimatePlayer(PlayerData playerData) {
+        this.playerData = playerData;
     }
 
     public void animatePlayer() {
-        if (player.getId() == ID.Player) {
+        if (playerData.getPlayer().getId() == ID.Player) {
             loopAnimationPlayer();
-        } else if (player.getId() == ID.Enemy) {
+        } else if (playerData.getPlayer().getId() == ID.Enemy) {
             loopAnimationEnemy();
         }
     }
@@ -33,11 +33,11 @@ public class AnimatePlayer {
 
     private void loopAnimationPlayer() {
         Timer timerPlayer = new Timer(200, e -> {
-            if (i >= ImagePlayer.getPlayerImg(player.getPlayerImage().getPlayerAnimationType(), player.getAction().isFacingRight()).size()) {
+            if (i >= ImagePlayer.getPlayerImg(playerData.getPlayerImage().getPlayerAnimationType(), playerData.getAction().isFacingRight()).size()) {
                 //System.out.println("Loop Animation Player: " + i);
                 i = 0;
             }
-            player.getPlayerImage().setImg(ImagePlayer.getPlayerImg(player.getPlayerImage().getPlayerAnimationType(), player.getAction().isFacingRight()).get(i));
+            playerData.getPlayerImage().setImg(ImagePlayer.getPlayerImg(playerData.getPlayerImage().getPlayerAnimationType(), playerData.getAction().isFacingRight()).get(i));
             i++;
         });
         timerPlayer.setRepeats(true);
@@ -48,11 +48,11 @@ public class AnimatePlayer {
     private void loopAnimationEnemy() {
         // TODO: Maybe put j instead of i, but it won't make the animation work
         Timer timerEnemy = new Timer(200, e -> {
-            if (i >= ImagePlayer.getEnemyImg(player.getPlayerImage().getPlayerAnimationType(), player.getAction().isFacingRight()).size()) {
+            if (i >= ImagePlayer.getEnemyImg(playerData.getPlayerImage().getPlayerAnimationType(), playerData.getAction().isFacingRight()).size()) {
                 //System.out.println("Loop Animation Enemy: " + i);
                 i = 0;
             }
-            player.getPlayerImage().setImg(ImagePlayer.getEnemyImg(player.getPlayerImage().getPlayerAnimationType(), player.getAction().isFacingRight()).get(i));
+            playerData.getPlayerImage().setImg(ImagePlayer.getEnemyImg(playerData.getPlayerImage().getPlayerAnimationType(), playerData.getAction().isFacingRight()).get(i));
             i++;
         });
         timerEnemy.setRepeats(true);

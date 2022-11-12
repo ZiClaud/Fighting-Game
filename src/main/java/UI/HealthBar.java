@@ -2,6 +2,7 @@ package UI;
 
 import characters.Player;
 import characters.PlayerAnimationType;
+import characters.PlayerData;
 import window.Game;
 import window.GameObject;
 import window.ID;
@@ -17,46 +18,46 @@ public class HealthBar extends GameObject {
         this.handler = handler;
     }
 
-    private void collision(Player player, Player enemy) {   // TODO: Put this somewhere else and make it public
+    private void collision(PlayerData playerData, PlayerData enemyData) {   // TODO: Put this somewhere else and make it public
         /*
-        System.out.println("Player X: " + ((Player) player).getSize().getActualX(player.getX()) + ", " + ((Player) player).getSize().getActualRightX(player.getX()));
-        System.out.println("Enemy X: " + ((Player) enemy).getSize().getActualX(enemy.getX()) + ", " + ((Player) enemy).getSize().getActualRightX(enemy.getX()));
-        System.out.println("True/False: " + (((Player) player).getSize().getActualX(player.getX()) >= ((Player) enemy).getSize().getActualX(enemy.getX())) + ", " + (((Player) player).getSize().getActualRightX(player.getX()) <= ((Player) enemy).getSize().getActualRightX(enemy.getX())));
+        System.out.println("Player X: " + ((Player) playerData).getSize().getActualX(playerData.getX()) + ", " + ((Player) playerData).getSize().getActualRightX(playerData.getX()));
+        System.out.println("Enemy X: " + ((Player) enemyData).getSize().getActualX(enemyData.getX()) + ", " + ((Player) enemyData).getSize().getActualRightX(enemyData.getX()));
+        System.out.println("True/False: " + (((Player) playerData).getSize().getActualX(playerData.getX()) >= ((Player) enemyData).getSize().getActualX(enemyData.getX())) + ", " + (((Player) playerData).getSize().getActualRightX(playerData.getX()) <= ((Player) enemyData).getSize().getActualRightX(enemyData.getX())));
         */
 
         /// Check if they have the same X
-        if (player.getSize().getActualX(player.getX()) <= enemy.getSize().getActualRightX(enemy.getX())
-                && player.getSize().getActualRightX(player.getX()) >= enemy.getSize().getActualX(enemy.getX())) {
+        if (playerData.getSize().getActualX(playerData.getPlayer().getX()) <= enemyData.getSize().getActualRightX(enemyData.getPlayer().getX())
+                && playerData.getSize().getActualRightX(playerData.getPlayer().getX()) >= enemyData.getSize().getActualX(enemyData.getPlayer().getX())) {
             /// Check if they have the same Y
-            if (player.getSize().getActualY(player.getY()) <= enemy.getSize().getActualBottomY(enemy.getY())
-                    && player.getSize().getActualBottomY(player.getY()) >= enemy.getSize().getActualY(enemy.getY())) {
+            if (playerData.getSize().getActualY(playerData.getPlayer().getY()) <= enemyData.getSize().getActualBottomY(enemyData.getPlayer().getY())
+                    && playerData.getSize().getActualBottomY(playerData.getPlayer().getY()) >= enemyData.getSize().getActualY(enemyData.getPlayer().getY())) {
 
                 /**
                  * Hit taken
                  */
-                player.getAction().setActionType(PlayerAnimationType.TakeHit);
+                playerData.getAction().setActionType(PlayerAnimationType.TakeHit);
 
                 /**
                  * Death
                  */
-                if (player.getHp() < 0) {
-                    player.getAction().setActionType(PlayerAnimationType.Death);
+                if (playerData.getPlayer().getHp() < 0) {
+                    playerData.getAction().setActionType(PlayerAnimationType.Death);
 
                     System.out.println("Enemy won!"); // TODO: Print this in game
 
-                    player.setX(50);
-                    enemy.setX(Game.WIDTH - 50 - 163);
+                    playerData.getPlayer().setX(50);
+                    enemyData.getPlayer().setX(Game.WIDTH - 50 - 163);
 
-                    player.setY(Game.HEIGHT);
-                    enemy.setY(Game.HEIGHT);
+                    playerData.getPlayer().setY(Game.HEIGHT);
+                    enemyData.getPlayer().setY(Game.HEIGHT);
 
                     // TODO: Add countdown
 
 
                     // TODO: Reset HPs - FIX
-                    player.setHp(player.getHp() + 100);
+                    playerData.getPlayer().setHp(playerData.getPlayer().getHp() + 100);
                 }
-                player.setHp(player.getHp() - 1);
+                playerData.getPlayer().setHp(playerData.getPlayer().getHp() - 1);
             }
         }
     }
@@ -66,7 +67,7 @@ public class HealthBar extends GameObject {
         for (GameObject player : handler.objects) {
             for (GameObject enemy : handler.objects) {
                 if (player.getId() == ID.Player && enemy.getId() == ID.Enemy) {
-                    collision((Player) player, (Player) enemy);
+                    collision(((Player) player).getPlayerData(), ((Player) enemy).getPlayerData());
                 }
             }
 

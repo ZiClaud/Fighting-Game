@@ -21,7 +21,7 @@ public class Game extends Canvas implements Runnable {
 
         Player player = new Player(50, Game.HEIGHT, ID.Player, 200, 200, 100);
         Player enemy = new Player(Game.WIDTH - 50 - 163, Game.HEIGHT, ID.Enemy, 100, 100, 100);
-        enemy.getAction().setFacingRight(false);
+        enemy.getPlayerData().getAction().setFacingRight(false);
 
         handler.addObject(player);
         handler.addObject(enemy);

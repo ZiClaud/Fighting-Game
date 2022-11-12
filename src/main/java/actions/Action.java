@@ -1,15 +1,15 @@
 package actions;
 
-import characters.Player;
 import characters.PlayerAnimationType;
+import characters.PlayerData;
 
 public class Action {
-    private final Player player;
+    private final PlayerData playerData;
     private PlayerAnimationType actionType;
     private boolean facingRight = true;
 
-    public Action(Player player) {
-        this.player = player;
+    public Action(PlayerData playerData) {
+        this.playerData = playerData;
         this.actionType = PlayerAnimationType.Idle;
     }
 
@@ -50,34 +50,34 @@ public class Action {
     }
 
     public void idle() {
-        player.getPlayerImage().setPlayerAnimationType(characters.PlayerAnimationType.Idle);
+        playerData.getPlayerImage().setPlayerAnimationType(characters.PlayerAnimationType.Idle);
     }
 
     public void run() {
-        player.getPlayerImage().setPlayerAnimationType(characters.PlayerAnimationType.Run);
+        playerData.getPlayerImage().setPlayerAnimationType(characters.PlayerAnimationType.Run);
     }
 
     public void jump() {
-        player.getPlayerImage().setPlayerAnimationType(characters.PlayerAnimationType.Jump);
+        playerData.getPlayerImage().setPlayerAnimationType(characters.PlayerAnimationType.Jump);
     }
 
     public void fall() {
-        player.getPlayerImage().setPlayerAnimationType(characters.PlayerAnimationType.Fall);
+        playerData.getPlayerImage().setPlayerAnimationType(characters.PlayerAnimationType.Fall);
     }
 
     public void attack1() {
-        player.getPlayerImage().setPlayerAnimationType(characters.PlayerAnimationType.Attack1);
+        playerData.getPlayerImage().setPlayerAnimationType(characters.PlayerAnimationType.Attack1);
     }
 
     public void attack2() {
-        player.getPlayerImage().setPlayerAnimationType(characters.PlayerAnimationType.Attack2);
+        playerData.getPlayerImage().setPlayerAnimationType(characters.PlayerAnimationType.Attack2);
     }
 
     public void takeHit() {
-        player.getPlayerImage().setPlayerAnimationType(PlayerAnimationType.TakeHit);
+        playerData.getPlayerImage().setPlayerAnimationType(PlayerAnimationType.TakeHit);
     }
 
     public void death() {
-        player.getPlayerImage().setPlayerAnimationType(PlayerAnimationType.Death);
+        playerData.getPlayerImage().setPlayerAnimationType(PlayerAnimationType.Death);
     }
 }

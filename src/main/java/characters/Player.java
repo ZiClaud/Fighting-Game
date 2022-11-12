@@ -1,6 +1,5 @@
 package characters;
 
-import actions.Action;
 import window.Game;
 import window.GameObject;
 import window.ID;
@@ -9,26 +8,14 @@ import java.awt.*;
 
 public class Player extends GameObject {
     private int hp;
-    private final PlayerImage playerImage;
-    private final PlayerSize size;
-    private final Action action;
-    private final AnimatePlayer animatePlayer;
+    private PlayerData playerData;
+
 
     public Player(int x, int y, ID id, int playerWidth, int playerHeight, int hp) {
         super(x, y, id);     // TODO: x - size.removeWidth, y - size.removeHeight;
         this.hp = hp;
 
-        this.size = new PlayerSize(playerWidth, playerHeight);
-        this.playerImage = new PlayerImage();
-
-        this.action = new Action(this);
-        this.animatePlayer = new AnimatePlayer(this);
-
-        animatePlayer.animatePlayer();
-    }
-
-    public PlayerImage getPlayerImage() {
-        return playerImage;
+        this.playerData = new PlayerData(this, playerWidth, playerHeight);
     }
 
     public int getHp() {
@@ -39,12 +26,16 @@ public class Player extends GameObject {
         this.hp = hp;
     }
 
+    public PlayerData getPlayerData() {
+        return playerData;
+    }
+
     @Override
     public void tick() {
         x += velX;
         y += velY;
 
-        action.act();
+        playerData.getAction().act();
 
         checkWall();
     }
@@ -53,30 +44,30 @@ public class Player extends GameObject {
         /**
          * Right/Left Wall
          */
-        if (size.getActualX(x) <= 0 || size.getActualRightX(x) >= Game.WIDTH) {
+        if (playerData.getSize().getActualX(x) <= 0 || playerData.getSize().getActualRightX(x) >= Game.WIDTH) {
             velX = 0;
-            if (size.getActualX(x) <= 0) {
-                x = -size.getExcessiveLeft();
-            } else if (size.getActualRightX(x) >= Game.WIDTH) {
-                x = Game.WIDTH - size.getImgWidth() + size.getExcessiveRight();
+            if (playerData.getSize().getActualX(x) <= 0) {
+                x = -playerData.getSize().getExcessiveLeft();
+            } else if (playerData.getSize().getActualRightX(x) >= Game.WIDTH) {
+                x = Game.WIDTH - playerData.getSize().getImgWidth() + playerData.getSize().getExcessiveRight();
             }
         }
         /**
          * Top/Bottom Wall
          */
-        if (size.getActualY(y) <= 0 || size.getActualBottomY(y) >= Game.HEIGHT) {
+        if (playerData.getSize().getActualY(y) <= 0 || playerData.getSize().getActualBottomY(y) >= Game.HEIGHT) {
             velY = 0;
-            if (size.getActualY(y) <= 0) {
-                y = -size.getExcessiveTop();
-            } else if (size.getActualBottomY(y) >= Game.HEIGHT) {
-                y = Game.HEIGHT - size.getImgHeight() + size.getExcessiveBottom();
+            if (playerData.getSize().getActualY(y) <= 0) {
+                y = -playerData.getSize().getExcessiveTop();
+            } else if (playerData.getSize().getActualBottomY(y) >= Game.HEIGHT) {
+                y = Game.HEIGHT - playerData.getSize().getImgHeight() + playerData.getSize().getExcessiveBottom();
             }
         }
     }
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(playerImage.getImg(), x, y, null);
+        g.drawImage(playerData.getPlayerImage().getImg(), x, y, null);
     }
 
     /*
@@ -92,11 +83,4 @@ public class Player extends GameObject {
      }
     */
 
-    public PlayerSize getSize() {
-        return size;
-    }
-
-    public Action getAction() {
-        return action;
-    }
 }
