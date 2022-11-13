@@ -1,7 +1,7 @@
 package characters;
 
 import actions.Action;
-import window.Game;
+import utils.Events;
 import window.GameObject;
 import window.ID;
 
@@ -52,32 +52,7 @@ public class Player extends GameObject {
 
         action.act();
 
-        checkWall();
-    }
-
-    private void checkWall() {
-        /**
-         * Right/Left Wall
-         */
-        if (size.getActualX(x) <= 0 || size.getActualRightX(x) >= Game.WIDTH) {
-            velX = 0;
-            if (size.getActualX(x) <= 0) {
-                x = -size.getExcessiveLeft();
-            } else if (size.getActualRightX(x) >= Game.WIDTH) {
-                x = Game.WIDTH - size.getImgWidth() + size.getExcessiveRight();
-            }
-        }
-        /**
-         * Top/Bottom Wall
-         */
-        if (size.getActualY(y) <= 0 || size.getActualBottomY(y) >= Game.HEIGHT) {
-            velY = 0;
-            if (size.getActualY(y) <= 0) {
-                y = -size.getExcessiveTop();
-            } else if (size.getActualBottomY(y) >= Game.HEIGHT) {
-                y = Game.HEIGHT - size.getImgHeight() + size.getExcessiveBottom();
-            }
-        }
+        Events.checkWall(this);
     }
 
     @Override
