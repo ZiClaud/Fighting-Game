@@ -1,5 +1,6 @@
 package characters;
 
+import actions.PlayerAction;
 import utils.MyUtils;
 
 import javax.imageio.ImageIO;
@@ -22,66 +23,62 @@ import java.util.ArrayList;
  * HeightToRemoveFromTop: 70px <p>
  */
 public class ImagePlayer {
-    public static ArrayList<BufferedImage> getPlayerImg(PlayerAnimationType playerAnimationType, boolean facingRight) {
+    public static ArrayList<BufferedImage> getPlayerImg(PlayerAction playerAction, boolean facingRight) {
         //System.out.println("isFacingRight()" + facingRight);
         if (facingRight) {
-            if (playerAnimationType == PlayerAnimationType.Idle)
+            if (playerAction == PlayerAction.Idle)
                 return PlayerImgIdle();
-            else if (playerAnimationType == PlayerAnimationType.Run)
+            else if (playerAction == PlayerAction.Run)
                 return PlayerImgRun();
-            else if (playerAnimationType == PlayerAnimationType.RunLeft)
-                return PlayerImgRunLeft();
-            else if (playerAnimationType == PlayerAnimationType.Jump)
+            else if (playerAction == PlayerAction.Jump)
                 return PlayerImgJump();
-            else if (playerAnimationType == PlayerAnimationType.Fall)
+            else if (playerAction == PlayerAction.Fall)
                 return PlayerImgFall();
-            else if (playerAnimationType == PlayerAnimationType.Attack1)
+            else if (playerAction == PlayerAction.Attack1)
                 return PlayerImgAttack1();
-            else if (playerAnimationType == PlayerAnimationType.Attack2)
+            else if (playerAction == PlayerAction.Attack2)
                 return PlayerImgAttack2();
-            else if (playerAnimationType == PlayerAnimationType.TakeHit)
+            else if (playerAction == PlayerAction.TakeHit)
                 return PlayerImgTakeHit();
-            else if (playerAnimationType == PlayerAnimationType.Death)
+            else if (playerAction == PlayerAction.Death)
                 return PlayerImgDeath();
             else
                 return PlayerImgIdle();
         } else {
-            if (playerAnimationType == PlayerAnimationType.Idle)
+            if (playerAction == PlayerAction.Idle)
                 return MirrorImages(PlayerImgIdle());
-            else if (playerAnimationType == PlayerAnimationType.Run)
+            else if (playerAction == PlayerAction.Run)
                 return MirrorImages(PlayerImgRun());
-            else if (playerAnimationType == PlayerAnimationType.RunLeft)
-                return MirrorImages(PlayerImgRunLeft());
-            else if (playerAnimationType == PlayerAnimationType.Jump)
+            else if (playerAction == PlayerAction.Jump)
                 return MirrorImages(PlayerImgJump());
-            else if (playerAnimationType == PlayerAnimationType.Fall)
+            else if (playerAction == PlayerAction.Fall)
                 return MirrorImages(PlayerImgFall());
-            else if (playerAnimationType == PlayerAnimationType.Attack1)
+            else if (playerAction == PlayerAction.Attack1)
                 return MirrorImages(PlayerImgAttack1());
-            else if (playerAnimationType == PlayerAnimationType.Attack2)
+            else if (playerAction == PlayerAction.Attack2)
                 return MirrorImages(PlayerImgAttack2());
-            else if (playerAnimationType == PlayerAnimationType.TakeHit)
+            else if (playerAction == PlayerAction.TakeHit)
                 return MirrorImages(PlayerImgTakeHit());
-            else if (playerAnimationType == PlayerAnimationType.Death)
+            else if (playerAction == PlayerAction.Death)
                 return MirrorImages(PlayerImgDeath());
             else
                 return MirrorImages(PlayerImgIdle());
         }
     }
 
-    public static ArrayList<BufferedImage> getEnemyImg(PlayerAnimationType playerAnimationType, boolean facingRight) {
+    public static ArrayList<BufferedImage> getEnemyImg(PlayerAction playerAction, boolean facingRight) {
         //System.out.println("isFacingRight()" + facingRight);
         if (facingRight) {
-            if (playerAnimationType == PlayerAnimationType.Idle)
+            if (playerAction == PlayerAction.Idle)
                 return EnemyImgIdle();
-            else if (playerAnimationType == PlayerAnimationType.Attack1)
+            else if (playerAction == PlayerAction.Attack1)
                 return EnemyImgAttack1();
             else
                 return EnemyImgIdle();
         } else {
-            if (playerAnimationType == PlayerAnimationType.Idle)
+            if (playerAction == PlayerAction.Idle)
                 return MirrorImages(EnemyImgIdle());
-            else if (playerAnimationType == PlayerAnimationType.Attack1)
+            else if (playerAction == PlayerAction.Attack1)
                 return MirrorImages(EnemyImgAttack1());
             else
                 return MirrorImages(EnemyImgIdle());

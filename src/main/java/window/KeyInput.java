@@ -1,7 +1,7 @@
 package window;
 
 import characters.Player;
-import characters.PlayerAnimationType;
+import actions.PlayerAction;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -22,26 +22,26 @@ public class KeyInput extends KeyAdapter {
                 // KEY EVENTS FOR PLAYER
                 if (key == KeyEvent.VK_W) {
                     tempObject.setVelY(-5);
-                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Jump);
+                    ((Player) tempObject).getAction().setActionType(PlayerAction.Jump);
                 }
                 if (key == KeyEvent.VK_S) {
                     tempObject.setVelY(5);
 
-                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Fall);
+                    ((Player) tempObject).getAction().setActionType(PlayerAction.Fall);
                 }
                 if (key == KeyEvent.VK_A) {
                     tempObject.setVelX(-5);
-                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Run);
+                    ((Player) tempObject).getAction().setActionType(PlayerAction.Run);
                     ((Player) tempObject).getAction().setFacingRight(false);
                 }
                 if (key == KeyEvent.VK_D) {
                     tempObject.setVelX(5);
-                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Run);
+                    ((Player) tempObject).getAction().setActionType(PlayerAction.Run);
                     ((Player) tempObject).getAction().setFacingRight(true);
                 }
                 if (key == KeyEvent.VK_SPACE) {
 //                    System.out.println("Attack! Or jump, idk yet");
-                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Attack1);
+                    ((Player) tempObject).getAction().setActionType(PlayerAction.Attack1);
                 }
             }
 
@@ -49,24 +49,24 @@ public class KeyInput extends KeyAdapter {
                 // KEY EVENTS FOR ENEMY
                 if (key == KeyEvent.VK_UP) {
                     tempObject.setVelY(-5);
-                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Idle);
+                    ((Player) tempObject).getAction().setActionType(PlayerAction.Idle);
                 }
                 if (key == KeyEvent.VK_DOWN) {
                     tempObject.setVelY(5);
-                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Idle);
+                    ((Player) tempObject).getAction().setActionType(PlayerAction.Idle);
                 }
                 if (key == KeyEvent.VK_LEFT) {
                     tempObject.setVelX(-5);
-                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Idle);
+                    ((Player) tempObject).getAction().setActionType(PlayerAction.Idle);
                     ((Player) tempObject).getAction().setFacingRight(false);
                 }
                 if (key == KeyEvent.VK_RIGHT) {
                     tempObject.setVelX(5);
-                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Idle);
+                    ((Player) tempObject).getAction().setActionType(PlayerAction.Idle);
                     ((Player) tempObject).getAction().setFacingRight(true);
                 }
                 if (key == KeyEvent.VK_ENTER) {
-                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Attack1);
+                    ((Player) tempObject).getAction().setActionType(PlayerAction.Attack1);
                 }
             }
         }
@@ -80,14 +80,14 @@ public class KeyInput extends KeyAdapter {
                 // KEY EVENTS FOR PLAYER
                 if (key == KeyEvent.VK_W || key == KeyEvent.VK_S) {
                     tempObject.setVelY(0);
-                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Idle);
+                    ((Player) tempObject).getAction().setActionType(PlayerAction.Idle);
                 }
                 if (key == KeyEvent.VK_A || key == KeyEvent.VK_D) {
                     tempObject.setVelX(0);
-                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Idle);
+                    ((Player) tempObject).getAction().setActionType(PlayerAction.Idle);
                 }
                 if (key == KeyEvent.VK_SPACE) {
-                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Idle);
+                    ((Player) tempObject).getAction().setActionType(PlayerAction.Idle);
                 }
             }
 
@@ -95,22 +95,22 @@ public class KeyInput extends KeyAdapter {
                 // KEY EVENTS FOR ENEMY
                 if (key == KeyEvent.VK_UP) {
                     tempObject.setVelY(0);
-                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Idle);
+                    ((Player) tempObject).getAction().setActionType(PlayerAction.Idle);
                 }
                 if (key == KeyEvent.VK_DOWN) {
                     tempObject.setVelY(0);
-                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Idle);
+                    ((Player) tempObject).getAction().setActionType(PlayerAction.Idle);
                 }
                 if (key == KeyEvent.VK_LEFT) {
                     tempObject.setVelX(0);
-                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Idle);
+                    ((Player) tempObject).getAction().setActionType(PlayerAction.Idle);
                 }
                 if (key == KeyEvent.VK_RIGHT) {
                     tempObject.setVelX(0);
-                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Idle);
+                    ((Player) tempObject).getAction().setActionType(PlayerAction.Idle);
                 }
                 if (key == KeyEvent.VK_ENTER) {
-                    ((Player) tempObject).getAction().setActionType(PlayerAnimationType.Idle);
+                    ((Player) tempObject).getAction().setActionType(PlayerAction.Idle);
                 }
             }
         }
