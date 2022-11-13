@@ -33,11 +33,11 @@ public class AnimatePlayer {
 
     private void loopAnimationPlayer() {
         Timer timerPlayer = new Timer(200, e -> {
-            if (i >= ImagePlayer.getPlayerImg(player.getPlayerImage().getPlayerAnimationType(), player.getAction().isFacingRight()).size()) {
+            if (i >= PlayerImagesFromResources.getPlayerImg(player.getPlayerImage().getPlayerAnimationType(), player.getAction().isFacingRight()).size()) {
                 //System.out.println("Loop Animation Player: " + i);
                 i = 0;
             }
-            player.getPlayerImage().setImg(ImagePlayer.getPlayerImg(player.getPlayerImage().getPlayerAnimationType(), player.getAction().isFacingRight()).get(i));
+            player.getPlayerImage().setImg(PlayerImagesFromResources.getPlayerImg(player.getPlayerImage().getPlayerAnimationType(), player.getAction().isFacingRight()).get(i));
             i++;
         });
         timerPlayer.setRepeats(true);
@@ -48,11 +48,11 @@ public class AnimatePlayer {
     private void loopAnimationEnemy() {
         // TODO: Maybe put j instead of i, but it won't make the animation work
         Timer timerEnemy = new Timer(200, e -> {
-            if (i >= ImagePlayer.getEnemyImg(player.getPlayerImage().getPlayerAnimationType(), player.getAction().isFacingRight()).size()) {
+            if (i >= PlayerImagesFromResources.getEnemyImg(player.getPlayerImage().getPlayerAnimationType(), player.getAction().isFacingRight()).size()) {
                 //System.out.println("Loop Animation Enemy: " + i);
                 i = 0;
             }
-            player.getPlayerImage().setImg(ImagePlayer.getEnemyImg(player.getPlayerImage().getPlayerAnimationType(), player.getAction().isFacingRight()).get(i));
+            player.getPlayerImage().setImg(PlayerImagesFromResources.getEnemyImg(player.getPlayerImage().getPlayerAnimationType(), player.getAction().isFacingRight()).get(i));
             i++;
         });
         timerEnemy.setRepeats(true);
