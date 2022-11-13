@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Added enemy images and animation that's still in work in progress">
+    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Slightly improved code">
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Events.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/UI/HealthBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI/HealthBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/actions/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actions/Action.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/ImagePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/ImagePlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerAnimationType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actions/PlayerAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/AnimatePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/AnimatePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/ImagePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerImagesFromResources.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +44,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -180,7 +178,7 @@
       <workItem from="1667930137067" duration="3849000" />
       <workItem from="1667980334770" duration="3140000" />
       <workItem from="1667984770105" duration="1173000" />
-      <workItem from="1668345328828" duration="300000" />
+      <workItem from="1668345328828" duration="855000" />
     </task>
     <task id="LOCAL-00001" summary="Fist commit - Window with basic functions that works">
       <created>1667246690426</created>
@@ -469,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668345436918</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Slightly improved code">
+      <created>1668345662385</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1668345662385</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,7 +492,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="improved frames by doing ArrayList instead of LinkedList and added minor classes" />
     <MESSAGE value="Minor changes" />
     <MESSAGE value="Improved code" />
     <MESSAGE value="Improved position of Player - There's still a bug to fix : COMMENTED" />
@@ -512,6 +516,7 @@
     <MESSAGE value="Temporarily fixed width problem" />
     <MESSAGE value="When player dies, both player and enemy go back to starting position" />
     <MESSAGE value="Tried to implement SOLID Principles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tried to implement SOLID Principles" />
+    <MESSAGE value="Slightly improved code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Slightly improved code" />
   </component>
 </project>

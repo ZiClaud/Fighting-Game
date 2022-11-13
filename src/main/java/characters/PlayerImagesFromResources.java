@@ -22,7 +22,7 @@ import java.util.ArrayList;
  * HeightToRemoveFromBottom: 78px <p>
  * HeightToRemoveFromTop: 70px <p>
  */
-public class ImagePlayer {
+class PlayerImagesFromResources {
     public static ArrayList<BufferedImage> getPlayerImg(PlayerAction playerAction, boolean facingRight) {
         //System.out.println("isFacingRight()" + facingRight);
         if (facingRight) {
