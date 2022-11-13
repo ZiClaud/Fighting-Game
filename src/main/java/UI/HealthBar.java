@@ -1,7 +1,7 @@
 package UI;
 
 import characters.Player;
-import characters.PlayerAnimationType;
+import actions.PlayerAction;
 import window.Game;
 import window.GameObject;
 import window.ID;
@@ -34,13 +34,13 @@ public class HealthBar extends GameObject {
                 /**
                  * Hit taken
                  */
-                player.getAction().setActionType(PlayerAnimationType.TakeHit);
+                player.getAction().setActionType(PlayerAction.TakeHit);
 
                 /**
                  * Death
                  */
                 if (player.getHp() < 0) {
-                    player.getAction().setActionType(PlayerAnimationType.Death);
+                    player.getAction().setActionType(PlayerAction.Death);
 
                     System.out.println("Enemy won!"); // TODO: Print this in game
 

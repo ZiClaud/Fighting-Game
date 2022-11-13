@@ -1,6 +1,6 @@
-package characters;
+package actions;
 
-public enum PlayerAnimationType {
+public enum PlayerAction {
     Idle(),
     Attack1(),
     Attack2(),
@@ -8,7 +8,6 @@ public enum PlayerAnimationType {
     Fall(),
     Jump(),
     Run(),
-    RunLeft(),
     TakeHit(),
     TakeHitC()
 }
