@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Slightly improved code">
+    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Code improvements">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/Events.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Events.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,7 +177,7 @@
       <workItem from="1667930137067" duration="3849000" />
       <workItem from="1667980334770" duration="3140000" />
       <workItem from="1667984770105" duration="1173000" />
-      <workItem from="1668345328828" duration="1917000" />
+      <workItem from="1668345328828" duration="3086000" />
     </task>
     <task id="LOCAL-00001" summary="Fist commit - Window with basic functions that works">
       <created>1667246690426</created>
@@ -479,7 +480,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668346332970</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Code improvements">
+      <created>1668347715507</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1668347715507</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,7 +505,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Minor changes" />
     <MESSAGE value="Improved code" />
     <MESSAGE value="Improved position of Player - There's still a bug to fix : COMMENTED" />
     <MESSAGE value="There was no bug - commented" />
@@ -522,6 +529,7 @@
     <MESSAGE value="When player dies, both player and enemy go back to starting position" />
     <MESSAGE value="Tried to implement SOLID Principles" />
     <MESSAGE value="Slightly improved code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Slightly improved code" />
+    <MESSAGE value="Code improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code improvements" />
   </component>
 </project>

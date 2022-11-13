@@ -3,8 +3,34 @@ package utils;
 import actions.PlayerAction;
 import characters.Player;
 import window.Game;
+import window.ID;
 
-public class Events {
+public class Events {   //TODO: Change class -> Maybe not static, maybe with just "Player" as argument, idk
+    public static void checkWall(Player player) {
+        /**
+         * Right/Left Wall
+         */
+        if (player.getSize().getActualX(player.getX()) <= 0 || player.getSize().getActualRightX(player.getX()) >= Game.WIDTH) {
+            player.setVelX(0);
+            if (player.getSize().getActualX(player.getX()) <= 0) {
+                player.setX(-player.getSize().getExcessiveLeft());
+            } else if (player.getSize().getActualRightX(player.getX()) >= Game.WIDTH) {
+                player.setX(Game.WIDTH - player.getSize().getImgWidth() + player.getSize().getExcessiveRight());
+            }
+        }
+        /**
+         * Top/Bottom Wall
+         */
+        if (player.getSize().getActualY(player.getY()) <= 0 || player.getSize().getActualBottomY(player.getY()) >= Game.HEIGHT) {
+            player.setVelY(0);
+            if (player.getSize().getActualY(player.getY()) <= 0) {
+                player.setY(-player.getSize().getExcessiveTop());
+            } else if (player.getSize().getActualBottomY(player.getY()) >= Game.HEIGHT) {
+                player.setY(Game.HEIGHT - player.getSize().getImgHeight() + player.getSize().getExcessiveBottom());
+            }
+        }
+    }
+
     public static void collision(Player player, Player enemy) {   // TODO: Put this somewhere else and make it public
         /// Check if they have the same X
         if (player.getSize().getActualX(player.getX()) <= enemy.getSize().getActualRightX(enemy.getX())
@@ -13,7 +39,12 @@ public class Events {
             if (player.getSize().getActualY(player.getY()) <= enemy.getSize().getActualBottomY(enemy.getY())
                     && player.getSize().getActualBottomY(player.getY()) >= enemy.getSize().getActualY(enemy.getY())) {
                 //TODO: Collision effect
-                takeHit(player, enemy);
+
+                // TODO: Understand why this works
+                if (player.getAction().getActionType() == PlayerAction.Attack1)
+                    hit(player, enemy);
+                if (enemy.getAction().getActionType() == PlayerAction.Attack1)
+                    hit(enemy, player);
             }
         }
     }
@@ -26,24 +57,25 @@ public class Events {
 
     }
 
-    public static void hit(Player hitter, Player hitten) {
+    public static void hit(Player hitter, Player damaged) {
+        // TODO: hitter will now attack when he touches damaged - TO FIX
         hitter.getAction().setActionType(PlayerAction.Attack1);
-        takeHit(hitten, hitter);
+        takeHit(damaged, hitter);
     }
 
-    public static void takeHit(Player hitten, Player hitter) {
+    private static void takeHit(Player damaged, Player hitter) {
         /**
          * Hit taken
          */
-        hitten.getAction().setActionType(PlayerAction.TakeHit);
-        hitten.setHp(hitten.getHp() - 1);
+        damaged.getAction().setActionType(PlayerAction.TakeHit);
+        damaged.setHp(damaged.getHp() - 1);
 
-        if (hitten.getHp() < 0) {
-            death(hitten, hitter);
+        if (damaged.getHp() < 0) {
+            death(damaged, hitter);
         }
     }
 
-    public static void death(Player loser, Player winner) {
+    private static void death(Player loser, Player winner) {
         /**
          * Death
          */
@@ -51,11 +83,16 @@ public class Events {
 
         System.out.println(winner.getUsername() + " won!"); // TODO: Print this in game
 
-        loser.setX(50);
-        winner.setX(Game.WIDTH - 50 - 163);
-
-        loser.setY(Game.HEIGHT);
+        // Reset location
+        if (winner.getId() == ID.Player) {
+            winner.setX(50);
+            loser.setX(Game.WIDTH - 50 - 163);
+        } else {
+            loser.setX(50);
+            winner.setX(Game.WIDTH - 50 - 163);
+        }
         winner.setY(Game.HEIGHT);
+        loser.setY(Game.HEIGHT);
 
         // TODO: Add countdown
 
