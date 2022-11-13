@@ -8,15 +8,17 @@ import window.ID;
 import java.awt.*;
 
 public class Player extends GameObject {
+    private final String username;
     private int hp;
     private final PlayerImage playerImage;
     private final PlayerSize size;
     private final Action action;
     private final AnimatePlayer animatePlayer;
 
-    public Player(int x, int y, ID id, int playerWidth, int playerHeight, int hp) {
+    public Player(int x, int y, ID id, int playerWidth, int playerHeight, int hp, String username) {
         super(x, y, id);     // TODO: x - size.removeWidth, y - size.removeHeight;
         this.hp = hp;
+        this.username = username;
 
         this.size = new PlayerSize(playerWidth, playerHeight);
         this.playerImage = new PlayerImage();
@@ -37,6 +39,10 @@ public class Player extends GameObject {
 
     public void setHp(int hp) {
         this.hp = hp;
+    }
+
+    public String getUsername() {
+        return username;
     }
 
     @Override
