@@ -73,6 +73,10 @@ class PlayerImagesFromResources {
                 return EnemyImgIdle();
             else if (playerAction == PlayerAction.Attack1)
                 return EnemyImgAttack1();
+            else if (playerAction == PlayerAction.TakeHit)
+                return EnemyImgTakeHit();
+            else if (playerAction == PlayerAction.Death)
+                return EnemyImgDeath();
             else
                 return EnemyImgIdle();
         } else {
@@ -80,6 +84,10 @@ class PlayerImagesFromResources {
                 return MirrorImages(EnemyImgIdle());
             else if (playerAction == PlayerAction.Attack1)
                 return MirrorImages(EnemyImgAttack1());
+            else if (playerAction == PlayerAction.TakeHit)
+                return MirrorImages(EnemyImgTakeHit());
+            else if (playerAction == PlayerAction.Death)
+                return MirrorImages(EnemyImgDeath());
             else
                 return MirrorImages(EnemyImgIdle());
         }
@@ -236,6 +244,34 @@ class PlayerImagesFromResources {
             imageList.add(ImageIO.read(new File("src/main/resources/Death/Attack1/Attack1_4.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Death/Attack1/Attack1_5.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Death/Attack1/Attack1_6.png")));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return imageList;
+    }
+
+    private static ArrayList<BufferedImage> EnemyImgTakeHit() {
+        ArrayList<BufferedImage> imageList = new ArrayList<>();
+        try {
+            imageList.add(ImageIO.read(new File("src/main/resources/Death/TakeHit/TakeHit_1.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Death/TakeHit/TakeHit_2.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Death/TakeHit/TakeHit_3.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Death/TakeHit/TakeHit_4.png")));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return imageList;
+    }
+
+    private static ArrayList<BufferedImage> EnemyImgDeath() {   // TODO
+        ArrayList<BufferedImage> imageList = new ArrayList<>();
+        try {
+            imageList.add(ImageIO.read(new File("src/main/resources/Death/Death/Death_1.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Death/Death/Death_2.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Death/Death/Death_3.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Death/Death/Death_4.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Death/Death/Death_5.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Death/Death/Death_6.png")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

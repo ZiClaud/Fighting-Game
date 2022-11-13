@@ -38,7 +38,7 @@ public class HealthBar extends GameObject {
 
                     g.fillRect(x, y, ((Player) player).getHp(), 10);
                 }
-            } else if (id == ID.HealthBarEnemy){
+            } else if (id == ID.HealthBarEnemy) {
                 g.setColor(Color.RED);
                 if (player.getId() == ID.Enemy) {
                     g.fillRect(x, y, ((Player) player).getHp(), 10);
