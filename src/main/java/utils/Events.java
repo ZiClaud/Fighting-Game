@@ -26,36 +26,41 @@ public class Events {
 
     }
 
-    public static void takeHit(Player player, Player enemy) {
+    public static void hit(Player hitter, Player hitten) {
+        hitter.getAction().setActionType(PlayerAction.Attack1);
+        takeHit(hitten, hitter);
+    }
+
+    public static void takeHit(Player hitten, Player hitter) {
         /**
          * Hit taken
          */
-        player.getAction().setActionType(PlayerAction.TakeHit);
+        hitten.getAction().setActionType(PlayerAction.TakeHit);
+        hitten.setHp(hitten.getHp() - 1);
 
-        death(player, enemy);
-        player.setHp(player.getHp() - 1);
+        if (hitten.getHp() < 0) {
+            death(hitten, hitter);
+        }
     }
 
-    public static void death(Player player, Player enemy) {
+    public static void death(Player loser, Player winner) {
         /**
          * Death
          */
-        if (player.getHp() < 0) {
-            player.getAction().setActionType(PlayerAction.Death);
+        loser.getAction().setActionType(PlayerAction.Death);
 
-            System.out.println("Enemy won!"); // TODO: Print this in game
+        System.out.println(winner.getUsername() + " won!"); // TODO: Print this in game
 
-            player.setX(50);
-            enemy.setX(Game.WIDTH - 50 - 163);
+        loser.setX(50);
+        winner.setX(Game.WIDTH - 50 - 163);
 
-            player.setY(Game.HEIGHT);
-            enemy.setY(Game.HEIGHT);
+        loser.setY(Game.HEIGHT);
+        winner.setY(Game.HEIGHT);
 
-            // TODO: Add countdown
+        // TODO: Add countdown
 
+        // TODO: Reset HPs - FIX
 
-            // TODO: Reset HPs - FIX
-            player.setHp(player.getHp() + 100);
-        }
+        loser.setHp(loser.getHp() + 100);
     }
 }
