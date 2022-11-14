@@ -77,7 +77,7 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
 
     private static void death(PlayerInterface loser, PlayerInterface winner) {
         /**
-         * Undead
+         * Death
          */
         loser.getAction().setActionType(PlayerActions.Death);
 
