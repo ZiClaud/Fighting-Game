@@ -3,9 +3,9 @@ package window;
 import java.awt.*;
 
 public interface GameObjectInt {
-    public abstract void tick();
+    void tick();
 
-    public abstract void render(Graphics g);
+    void render(Graphics g);
 
     int getX();
 
@@ -13,17 +13,17 @@ public interface GameObjectInt {
 
     int getY();
 
-    public void setY(int y);
+    void setY(int y);
 
-    public ID getId();
+    ID getId();
 
-    public void setId(ID id);
+    void setId(ID id);
 
-    public int getVelX();
+    int getVelX();
 
-    public void setVelX(int velX);
+    void setVelX(int velX);
 
-    public int getVelY();
+    int getVelY();
 
-    public void setVelY(int velY);
+    void setVelY(int velY);
 }
