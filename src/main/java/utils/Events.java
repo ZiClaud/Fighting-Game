@@ -5,7 +5,7 @@ import characters.PlayerInterface;
 import window.Game;
 import window.ID;
 
-public class Events {   //TODO: Change class -> Maybe not static, maybe with just "Player" as argument, idk
+public class Events implements EventsInterface {   //TODO: Change class -> Maybe not static, maybe with just "Player" as argument, idk
     public static void checkWall(PlayerInterface player) {
         /**
          * Right/Left Wall

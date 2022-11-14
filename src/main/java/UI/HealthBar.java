@@ -9,7 +9,7 @@ import window.MyHandler;
 
 import java.awt.*;
 
-public class HealthBar extends GameObject implements GameObjectInt {
+public class HealthBar extends GameObject {
     private final MyHandler handler;
 
     public HealthBar(int x, int y, ID id, MyHandler handler) {

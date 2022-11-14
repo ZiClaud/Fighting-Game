@@ -1,4 +1,4 @@
 package actions;
 
-public class ActionInterface {
+public interface ActionInterface {
 }
