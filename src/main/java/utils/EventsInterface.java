@@ -1,4 +1,4 @@
 package utils;
 
-public class EventsInterface {
+public interface EventsInterface {
 }

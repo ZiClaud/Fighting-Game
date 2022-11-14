@@ -2,7 +2,7 @@ package actions;
 
 import characters.PlayerInterface;
 
-public class Action {
+public class Action implements ActionInterface {
     private final PlayerInterface player;
     private PlayerAction actionType;
     private boolean facingRight = true;
