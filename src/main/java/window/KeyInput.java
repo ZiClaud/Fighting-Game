@@ -1,7 +1,7 @@
 package window;
 
-import characters.PlayerInterface;
 import actions.PlayerActions;
+import characters.PlayerInterface;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;

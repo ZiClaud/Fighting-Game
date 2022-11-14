@@ -10,11 +10,11 @@ import java.awt.*;
 
 public class PlayerClass extends GameObject implements PlayerInterface {
     private final String username;
-    private int hp;
     private final PlayerImage playerImage;
     private final PlayerSizeInterface size;
     private final ActionInterface action;
     private final AnimatePlayer animatePlayer;
+    private int hp;
 
     public PlayerClass(int x, int y, ID id, int playerWidth, int playerHeight, int hp, String username) {
         super(x, y, id);     // TODO: x - size.removeWidth, y - size.removeHeight;

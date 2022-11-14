@@ -1,8 +1,8 @@
 package window;
 
 import UI.HealthBar;
-import characters.PlayerInterface;
 import characters.PlayerClass;
+import characters.PlayerInterface;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -11,11 +11,10 @@ import java.io.File;
 import java.io.IOException;
 
 public class Game extends Canvas implements Runnable {
-    private final MyHandler handler;
     public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9;
+    private final MyHandler handler;
     private Thread thread;
     private boolean running = false;
-
     public Game() {
         handler = new MyHandler();
         this.addKeyListener(new KeyInput(handler));
@@ -109,4 +108,6 @@ public class Game extends Canvas implements Runnable {
         g.dispose();
         bs.show();
     }
+
+
 }

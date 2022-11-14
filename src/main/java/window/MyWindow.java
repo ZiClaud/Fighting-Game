@@ -26,7 +26,7 @@ public class MyWindow extends Canvas {
         //setFullScreen(frame);
     }
 
-    void setFullScreen(JFrame frame){
+    void setFullScreen(JFrame frame) {
         gDevice.setFullScreenWindow(frame);
     }
 }
