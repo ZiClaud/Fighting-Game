@@ -1,7 +1,8 @@
 package window;
 
 import UI.HealthBar;
-import characters.Player;
+import characters.PlayerInterface;
+import characters.PlayerClass;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -19,8 +20,8 @@ public class Game extends Canvas implements Runnable {
         handler = new MyHandler();
         this.addKeyListener(new KeyInput(handler));
 
-        Player player = new Player(50, Game.HEIGHT, ID.Player, 200, 200, 100, "Player");
-        Player enemy = new Player(Game.WIDTH - 50 - 163, Game.HEIGHT, ID.Enemy, 100, 100, 100, "Enemy");
+        PlayerInterface player = new PlayerClass(50, Game.HEIGHT, ID.Player, 200, 200, 100, "Player");
+        PlayerInterface enemy = new PlayerClass(Game.WIDTH - 50 - 163, Game.HEIGHT, ID.Enemy, 100, 100, 100, "Enemy");
         enemy.getAction().setFacingRight(false);
 
         handler.addObject(player);

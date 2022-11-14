@@ -5,11 +5,11 @@ import window.ID;
 import javax.swing.*;
 
 public class AnimatePlayer {
-    Player player;
+    PlayerInterface player;
     int i = 0;
     int j = 0;
 
-    public AnimatePlayer(Player player) {
+    public AnimatePlayer(PlayerInterface player) {
         this.player = player;
     }
 

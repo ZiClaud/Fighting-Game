@@ -7,7 +7,7 @@ import window.ID;
 
 import java.awt.*;
 
-public class Player extends GameObject {
+public class PlayerClass extends GameObject implements PlayerInterface {
     private final String username;
     private int hp;
     private final PlayerImage playerImage;
@@ -15,7 +15,7 @@ public class Player extends GameObject {
     private final Action action;
     private final AnimatePlayer animatePlayer;
 
-    public Player(int x, int y, ID id, int playerWidth, int playerHeight, int hp, String username) {
+    public PlayerClass(int x, int y, ID id, int playerWidth, int playerHeight, int hp, String username) {
         super(x, y, id);     // TODO: x - size.removeWidth, y - size.removeHeight;
         this.hp = hp;
         this.username = username;

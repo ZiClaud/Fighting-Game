@@ -1,13 +1,13 @@
 package actions;
 
-import characters.Player;
+import characters.PlayerInterface;
 
 public class Action {
-    private final Player player;
+    private final PlayerInterface player;
     private PlayerAction actionType;
     private boolean facingRight = true;
 
-    public Action(Player player) {
+    public Action(PlayerInterface player) {
         this.player = player;
         this.actionType = PlayerAction.Idle;
     }
