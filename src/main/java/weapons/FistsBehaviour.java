@@ -1,0 +1,18 @@
+package weapons;
+
+public class FistsBehaviour extends FightBehaviour {    // TODO
+    @Override
+    public int getWeaponDamage() {
+        return 0;
+    }
+
+    @Override
+    public int getWeaponSpeed() {
+        return 0;
+    }
+
+    @Override
+    public WeaponType getWeaponType() {
+        return WeaponType.fists;
+    }
+}

@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="N/A" />
+    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="N/A">
+      <change afterPath="$PROJECT_DIR$/src/main/java/weapons/FightBehaviour.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/weapons/FistsBehaviour.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/weapons/SwordBehaviour.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/weapons/WeaponType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerClass.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,9 +45,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
-        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -176,13 +183,8 @@
       <workItem from="1667984770105" duration="1173000" />
       <workItem from="1668345328828" duration="3086000" />
       <workItem from="1668416057786" duration="231000" />
-    </task>
-    <task id="LOCAL-00001" summary="Fist commit - Window with basic functions that works">
-      <created>1667246690426</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1667246690426</updated>
+      <workItem from="1668416345611" duration="213000" />
+      <workItem from="1668450767684" duration="829000" />
     </task>
     <task id="LOCAL-00002" summary="Added moving characters!">
       <created>1667248087711</created>
@@ -513,7 +515,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668416210848</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="N/A">
+      <created>1668416480800</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1668416480800</updated>
+    </task>
+    <task id="LOCAL-00050" summary="N/A">
+      <created>1668416541823</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1668416541824</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

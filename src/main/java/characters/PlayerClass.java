@@ -8,7 +8,7 @@ import window.ID;
 
 import java.awt.*;
 
-public class PlayerClass extends GameObject implements PlayerInterface {
+public class PlayerClass extends GameObject implements PlayerInterface {    // TODO: Make this class way less complicated
     private final String username;
     private final PlayerImage playerImage;
     private final PlayerSizeInterface size;
