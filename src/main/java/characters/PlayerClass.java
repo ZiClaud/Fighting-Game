@@ -1,6 +1,7 @@
 package characters;
 
 import actions.Action;
+import actions.ActionInterface;
 import utils.Events;
 import window.GameObject;
 import window.ID;
@@ -11,8 +12,8 @@ public class PlayerClass extends GameObject implements PlayerInterface {
     private final String username;
     private int hp;
     private final PlayerImage playerImage;
-    private final PlayerSize size;
-    private final Action action;
+    private final PlayerSizeInterface size;
+    private final ActionInterface action;
     private final AnimatePlayer animatePlayer;
 
     public PlayerClass(int x, int y, ID id, int playerWidth, int playerHeight, int hp, String username) {
@@ -73,11 +74,11 @@ public class PlayerClass extends GameObject implements PlayerInterface {
      }
     */
 
-    public PlayerSize getSize() {
+    public PlayerSizeInterface getSize() {
         return size;
     }
 
-    public Action getAction() {
+    public ActionInterface getAction() {
         return action;
     }
 }

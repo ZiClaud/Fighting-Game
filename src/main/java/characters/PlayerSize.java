@@ -13,7 +13,7 @@ package characters;
  * HeightToRemoveFromBottom: 78px <p>
  * HeightToRemoveFromTop: 70px <p>
  */
-public class PlayerSize {
+public class PlayerSize implements PlayerSizeInterface {
     private final int imgWidth;
     private final int imgHeight;
 
@@ -95,7 +95,7 @@ public class PlayerSize {
     }
 
     public int getActualBottomY(int y) {
-        return  y + getImgHeight() - getExcessiveBottom();
+        return y + getImgHeight() - getExcessiveBottom();
     }
 
     @Override

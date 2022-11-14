@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Added interfaces">
-      <change beforePath="$PROJECT_DIR$/src/main/java/UI/HealthBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI/HealthBar.java" afterDir="false" />
+    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Improved interfaces">
+      <change afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerSizeInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/actions/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actions/Action.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/actions/ActionInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actions/ActionInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/actions/PlayerAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actions/PlayerActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerImagesFromResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerImagesFromResources.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerSize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerSize.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/Events.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Events.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/EventsInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/EventsInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/window/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/EventsInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/window/GameObjectInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/GameObjectInt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -498,7 +505,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668413171787</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Improved interfaces">
+      <created>1668413765526</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1668413765526</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +530,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Improved position of Player - There's still a bug to fix : COMMENTED" />
     <MESSAGE value="There was no bug - commented" />
     <MESSAGE value="Added background" />
     <MESSAGE value="Imrpoved player and enemy position" />
@@ -541,7 +554,8 @@
     <MESSAGE value="Slightly improved code" />
     <MESSAGE value="Code improvements" />
     <MESSAGE value="Added interfaces" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added interfaces" />
+    <MESSAGE value="Improved interfaces" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved interfaces" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

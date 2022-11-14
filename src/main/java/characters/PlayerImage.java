@@ -1,19 +1,19 @@
 package characters;
 
-import actions.PlayerAction;
+import actions.PlayerActions;
 
 import java.awt.image.BufferedImage;
 
 public class PlayerImage {
     private BufferedImage img;
-    private PlayerAction playerAction = PlayerAction.Idle;
+    private PlayerActions playerActions = PlayerActions.Idle;
 
-    public PlayerAction getPlayerAnimationType() {
-        return playerAction;
+    public PlayerActions getPlayerAnimationType() {
+        return playerActions;
     }
 
-    public void setPlayerAnimationType(PlayerAction playerAction) {
-        this.playerAction = playerAction;
+    public void setPlayerAnimationType(PlayerActions playerActions) {
+        this.playerActions = playerActions;
         /*
         // TODO: This fixes bug that stops animation if I both jump and go right, but can't attack
         if (velX == 0 && velY == 0){
