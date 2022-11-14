@@ -1,22 +1,22 @@
 package actions;
 
-import characters.Player;
+import characters.PlayerInterface;
 
-public class Action {
-    private final Player player;
-    private PlayerAction actionType;
+public class Action implements ActionInterface {
+    private final PlayerInterface player;
+    private PlayerActions actionType;
     private boolean facingRight = true;
 
-    public Action(Player player) {
+    public Action(PlayerInterface player) {
         this.player = player;
-        this.actionType = PlayerAction.Idle;
+        this.actionType = PlayerActions.Idle;
     }
 
-    public PlayerAction getActionType() {
+    public PlayerActions getActionType() {
         return actionType;
     }
 
-    public void setActionType(PlayerAction actionType) {
+    public void setActionType(PlayerActions actionType) {
         this.actionType = actionType;
     }
 
@@ -29,54 +29,54 @@ public class Action {
     }
 
     public void act() {
-        if (getActionType() == PlayerAction.Idle) {
+        if (getActionType() == PlayerActions.Idle) {
             idle();
-        } else if (getActionType() == PlayerAction.Run) {
+        } else if (getActionType() == PlayerActions.Run) {
             run();
-        } else if (getActionType() == PlayerAction.Jump) {
+        } else if (getActionType() == PlayerActions.Jump) {
             jump();
-        } else if (getActionType() == PlayerAction.Fall) {
+        } else if (getActionType() == PlayerActions.Fall) {
             fall();
-        } else if (getActionType() == PlayerAction.Attack1) {
+        } else if (getActionType() == PlayerActions.Attack1) {
             attack1();
-        } else if (getActionType() == PlayerAction.Attack2) {
+        } else if (getActionType() == PlayerActions.Attack2) {
             attack2();
-        } else if (getActionType() == PlayerAction.TakeHit) {
+        } else if (getActionType() == PlayerActions.TakeHit) {
             takeHit();
-        } else if (getActionType() == PlayerAction.Death) {
+        } else if (getActionType() == PlayerActions.Death) {
             death();
         }
     }
 
     public void idle() {
-        player.getPlayerImage().setPlayerAnimationType(PlayerAction.Idle);
+        player.getPlayerImage().setPlayerAnimationType(PlayerActions.Idle);
     }
 
     public void run() {
-        player.getPlayerImage().setPlayerAnimationType(PlayerAction.Run);
+        player.getPlayerImage().setPlayerAnimationType(PlayerActions.Run);
     }
 
     public void jump() {
-        player.getPlayerImage().setPlayerAnimationType(PlayerAction.Jump);
+        player.getPlayerImage().setPlayerAnimationType(PlayerActions.Jump);
     }
 
     public void fall() {
-        player.getPlayerImage().setPlayerAnimationType(PlayerAction.Fall);
+        player.getPlayerImage().setPlayerAnimationType(PlayerActions.Fall);
     }
 
     public void attack1() {
-        player.getPlayerImage().setPlayerAnimationType(PlayerAction.Attack1);
+        player.getPlayerImage().setPlayerAnimationType(PlayerActions.Attack1);
     }
 
     public void attack2() {
-        player.getPlayerImage().setPlayerAnimationType(PlayerAction.Attack2);
+        player.getPlayerImage().setPlayerAnimationType(PlayerActions.Attack2);
     }
 
     public void takeHit() {
-        player.getPlayerImage().setPlayerAnimationType(PlayerAction.TakeHit);
+        player.getPlayerImage().setPlayerAnimationType(PlayerActions.TakeHit);
     }
 
     public void death() {
-        player.getPlayerImage().setPlayerAnimationType(PlayerAction.Death);
+        player.getPlayerImage().setPlayerAnimationType(PlayerActions.Death);
     }
 }

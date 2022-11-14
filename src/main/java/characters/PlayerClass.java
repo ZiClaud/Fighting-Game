@@ -1,21 +1,22 @@
 package characters;
 
 import actions.Action;
+import actions.ActionInterface;
 import utils.Events;
 import window.GameObject;
 import window.ID;
 
 import java.awt.*;
 
-public class Player extends GameObject {
+public class PlayerClass extends GameObject implements PlayerInterface {
     private final String username;
     private int hp;
     private final PlayerImage playerImage;
-    private final PlayerSize size;
-    private final Action action;
+    private final PlayerSizeInterface size;
+    private final ActionInterface action;
     private final AnimatePlayer animatePlayer;
 
-    public Player(int x, int y, ID id, int playerWidth, int playerHeight, int hp, String username) {
+    public PlayerClass(int x, int y, ID id, int playerWidth, int playerHeight, int hp, String username) {
         super(x, y, id);     // TODO: x - size.removeWidth, y - size.removeHeight;
         this.hp = hp;
         this.username = username;
@@ -73,11 +74,11 @@ public class Player extends GameObject {
      }
     */
 
-    public PlayerSize getSize() {
+    public PlayerSizeInterface getSize() {
         return size;
     }
 
-    public Action getAction() {
+    public ActionInterface getAction() {
         return action;
     }
 }

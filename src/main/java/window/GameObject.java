@@ -2,7 +2,7 @@ package window;
 
 import java.awt.*;
 
-public abstract class GameObject {
+public abstract class GameObject implements GameObjectInt {
     protected int x, y;
     protected ID id;
     protected int velX, velY;

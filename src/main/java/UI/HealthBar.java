@@ -1,8 +1,9 @@
 package UI;
 
-import characters.Player;
+import characters.PlayerInterface;
 import utils.Events;
 import window.GameObject;
+import window.GameObjectInt;
 import window.ID;
 import window.MyHandler;
 
@@ -18,10 +19,10 @@ public class HealthBar extends GameObject {
 
     @Override
     public void tick() {
-        for (GameObject player : handler.objects) {
-            for (GameObject enemy : handler.objects) {
+        for (GameObjectInt player : handler.objects) {
+            for (GameObjectInt enemy : handler.objects) {
                 if (player.getId() == ID.Player && enemy.getId() == ID.Enemy) {
-                    Events.collision((Player) player, (Player) enemy);
+                    Events.collision((PlayerInterface) player, (PlayerInterface) enemy);
                 }
             }
 
@@ -31,17 +32,17 @@ public class HealthBar extends GameObject {
     @Override
     public void render(Graphics g) {
 
-        for (GameObject player : handler.objects) {
+        for (GameObjectInt player : handler.objects) {
             if (id == ID.HealthBarPlayer) {
                 g.setColor(Color.GREEN);
                 if (player.getId() == ID.Player) {
 
-                    g.fillRect(x, y, ((Player) player).getHp(), 10);
+                    g.fillRect(x, y, ((PlayerInterface) player).getHp(), 10);
                 }
             } else if (id == ID.HealthBarEnemy) {
                 g.setColor(Color.RED);
                 if (player.getId() == ID.Enemy) {
-                    g.fillRect(x, y, ((Player) player).getHp(), 10);
+                    g.fillRect(x, y, ((PlayerInterface) player).getHp(), 10);
                 }
             }
         }
