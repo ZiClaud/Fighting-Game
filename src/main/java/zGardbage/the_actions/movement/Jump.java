@@ -2,13 +2,13 @@ package zGardbage.the_actions.movement;
 
 import zGardbage.the_actions.ActionType;
 import zGardbage.the_actions.TheAction;
-import characters.Player;
+import characters.PlayerInterface;
 
 public class Jump extends TheAction {
     double jumpSpeed;
     double jumpHeight;
 
-    public Jump(Player player, ActionType actionType) {
+    public Jump(PlayerInterface player, ActionType actionType) {
         super(player, actionType);
     }
 

@@ -1,12 +1,12 @@
 package utils;
 
 import actions.PlayerAction;
-import characters.Player;
+import characters.PlayerInterface;
 import window.Game;
 import window.ID;
 
 public class Events {   //TODO: Change class -> Maybe not static, maybe with just "Player" as argument, idk
-    public static void checkWall(Player player) {
+    public static void checkWall(PlayerInterface player) {
         /**
          * Right/Left Wall
          */
@@ -31,7 +31,7 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         }
     }
 
-    public static void collision(Player player, Player enemy) {   // TODO: Put this somewhere else and make it public
+    public static void collision(PlayerInterface player, PlayerInterface enemy) {   // TODO: Put this somewhere else and make it public
         /// Check if they have the same X
         if (player.getSize().getActualX(player.getX()) <= enemy.getSize().getActualRightX(enemy.getX())
                 && player.getSize().getActualRightX(player.getX()) >= enemy.getSize().getActualX(enemy.getX())) {
@@ -49,21 +49,21 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         }
     }
 
-    public static void jump(Player player) {
+    public static void jump(PlayerInterface player) {
 
     }
 
-    public static void fall(Player player) {
+    public static void fall(PlayerInterface player) {
 
     }
 
-    public static void hit(Player hitter, Player damaged) {
+    public static void hit(PlayerInterface hitter, PlayerInterface damaged) {
         // TODO: hitter will now attack when he touches damaged - TO FIX
         hitter.getAction().setActionType(PlayerAction.Attack1);
         takeHit(damaged, hitter);
     }
 
-    private static void takeHit(Player damaged, Player hitter) {
+    private static void takeHit(PlayerInterface damaged, PlayerInterface hitter) {
         /**
          * Hit taken
          */
@@ -75,7 +75,7 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         }
     }
 
-    private static void death(Player loser, Player winner) {
+    private static void death(PlayerInterface loser, PlayerInterface winner) {
         /**
          * Death
          */

@@ -5,7 +5,7 @@ import zGardbage.the_actions.movement.Moving;
 import zGardbage.the_actions.fight.Damage;
 import zGardbage.the_actions.fight.Attack;
 import zGardbage.the_actions.movement.Jump;
-import characters.Player;
+import characters.PlayerInterface;
 import window.ID;
 
 public class TheAction2 extends TheAction {
@@ -16,7 +16,7 @@ public class TheAction2 extends TheAction {
     Moving moving;
     Damage damage;
 
-    public TheAction2(Player player, ActionType actionType) {
+    public TheAction2(PlayerInterface player, ActionType actionType) {
         super(player, actionType);
         this.attack = new Attack(player, actionType);
         this.facing = new Facing(player, actionType);

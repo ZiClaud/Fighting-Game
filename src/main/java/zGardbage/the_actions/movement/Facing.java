@@ -2,12 +2,12 @@ package zGardbage.the_actions.movement;
 
 import zGardbage.the_actions.TheAction;
 import zGardbage.the_actions.ActionType;
-import characters.Player;
+import characters.PlayerInterface;
 
 public class Facing extends TheAction {
     Boolean facingRight;
 
-    public Facing(Player player, ActionType actionType) {
+    public Facing(PlayerInterface player, ActionType actionType) {
         super(player, actionType);
     }
 
