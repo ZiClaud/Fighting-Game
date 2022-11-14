@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Improved interfaces">
-      <change beforePath="$PROJECT_DIR$/src/main/java/zGardbage/the_actions/ActionType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/zGardbage/the_actions/TheAction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/zGardbage/the_actions/TheAction2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/zGardbage/the_actions/fight/Attack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/zGardbage/the_actions/fight/Damage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/zGardbage/the_actions/movement/Facing.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/zGardbage/the_actions/movement/Jump.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/zGardbage/the_actions/movement/Moving.java" beforeDir="false" />
-    </list>
+    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="N/A" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,22 +61,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ToolWindowPlantUML.ShowToolbar": "false",
-    "WebServerToolWindowFactoryState": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "extract.method.default.visibility": "private",
-    "last_opened_file_path": "C:/Users/claud/IdeaProjects/FightingGame/src/main/resources/Background",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ToolWindowPlantUML.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/claud/IdeaProjects/FightingGame/src/main/resources/Background&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\claud\IdeaProjects\FightingGame\src\main\resources\Background" />
@@ -184,6 +175,7 @@
       <workItem from="1667980334770" duration="3140000" />
       <workItem from="1667984770105" duration="1173000" />
       <workItem from="1668345328828" duration="3086000" />
+      <workItem from="1668416057786" duration="231000" />
     </task>
     <task id="LOCAL-00001" summary="Fist commit - Window with basic functions that works">
       <created>1667246690426</created>
@@ -514,7 +506,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668414671668</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="N/A">
+      <created>1668416210848</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1668416210848</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -546,7 +545,6 @@
     <MESSAGE value="Found a bug - moving character bugged" />
     <MESSAGE value="Death animation added and working&#10;TakeHit animation added" />
     <MESSAGE value="TakeHit animation working" />
-    <MESSAGE value="N/A" />
     <MESSAGE value="Minor improvements" />
     <MESSAGE value="Now player takes damage only if there's collision between him and the enemy" />
     <MESSAGE value="Now enemy has his own HealthBar" />
@@ -557,7 +555,8 @@
     <MESSAGE value="Code improvements" />
     <MESSAGE value="Added interfaces" />
     <MESSAGE value="Improved interfaces" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved interfaces" />
+    <MESSAGE value="N/A" />
+    <option name="LAST_COMMIT_MESSAGE" value="N/A" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
