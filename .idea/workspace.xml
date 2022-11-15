@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="N/A">
-      <change afterPath="$PROJECT_DIR$/src/main/java/weapons/FightBehaviour.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/weapons/FistsBehaviour.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/weapons/SwordBehaviour.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/weapons/WeaponType.java" afterDir="false" />
+    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Added some weapons class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/actions/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actions/Action.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/AnimatePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/AnimatePlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

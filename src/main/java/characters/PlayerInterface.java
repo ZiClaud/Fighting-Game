@@ -15,4 +15,6 @@ public interface PlayerInterface extends GameObjectInt {
     PlayerSizeInterface getSize();
 
     ActionInterface getAction();
+
+    AnimatePlayer getAnimatePlayer();
 }

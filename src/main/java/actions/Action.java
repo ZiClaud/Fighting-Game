@@ -29,23 +29,25 @@ public class Action implements ActionInterface {
     }
 
     public void act() {
-        if (getActionType() == PlayerActions.Idle) {
-            idle();
-        } else if (getActionType() == PlayerActions.Run) {
-            run();
-        } else if (getActionType() == PlayerActions.Jump) {
-            jump();
-        } else if (getActionType() == PlayerActions.Fall) {
-            fall();
-        } else if (getActionType() == PlayerActions.Attack1) {
-            attack1();
-        } else if (getActionType() == PlayerActions.Attack2) {
-            attack2();
-        } else if (getActionType() == PlayerActions.TakeHit) {
-            takeHit();
-        } else if (getActionType() == PlayerActions.Death) {
-            death();
-        }
+//        if (player.getAnimatePlayer().isLoopCompleted()) {
+            if (getActionType() == PlayerActions.Idle) {
+                idle();
+            } else if (getActionType() == PlayerActions.Run) {
+                run();
+            } else if (getActionType() == PlayerActions.Jump) {
+                jump();
+            } else if (getActionType() == PlayerActions.Fall) {
+                fall();
+            } else if (getActionType() == PlayerActions.Attack1) {
+                attack1();
+            } else if (getActionType() == PlayerActions.Attack2) {
+                attack2();
+            } else if (getActionType() == PlayerActions.TakeHit) {
+                takeHit();
+            } else if (getActionType() == PlayerActions.Death) {
+                death();
+            }
+   //     }
     }
 
     public void idle() {

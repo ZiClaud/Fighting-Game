@@ -8,7 +8,7 @@ public class PlayerImage {
     private BufferedImage img;
     private PlayerActions playerActions = PlayerActions.Idle;
 
-    public PlayerActions getPlayerAnimationType() {
+    public PlayerActions getPlayerActions() {
         return playerActions;
     }
 

@@ -34,6 +34,10 @@ public class PlayerClass extends GameObject implements PlayerInterface {    // T
         return playerImage;
     }
 
+    public AnimatePlayer getAnimatePlayer() {
+        return animatePlayer;
+    }
+
     public int getHp() {
         return hp;
     }
