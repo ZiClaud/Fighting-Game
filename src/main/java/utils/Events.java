@@ -1,6 +1,6 @@
 package utils;
 
-import actions.PlayerActions;
+import actions.PlayerAction;
 import characters.PlayerInterface;
 import window.Game;
 import window.ID;
@@ -41,9 +41,9 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
                 //TODO: Collision effect
 
                 // TODO: Understand why this works
-                if (player.getAction().getActionType() == PlayerActions.Attack1)
+                if (player.getAction().getActionType() == PlayerAction.Attack1)
                     hit(player, enemy);
-                if (enemy.getAction().getActionType() == PlayerActions.Attack1)
+                if (enemy.getAction().getActionType() == PlayerAction.Attack1)
                     hit(enemy, player);
             }
         }
@@ -59,7 +59,7 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
 
     public static void hit(PlayerInterface hitter, PlayerInterface damaged) {
         // TODO: hitter will now attack when he touches damaged - TO FIX
-        hitter.getAction().setActionType(PlayerActions.Attack1);
+        hitter.getAction().setActionType(PlayerAction.Attack1);
         takeHit(damaged, hitter);
     }
 
@@ -67,7 +67,7 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         /**
          * Hit taken
          */
-        damaged.getAction().setActionType(PlayerActions.TakeHit);
+        damaged.getAction().setActionType(PlayerAction.TakeHit);
         damaged.setHp(damaged.getHp() - 1);
 
         if (damaged.getHp() < 0) {
@@ -79,7 +79,7 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         /**
          * Death
          */
-        loser.getAction().setActionType(PlayerActions.Death);
+        loser.getAction().setActionType(PlayerAction.Death);
 
         System.out.println(winner.getUsername() + " won!"); // TODO: Print this in game
 

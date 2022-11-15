@@ -1,29 +1,13 @@
 package actions;
 
 public interface ActionInterface {
-    PlayerActions getActionType();
+    PlayerAction getActionType();
 
-    void setActionType(PlayerActions actionType);
+    void setActionType(PlayerAction actionType);
 
     boolean isFacingRight();
 
     void setFacingRight(boolean facingRight);
 
     void act();
-
-    void idle();
-
-    void run();
-
-    void jump();
-
-    void fall();
-
-    void attack1();
-
-    void attack2();
-
-    void takeHit();
-
-    void death();
 }

@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Added some weapons class">
+    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Tried some stuff with the code&#10;- Will print &quot;Attack1&quot; when the 5th frame/image of Attack1 is displayed">
+      <change afterPath="$PROJECT_DIR$/src/main/java/characters/ObserverAnimation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/actions/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actions/Action.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/actions/ActionInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actions/ActionInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/actions/PlayerActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actions/PlayerAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/characters/AnimatePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/AnimatePlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerImagesFromResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerImagesFromResources.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Events.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Events.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,9 +49,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -185,13 +189,7 @@
       <workItem from="1668416057786" duration="231000" />
       <workItem from="1668416345611" duration="213000" />
       <workItem from="1668450767684" duration="829000" />
-    </task>
-    <task id="LOCAL-00002" summary="Added moving characters!">
-      <created>1667248087711</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1667248087711</updated>
+      <workItem from="1668507357049" duration="5087000" />
     </task>
     <task id="LOCAL-00003" summary="Added Healthbar all by myself u.u">
       <created>1667297874520</created>
@@ -529,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668416541824</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Tried some stuff with the code&#10;- Will print &quot;Attack1&quot; when the 5th frame/image of Attack1 is displayed">
+      <created>1668504444682</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1668504444683</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -547,7 +552,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="There was no bug - commented" />
     <MESSAGE value="Added background" />
     <MESSAGE value="Imrpoved player and enemy position" />
     <MESSAGE value="Improved player and enemy position" />
@@ -572,7 +576,8 @@
     <MESSAGE value="Added interfaces" />
     <MESSAGE value="Improved interfaces" />
     <MESSAGE value="N/A" />
-    <option name="LAST_COMMIT_MESSAGE" value="N/A" />
+    <MESSAGE value="Tried some stuff with the code&#10;- Will print &quot;Attack1&quot; when the 5th frame/image of Attack1 is displayed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tried some stuff with the code&#10;- Will print &quot;Attack1&quot; when the 5th frame/image of Attack1 is displayed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

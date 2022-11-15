@@ -1,6 +1,6 @@
 package actions;
 
-public enum PlayerActions {
+public enum PlayerAction {
     Idle(),
     Attack1(),
     Attack2(),

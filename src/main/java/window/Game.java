@@ -1,6 +1,7 @@
 package window;
 
 import UI.HealthBar;
+import actions.PlayerAction;
 import characters.PlayerClass;
 import characters.PlayerInterface;
 
@@ -21,7 +22,8 @@ public class Game extends Canvas implements Runnable {
 
         PlayerInterface player = new PlayerClass(50, Game.HEIGHT, ID.Player, 200, 200, 100, "Player");
         PlayerInterface enemy = new PlayerClass(Game.WIDTH - 50 - 163, Game.HEIGHT, ID.Enemy, 100, 100, 100, "Enemy");
-        enemy.getAction().setFacingRight(false);
+//        enemy.getAction().setFacingRight(false);
+        enemy.getAnimatePlayer().update(PlayerAction.Idle, false);
 
         handler.addObject(player);
         handler.addObject(enemy);
