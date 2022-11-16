@@ -74,13 +74,18 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
     }
 
     public static void collision(PlayerInterface player, PlayerInterface enemy) {   // TODO: Put this somewhere else and make it public
-        boolean playerLeftEnemyRight = player.getSize().getActualX(player.getX()) <= enemy.getSize().getActualRightX(enemy.getX());
-        boolean playerRightEnemyLeft = player.getSize().getActualRightX(player.getX()) >= enemy.getSize().getActualX(enemy.getX());
+        boolean isPlayerLeftEnemyRight = player.getSize().getActualX(player.getX()) <= enemy.getSize().getActualRightX(enemy.getX());
+        boolean isPlayerRightEnemyLeft = player.getSize().getActualRightX(player.getX()) >= enemy.getSize().getActualX(enemy.getX());
+        boolean isPlayerTopEnemyBottom = player.getSize().getActualY(player.getY()) <= enemy.getSize().getActualBottomY(enemy.getY());
+        boolean isPlayerBottomEnemyTop = player.getSize().getActualBottomY(player.getY()) >= enemy.getSize().getActualY(enemy.getY());
+        //System.out.println("isPlayerLeftEnemyRight? " + isPlayerLeftEnemyRight);
+        //System.out.println("isPlayerRightEnemyLeft? " + isPlayerRightEnemyLeft);
+        //System.out.println("isPlayerBottomEnemyTop? " + isPlayerBottomEnemyTop);
+
         /// Check if they have the same X
-        if (playerLeftEnemyRight && playerRightEnemyLeft) {
+        if (isPlayerLeftEnemyRight && isPlayerRightEnemyLeft) {
             /// Check if they have the same Y
-            if (player.getSize().getActualY(player.getY()) <= enemy.getSize().getActualBottomY(enemy.getY())
-                    && player.getSize().getActualBottomY(player.getY()) >= enemy.getSize().getActualY(enemy.getY())) {
+            if (isPlayerTopEnemyBottom && isPlayerBottomEnemyTop) {
                 //TODO: Collision effect
 
                 // TODO: Understand why this works
@@ -97,8 +102,9 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
     }
 
     public static void fall(PlayerInterface player) {
+        // TODO: Understand why this doesn't work - it's bugged
 //        player.getAction().setActionType(PlayerAction.Fall);
-        player.getAnimatePlayer().update(PlayerAction.Fall);
+//        player.getAnimatePlayer().update(PlayerAction.Fall);
     }
 
     public static void hit(PlayerInterface hitter, PlayerInterface damaged) {
