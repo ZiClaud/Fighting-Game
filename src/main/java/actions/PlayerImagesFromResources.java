@@ -1,6 +1,5 @@
-package characters;
+package actions;
 
-import actions.PlayerAction;
 import utils.MyUtils;
 
 import javax.imageio.ImageIO;

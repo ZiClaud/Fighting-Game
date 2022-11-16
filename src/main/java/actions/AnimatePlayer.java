@@ -1,7 +1,7 @@
-package characters;
+package actions;
 
-import actions.ActionInterface;
-import actions.PlayerAction;
+import characters.ObserverAnimation;
+import characters.PlayerInterface;
 import utils.Events;
 import window.ID;
 
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class AnimatePlayer implements ObserverAnimation {
     private PlayerInterface player;
-    private ActionInterface action;
+    private Action action;
     private ArrayList<BufferedImage> currentAnimation;
     private int i = 0;
 
@@ -23,7 +23,6 @@ public class AnimatePlayer implements ObserverAnimation {
     public void animatePlayer() {
         updateMore();
         loopAnimation();
-
     }
 
     private void loopAnimation() {
@@ -43,7 +42,7 @@ public class AnimatePlayer implements ObserverAnimation {
     }
 
     @Override
-    public void update(ActionInterface action) {
+    public void update(Action action) {
         this.action = action;
         updateMore();
     }
@@ -52,6 +51,7 @@ public class AnimatePlayer implements ObserverAnimation {
     public void update(PlayerAction playerAction, boolean isFacingRight) {
         if (action.getActionType() == playerAction && action.isFacingRight() == isFacingRight)
             return;
+
         action.setActionType(playerAction);
         action.setFacingRight(isFacingRight);
         updateMore();

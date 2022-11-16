@@ -2,7 +2,7 @@ package actions;
 
 import characters.PlayerInterface;
 
-public class Action implements ActionInterface {
+public class Action {
     private final PlayerInterface player;
     private PlayerAction actionType;
     private boolean facingRight = true;
@@ -16,15 +16,15 @@ public class Action implements ActionInterface {
         return actionType;
     }
 
-    public void setActionType(PlayerAction actionType) {
+    protected void setActionType(PlayerAction actionType) {
         this.actionType = actionType;
     }
 
-    public boolean isFacingRight() {
+    protected boolean isFacingRight() {
         return facingRight;
     }
 
-    public void setFacingRight(boolean facingRight) {
+    protected void setFacingRight(boolean facingRight) {
         this.facingRight = facingRight;
     }
 

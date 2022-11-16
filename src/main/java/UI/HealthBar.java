@@ -19,19 +19,11 @@ public class HealthBar extends GameObject {
 
     @Override
     public void tick() {
-        for (GameObjectInt player : handler.objects) {
-            for (GameObjectInt enemy : handler.objects) {
-                if (player.getId() == ID.Player && enemy.getId() == ID.Enemy) {
-                    Events.collision((PlayerInterface) player, (PlayerInterface) enemy);
-                }
-            }
-
-        }
+        Events.ticketeTickete(handler);
     }
 
     @Override
     public void render(Graphics g) {
-
         for (GameObjectInt player : handler.objects) {
             if (id == ID.HealthBarPlayer) {
                 g.setColor(Color.GREEN);

@@ -3,9 +3,37 @@ package utils;
 import actions.PlayerAction;
 import characters.PlayerInterface;
 import window.Game;
+import window.GameObjectInt;
 import window.ID;
+import window.MyHandler;
+
+import static window.Game.HEIGHT_WINDOW;
 
 public class Events {   //TODO: Change class -> Maybe not static, maybe with just "Player" as argument, idk
+    public static void ticketeTickete(MyHandler handler) {
+        for (GameObjectInt player : handler.objects) {
+            if (player.getId() == ID.Player || player.getId() == ID.Enemy) {
+                /**
+                 * Fall
+                 */
+                if (((PlayerInterface) player).getSize().getActualBottomY(player.getY()) != HEIGHT_WINDOW) {
+                    Events.fall((PlayerInterface) player);
+                }
+            }
+        }
+
+        /**
+         * Collision
+         */
+        for (GameObjectInt player : handler.objects) {
+            for (GameObjectInt enemy : handler.objects) {
+                if (player.getId() == ID.Player && enemy.getId() == ID.Enemy) {
+                    Events.collision((PlayerInterface) player, (PlayerInterface) enemy);
+                }
+            }
+        }
+    }
+
     public static void event(PlayerInterface player, int i) {   // TODO: Use wisely - Works when frame of player is indeed the sword attacking
         if (player.getId() == ID.Player) {
             if (player.getAction().getActionType() == PlayerAction.Attack1 && i == 5) {
@@ -24,31 +52,32 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         /**
          * Right/Left Wall
          */
-        if (player.getSize().getActualX(player.getX()) <= 0 || player.getSize().getActualRightX(player.getX()) >= Game.WIDTH) {
+        if (player.getSize().getActualX(player.getX()) <= 0 || player.getSize().getActualRightX(player.getX()) >= Game.WIDTH_WINDOW) {
             player.setVelX(0);
             if (player.getSize().getActualX(player.getX()) <= 0) {
                 player.setX(-player.getSize().getExcessiveLeft());
-            } else if (player.getSize().getActualRightX(player.getX()) >= Game.WIDTH) {
-                player.setX(Game.WIDTH - player.getSize().getImgWidth() + player.getSize().getExcessiveRight());
+            } else if (player.getSize().getActualRightX(player.getX()) >= Game.WIDTH_WINDOW) {
+                player.setX(Game.WIDTH_WINDOW - player.getSize().getImgWidth() + player.getSize().getExcessiveRight());
             }
         }
         /**
          * Top/Bottom Wall
          */
-        if (player.getSize().getActualY(player.getY()) <= 0 || player.getSize().getActualBottomY(player.getY()) >= Game.HEIGHT) {
+        if (player.getSize().getActualY(player.getY()) <= 0 || player.getSize().getActualBottomY(player.getY()) >= Game.HEIGHT_WINDOW) {
             player.setVelY(0);
             if (player.getSize().getActualY(player.getY()) <= 0) {
                 player.setY(-player.getSize().getExcessiveTop());
-            } else if (player.getSize().getActualBottomY(player.getY()) >= Game.HEIGHT) {
-                player.setY(Game.HEIGHT - player.getSize().getImgHeight() + player.getSize().getExcessiveBottom());
+            } else if (player.getSize().getActualBottomY(player.getY()) >= Game.HEIGHT_WINDOW) {
+                player.setY(Game.HEIGHT_WINDOW - player.getSize().getImgHeight() + player.getSize().getExcessiveBottom());
             }
         }
     }
 
     public static void collision(PlayerInterface player, PlayerInterface enemy) {   // TODO: Put this somewhere else and make it public
+        boolean playerLeftEnemyRight = player.getSize().getActualX(player.getX()) <= enemy.getSize().getActualRightX(enemy.getX());
+        boolean playerRightEnemyLeft = player.getSize().getActualRightX(player.getX()) >= enemy.getSize().getActualX(enemy.getX());
         /// Check if they have the same X
-        if (player.getSize().getActualX(player.getX()) <= enemy.getSize().getActualRightX(enemy.getX())
-                && player.getSize().getActualRightX(player.getX()) >= enemy.getSize().getActualX(enemy.getX())) {
+        if (playerLeftEnemyRight && playerRightEnemyLeft) {
             /// Check if they have the same Y
             if (player.getSize().getActualY(player.getY()) <= enemy.getSize().getActualBottomY(enemy.getY())
                     && player.getSize().getActualBottomY(player.getY()) >= enemy.getSize().getActualY(enemy.getY())) {
@@ -68,12 +97,14 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
     }
 
     public static void fall(PlayerInterface player) {
-
+//        player.getAction().setActionType(PlayerAction.Fall);
+        player.getAnimatePlayer().update(PlayerAction.Fall);
     }
 
     public static void hit(PlayerInterface hitter, PlayerInterface damaged) {
         // TODO: hitter will now attack when he touches damaged - TO FIX
-        hitter.getAction().setActionType(PlayerAction.Attack1);
+        //       hitter.getAction().setActionType(PlayerAction.Attack1);
+        hitter.getAnimatePlayer().update(PlayerAction.Attack1);
         _takeHit(damaged, hitter);
     }
 
@@ -81,7 +112,8 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         /**
          * Hit taken
          */
-        damaged.getAction().setActionType(PlayerAction.TakeHit);
+        //     damaged.getAction().setActionType(PlayerAction.TakeHit);
+        damaged.getAnimatePlayer().update(PlayerAction.TakeHit);
         damaged.setHp(damaged.getHp() - 1);
 
         if (damaged.getHp() < 0) {
@@ -93,24 +125,25 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         /**
          * Death
          */
-        loser.getAction().setActionType(PlayerAction.Death);
+        //       loser.getAction().setActionType(PlayerAction.Death);
+        loser.getAnimatePlayer().update(PlayerAction.Death);
 
-        System.out.println(winner.getUsername() + " won!"); // TODO: Print this in game
+        // TODO: Print this in game
+        System.out.println(winner.getUsername() + " won!");
 
-        // Reset location
+        // TODO: use method that makes Handler remove objects and re-add them - resetHandlerObjects() in Game
+        // Reset game
         if (winner.getId() == ID.Player) {
             winner.setX(50);
-            loser.setX(Game.WIDTH - 50 - 163);
+            loser.setX(Game.WIDTH_WINDOW - 50 - 163);
         } else {
             loser.setX(50);
-            winner.setX(Game.WIDTH - 50 - 163);
+            winner.setX(Game.WIDTH_WINDOW - 50 - 163);
         }
-        winner.setY(Game.HEIGHT);
-        loser.setY(Game.HEIGHT);
+        winner.setY(Game.HEIGHT_WINDOW);
+        loser.setY(Game.HEIGHT_WINDOW);
 
         // TODO: Add countdown
-
-        // TODO: Reset HPs - FIX
 
         loser.setHp(loser.getHp() + 100);
     }

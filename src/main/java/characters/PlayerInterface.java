@@ -1,6 +1,7 @@
 package characters;
 
-import actions.ActionInterface;
+import actions.Action;
+import actions.AnimatePlayer;
 import window.GameObjectInt;
 
 public interface PlayerInterface extends GameObjectInt {
@@ -14,7 +15,7 @@ public interface PlayerInterface extends GameObjectInt {
 
     PlayerSizeInterface getSize();
 
-    ActionInterface getAction();
+    Action getAction();
 
     AnimatePlayer getAnimatePlayer();
 }
