@@ -6,6 +6,20 @@ import window.Game;
 import window.ID;
 
 public class Events {   //TODO: Change class -> Maybe not static, maybe with just "Player" as argument, idk
+    public static void event(PlayerInterface player, int i) {   // TODO: Use wisely - Works when frame of player is indeed the sword attacking
+        if (player.getId() == ID.Player) {
+            if (player.getAction().getActionType() == PlayerAction.Attack1 && i == 5) {
+                System.out.println("Attack1! by player");
+//              Events.hit();
+            }
+        } else if (player.getId() == ID.Enemy) {
+            if (player.getAction().getActionType() == PlayerAction.Attack1 && i == 3) {
+                System.out.println("Attack1! by enemy");
+//              Events.hit();
+            }
+        }
+    }
+
     public static void checkWall(PlayerInterface player) {
         /**
          * Right/Left Wall
@@ -60,10 +74,10 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
     public static void hit(PlayerInterface hitter, PlayerInterface damaged) {
         // TODO: hitter will now attack when he touches damaged - TO FIX
         hitter.getAction().setActionType(PlayerAction.Attack1);
-        takeHit(damaged, hitter);
+        _takeHit(damaged, hitter);
     }
 
-    private static void takeHit(PlayerInterface damaged, PlayerInterface hitter) {
+    private static void _takeHit(PlayerInterface damaged, PlayerInterface hitter) {
         /**
          * Hit taken
          */
@@ -71,11 +85,11 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         damaged.setHp(damaged.getHp() - 1);
 
         if (damaged.getHp() < 0) {
-            death(damaged, hitter);
+            _death(damaged, hitter);
         }
     }
 
-    private static void death(PlayerInterface loser, PlayerInterface winner) {
+    private static void _death(PlayerInterface loser, PlayerInterface winner) {
         /**
          * Death
          */

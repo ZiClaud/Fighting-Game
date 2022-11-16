@@ -2,6 +2,7 @@ package characters;
 
 import actions.ActionInterface;
 import actions.PlayerAction;
+import utils.Events;
 import window.ID;
 
 import javax.swing.*;
@@ -21,7 +22,7 @@ public class AnimatePlayer implements ObserverAnimation {
 
     public void animatePlayer() {
         updateMore();
-            loopAnimation();
+        loopAnimation();
 
     }
 
@@ -34,26 +35,13 @@ public class AnimatePlayer implements ObserverAnimation {
             //System.out.println("I: " + i);
             player.getPlayerImage().setImg(currentAnimation.get(i));
             i++;
-            event();
+            Events.event(player, i);
         });
         timer.setRepeats(true);
         timer.setCoalesce(true);
         timer.start();
     }
 
-    private void event(){   // TODO: Use wisely
-        if (player.getId() == ID.Player) {
-            if (action.getActionType() == PlayerAction.Attack1 && i == 5) {
-                System.out.println("Attack1! by player");
-//            Events.hit();
-            }
-        } else if (player.getId() == ID.Enemy) {
-            if (action.getActionType() == PlayerAction.Attack1 && i == 3) {
-                System.out.println("Attack1! by enemy");
-//            Events.hit();
-            }
-        }
-    }
     @Override
     public void update(ActionInterface action) {
         this.action = action;
