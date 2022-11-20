@@ -97,16 +97,16 @@ class CharacterImagesFromResources {
     private static ArrayList<BufferedImage> PlayerImgIdle() {
         ArrayList<BufferedImage> imageList = new ArrayList<>();
         try {
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Idle/Idle_1.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Idle/Idle_2.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Idle/Idle_3.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Idle/Idle_4.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Idle/Idle_5.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Idle/Idle_6.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Idle/Idle_7.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Idle/Idle_8.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Idle/Idle_1.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Idle/Idle_2.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Idle/Idle_3.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Idle/Idle_4.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Idle/Idle_5.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Idle/Idle_6.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Idle/Idle_7.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Idle/Idle_8.png")));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return imageList;
     }
@@ -114,25 +114,16 @@ class CharacterImagesFromResources {
     private static ArrayList<BufferedImage> PlayerImgRun() {
         ArrayList<BufferedImage> imageList = new ArrayList<>();
         try {
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Run/Run_1.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Run/Run_2.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Run/Run_3.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Run/Run_4.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Run/Run_5.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Run/Run_6.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Run/Run_7.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Run/Run_8.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Run/Run_1.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Run/Run_2.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Run/Run_3.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Run/Run_4.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Run/Run_5.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Run/Run_6.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Run/Run_7.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Run/Run_8.png")));
         } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        return imageList;
-    }
-
-    private static ArrayList<BufferedImage> PlayerImgRunLeft() {
-        ArrayList<BufferedImage> images = PlayerImgRun();
-        ArrayList<BufferedImage> imageList = new ArrayList<>();
-        for (BufferedImage image : images) {
-            imageList.add(MyUtils.mirrorImage(image));
+            e.printStackTrace();
         }
         return imageList;
     }
@@ -140,14 +131,14 @@ class CharacterImagesFromResources {
     private static ArrayList<BufferedImage> PlayerImgAttack1() {
         ArrayList<BufferedImage> imageList = new ArrayList<>();
         try {
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Attack1/Attack1_1.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Attack1/Attack1_2.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Attack1/Attack1_3.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Attack1/Attack1_4.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Attack1/Attack1_5.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Attack1/Attack1_6.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Attack1/Attack1_1.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Attack1/Attack1_2.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Attack1/Attack1_3.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Attack1/Attack1_4.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Attack1/Attack1_5.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Attack1/Attack1_6.png")));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return imageList;
     }
@@ -155,14 +146,14 @@ class CharacterImagesFromResources {
     private static ArrayList<BufferedImage> PlayerImgAttack2() {
         ArrayList<BufferedImage> imageList = new ArrayList<>();
         try {
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Attack2/Attack2_1.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Attack2/Attack2_2.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Attack2/Attack2_3.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Attack2/Attack2_4.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Attack2/Attack2_5.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Attack2/Attack2_6.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Attack2/Attack2_1.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Attack2/Attack2_2.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Attack2/Attack2_3.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Attack2/Attack2_4.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Attack2/Attack2_5.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Attack2/Attack2_6.png")));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return imageList;
     }
@@ -170,10 +161,10 @@ class CharacterImagesFromResources {
     private static ArrayList<BufferedImage> PlayerImgJump() {
         ArrayList<BufferedImage> imageList = new ArrayList<>();
         try {
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Jump/Jump_1.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Jump/Jump_2.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Jump/Jump_1.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Jump/Jump_2.png")));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return imageList;
     }
@@ -181,10 +172,10 @@ class CharacterImagesFromResources {
     private static ArrayList<BufferedImage> PlayerImgFall() {
         ArrayList<BufferedImage> imageList = new ArrayList<>();
         try {
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Fall/Fall_1.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Fall/Fall_2.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Fall/Fall_1.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Fall/Fall_2.png")));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return imageList;
     }
@@ -192,14 +183,14 @@ class CharacterImagesFromResources {
     private static ArrayList<BufferedImage> PlayerImgDeath() {
         ArrayList<BufferedImage> imageList = new ArrayList<>();
         try {
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Death/Death_1.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Death/Death_2.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Death/Death_3.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Death/Death_4.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Death/Death_5.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/Death/Death_6.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Death/Death_1.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Death/Death_2.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Death/Death_3.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Death/Death_4.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Death/Death_5.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Death/Death_6.png")));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return imageList;
     }
@@ -207,12 +198,12 @@ class CharacterImagesFromResources {
     private static ArrayList<BufferedImage> PlayerImgTakeHit() {
         ArrayList<BufferedImage> imageList = new ArrayList<>();
         try {
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/TakeHit/TakeHit_1.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/TakeHit/TakeHit_2.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/TakeHit/TakeHit_3.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Sprites/TakeHit/TakeHit_4.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/TakeHit/TakeHit_1.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/TakeHit/TakeHit_2.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/TakeHit/TakeHit_3.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/TakeHit/TakeHit_4.png")));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return imageList;
     }
@@ -228,7 +219,7 @@ class CharacterImagesFromResources {
             imageList.add(ImageIO.read(new File("src/main/resources/Undead/Idle/Idle_3.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Undead/Idle/Idle_4.png")));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return imageList;
     }
@@ -243,7 +234,7 @@ class CharacterImagesFromResources {
             imageList.add(ImageIO.read(new File("src/main/resources/Undead/Attack1/Attack1_5.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Undead/Attack1/Attack1_6.png")));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return imageList;
     }
@@ -256,12 +247,12 @@ class CharacterImagesFromResources {
             imageList.add(ImageIO.read(new File("src/main/resources/Undead/TakeHit/TakeHit_3.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Undead/TakeHit/TakeHit_4.png")));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return imageList;
     }
 
-    private static ArrayList<BufferedImage> EnemyImgDeath() {   // TODO
+    private static ArrayList<BufferedImage> EnemyImgDeath() {
         ArrayList<BufferedImage> imageList = new ArrayList<>();
         try {
             imageList.add(ImageIO.read(new File("src/main/resources/Undead/Death/Death_1.png")));
@@ -269,9 +260,9 @@ class CharacterImagesFromResources {
             imageList.add(ImageIO.read(new File("src/main/resources/Undead/Death/Death_3.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Undead/Death/Death_4.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Undead/Death/Death_5.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Undead/Death/Death_6.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Undead/Death/Death_62.png")));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return imageList;
     }

@@ -65,7 +65,6 @@ public class Game extends Canvas implements Runnable {
             running = false;
         } catch (InterruptedException e) {
             e.printStackTrace();
-//            throw new RuntimeException(e);
         }
     }
 
