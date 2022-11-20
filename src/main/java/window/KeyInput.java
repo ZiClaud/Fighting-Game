@@ -3,6 +3,8 @@ package window;
 import actions.PlayerAction;
 import characters.ObserverAnimation;
 import characters.PlayerClass;
+import window.GameObject.ID;
+import window.GameObject.MovingGameObjectInt;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -17,7 +19,7 @@ public class KeyInput extends KeyAdapter {
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
 
-        for (GameObjectInt tempObject : handler.objects) {
+        for (MovingGameObjectInt tempObject : handler.getOnlyMovingObjects()) {
             if (tempObject.getId() == ID.Player) {
                 ObserverAnimation playerObserverAnimation = ((PlayerClass)tempObject).getAnimatePlayer();
 
@@ -73,7 +75,7 @@ public class KeyInput extends KeyAdapter {
     public void keyReleased(KeyEvent e) {
         int key = e.getKeyCode();
 
-        for (GameObjectInt tempObject : handler.objects) {
+        for (MovingGameObjectInt tempObject : handler.getOnlyMovingObjects()) {
             if (tempObject.getId() == ID.Player) {
                 ObserverAnimation playerObserverAnimation = ((PlayerClass)tempObject).getAnimatePlayer();
                 // KEY EVENTS FOR PLAYER

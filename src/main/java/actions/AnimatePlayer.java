@@ -3,7 +3,7 @@ package actions;
 import characters.ObserverAnimation;
 import characters.PlayerInterface;
 import utils.Events;
-import window.ID;
+import window.GameObject.ID;
 
 import javax.swing.*;
 import java.awt.image.BufferedImage;

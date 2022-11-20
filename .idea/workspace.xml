@@ -4,17 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Tried some stuff with the code&#10;- Will print &quot;Attack1&quot; when the 5th frame/image of Attack1 is displayed">
-      <change afterPath="$PROJECT_DIR$/src/main/java/characters/ObserverAnimation.java" afterDir="false" />
+    <list default="true" id="8ea283d3-aef3-499f-80d5-f639c6d377eb" name="Changes" comment="Fixed some bugs and improved code">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fight/Fight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fight/FightInt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/window/GameObject/MovingGameObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/window/GameObject/MovingGameObjectInt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/actions/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actions/Action.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/actions/ActionInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actions/ActionInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/actions/PlayerActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actions/PlayerAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/AnimatePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/AnimatePlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerImagesFromResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerImagesFromResources.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UI/HealthBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI/HealthBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/actions/AnimatePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actions/AnimatePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/PlayerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/PlayerInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/Events.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Events.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/window/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/window/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/GameObject/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/window/GameObjectInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/GameObject/GameObjectInt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/window/ID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/GameObject/ID.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/KeyInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/window/MyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/window/MyHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +56,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -103,7 +109,7 @@
       <module name="FightingGame.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="window.*" />
+          <option name="PATTERN" value="window.GameObject.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -189,42 +195,8 @@
       <workItem from="1668416057786" duration="231000" />
       <workItem from="1668416345611" duration="213000" />
       <workItem from="1668450767684" duration="829000" />
-      <workItem from="1668507357049" duration="5087000" />
-    </task>
-    <task id="LOCAL-00003" summary="Added Healthbar all by myself u.u">
-      <created>1667297874520</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1667297874520</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Added Character image all by myself u.u">
-      <created>1667301101666</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1667301101666</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Tried to animate character - WIP">
-      <created>1667307414353</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1667307414353</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Idle animation animated">
-      <created>1667310474758</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1667310474758</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Added images for Run aniamtion">
-      <created>1667311644912</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1667311644912</updated>
+      <workItem from="1668507357049" duration="10095000" />
+      <workItem from="1668929421170" duration="4241000" />
     </task>
     <task id="LOCAL-00008" summary="N/A">
       <created>1667311680773</created>
@@ -534,7 +506,42 @@
       <option name="project" value="LOCAL" />
       <updated>1668504444683</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Added Observer and improved code">
+      <created>1668526489509</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1668526489510</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Re-added &quot;event&quot; in AnimatePlayer">
+      <created>1668526684084</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1668526684084</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Minor changes">
+      <created>1668590915901</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1668590915901</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Removed ActionInterface.java, fixed some bugs and improved code">
+      <created>1668593656879</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1668593656879</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Fixed some bugs and improved code">
+      <created>1668594171416</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1668594171416</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,11 +559,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added background" />
-    <MESSAGE value="Imrpoved player and enemy position" />
-    <MESSAGE value="Improved player and enemy position" />
-    <MESSAGE value="Tried to improve classes, maybe failed, maybe succeeded, idk it doesn't work as I wished" />
-    <MESSAGE value="Tried to improve classes, maybe failed, maybe succeeded, idk it doesn't work as I wished it would" />
     <MESSAGE value="Improved classes" />
     <MESSAGE value="Improved classes, at least tried to" />
     <MESSAGE value="Improved classes, or at least tried to" />
@@ -577,7 +579,12 @@
     <MESSAGE value="Improved interfaces" />
     <MESSAGE value="N/A" />
     <MESSAGE value="Tried some stuff with the code&#10;- Will print &quot;Attack1&quot; when the 5th frame/image of Attack1 is displayed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tried some stuff with the code&#10;- Will print &quot;Attack1&quot; when the 5th frame/image of Attack1 is displayed" />
+    <MESSAGE value="Added Observer and improved code" />
+    <MESSAGE value="Re-added &quot;event&quot; in AnimatePlayer" />
+    <MESSAGE value="Minor changes" />
+    <MESSAGE value="Removed ActionInterface.java, fixed some bugs and improved code" />
+    <MESSAGE value="Fixed some bugs and improved code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed some bugs and improved code" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

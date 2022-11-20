@@ -1,4 +1,4 @@
-package window;
+package window.GameObject;
 
 public enum ID {
     Player(),

@@ -3,12 +3,12 @@ package characters;
 import actions.Action;
 import actions.AnimatePlayer;
 import utils.Events;
-import window.GameObject;
-import window.ID;
+import window.GameObject.ID;
+import window.GameObject.MovingGameObject;
 
 import java.awt.*;
 
-public class PlayerClass extends GameObject implements PlayerInterface {    // TODO: Make this class way less complicated
+public class PlayerClass extends MovingGameObject implements PlayerInterface {    // TODO: Make this class way less complicated
     private final String username;
     private final PlayerImage playerImage;
     private final PlayerSizeInterface size;

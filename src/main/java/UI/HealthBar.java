@@ -2,9 +2,9 @@ package UI;
 
 import characters.PlayerInterface;
 import utils.Events;
-import window.GameObject;
-import window.GameObjectInt;
-import window.ID;
+import window.GameObject.GameObject;
+import window.GameObject.GameObjectInt;
+import window.GameObject.ID;
 import window.MyHandler;
 
 import java.awt.*;
@@ -24,7 +24,7 @@ public class HealthBar extends GameObject {
 
     @Override
     public void render(Graphics g) {
-        for (GameObjectInt player : handler.objects) {
+        for (GameObjectInt player : handler.getOnlyMovingObjects()) {
             if (id == ID.HealthBarPlayer) {
                 g.setColor(Color.GREEN);
                 if (player.getId() == ID.Player) {

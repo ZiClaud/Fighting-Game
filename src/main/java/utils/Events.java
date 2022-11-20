@@ -3,15 +3,15 @@ package utils;
 import actions.PlayerAction;
 import characters.PlayerInterface;
 import window.Game;
-import window.GameObjectInt;
-import window.ID;
+import window.GameObject.GameObjectInt;
+import window.GameObject.ID;
 import window.MyHandler;
 
 import static window.Game.HEIGHT_WINDOW;
 
 public class Events {   //TODO: Change class -> Maybe not static, maybe with just "Player" as argument, idk
     public static void ticketeTickete(MyHandler handler) {
-        for (GameObjectInt player : handler.objects) {
+        for (GameObjectInt player : handler.getObjects()) {
             if (player.getId() == ID.Player || player.getId() == ID.Enemy) {
                 /**
                  * Fall
@@ -25,8 +25,8 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         /**
          * Collision
          */
-        for (GameObjectInt player : handler.objects) {
-            for (GameObjectInt enemy : handler.objects) {
+        for (GameObjectInt player : handler.getObjects()) {
+            for (GameObjectInt enemy : handler.getObjects()) {
                 if (player.getId() == ID.Player && enemy.getId() == ID.Enemy) {
                     Events.collision((PlayerInterface) player, (PlayerInterface) enemy);
                 }

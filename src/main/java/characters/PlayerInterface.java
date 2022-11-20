@@ -2,9 +2,9 @@ package characters;
 
 import actions.Action;
 import actions.AnimatePlayer;
-import window.GameObjectInt;
+import window.GameObject.MovingGameObjectInt;
 
-public interface PlayerInterface extends GameObjectInt {
+public interface PlayerInterface extends MovingGameObjectInt {
     PlayerImage getPlayerImage();
 
     int getHp();

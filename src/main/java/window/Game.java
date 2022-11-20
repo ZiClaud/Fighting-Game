@@ -4,6 +4,7 @@ import UI.HealthBar;
 import actions.PlayerAction;
 import characters.PlayerClass;
 import characters.PlayerInterface;
+import window.GameObject.ID;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -39,16 +40,19 @@ public class Game extends Canvas implements Runnable {
         handler.addObject(player);
         handler.addObject(enemy);
 //        handler.addObject(new Player(500, 300, ID.Enemy, 200, 200, 100));  // TODO: USE TO CHECK -> THERE'S NO BUG
+
         handler.addObject(new HealthBar(50, 50, ID.HealthBarPlayer, handler));
         handler.addObject(new HealthBar(Game.WIDTH_WINDOW - 50 - enemy.getHp(), 50, ID.HealthBarEnemy, handler));
     }
 
+    /*
     public void resetHandlerObjects() {
-        for (GameObjectInt tempObject : handler.objects) {
+        for (MovingGameObjectInt tempObject : handler.objects) {
             handler.removeObject(tempObject);
         }
         setHandlerObjects();
     }
+    */
 
 
     public synchronized void start() {

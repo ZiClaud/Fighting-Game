@@ -1,4 +1,4 @@
-package window;
+package window.GameObject;
 
 import java.awt.*;
 
@@ -18,12 +18,4 @@ public interface GameObjectInt {
     ID getId();
 
     void setId(ID id);
-
-    int getVelX();
-
-    void setVelX(int velX);
-
-    int getVelY();
-
-    void setVelY(int velY);
 }

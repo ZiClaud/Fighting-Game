@@ -1,11 +1,10 @@
-package window;
+package window.GameObject;
 
 import java.awt.*;
 
 public abstract class GameObject implements GameObjectInt {
     protected int x, y;
     protected ID id;
-    protected int velX, velY;
 
 
     public GameObject(int x, int y, ID id) {
@@ -40,21 +39,5 @@ public abstract class GameObject implements GameObjectInt {
 
     public void setId(ID id) {
         this.id = id;
-    }
-
-    public int getVelX() {
-        return velX;
-    }
-
-    public void setVelX(int velX) {
-        this.velX = velX;
-    }
-
-    public int getVelY() {
-        return velY;
-    }
-
-    public void setVelY(int velY) {
-        this.velY = velY;
     }
 }
