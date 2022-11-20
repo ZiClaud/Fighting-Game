@@ -1,6 +1,6 @@
 package characters;
 
-public interface PlayerSizeInterface {
+public interface PlayerSizeInt {
     int getImgWidth();
 
     int getImgHeight();

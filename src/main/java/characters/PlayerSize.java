@@ -13,7 +13,7 @@ package characters;
  * HeightToRemoveFromBottom: 78px <p>
  * HeightToRemoveFromTop: 70px <p>
  */
-public class PlayerSize implements PlayerSizeInterface {
+public class PlayerSize implements PlayerSizeInt {
     private final int imgWidth;
     private final int imgHeight;
 

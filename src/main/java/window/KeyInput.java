@@ -1,8 +1,8 @@
 package window;
 
 import actions.PlayerAction;
+import characters.CharacterInt;
 import characters.ObserverAnimation;
-import characters.PlayerClass;
 import window.GameObject.ID;
 import window.GameObject.MovingGameObjectInt;
 
@@ -21,7 +21,7 @@ public class KeyInput extends KeyAdapter {
 
         for (MovingGameObjectInt tempObject : handler.getOnlyMovingObjects()) {
             if (tempObject.getId() == ID.Player) {
-                ObserverAnimation playerObserverAnimation = ((PlayerClass)tempObject).getAnimatePlayer();
+                ObserverAnimation playerObserverAnimation = ((CharacterInt) tempObject).getAnimatePlayer();
 
                 // KEY EVENTS FOR PLAYER
                 if (key == KeyEvent.VK_W) {
@@ -47,7 +47,7 @@ public class KeyInput extends KeyAdapter {
             }
 
             if (tempObject.getId() == ID.Enemy) {
-                ObserverAnimation enemyObserverAnimation = ((PlayerClass)tempObject).getAnimatePlayer();
+                ObserverAnimation enemyObserverAnimation = ((CharacterInt) tempObject).getAnimatePlayer();
                 // KEY EVENTS FOR ENEMY
                 if (key == KeyEvent.VK_UP) {
                     tempObject.setVelY(-5);
@@ -77,7 +77,7 @@ public class KeyInput extends KeyAdapter {
 
         for (MovingGameObjectInt tempObject : handler.getOnlyMovingObjects()) {
             if (tempObject.getId() == ID.Player) {
-                ObserverAnimation playerObserverAnimation = ((PlayerClass)tempObject).getAnimatePlayer();
+                ObserverAnimation playerObserverAnimation = ((CharacterInt) tempObject).getAnimatePlayer();
                 // KEY EVENTS FOR PLAYER
                 if (key == KeyEvent.VK_W || key == KeyEvent.VK_S) {
                     tempObject.setVelY(0);
@@ -93,7 +93,7 @@ public class KeyInput extends KeyAdapter {
             }
 
             if (tempObject.getId() == ID.Enemy) {
-                ObserverAnimation enemyObserverAnimation = ((PlayerClass)tempObject).getAnimatePlayer();
+                ObserverAnimation enemyObserverAnimation = ((CharacterInt) tempObject).getAnimatePlayer();
                 // KEY EVENTS FOR ENEMY
                 if (key == KeyEvent.VK_UP) {
                     tempObject.setVelY(0);

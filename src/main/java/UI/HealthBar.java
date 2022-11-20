@@ -1,6 +1,6 @@
 package UI;
 
-import characters.PlayerInterface;
+import characters.CharacterInt;
 import utils.Events;
 import window.GameObject.GameObject;
 import window.GameObject.GameObjectInt;
@@ -29,12 +29,12 @@ public class HealthBar extends GameObject {
                 g.setColor(Color.GREEN);
                 if (player.getId() == ID.Player) {
 
-                    g.fillRect(x, y, ((PlayerInterface) player).getHp(), 10);
+                    g.fillRect(x, y, ((CharacterInt) player).getHp(), 10);
                 }
             } else if (id == ID.HealthBarEnemy) {
                 g.setColor(Color.RED);
                 if (player.getId() == ID.Enemy) {
-                    g.fillRect(x, y, ((PlayerInterface) player).getHp(), 10);
+                    g.fillRect(x, y, ((CharacterInt) player).getHp(), 10);
                 }
             }
         }

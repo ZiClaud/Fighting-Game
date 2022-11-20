@@ -21,7 +21,7 @@ import java.util.ArrayList;
  * HeightToRemoveFromBottom: 78px <p>
  * HeightToRemoveFromTop: 70px <p>
  */
-class PlayerImagesFromResources {
+class CharacterImagesFromResources {
     public static ArrayList<BufferedImage> getPlayerImg(PlayerAction playerAction, boolean facingRight) {
         if (facingRight) {
             if (playerAction == PlayerAction.Idle)

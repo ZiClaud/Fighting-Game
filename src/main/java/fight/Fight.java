@@ -1,16 +1,16 @@
 package fight;
 
-import characters.PlayerInterface;
+import characters.CharacterInt;
 import window.GameObject.GameObject;
 import window.GameObject.ID;
 
 import java.awt.*;
 
 public class Fight extends GameObject {
-    PlayerInterface player;
-    PlayerInterface enemy;
+    CharacterInt player;
+    CharacterInt enemy;
 
-    public Fight(int x, int y, ID id, PlayerInterface player, PlayerInterface enemy) {
+    public Fight(int x, int y, ID id, CharacterInt player, CharacterInt enemy) {
         super(x, y, id);
         this.player = player;
         this.enemy = enemy;

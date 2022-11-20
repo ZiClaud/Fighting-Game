@@ -4,7 +4,7 @@ import actions.Action;
 import actions.AnimatePlayer;
 import window.GameObject.MovingGameObjectInt;
 
-public interface PlayerInterface extends MovingGameObjectInt {
+public interface CharacterInt extends MovingGameObjectInt {
     PlayerImage getPlayerImage();
 
     int getHp();
@@ -13,7 +13,7 @@ public interface PlayerInterface extends MovingGameObjectInt {
 
     String getUsername();
 
-    PlayerSizeInterface getSize();
+    PlayerSizeInt getSize();
 
     Action getAction();
 

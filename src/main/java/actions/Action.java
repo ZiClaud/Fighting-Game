@@ -1,13 +1,13 @@
 package actions;
 
-import characters.PlayerInterface;
+import characters.CharacterInt;
 
 public class Action {
-    private final PlayerInterface player;
+    private final CharacterInt player;
     private PlayerAction actionType;
     private boolean facingRight = true;
 
-    public Action(PlayerInterface player) {
+    public Action(CharacterInt player) {
         this.player = player;
         this.actionType = PlayerAction.Idle;
     }
@@ -30,24 +30,24 @@ public class Action {
 
     public void act() {
 //        if (player.getAnimatePlayer().isLoopCompleted()) {
-            if (getActionType() == PlayerAction.Idle) {
-                idle();
-            } else if (getActionType() == PlayerAction.Run) {
-                run();
-            } else if (getActionType() == PlayerAction.Jump) {
-                jump();
-            } else if (getActionType() == PlayerAction.Fall) {
-                fall();
-            } else if (getActionType() == PlayerAction.Attack1) {
-                attack1();
-            } else if (getActionType() == PlayerAction.Attack2) {
-                attack2();
-            } else if (getActionType() == PlayerAction.TakeHit) {
-                takeHit();
-            } else if (getActionType() == PlayerAction.Death) {
-                death();
-            }
-   //     }
+        if (getActionType() == PlayerAction.Idle) {
+            idle();
+        } else if (getActionType() == PlayerAction.Run) {
+            run();
+        } else if (getActionType() == PlayerAction.Jump) {
+            jump();
+        } else if (getActionType() == PlayerAction.Fall) {
+            fall();
+        } else if (getActionType() == PlayerAction.Attack1) {
+            attack1();
+        } else if (getActionType() == PlayerAction.Attack2) {
+            attack2();
+        } else if (getActionType() == PlayerAction.TakeHit) {
+            takeHit();
+        } else if (getActionType() == PlayerAction.Death) {
+            death();
+        }
+        //     }
     }
 
     private void idle() {

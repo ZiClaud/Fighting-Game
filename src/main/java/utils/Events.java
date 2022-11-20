@@ -1,7 +1,7 @@
 package utils;
 
 import actions.PlayerAction;
-import characters.PlayerInterface;
+import characters.CharacterInt;
 import window.Game;
 import window.GameObject.GameObjectInt;
 import window.GameObject.ID;
@@ -16,8 +16,8 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
                 /**
                  * Fall
                  */
-                if (((PlayerInterface) player).getSize().getActualBottomY(player.getY()) != HEIGHT_WINDOW) {
-                    Events.fall((PlayerInterface) player);
+                if (((CharacterInt) player).getSize().getActualBottomY(player.getY()) != HEIGHT_WINDOW) {
+                    Events.fall((CharacterInt) player);
                 }
             }
         }
@@ -28,13 +28,13 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         for (GameObjectInt player : handler.getObjects()) {
             for (GameObjectInt enemy : handler.getObjects()) {
                 if (player.getId() == ID.Player && enemy.getId() == ID.Enemy) {
-                    Events.collision((PlayerInterface) player, (PlayerInterface) enemy);
+                    Events.collision((CharacterInt) player, (CharacterInt) enemy);
                 }
             }
         }
     }
 
-    public static void event(PlayerInterface player, int i) {   // TODO: Use wisely - Works when frame of player is indeed the sword attacking
+    public static void event(CharacterInt player, int i) {   // TODO: Use wisely - Works when frame of player is indeed the sword attacking
         if (player.getId() == ID.Player) {
             if (player.getAction().getActionType() == PlayerAction.Attack1 && i == 5) {
                 System.out.println("Attack1! by player");
@@ -48,7 +48,7 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         }
     }
 
-    public static void checkWall(PlayerInterface player) {
+    public static void checkWall(CharacterInt player) {
         /**
          * Right/Left Wall
          */
@@ -73,7 +73,7 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         }
     }
 
-    public static void collision(PlayerInterface player, PlayerInterface enemy) {   // TODO: Put this somewhere else and make it public
+    public static void collision(CharacterInt player, CharacterInt enemy) {   // TODO: Put this somewhere else and make it public
         boolean isPlayerLeftEnemyRight = player.getSize().getActualX(player.getX()) <= enemy.getSize().getActualRightX(enemy.getX());
         boolean isPlayerRightEnemyLeft = player.getSize().getActualRightX(player.getX()) >= enemy.getSize().getActualX(enemy.getX());
         boolean isPlayerTopEnemyBottom = player.getSize().getActualY(player.getY()) <= enemy.getSize().getActualBottomY(enemy.getY());
@@ -97,24 +97,24 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         }
     }
 
-    public static void jump(PlayerInterface player) {
+    public static void jump(CharacterInt player) {
 
     }
 
-    public static void fall(PlayerInterface player) {
+    public static void fall(CharacterInt player) {
         // TODO: Understand why this doesn't work - it's bugged
 //        player.getAction().setActionType(PlayerAction.Fall);
 //        player.getAnimatePlayer().update(PlayerAction.Fall);
     }
 
-    public static void hit(PlayerInterface hitter, PlayerInterface damaged) {
+    public static void hit(CharacterInt hitter, CharacterInt damaged) {
         // TODO: hitter will now attack when he touches damaged - TO FIX
         //       hitter.getAction().setActionType(PlayerAction.Attack1);
         hitter.getAnimatePlayer().update(PlayerAction.Attack1);
         _takeHit(damaged, hitter);
     }
 
-    private static void _takeHit(PlayerInterface damaged, PlayerInterface hitter) {
+    private static void _takeHit(CharacterInt damaged, CharacterInt hitter) {
         /**
          * Hit taken
          */
@@ -127,7 +127,7 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         }
     }
 
-    private static void _death(PlayerInterface loser, PlayerInterface winner) {
+    private static void _death(CharacterInt loser, CharacterInt winner) {
         /**
          * Death
          */

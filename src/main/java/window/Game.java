@@ -2,8 +2,9 @@ package window;
 
 import UI.HealthBar;
 import actions.PlayerAction;
-import characters.PlayerClass;
-import characters.PlayerInterface;
+import characters.CharacterInt;
+import characters.Enemy;
+import characters.Player;
 import window.GameObject.ID;
 
 import javax.imageio.ImageIO;
@@ -13,11 +14,9 @@ import java.io.File;
 import java.io.IOException;
 
 public class Game extends Canvas implements Runnable {
-    public static final int WIDTH_WINDOW = 640, HEIGHT_WINDOW = WIDTH_WINDOW / 12 * 9;
-    private final MyHandler handler;
+    private final MyHandler handler;    public static final int WIDTH_WINDOW = 640, HEIGHT_WINDOW = WIDTH_WINDOW / 12 * 9;
     private Thread thread;
     private boolean running = false;
-
     public Game() {
         handler = new MyHandler();
         this.addKeyListener(new KeyInput(handler));
@@ -32,8 +31,8 @@ public class Game extends Canvas implements Runnable {
     }
 
     private void setHandlerObjects() {
-        PlayerInterface player = new PlayerClass(50, Game.HEIGHT_WINDOW, ID.Player, 200, 200, 100, "Player");
-        PlayerInterface enemy = new PlayerClass(Game.WIDTH_WINDOW - 50 - 163, Game.HEIGHT_WINDOW, ID.Enemy, 100, 100, 100, "Enemy");
+        CharacterInt player = new Player(50, Game.HEIGHT_WINDOW, ID.Player, 200, 200, 100, "Player");
+        CharacterInt enemy = new Enemy(Game.WIDTH_WINDOW - 50 - 163, Game.HEIGHT_WINDOW, ID.Enemy, 100, 100, 100, "Enemy");
 //        enemy.getAction().setFacingRight(false);
         enemy.getAnimatePlayer().update(PlayerAction.Idle, false);
 
@@ -45,6 +44,12 @@ public class Game extends Canvas implements Runnable {
         handler.addObject(new HealthBar(Game.WIDTH_WINDOW - 50 - enemy.getHp(), 50, ID.HealthBarEnemy, handler));
     }
 
+    public synchronized void start() {
+        thread = new Thread(this);
+        thread.start();
+        running = true;
+    }
+
     /*
     public void resetHandlerObjects() {
         for (MovingGameObjectInt tempObject : handler.objects) {
@@ -53,13 +58,6 @@ public class Game extends Canvas implements Runnable {
         setHandlerObjects();
     }
     */
-
-
-    public synchronized void start() {
-        thread = new Thread(this);
-        thread.start();
-        running = true;
-    }
 
     public synchronized void stop() {
         try {
@@ -127,6 +125,8 @@ public class Game extends Canvas implements Runnable {
         g.dispose();
         bs.show();
     }
+
+
 
 
 }

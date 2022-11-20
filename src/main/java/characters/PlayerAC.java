@@ -8,15 +8,15 @@ import window.GameObject.MovingGameObject;
 
 import java.awt.*;
 
-public class PlayerClass extends MovingGameObject implements PlayerInterface {    // TODO: Make this class way less complicated
+public class PlayerAC extends MovingGameObject implements CharacterInt {
     private final String username;
     private final PlayerImage playerImage;
-    private final PlayerSizeInterface size;
+    private final PlayerSizeInt size;
     private final Action action;
     private final AnimatePlayer animatePlayer;
     private int hp;
 
-    public PlayerClass(int x, int y, ID id, int playerWidth, int playerHeight, int hp, String username) {
+    public PlayerAC(int x, int y, ID id, int playerWidth, int playerHeight, int hp, String username) {
         super(x, y, id);     // TODO: x - size.removeWidth, y - size.removeHeight;
         this.hp = hp;
         this.username = username;
@@ -65,6 +65,15 @@ public class PlayerClass extends MovingGameObject implements PlayerInterface {  
         g.drawImage(playerImage.getImg(), x, y, null);
     }
 
+    public PlayerSizeInt getSize() {
+        return size;
+    }
+
+    public Action getAction() {
+        return action;
+    }
+}
+
     /*
 //    WAS IN RENDER
      if (id == ID.Player) {
@@ -77,12 +86,3 @@ public class PlayerClass extends MovingGameObject implements PlayerInterface {  
          // g.fillRect(x, y, size.getActualWidth(), size.getActualHeight());  // TODO: USE TO CHECK -> THERE'S NO BUG
      }
     */
-
-    public PlayerSizeInterface getSize() {
-        return size;
-    }
-
-    public Action getAction() {
-        return action;
-    }
-}

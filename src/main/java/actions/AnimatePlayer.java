@@ -1,7 +1,7 @@
 package actions;
 
+import characters.CharacterInt;
 import characters.ObserverAnimation;
-import characters.PlayerInterface;
 import utils.Events;
 import window.GameObject.ID;
 
@@ -10,12 +10,12 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 public class AnimatePlayer implements ObserverAnimation {
-    private PlayerInterface player;
+    private CharacterInt player;
     private Action action;
     private ArrayList<BufferedImage> currentAnimation;
     private int i = 0;
 
-    public AnimatePlayer(PlayerInterface player) {
+    public AnimatePlayer(CharacterInt player) {
         this.player = player;
         this.action = player.getAction();
     }
@@ -68,9 +68,9 @@ public class AnimatePlayer implements ObserverAnimation {
     private void updateMore() {
         i = 0;
         if (player.getId() == ID.Player) {
-            currentAnimation = PlayerImagesFromResources.getPlayerImg(action.getActionType(), action.isFacingRight());
+            currentAnimation = CharacterImagesFromResources.getPlayerImg(action.getActionType(), action.isFacingRight());
         } else if (player.getId() == ID.Enemy) {
-            currentAnimation = PlayerImagesFromResources.getEnemyImg(action.getActionType(), action.isFacingRight());
+            currentAnimation = CharacterImagesFromResources.getEnemyImg(action.getActionType(), action.isFacingRight());
         }
     }
 }
