@@ -5,7 +5,7 @@ It's a work in progress, you can now just move two characters
 
 There isn't gravity yet, will be added in future
 
-You can't actually fight yet, you lose hp if you touch the enemy and press Enter/Space
+You can't actually event yet, you lose hp if you touch the enemy and press Enter/Space
 
 
 

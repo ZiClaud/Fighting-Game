@@ -14,9 +14,11 @@ import java.io.File;
 import java.io.IOException;
 
 public class Game extends Canvas implements Runnable {
-    private final MyHandler handler;    public static final int WIDTH_WINDOW = 640, HEIGHT_WINDOW = WIDTH_WINDOW / 12 * 9;
+    private final MyHandler handler;
+    public static final int WIDTH_WINDOW = 640, HEIGHT_WINDOW = WIDTH_WINDOW / 12 * 9;
     private Thread thread;
     private boolean running = false;
+
     public Game() {
         handler = new MyHandler();
         this.addKeyListener(new KeyInput(handler));
@@ -124,8 +126,4 @@ public class Game extends Canvas implements Runnable {
         g.dispose();
         bs.show();
     }
-
-
-
-
 }

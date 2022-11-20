@@ -260,7 +260,7 @@ class CharacterImagesFromResources {
             imageList.add(ImageIO.read(new File("src/main/resources/Undead/Death/Death_3.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Undead/Death/Death_4.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Undead/Death/Death_5.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Undead/Death/Death_62.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Undead/Death/Death_6.png")));
         } catch (IOException e) {
             e.printStackTrace();
         }
