@@ -34,7 +34,7 @@ public class AnimatePlayer implements ObserverAnimation {
             //System.out.println("I: " + i);
             player.getPlayerImage().setImg(currentAnimation.get(i));
             i++;
-            Events.event(player, i);
+            Events.animationEvent(player, i);
         });
         timer.setRepeats(true);
         timer.setCoalesce(true);
