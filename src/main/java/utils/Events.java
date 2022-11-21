@@ -29,6 +29,7 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
             for (GameObjectInt enemy : handler.getObjects()) {
                 if (player.getId() == ID.Player && enemy.getId() == ID.Enemy) {
                     Events.collision((CharacterInt) player, (CharacterInt) enemy);
+                    Events.attack((CharacterInt) player, (CharacterInt) enemy);
                 }
             }
         }
@@ -73,7 +74,10 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         }
     }
 
-    public static void collision(CharacterInt player, CharacterInt enemy) {   // TODO: Put this somewhere else and make it public
+    public static void collision(CharacterInt player, CharacterInt enemy) {
+        int playerCenter = player.getSize().getActualX(player.getX()) + player.getSize().getActualWidth() / 2;
+        int enemyCenter = enemy.getSize().getActualX(enemy.getX()) + enemy.getSize().getActualWidth() / 2;
+
         boolean isPlayerLeftEnemyRight = player.getSize().getActualX(player.getX()) <= enemy.getSize().getActualRightX(enemy.getX());
         boolean isPlayerRightEnemyLeft = player.getSize().getActualRightX(player.getX()) >= enemy.getSize().getActualX(enemy.getX());
         boolean isPlayerTopEnemyBottom = player.getSize().getActualY(player.getY()) <= enemy.getSize().getActualBottomY(enemy.getY());
@@ -86,13 +90,53 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         if (isPlayerLeftEnemyRight && isPlayerRightEnemyLeft) {
             /// Check if they have the same Y
             if (isPlayerTopEnemyBottom && isPlayerBottomEnemyTop) {
-                //TODO: Collision effect
+                /// Collision effect
+                if (player.getSize().getActualX(player.getX()) + (player.getSize().getActualWidth() / 2) <=
+                        enemy.getSize().getActualRightX(enemy.getX()) + enemy.getSize().getActualWidth() / 2) {
+                    if (playerCenter < enemyCenter) {
+                        player.setX(player.getX() - player.getSize().getActualWidth() / 4);
+                        enemy.setX(enemy.getX() + enemy.getSize().getActualWidth() / 4);
+                    } else {
+                        player.setX(player.getX() + player.getSize().getActualWidth() / 4);
+                        enemy.setX(enemy.getX() - enemy.getSize().getActualWidth() / 4);
+                    }
+                }
+            }
+        }
+    }
 
-                // TODO: Understand why this works
-                if (player.getAction().getActionType() == PlayerAction.Attack1)
-                    hit(player, enemy);
-                if (enemy.getAction().getActionType() == PlayerAction.Attack1)
-                    hit(enemy, player);
+    public static void attack(CharacterInt player, CharacterInt enemy) {
+        int playerHalfWidth = (player.getSize().getActualWidth() / 2);
+        int enemyHalfWidth = (enemy.getSize().getActualWidth() / 2);
+
+        int playerCenter = player.getSize().getActualX(player.getX()) + player.getSize().getActualWidth() / 2;
+        int enemyCenter = enemy.getSize().getActualX(enemy.getX()) + enemy.getSize().getActualWidth() / 2;
+
+
+        boolean isPlayerLeftEnemyRight = player.getSize().getActualX(player.getX()) - playerHalfWidth <= enemy.getSize().getActualRightX(enemy.getX()) + enemyHalfWidth;
+        boolean isPlayerRightEnemyLeft = player.getSize().getActualRightX(player.getX()) + playerHalfWidth >= enemy.getSize().getActualX(enemy.getX()) - enemyHalfWidth;
+        boolean isPlayerTopEnemyBottom = player.getSize().getActualY(player.getY()) <= enemy.getSize().getActualBottomY(enemy.getY());
+        boolean isPlayerBottomEnemyTop = player.getSize().getActualBottomY(player.getY()) >= enemy.getSize().getActualY(enemy.getY());
+
+        //System.out.println("isPlayerLeftEnemyRight? " + isPlayerLeftEnemyRight);
+        //System.out.println("isPlayerRightEnemyLeft? " + isPlayerRightEnemyLeft);
+        //System.out.println("isPlayerBottomEnemyTop? " + isPlayerBottomEnemyTop);
+
+        /// Check if they have the same X
+        if (isPlayerLeftEnemyRight && isPlayerRightEnemyLeft) {
+            /// Check if they have the same Y
+            if (isPlayerTopEnemyBottom && isPlayerBottomEnemyTop) {
+                if ((player.getAction().isFacingRight() && playerCenter < enemyCenter) ||
+                        (!player.getAction().isFacingRight() && playerCenter > enemyCenter)) {
+                    // TODO: Understand why this works
+                    if (player.getAction().getActionType() == PlayerAction.Attack1)
+                        hit(player, enemy);
+                }
+                if ((enemy.getAction().isFacingRight() && enemyCenter < playerCenter) ||
+                        (!enemy.getAction().isFacingRight() && enemyCenter > playerCenter)) {
+                    if (enemy.getAction().getActionType() == PlayerAction.Attack1)
+                        hit(enemy, player);
+                }
             }
         }
     }

@@ -20,7 +20,7 @@ public class Action {
         this.actionType = actionType;
     }
 
-    protected boolean isFacingRight() {
+    public boolean isFacingRight() {
         return facingRight;
     }
 
