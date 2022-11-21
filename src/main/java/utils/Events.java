@@ -16,9 +16,11 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
                 /**
                  * Fall
                  */
-                if (((CharacterInt) player).getSize().getActualBottomY(player.getY()) != HEIGHT_WINDOW) {
-                    Events.fall((CharacterInt) player);
-                }
+                Events.fall((CharacterInt) player);
+                /**
+                 * Jump
+                 */
+                Events.jump((CharacterInt) player);
             }
         }
 
@@ -142,14 +144,40 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
     }
 
     public static void jump(CharacterInt player) {
+        if (player.getSize().getActualBottomY(player.getY()) == HEIGHT_WINDOW &&
+                player.getPlayerImage().getPlayerAction() == PlayerAction.Jump) {
+            int GRAVITY = -12;
+            int TERMINAL_VELOCITY = -12;
 
+            player.setVelY(player.getVelY() + GRAVITY);
+
+            if (player.getVelY() > TERMINAL_VELOCITY) {
+                player.setVelY(TERMINAL_VELOCITY);
+            }
+            player.getAnimatePlayer().update(PlayerAction.Jump);
+        }
     }
 
     public static void fall(CharacterInt player) {
-        // TODO: Understand why this doesn't work - it's bugged
-//        player.getAction().setActionType(PlayerAction.Fall);
-//        player.getAnimatePlayer().update(PlayerAction.Fall);
+        if (player.getSize().getActualBottomY(player.getY()) < HEIGHT_WINDOW &&
+                (player.getPlayerImage().getPlayerAction() == PlayerAction.Jump ||
+                        player.getPlayerImage().getPlayerAction() == PlayerAction.Fall)) {
+            int GRAVITY = 2;
+            int TERMINAL_VELOCITY = 2;
+
+            player.setVelY(player.getVelY() + GRAVITY);
+
+            if (player.getVelY() > TERMINAL_VELOCITY) {
+                player.setVelY(TERMINAL_VELOCITY);
+            }
+            player.getAnimatePlayer().update(PlayerAction.Fall);
+        }
+        if (player.getPlayerImage().getPlayerAction() == PlayerAction.Fall &&
+                player.getSize().getActualBottomY(player.getY()) == HEIGHT_WINDOW) {
+            player.getAnimatePlayer().update(PlayerAction.Idle);
+        }
     }
+
 
     public static void hit(CharacterInt hitter, CharacterInt damaged) {
         // TODO: hitter will now attack when he touches damaged - TO FIX

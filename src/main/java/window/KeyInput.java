@@ -25,12 +25,12 @@ public class KeyInput extends KeyAdapter {
 
                 // KEY EVENTS FOR PLAYER
                 if (key == KeyEvent.VK_W) {
-                    tempObject.setVelY(-5);
+//                    tempObject.setVelY(-5);
                     playerObserverAnimation.update(PlayerAction.Jump);
                 }
                 if (key == KeyEvent.VK_S) {
-                    tempObject.setVelY(5);
-                    playerObserverAnimation.update(PlayerAction.Fall);
+//                    tempObject.setVelY(5);
+//                    playerObserverAnimation.update(PlayerAction.Fall);
                 }
                 if (key == KeyEvent.VK_A) {
                     tempObject.setVelX(-5);
@@ -50,20 +50,20 @@ public class KeyInput extends KeyAdapter {
                 ObserverAnimation enemyObserverAnimation = ((CharacterInt) tempObject).getAnimatePlayer();
                 // KEY EVENTS FOR ENEMY
                 if (key == KeyEvent.VK_UP) {
-                    tempObject.setVelY(-5);
-                    enemyObserverAnimation.update(PlayerAction.Idle);
+//                    tempObject.setVelY(-5);
+                    enemyObserverAnimation.update(PlayerAction.Jump);
                 }
                 if (key == KeyEvent.VK_DOWN) {
-                    tempObject.setVelY(5);
-                    enemyObserverAnimation.update(PlayerAction.Idle);
+//                    tempObject.setVelY(5);
+//                    enemyObserverAnimation.update(PlayerAction.Fall);
                 }
                 if (key == KeyEvent.VK_LEFT) {
                     tempObject.setVelX(-5);
-                    enemyObserverAnimation.update(PlayerAction.Idle, false);
+                    enemyObserverAnimation.update(PlayerAction.Run, false);
                 }
                 if (key == KeyEvent.VK_RIGHT) {
                     tempObject.setVelX(5);
-                    enemyObserverAnimation.update(PlayerAction.Idle, true);
+                    enemyObserverAnimation.update(PlayerAction.Run, true);
                 }
                 if (key == KeyEvent.VK_ENTER) {
                     enemyObserverAnimation.update(PlayerAction.Attack1);
