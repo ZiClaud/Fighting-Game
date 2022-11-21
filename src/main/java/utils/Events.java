@@ -94,11 +94,11 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
                 if (player.getSize().getActualX(player.getX()) + (player.getSize().getActualWidth() / 2) <=
                         enemy.getSize().getActualRightX(enemy.getX()) + enemy.getSize().getActualWidth() / 2) {
                     if (playerCenter < enemyCenter) {
-                        player.setX(player.getX() - player.getSize().getActualWidth() / 4);
-                        enemy.setX(enemy.getX() + enemy.getSize().getActualWidth() / 4);
+                        player.setX(player.getX() - 4);
+                        enemy.setX(enemy.getX() + 4);
                     } else {
-                        player.setX(player.getX() + player.getSize().getActualWidth() / 4);
-                        enemy.setX(enemy.getX() - enemy.getSize().getActualWidth() / 4);
+                        player.setX(player.getX() + 4);
+                        enemy.setX(enemy.getX() - 4);
                     }
                 }
             }
