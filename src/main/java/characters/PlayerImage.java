@@ -8,10 +8,6 @@ public class PlayerImage {
     private BufferedImage img;
     private ActionType actionType = ActionType.Idle;
 
-    public ActionType getPlayerAction() {
-        return actionType;
-    }
-
     public void setPlayerAnimationType(ActionType actionType) {
         this.actionType = actionType;
     }

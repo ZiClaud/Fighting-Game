@@ -14,10 +14,6 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         for (GameObjectInt player : handler.getObjects()) {
             if (player.getId() == ID.Player || player.getId() == ID.Enemy) {
                 /**
-                 * Fall
-                 */
-                Events.fall((CharacterInt) player);
-                /**
                  * Jump
                  */
                 Events.jump((CharacterInt) player);
@@ -150,41 +146,60 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         }
     }
 
-    public static void jump(CharacterInt player) {
-        if (player.getSize().getActualBottomY(player.getY()) == HEIGHT_WINDOW &&
-                player.getPlayerImage().getPlayerAction() == ActionType.Jump) {
-            int GRAVITY = -12;
-            int TERMINAL_VELOCITY = -12;
+    private static int fallingSpeed = 0;
 
-            player.setVelY(player.getVelY() + GRAVITY);
+    private static void jump(CharacterInt player) {
+        if (isOnGround(player)) {
+            if (isJumping(player)) {
+                int JUMP_POWER = -5;
+                fallingSpeed = JUMP_POWER;
 
-            if (player.getVelY() > TERMINAL_VELOCITY) {
-                player.setVelY(TERMINAL_VELOCITY);
+                player.setVelY(player.getVelY() + JUMP_POWER);
+
+                player.getAnimatePlayer().addPlayerAction(ActionType.Jump);
+
+            } else {
+                if (isFalling(player)) {
+                    player.getAnimatePlayer().removePlayerAction(ActionType.Fall);
+                }
             }
-            player.getAnimatePlayer().addPlayerAction(ActionType.Jump);
+        } else {
+            /**
+             * Fall
+             */
+            fall(player);
         }
     }
 
-    public static void fall(CharacterInt player) {
-        if (player.getSize().getActualBottomY(player.getY()) < HEIGHT_WINDOW &&
-                (player.getPlayerImage().getPlayerAction() == ActionType.Jump ||
-                        player.getPlayerImage().getPlayerAction() == ActionType.Fall)) {
-            int GRAVITY = 2;
-            int TERMINAL_VELOCITY = 2;
+    private static void fall(CharacterInt player) {
+        int GRAVITY = 1;
+        fallingSpeed += GRAVITY;
 
-            player.setVelY(player.getVelY() + GRAVITY);
+        if (fallingSpeed == 0) {
+            player.getAnimatePlayer().removePlayerAction(ActionType.Jump);
+        }
 
-            if (player.getVelY() > TERMINAL_VELOCITY) {
-                player.setVelY(TERMINAL_VELOCITY);
-            }
-            player.getAnimatePlayer().addPlayerAction(ActionType.Fall);
-        }
-        if (player.getPlayerImage().getPlayerAction() == ActionType.Fall &&
-                player.getSize().getActualBottomY(player.getY()) == HEIGHT_WINDOW) {
-            player.getAnimatePlayer().addPlayerAction(ActionType.Idle);
-        }
+        player.setVelY(player.getVelY() + fallingSpeed);
+
+        player.getAnimatePlayer().addPlayerAction(ActionType.Fall);
     }
 
+    private static boolean isOnGround(CharacterInt player) {
+        return player.getSize().getActualBottomY(player.getY()) >= HEIGHT_WINDOW;
+    }
+
+
+    private static boolean isJumping(CharacterInt player) {
+        return (player.getAction().getBestActionType() == ActionType.Jump);
+    }
+
+    private static boolean isFalling(CharacterInt player) {
+        return (player.getAction().getBestActionType() == ActionType.Fall);
+    }
+
+    private static boolean isJumpingOrFalling(CharacterInt player) {
+        return (isJumping(player) || isFalling(player));
+    }
 
     public static void hit(CharacterInt hitter, CharacterInt damaged) {
         // TODO: hitter will now attack when he touches damaged - TO FIX
