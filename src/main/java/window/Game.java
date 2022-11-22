@@ -36,7 +36,8 @@ public class Game extends Canvas implements Runnable {
     private void setHandlerObjects() {
         CharacterInt player = new Player(50, Game.HEIGHT_WINDOW, ID.Player, 200, 200, 100, "Player");
         CharacterInt enemy = new Enemy(Game.WIDTH_WINDOW - 50 - 163, Game.HEIGHT_WINDOW, ID.Enemy, 100, 100, 100, "Enemy");
-//        enemy.getAction().setFacingRight(false);
+
+        player.getAnimatePlayer().addPlayerAction(ActionType.Idle, true);
         enemy.getAnimatePlayer().addPlayerAction(ActionType.Idle, false);
 
         handler.addObject(player);

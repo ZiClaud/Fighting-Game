@@ -153,13 +153,13 @@ public class KeyInput extends KeyAdapter {
     }
 
     private void releasedW(ObserverAnimation playerObserverAnimation) {
-        // TODO: CHECK IF IT'S OK
+        // TODO: CHECK IF IT'S OK -- FIX --
         playerObserverAnimation.removePlayerAction(ActionType.Jump);
-
     }
 
     private void releasedS(ObserverAnimation playerObserverAnimation) {
-        playerObserverAnimation.removePlayerAction(ActionType.Fall);
+        // TODO: CHECK IF IT'S OK
+//        playerObserverAnimation.removePlayerAction(ActionType.Fall);
     }
 
     private void releasedA(ObserverAnimation playerObserverAnimation, CharacterInt tempObject) {

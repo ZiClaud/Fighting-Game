@@ -277,4 +277,6 @@ class CharacterImagesFromResources {
         }
         return imageList;
     }
+
+    // TODO IMPORTANT: Make sure that all the image size are the same for both Player and Enemy
 }

@@ -14,6 +14,7 @@ public class AnimatePlayer implements ObserverAnimation {
     private Action action;
     private ArrayList<BufferedImage> currentAnimation;
     private int i = 0;
+    private ActionType previousBestActionType = ActionType.Idle;
 
     public AnimatePlayer(CharacterInt player) {
         this.player = player;
@@ -68,7 +69,13 @@ public class AnimatePlayer implements ObserverAnimation {
     }
 
     private void updateMore() {
-//        i = 0;
+        /**
+         * Resets "i" only when the "action.getBestActionType()" changes
+         */
+        if (previousBestActionType != action.getBestActionType()) {
+            i = 0;
+            previousBestActionType = action.getBestActionType();
+        }
         if (player.getId() == ID.Player) {
             currentAnimation = CharacterImagesFromResources.getPlayerImg(action.getBestActionType(), action.isFacingRight());
         } else if (player.getId() == ID.Enemy) {
