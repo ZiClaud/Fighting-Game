@@ -42,35 +42,37 @@ public class AnimatePlayer implements ObserverAnimation {
     }
 
     @Override
-    public void update(Action action) {
-        this.action = action;
-        updateMore();
-    }
-
-    @Override
-    public void update(PlayerAction playerAction, boolean isFacingRight) {
-        if (action.getActionType() == playerAction && action.isFacingRight() == isFacingRight)
-            return;
-
-        action.setActionType(playerAction);
+    public void addPlayerAction(ActionType actionType, boolean isFacingRight) {
+        action.addActionType(actionType);
         action.setFacingRight(isFacingRight);
         updateMore();
     }
 
     @Override
-    public void update(PlayerAction playerAction) {
-        if (action.getActionType() == playerAction)
-            return;
-        action.setActionType(playerAction);
+    public void addPlayerAction(ActionType actionType) {
+        action.addActionType(actionType);
+        updateMore();
+    }
+
+    @Override
+    public void removePlayerAction(ActionType actionType) {
+        action.removeActionType(actionType);
+        updateMore();
+    }
+
+    @Override
+    public void removePlayerAction(ActionType actionType, boolean isFacingRight) {
+        action.removeActionType(actionType);
+        action.setFacingRight(isFacingRight);
         updateMore();
     }
 
     private void updateMore() {
-        i = 0;
+//        i = 0;
         if (player.getId() == ID.Player) {
-            currentAnimation = CharacterImagesFromResources.getPlayerImg(action.getActionType(), action.isFacingRight());
+            currentAnimation = CharacterImagesFromResources.getPlayerImg(action.getBestActionType(), action.isFacingRight());
         } else if (player.getId() == ID.Enemy) {
-            currentAnimation = CharacterImagesFromResources.getEnemyImg(action.getActionType(), action.isFacingRight());
+            currentAnimation = CharacterImagesFromResources.getEnemyImg(action.getBestActionType(), action.isFacingRight());
         }
     }
 }

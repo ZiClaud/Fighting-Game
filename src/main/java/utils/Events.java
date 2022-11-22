@@ -1,6 +1,6 @@
 package utils;
 
-import actions.PlayerAction;
+import actions.ActionType;
 import characters.CharacterInt;
 import window.Game;
 import window.GameObject.GameObjectInt;
@@ -38,15 +38,22 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
     }
 
     public static void animationEvent(CharacterInt character, int animationFrame) {   // TODO: Use wisely - Works when frame of player is indeed the sword attacking
-        if (character.getId() == ID.Player) {
-            if (character.getAction().getActionType() == PlayerAction.Attack1 && animationFrame == 2) {
-                System.out.println("Attack1! by player");
+        if (character.getId() == ID.Player || character.getId() == ID.Enemy) {
+            if (animationFrame == 2 && character.getAction().getBestActionType() == ActionType.Attack1) {
+                System.out.println("Attack1! by " + character.getUsername());
 //              Events.hit();
-            }
-        } else if (character.getId() == ID.Enemy) {
-            if (character.getAction().getActionType() == PlayerAction.Attack1 && animationFrame == 2) {
-                System.out.println("Attack1! by enemy");
-//              Events.hit();
+            } else if (animationFrame == 3 && character.getAction().getBestActionType() == ActionType.Attack1) {
+                System.out.println("Attack1! by " + character.getUsername() + " completed");
+                character.getAnimatePlayer().removePlayerAction(ActionType.Attack1);
+            } else if (animationFrame == 6 && character.getAction().getBestActionType() == ActionType.Death) {
+                System.out.println("Death by " + character.getUsername());
+                character.getAnimatePlayer().removePlayerAction(ActionType.Death);
+                character.getAnimatePlayer().removePlayerAction(ActionType.TakeHit);
+                character.getAnimatePlayer().removePlayerAction(ActionType.TakeHitC);
+            } else if (animationFrame == 4 && (character.getAction().getBestActionType() == ActionType.TakeHit || character.getAction().getBestActionType() == ActionType.TakeHit)) {
+                System.out.println(character.getUsername() + " Damaged");
+                character.getAnimatePlayer().removePlayerAction(ActionType.TakeHit);
+                character.getAnimatePlayer().removePlayerAction(ActionType.TakeHitC);
             }
         }
     }
@@ -131,12 +138,12 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
                 if ((player.getAction().isFacingRight() && playerCenter < enemyCenter) ||
                         (!player.getAction().isFacingRight() && playerCenter > enemyCenter)) {
                     // TODO: Understand why this works
-                    if (player.getAction().getActionType() == PlayerAction.Attack1)
+                    if (player.getAction().getBestActionType() == ActionType.Attack1)
                         hit(player, enemy);
                 }
                 if ((enemy.getAction().isFacingRight() && enemyCenter < playerCenter) ||
                         (!enemy.getAction().isFacingRight() && enemyCenter > playerCenter)) {
-                    if (enemy.getAction().getActionType() == PlayerAction.Attack1)
+                    if (enemy.getAction().getBestActionType() == ActionType.Attack1)
                         hit(enemy, player);
                 }
             }
@@ -145,7 +152,7 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
 
     public static void jump(CharacterInt player) {
         if (player.getSize().getActualBottomY(player.getY()) == HEIGHT_WINDOW &&
-                player.getPlayerImage().getPlayerAction() == PlayerAction.Jump) {
+                player.getPlayerImage().getPlayerAction() == ActionType.Jump) {
             int GRAVITY = -12;
             int TERMINAL_VELOCITY = -12;
 
@@ -154,14 +161,14 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
             if (player.getVelY() > TERMINAL_VELOCITY) {
                 player.setVelY(TERMINAL_VELOCITY);
             }
-            player.getAnimatePlayer().update(PlayerAction.Jump);
+            player.getAnimatePlayer().addPlayerAction(ActionType.Jump);
         }
     }
 
     public static void fall(CharacterInt player) {
         if (player.getSize().getActualBottomY(player.getY()) < HEIGHT_WINDOW &&
-                (player.getPlayerImage().getPlayerAction() == PlayerAction.Jump ||
-                        player.getPlayerImage().getPlayerAction() == PlayerAction.Fall)) {
+                (player.getPlayerImage().getPlayerAction() == ActionType.Jump ||
+                        player.getPlayerImage().getPlayerAction() == ActionType.Fall)) {
             int GRAVITY = 2;
             int TERMINAL_VELOCITY = 2;
 
@@ -170,11 +177,11 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
             if (player.getVelY() > TERMINAL_VELOCITY) {
                 player.setVelY(TERMINAL_VELOCITY);
             }
-            player.getAnimatePlayer().update(PlayerAction.Fall);
+            player.getAnimatePlayer().addPlayerAction(ActionType.Fall);
         }
-        if (player.getPlayerImage().getPlayerAction() == PlayerAction.Fall &&
+        if (player.getPlayerImage().getPlayerAction() == ActionType.Fall &&
                 player.getSize().getActualBottomY(player.getY()) == HEIGHT_WINDOW) {
-            player.getAnimatePlayer().update(PlayerAction.Idle);
+            player.getAnimatePlayer().addPlayerAction(ActionType.Idle);
         }
     }
 
@@ -182,7 +189,7 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
     public static void hit(CharacterInt hitter, CharacterInt damaged) {
         // TODO: hitter will now attack when he touches damaged - TO FIX
         //       hitter.getAction().setActionType(PlayerAction.Attack1);
-        hitter.getAnimatePlayer().update(PlayerAction.Attack1);
+        hitter.getAnimatePlayer().addPlayerAction(ActionType.Attack1);
         _takeHit(damaged, hitter);
     }
 
@@ -191,7 +198,7 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
          * Hit taken
          */
         //     damaged.getAction().setActionType(PlayerAction.TakeHit);
-        damaged.getAnimatePlayer().update(PlayerAction.TakeHit);
+        damaged.getAnimatePlayer().addPlayerAction(ActionType.TakeHit);
         damaged.setHp(damaged.getHp() - 1);
 
         if (damaged.getHp() < 0) {
@@ -204,7 +211,7 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
          * Death
          */
         //       loser.getAction().setActionType(PlayerAction.Death);
-        loser.getAnimatePlayer().update(PlayerAction.Death);
+        loser.getAnimatePlayer().addPlayerAction(ActionType.Death);
 
         // TODO: Print this in game
         System.out.println(winner.getUsername() + " won!");

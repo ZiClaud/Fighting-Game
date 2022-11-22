@@ -1,19 +1,19 @@
 package characters;
 
-import actions.PlayerAction;
+import actions.ActionType;
 
 import java.awt.image.BufferedImage;
 
 public class PlayerImage {
     private BufferedImage img;
-    private PlayerAction playerAction = PlayerAction.Idle;
+    private ActionType actionType = ActionType.Idle;
 
-    public PlayerAction getPlayerAction() {
-        return playerAction;
+    public ActionType getPlayerAction() {
+        return actionType;
     }
 
-    public void setPlayerAnimationType(PlayerAction playerAction) {
-        this.playerAction = playerAction;
+    public void setPlayerAnimationType(ActionType actionType) {
+        this.actionType = actionType;
     }
 
     public BufferedImage getImg() {

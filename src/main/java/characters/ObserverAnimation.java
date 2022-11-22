@@ -1,12 +1,13 @@
 package characters;
 
-import actions.Action;
-import actions.PlayerAction;
+import actions.ActionType;
 
 public interface ObserverAnimation {
-    void update(Action action);
+    void addPlayerAction(ActionType actionType);
 
-    void update(PlayerAction playerAction);
+    void addPlayerAction(ActionType actionType, boolean isFacingRight);
 
-    void update(PlayerAction playerAction, boolean isFacingRight);
+    void removePlayerAction(ActionType actionType);
+
+    void removePlayerAction(ActionType actionType, boolean isFacingRight);
 }

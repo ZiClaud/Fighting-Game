@@ -1,6 +1,6 @@
 package window;
 
-import actions.PlayerAction;
+import actions.ActionType;
 import characters.CharacterInt;
 import characters.ObserverAnimation;
 import window.GameObject.ID;
@@ -20,53 +20,54 @@ public class KeyInput extends KeyAdapter {
         int key = e.getKeyCode();
 
         for (MovingGameObjectInt tempObject : handler.getOnlyMovingObjects()) {
+            CharacterInt character = ((CharacterInt) tempObject);
+            ObserverAnimation observerAnimation = character.getAnimatePlayer();
+
             if (tempObject.getId() == ID.Player) {
-                ObserverAnimation playerObserverAnimation = ((CharacterInt) tempObject).getAnimatePlayer();
 
                 // KEY EVENTS FOR PLAYER
                 if (key == KeyEvent.VK_W) {
-//                    tempObject.setVelY(-5);
-                    playerObserverAnimation.update(PlayerAction.Jump);
+                    pressedW(observerAnimation);
                 }
                 if (key == KeyEvent.VK_S) {
-//                    tempObject.setVelY(5);
-//                    playerObserverAnimation.update(PlayerAction.Fall);
+                    pressedS(observerAnimation);
                 }
                 if (key == KeyEvent.VK_A) {
-                    tempObject.setVelX(-5);
-                    playerObserverAnimation.update(PlayerAction.Run, false);
+                    pressedA(observerAnimation, character);
                 }
                 if (key == KeyEvent.VK_D) {
-                    tempObject.setVelX(5);
-                    playerObserverAnimation.update(PlayerAction.Run, true);
+                    pressedD(observerAnimation, character);
                 }
                 if (key == KeyEvent.VK_SPACE) {
-//                    System.out.println("Attack! Or jump, idk yet");
-                    playerObserverAnimation.update(PlayerAction.Attack1);
+                    pressedSpace(observerAnimation);
                 }
             }
 
             if (tempObject.getId() == ID.Enemy) {
-                ObserverAnimation enemyObserverAnimation = ((CharacterInt) tempObject).getAnimatePlayer();
                 // KEY EVENTS FOR ENEMY
                 if (key == KeyEvent.VK_UP) {
+                    pressedW(observerAnimation);
 //                    tempObject.setVelY(-5);
-                    enemyObserverAnimation.update(PlayerAction.Jump);
+////                    observerAnimation.addPlayerAction(ActionType.Jump);
                 }
                 if (key == KeyEvent.VK_DOWN) {
+                    pressedS(observerAnimation);
 //                    tempObject.setVelY(5);
 //                    enemyObserverAnimation.update(PlayerAction.Fall);
                 }
                 if (key == KeyEvent.VK_LEFT) {
-                    tempObject.setVelX(-5);
-                    enemyObserverAnimation.update(PlayerAction.Run, false);
+                    pressedA(observerAnimation, character);
+////                    tempObject.setVelX(-5);
+////                    observerAnimation.addPlayerAction(ActionType.Run, false);
                 }
                 if (key == KeyEvent.VK_RIGHT) {
-                    tempObject.setVelX(5);
-                    enemyObserverAnimation.update(PlayerAction.Run, true);
+                    pressedD(observerAnimation, character);
+////                    tempObject.setVelX(5);
+////                    observerAnimation.addPlayerAction(ActionType.Run, true);
                 }
                 if (key == KeyEvent.VK_ENTER) {
-                    enemyObserverAnimation.update(PlayerAction.Attack1);
+                    pressedSpace(observerAnimation);
+////                    observerAnimation.addPlayerAction(ActionType.Attack1);
                 }
             }
         }
@@ -76,45 +77,106 @@ public class KeyInput extends KeyAdapter {
         int key = e.getKeyCode();
 
         for (MovingGameObjectInt tempObject : handler.getOnlyMovingObjects()) {
+            CharacterInt character = ((CharacterInt) tempObject);
+            ObserverAnimation observerAnimation = ((CharacterInt) tempObject).getAnimatePlayer();
+
             if (tempObject.getId() == ID.Player) {
-                ObserverAnimation playerObserverAnimation = ((CharacterInt) tempObject).getAnimatePlayer();
                 // KEY EVENTS FOR PLAYER
-                if (key == KeyEvent.VK_W || key == KeyEvent.VK_S) {
-                    tempObject.setVelY(0);
-                    playerObserverAnimation.update(PlayerAction.Idle);
+                if (key == KeyEvent.VK_W) {
+                    releasedW(observerAnimation);
                 }
-                if (key == KeyEvent.VK_A || key == KeyEvent.VK_D) {
-                    tempObject.setVelX(0);
-                    playerObserverAnimation.update(PlayerAction.Idle);
+                if (key == KeyEvent.VK_S) {
+                    releasedS(observerAnimation);
+                }
+                if (key == KeyEvent.VK_A) {
+                    releasedA(observerAnimation, character);
+                }
+                if (key == KeyEvent.VK_D) {
+                    releasedD(observerAnimation, character);
                 }
                 if (key == KeyEvent.VK_SPACE) {
-                    playerObserverAnimation.update(PlayerAction.Idle);
+                    releasedSpace(observerAnimation);
                 }
             }
 
             if (tempObject.getId() == ID.Enemy) {
-                ObserverAnimation enemyObserverAnimation = ((CharacterInt) tempObject).getAnimatePlayer();
                 // KEY EVENTS FOR ENEMY
                 if (key == KeyEvent.VK_UP) {
-                    tempObject.setVelY(0);
-                    enemyObserverAnimation.update(PlayerAction.Idle);
+                    releasedW(observerAnimation);
+////                    enemyObserverAnimation.removePlayerAction(ActionType.Jump);
                 }
                 if (key == KeyEvent.VK_DOWN) {
-                    tempObject.setVelY(0);
-                    enemyObserverAnimation.update(PlayerAction.Idle);
+                    releasedS(observerAnimation);
+////                    enemyObserverAnimation.removePlayerAction(ActionType.Fall);
                 }
                 if (key == KeyEvent.VK_LEFT) {
-                    tempObject.setVelX(0);
-                    enemyObserverAnimation.update(PlayerAction.Idle);
+                    releasedA(observerAnimation, character);
+////                    tempObject.setVelX(0);
+////                    enemyObserverAnimation.removePlayerAction(ActionType.Run);
                 }
                 if (key == KeyEvent.VK_RIGHT) {
-                    tempObject.setVelX(0);
-                    enemyObserverAnimation.update(PlayerAction.Idle);
+                    releasedD(observerAnimation, character);
+////                    tempObject.setVelX(0);
+////                    enemyObserverAnimation.removePlayerAction(ActionType.Run);
                 }
                 if (key == KeyEvent.VK_ENTER) {
-                    enemyObserverAnimation.update(PlayerAction.Idle);
+                    releasedSpace(observerAnimation);
+////                    enemyObserverAnimation.removePlayerAction(ActionType.Attack1);
                 }
             }
         }
     }
+
+    private void pressedW(ObserverAnimation playerObserverAnimation) {
+//                    tempObject.setVelY(-5);
+        playerObserverAnimation.addPlayerAction(ActionType.Jump);
+    }
+
+    private void pressedS(ObserverAnimation playerObserverAnimation) {
+//                    tempObject.setVelY(5);
+//                    playerObserverAnimation.update(PlayerAction.Fall);
+    }
+
+    private void pressedA(ObserverAnimation playerObserverAnimation, CharacterInt tempObject) {
+        tempObject.setVelX(-5);
+        playerObserverAnimation.addPlayerAction(ActionType.Run, false);
+    }
+
+    private void pressedD(ObserverAnimation playerObserverAnimation, CharacterInt tempObject) {
+        tempObject.setVelX(5);
+        playerObserverAnimation.addPlayerAction(ActionType.Run, true);
+    }
+
+    private void pressedSpace(ObserverAnimation playerObserverAnimation) {
+        //                    System.out.println("Attack! Or jump, idk yet");
+        playerObserverAnimation.addPlayerAction(ActionType.Attack1);
+    }
+
+    private void releasedW(ObserverAnimation playerObserverAnimation) {
+        // TODO: CHECK IF IT'S OK
+        playerObserverAnimation.removePlayerAction(ActionType.Jump);
+
+    }
+
+    private void releasedS(ObserverAnimation playerObserverAnimation) {
+        playerObserverAnimation.removePlayerAction(ActionType.Fall);
+    }
+
+    private void releasedA(ObserverAnimation playerObserverAnimation, CharacterInt tempObject) {
+        tempObject.setVelX(0);
+        // TODO: CHECK IF IT'S OK
+        playerObserverAnimation.removePlayerAction(ActionType.Run);
+
+    }
+
+    private void releasedD(ObserverAnimation playerObserverAnimation, CharacterInt tempObject) {
+        tempObject.setVelX(0);
+        // TODO: CHECK IF IT'S OK
+        playerObserverAnimation.removePlayerAction(ActionType.Run);
+    }
+
+    private void releasedSpace(ObserverAnimation playerObserverAnimation) {
+    }
+
+
 }

@@ -1,6 +1,7 @@
 package actions;
 
-public enum PlayerAction {
+public enum ActionType {
+    IsFacingRight(),
     Idle(),
     Attack1(),
     Attack2(),
