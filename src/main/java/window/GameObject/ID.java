@@ -5,5 +5,7 @@ public enum ID {
     Enemy(),
 
     HealthBarPlayer(),
-    HealthBarEnemy()
+    HealthBarEnemy(),
+
+    Event()
 }

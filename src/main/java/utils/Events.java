@@ -39,12 +39,12 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
 
     public static void animationEvent(CharacterInt character, int animationFrame) {   // TODO: Use wisely - Works when frame of player is indeed the sword attacking
         if (character.getId() == ID.Player) {
-            if (character.getAction().getActionType() == PlayerAction.Attack1 && animationFrame == 5) {
+            if (character.getAction().getActionType() == PlayerAction.Attack1 && animationFrame == 2) {
                 System.out.println("Attack1! by player");
 //              Events.hit();
             }
         } else if (character.getId() == ID.Enemy) {
-            if (character.getAction().getActionType() == PlayerAction.Attack1 && animationFrame == 3) {
+            if (character.getAction().getActionType() == PlayerAction.Attack1 && animationFrame == 2) {
                 System.out.println("Attack1! by enemy");
 //              Events.hit();
             }

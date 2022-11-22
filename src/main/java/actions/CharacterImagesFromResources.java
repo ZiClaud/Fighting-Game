@@ -131,9 +131,9 @@ class CharacterImagesFromResources {
     private static ArrayList<BufferedImage> PlayerImgAttack1() {
         ArrayList<BufferedImage> imageList = new ArrayList<>();
         try {
-            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Attack1/Attack1_1.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Attack1/Attack1_2.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Attack1/Attack1_3.png")));
+//            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Attack1/Attack1_1.png")));
+//            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Attack1/Attack1_2.png")));
+//            imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Attack1/Attack1_3.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Attack1/Attack1_4.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Attack1/Attack1_5.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Spirit/Attack1/Attack1_6.png")));
@@ -228,11 +228,11 @@ class CharacterImagesFromResources {
         ArrayList<BufferedImage> imageList = new ArrayList<>();
         try {
             imageList.add(ImageIO.read(new File("src/main/resources/Undead/Attack1/Attack1_1.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Undead/Attack1/Attack1_2.png")));
+//            imageList.add(ImageIO.read(new File("src/main/resources/Undead/Attack1/Attack1_2.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Undead/Attack1/Attack1_3.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Undead/Attack1/Attack1_4.png")));
+//            imageList.add(ImageIO.read(new File("src/main/resources/Undead/Attack1/Attack1_4.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Undead/Attack1/Attack1_5.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Undead/Attack1/Attack1_6.png")));
+//            imageList.add(ImageIO.read(new File("src/main/resources/Undead/Attack1/Attack1_6.png")));
         } catch (IOException e) {
             e.printStackTrace();
         }

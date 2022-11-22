@@ -1,5 +1,6 @@
 package window;
 
+import UI.EventClass;
 import UI.HealthBar;
 import actions.PlayerAction;
 import characters.CharacterInt;
@@ -42,8 +43,10 @@ public class Game extends Canvas implements Runnable {
         handler.addObject(enemy);
 //        handler.addObject(new Player(500, 300, ID.Enemy, 200, 200, 100));  // TODO: USE TO CHECK -> THERE'S NO BUG
 
-        handler.addObject(new HealthBar(50, 50, ID.HealthBarPlayer, handler));
-        handler.addObject(new HealthBar(Game.WIDTH_WINDOW - 50 - enemy.getHp(), 50, ID.HealthBarEnemy, handler));
+        handler.addObject(new HealthBar(50, 50, ID.HealthBarPlayer, player));
+        handler.addObject(new HealthBar(Game.WIDTH_WINDOW - 50 - enemy.getHp(), 50, ID.HealthBarEnemy, enemy));
+
+        handler.addObject(new EventClass(handler));
     }
 
     public synchronized void start() {
