@@ -35,18 +35,18 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
 
     public static void animationEvent(CharacterInt character, int animationFrame) {   // TODO: Use wisely - Works when frame of player is indeed the sword attacking
         if (character.getId() == ID.Player || character.getId() == ID.Enemy) {
-            if (animationFrame == 2 && character.getAction().getBestActionType() == ActionType.Attack1) {
+            if (animationFrame == 2 && character.getAnimatePlayer().getAction().getBestActionType() == ActionType.Attack1) {
                 System.out.println("Attack1! by " + character.getUsername());
 //              Events.hit();
-            } else if (animationFrame == 3 && character.getAction().getBestActionType() == ActionType.Attack1) {
+            } else if (animationFrame == 3 && character.getAnimatePlayer().getAction().getBestActionType() == ActionType.Attack1) {
                 System.out.println("Attack1! by " + character.getUsername() + " completed");
                 character.getAnimatePlayer().removePlayerAction(ActionType.Attack1);
-            } else if (animationFrame == 6 && character.getAction().getBestActionType() == ActionType.Death) {
+            } else if (animationFrame == 6 && character.getAnimatePlayer().getAction().getBestActionType() == ActionType.Death) {
                 System.out.println("Death by " + character.getUsername());
                 character.getAnimatePlayer().removePlayerAction(ActionType.Death);
                 character.getAnimatePlayer().removePlayerAction(ActionType.TakeHit);
                 character.getAnimatePlayer().removePlayerAction(ActionType.TakeHitC);
-            } else if (animationFrame == 4 && (character.getAction().getBestActionType() == ActionType.TakeHit || character.getAction().getBestActionType() == ActionType.TakeHit)) {
+            } else if (animationFrame == 4 && (character.getAnimatePlayer().getAction().getBestActionType() == ActionType.TakeHit || character.getAnimatePlayer().getAction().getBestActionType() == ActionType.TakeHit)) {
                 System.out.println(character.getUsername() + " Damaged");
                 character.getAnimatePlayer().removePlayerAction(ActionType.TakeHit);
                 character.getAnimatePlayer().removePlayerAction(ActionType.TakeHitC);
@@ -131,15 +131,15 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         if (isPlayerLeftEnemyRight && isPlayerRightEnemyLeft) {
             /// Check if they have the same Y
             if (isPlayerTopEnemyBottom && isPlayerBottomEnemyTop) {
-                if ((player.getAction().isFacingRight() && playerCenter < enemyCenter) ||
-                        (!player.getAction().isFacingRight() && playerCenter > enemyCenter)) {
+                if ((player.getAnimatePlayer().getAction().isFacingRight() && playerCenter < enemyCenter) ||
+                        (!player.getAnimatePlayer().getAction().isFacingRight() && playerCenter > enemyCenter)) {
                     // TODO: Understand why this works
-                    if (player.getAction().getBestActionType() == ActionType.Attack1)
+                    if (player.getAnimatePlayer().getAction().getBestActionType() == ActionType.Attack1)
                         hit(player, enemy);
                 }
-                if ((enemy.getAction().isFacingRight() && enemyCenter < playerCenter) ||
-                        (!enemy.getAction().isFacingRight() && enemyCenter > playerCenter)) {
-                    if (enemy.getAction().getBestActionType() == ActionType.Attack1)
+                if ((enemy.getAnimatePlayer().getAction().isFacingRight() && enemyCenter < playerCenter) ||
+                        (!enemy.getAnimatePlayer().getAction().isFacingRight() && enemyCenter > playerCenter)) {
+                    if (enemy.getAnimatePlayer().getAction().getBestActionType() == ActionType.Attack1)
                         hit(enemy, player);
                 }
             }
@@ -190,11 +190,11 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
 
 
     private static boolean isJumping(CharacterInt player) {
-        return (player.getAction().getBestActionType() == ActionType.Jump);
+        return (player.getAnimatePlayer().getAction().getBestActionType() == ActionType.Jump);
     }
 
     private static boolean isFalling(CharacterInt player) {
-        return (player.getAction().getBestActionType() == ActionType.Fall);
+        return (player.getAnimatePlayer().getAction().getBestActionType() == ActionType.Fall);
     }
 
     private static boolean isJumpingOrFalling(CharacterInt player) {

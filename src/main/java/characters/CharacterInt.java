@@ -15,7 +15,5 @@ public interface CharacterInt extends MovingGameObjectInt {
 
     PlayerSizeInt getSize();
 
-    Action getAction();
-
     AnimatePlayer getAnimatePlayer();
 }

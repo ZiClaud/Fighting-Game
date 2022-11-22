@@ -18,7 +18,7 @@ public class AnimatePlayer implements ObserverAnimation {
 
     public AnimatePlayer(CharacterInt player) {
         this.player = player;
-        this.action = player.getAction();
+        this.action = new Action(player);
     }
 
     public void animatePlayer() {
@@ -40,6 +40,10 @@ public class AnimatePlayer implements ObserverAnimation {
         timer.setRepeats(true);
         timer.setCoalesce(true);
         timer.start();
+    }
+
+    public Action getAction() {
+        return action;
     }
 
     @Override

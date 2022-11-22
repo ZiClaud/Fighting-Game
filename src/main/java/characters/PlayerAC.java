@@ -12,7 +12,6 @@ public class PlayerAC extends MovingGameObject implements CharacterInt {
     private final String username;
     private final PlayerImage playerImage;
     private final PlayerSizeInt size;
-    private final Action action;
     private final AnimatePlayer animatePlayer;
     private int hp;
 
@@ -24,7 +23,6 @@ public class PlayerAC extends MovingGameObject implements CharacterInt {
         this.size = new PlayerSize(playerWidth, playerHeight);
         this.playerImage = new PlayerImage();
 
-        this.action = new Action(this);
         this.animatePlayer = new AnimatePlayer(this);
 
         animatePlayer.animatePlayer();
@@ -55,7 +53,7 @@ public class PlayerAC extends MovingGameObject implements CharacterInt {
         x += velX;
         y += velY;
 
-        action.act();
+        getAnimatePlayer().getAction().act();
 
         Events.checkWall(this);
     }
@@ -67,10 +65,6 @@ public class PlayerAC extends MovingGameObject implements CharacterInt {
 
     public PlayerSizeInt getSize() {
         return size;
-    }
-
-    public Action getAction() {
-        return action;
     }
 }
 
