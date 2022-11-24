@@ -6,6 +6,7 @@ import actions.ActionType;
 import characters.CharacterInt;
 import characters.Enemy;
 import characters.Player;
+import window.AI.MediumLevel;
 import window.GameObject.ID;
 
 import javax.imageio.ImageIO;
@@ -22,9 +23,13 @@ public class Game extends Canvas implements Runnable {
 
     public Game() {
         handler = new MyHandler();
-        this.addKeyListener(new KeyInput(handler));
+        KeyInput keyInput = new KeyInput(handler);
+        this.addKeyListener(keyInput);
 
         setHandlerObjects();
+
+        // Check if it's single player or multiplayer
+        keyInput.checkIfAIIsHere();
 
         /**
          * Keep always at the end!
@@ -48,6 +53,9 @@ public class Game extends Canvas implements Runnable {
         handler.addObject(new HealthBar(Game.WIDTH_WINDOW - 50 - enemy.getHp(), 50, ID.HealthBarEnemy, enemy));
 
         handler.addObject(new EventClass(handler));
+
+        // AI
+        handler.addObject(new MediumLevel(enemy, player));
     }
 
     public synchronized void start() {

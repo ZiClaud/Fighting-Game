@@ -24,4 +24,7 @@ public interface PlayerSizeInt {
     int getActualY(int y);
 
     int getActualBottomY(int y);
+
+    int getMiddleX(int getActualX);
+    int getMiddleY(int getActualY);
 }

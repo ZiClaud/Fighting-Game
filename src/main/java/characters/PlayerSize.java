@@ -99,6 +99,16 @@ public class PlayerSize implements PlayerSizeInt {
     }
 
     @Override
+    public int getMiddleX(int getActualX) {
+        return ((getActualX + imgWidth) / 2);
+    }
+
+    @Override
+    public int getMiddleY(int getActualY) {
+        return ((getActualY + imgHeight) / 2);
+    }
+
+    @Override
     public String toString() {
         return "PlayerSize{" +
                 "imgWidth=" + imgWidth +

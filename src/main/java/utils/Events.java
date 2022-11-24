@@ -40,18 +40,18 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
     public static void animationEvent(CharacterInt character, int animationFrame) {   // TODO: Use wisely - Works when frame of player is indeed the sword attacking
         if (character.getId() == ID.Player || character.getId() == ID.Enemy) {
             if (animationFrame == 2 && character.getAnimatePlayer().getAction().getBestActionType() == ActionType.Attack1) {
-                System.out.println("Attack1! by " + character.getUsername());
+//                System.out.println("Attack1! by " + character.getUsername());
 //              Events.hit();
             } else if (animationFrame == 3 && character.getAnimatePlayer().getAction().getBestActionType() == ActionType.Attack1) {
-                System.out.println("Attack1! by " + character.getUsername() + " completed");
+//                System.out.println("Attack1! by " + character.getUsername() + " completed");
                 character.getAnimatePlayer().removePlayerAction(ActionType.Attack1);
             } else if (animationFrame == 6 && character.getAnimatePlayer().getAction().getBestActionType() == ActionType.Death) {
-                System.out.println("Death by " + character.getUsername());
+//                System.out.println("Death by " + character.getUsername());
                 character.getAnimatePlayer().removePlayerAction(ActionType.Death);
                 character.getAnimatePlayer().removePlayerAction(ActionType.TakeHit);
                 character.getAnimatePlayer().removePlayerAction(ActionType.TakeHitC);
             } else if (animationFrame == 4 && (character.getAnimatePlayer().getAction().getBestActionType() == ActionType.TakeHit || character.getAnimatePlayer().getAction().getBestActionType() == ActionType.TakeHit)) {
-                System.out.println(character.getUsername() + " Damaged");
+//                System.out.println(character.getUsername() + " Damaged");
                 character.getAnimatePlayer().removePlayerAction(ActionType.TakeHit);
                 character.getAnimatePlayer().removePlayerAction(ActionType.TakeHitC);
             }
