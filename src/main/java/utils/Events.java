@@ -10,13 +10,17 @@ import window.MyHandler;
 import static window.Game.HEIGHT_WINDOW;
 
 public class Events {   //TODO: Change class -> Maybe not static, maybe with just "Player" as argument, idk
+    private static int fallingSpeed;
+
     public static void ticketeTickete(MyHandler handler) {
         for (GameObjectInt player : handler.getObjects()) {
             if (player.getId() == ID.Player || player.getId() == ID.Enemy) {
                 /**
                  * Jump
                  */
-                Events.jump((CharacterInt) player);
+                jump((CharacterInt) player);
+
+                stopCharacter((CharacterInt) player);
             }
         }
 
@@ -146,7 +150,13 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         }
     }
 
-    private static int fallingSpeed = 0;
+    private static void stopCharacter(CharacterInt player) {
+        if (player.getAnimatePlayer().getAction().getBestActionType() == ActionType.TakeHit ||
+                player.getAnimatePlayer().getAction().getBestActionType() == ActionType.Death) {
+            player.setVelX(0);
+            player.setVelY(0);
+        }
+    }
 
     private static void jump(CharacterInt player) {
         if (isOnGround(player)) {
@@ -197,10 +207,6 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         return (player.getAnimatePlayer().getAction().getBestActionType() == ActionType.Fall);
     }
 
-    private static boolean isJumpingOrFalling(CharacterInt player) {
-        return (isJumping(player) || isFalling(player));
-    }
-
     public static void hit(CharacterInt hitter, CharacterInt damaged) {
         // TODO: hitter will now attack when he touches damaged - TO FIX
         //       hitter.getAction().setActionType(PlayerAction.Attack1);
@@ -230,6 +236,8 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
 
         // TODO: Print this in game
         System.out.println(winner.getUsername() + " won!");
+
+        // TODO: Wait until the "death" animation is over, then restart the game
 
         // TODO: use method that makes Handler remove objects and re-add them - resetHandlerObjects() in Game
         // Reset game
