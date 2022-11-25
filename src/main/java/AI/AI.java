@@ -1,10 +1,11 @@
-package window.AI;
+package AI;
 
 import actions.ActionType;
 import characters.CharacterInt;
-import window.GameObject.GameObject;
-import window.GameObject.ID;
-import window.KeyPressed;
+import window.game.GameObject.GameObject;
+import window.game.GameObject.ID;
+import window.game.KeyInput;
+import window.game.KeyPressed;
 
 import java.awt.*;
 
@@ -24,7 +25,8 @@ public abstract class AI extends GameObject implements AIInterface {
     protected boolean canAIMove() {
         return (ai.getAnimatePlayer().getAction().getBestActionType() != ActionType.TakeHit &&
                 ai.getAnimatePlayer().getAction().getBestActionType() != ActionType.TakeHitC &&
-                ai.getAnimatePlayer().getAction().getBestActionType() != ActionType.Death);
+                ai.getAnimatePlayer().getAction().getBestActionType() != ActionType.Death &&
+                KeyInput.canMove());
     }
 
     protected int getAIMiddle() {

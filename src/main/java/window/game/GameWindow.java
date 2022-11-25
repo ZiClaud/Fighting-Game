@@ -1,12 +1,12 @@
-package window;
+package window.game;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class MyWindow extends Canvas {
+public class GameWindow extends Canvas {
     GraphicsDevice gDevice;
 
-    public MyWindow(int width, int height, String title, Game game) {
+    public GameWindow(int width, int height, String title, Game game) {
         GraphicsEnvironment gEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
         gDevice = gEnvironment.getDefaultScreenDevice();
 

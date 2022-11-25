@@ -1,7 +1,7 @@
-package window.AI;
+package AI;
 
 import characters.CharacterInt;
-import window.KeyPressed;
+import window.game.KeyPressed;
 
 import java.util.Random;
 

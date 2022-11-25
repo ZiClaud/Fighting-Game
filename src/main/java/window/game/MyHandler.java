@@ -1,7 +1,7 @@
-package window;
+package window.game;
 
-import window.GameObject.GameObjectInt;
-import window.GameObject.MovingGameObjectInt;
+import window.game.GameObject.GameObjectInt;
+import window.game.GameObject.MovingGameObjectInt;
 
 import java.awt.*;
 import java.util.LinkedList;

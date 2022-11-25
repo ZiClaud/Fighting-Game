@@ -1,9 +1,9 @@
-package UI;
+package events;
 
 import utils.Events;
-import window.GameObject.GameObject;
-import window.GameObject.ID;
-import window.MyHandler;
+import window.game.GameObject.GameObject;
+import window.game.GameObject.ID;
+import window.game.MyHandler;
 
 import java.awt.*;
 

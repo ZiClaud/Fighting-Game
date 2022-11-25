@@ -2,12 +2,12 @@ package utils;
 
 import actions.ActionType;
 import characters.CharacterInt;
-import window.Game;
-import window.GameObject.GameObjectInt;
-import window.GameObject.ID;
-import window.MyHandler;
+import window.game.Game;
+import window.game.GameObject.GameObjectInt;
+import window.game.GameObject.ID;
+import window.game.MyHandler;
 
-import static window.Game.HEIGHT_WINDOW;
+import static window.game.Game.HEIGHT_WINDOW;
 
 public class Events {   //TODO: Change class -> Maybe not static, maybe with just "Player" as argument, idk
     private static int fallingSpeed;

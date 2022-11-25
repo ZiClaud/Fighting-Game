@@ -1,4 +1,4 @@
-package window;
+package window.game;
 
 import actions.ActionType;
 import characters.CharacterInt;

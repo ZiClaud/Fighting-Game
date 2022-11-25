@@ -1,4 +1,4 @@
-package window.GameObject;
+package window.game.GameObject;
 
 public interface MovingGameObjectInt extends GameObjectInt {
 

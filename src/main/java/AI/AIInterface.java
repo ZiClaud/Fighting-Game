@@ -1,4 +1,4 @@
-package window.AI;
+package AI;
 
 
 public interface AIInterface {

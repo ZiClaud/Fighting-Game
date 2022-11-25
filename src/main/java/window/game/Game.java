@@ -1,13 +1,6 @@
-package window;
+package window.game;
 
-import UI.EventClass;
-import UI.HealthBar;
-import actions.ActionType;
-import characters.CharacterInt;
-import characters.Enemy;
-import characters.Player;
-import window.AI.MediumLevel;
-import window.GameObject.ID;
+import window.UI.MenuData;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -26,7 +19,7 @@ public class Game extends Canvas implements Runnable {
         KeyInput keyInput = new KeyInput(handler);
         this.addKeyListener(keyInput);
 
-        setHandlerObjects();
+        MenuData.setHandlerObjects(handler);
 
         // Check if it's single player or multiplayer
         keyInput.checkIfAIIsHere();
@@ -35,27 +28,7 @@ public class Game extends Canvas implements Runnable {
          * Keep always at the end!
          */
         // TODO: Remove +37 from HEIGHT - It's there for a temporary bug fix
-        new MyWindow(WIDTH_WINDOW, HEIGHT_WINDOW + 37, "Fight!", this);
-    }
-
-    private void setHandlerObjects() {
-        CharacterInt player = new Player(50, Game.HEIGHT_WINDOW, ID.Player, 200, 200, 100, "Player");
-        CharacterInt enemy = new Enemy(Game.WIDTH_WINDOW - 50 - 163, Game.HEIGHT_WINDOW, ID.Enemy, 100, 100, 100, "Enemy");
-
-        player.getAnimatePlayer().addPlayerAction(ActionType.Idle, true);
-        enemy.getAnimatePlayer().addPlayerAction(ActionType.Idle, false);
-
-        handler.addObject(player);
-        handler.addObject(enemy);
-//        handler.addObject(new Player(500, 300, ID.Enemy, 200, 200, 100));  // TODO: USE TO CHECK -> THERE'S NO BUG
-
-        handler.addObject(new HealthBar(50, 50, ID.HealthBarPlayer, player));
-        handler.addObject(new HealthBar(Game.WIDTH_WINDOW - 50 - enemy.getHp(), 50, ID.HealthBarEnemy, enemy));
-
-        handler.addObject(new EventClass(handler));
-
-        // AI
-        handler.addObject(new MediumLevel(enemy, player));
+        new GameWindow(WIDTH_WINDOW, HEIGHT_WINDOW + 37, "Fight!", this);
     }
 
     public synchronized void start() {

@@ -1,8 +1,8 @@
-package UI;
+package events;
 
 import characters.CharacterInt;
-import window.GameObject.GameObject;
-import window.GameObject.ID;
+import window.game.GameObject.GameObject;
+import window.game.GameObject.ID;
 
 import java.awt.*;
 

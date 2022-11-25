@@ -1,10 +1,9 @@
 package characters;
 
-import actions.Action;
 import actions.AnimatePlayer;
 import utils.Events;
-import window.GameObject.ID;
-import window.GameObject.MovingGameObject;
+import window.game.GameObject.ID;
+import window.game.GameObject.MovingGameObject;
 
 import java.awt.*;
 
