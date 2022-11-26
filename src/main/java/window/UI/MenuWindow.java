@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MenuWindow extends JFrame {
-
+    JFrame frame;
     public MenuWindow() {
         Theme.setup();
         Theme.theme();
@@ -25,7 +25,7 @@ public class MenuWindow extends JFrame {
         mainPanel.add(btMedium);
         mainPanel.add(btHard);
 
-        JFrame frame = new JFrame("");
+        frame = new JFrame("");
 
         frame.setPreferredSize(new Dimension(Game.WIDTH_WINDOW, Game.HEIGHT_WINDOW));
         frame.setMaximumSize(new Dimension(Game.WIDTH_WINDOW, Game.HEIGHT_WINDOW));
@@ -37,43 +37,23 @@ public class MenuWindow extends JFrame {
         frame.add(mainPanel);
         frame.setVisible(true);
 
-        btPVP.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                newGame(LevelAI.PvP);
-            }
-        });
+        btPVP.addActionListener(actionEvent -> newGame(LevelAI.PvP));
 
-        btEasy.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                newGame(LevelAI.Easy);
-            }
-        });
+        btEasy.addActionListener(actionEvent -> newGame(LevelAI.Easy));
 
-        btMedium.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                newGame(LevelAI.Medium);
-            }
-        });
+        btMedium.addActionListener(actionEvent -> newGame(LevelAI.Medium));
 
-        btHard.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                newGame(LevelAI.Hard);
-            }
-        });
+        btHard.addActionListener(actionEvent -> newGame(LevelAI.Hard));
     }
 
     private void newGame(LevelAI level) {
         MenuData.setLevelAI(level);
 
+        // TODO: DO IN GAME -> AFTER COUNTDOWN
+        KeyInput.setCanMove(true);
+
         new Game();
 
-        setVisible(false);
-
-
-        KeyInput.setCanMove(true);
+        frame.setVisible(false);
     }
 }
