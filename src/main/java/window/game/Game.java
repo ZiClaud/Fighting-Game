@@ -1,5 +1,6 @@
 package window.game;
 
+import music.GameMusic;
 import window.UI.MenuData;
 
 import javax.imageio.ImageIO;
@@ -14,6 +15,7 @@ public class Game extends Canvas implements Runnable {
     public static final int WIDTH_WINDOW = 640, HEIGHT_WINDOW = WIDTH_WINDOW / 12 * 9;
     private boolean running = false;
     public Game() {
+        GameMusic.startGameMusic();
         handler = new MyHandler();
         KeyInput keyInput = new KeyInput(handler);
         this.addKeyListener(keyInput);

@@ -1,5 +1,6 @@
 package window.UI;
 
+import music.GameMusic;
 import utils.MyUtils;
 import window.game.Game;
 import window.game.KeyInput;
@@ -15,6 +16,7 @@ public class MenuWindow extends JFrame {
     JFrame frame;
 
     public MenuWindow() {
+        GameMusic.startMenuMusic();
         Theme.setup();
         Theme.theme();
 
