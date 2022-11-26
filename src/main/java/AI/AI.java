@@ -38,10 +38,6 @@ public abstract class AI extends GameObject implements AIInterface {
     }
 
     protected void facePlayer() {
-        if (getAIMiddle() > getPlayerMiddle()){
-            KeyPressed.changeFacing(ai.getAnimatePlayer(), false);
-        } else {
-            KeyPressed.changeFacing(ai.getAnimatePlayer(), true);
-        }
+        KeyPressed.changeFacing(ai.getAnimatePlayer(), getAIMiddle() <= getPlayerMiddle());
     }
 }

@@ -67,9 +67,11 @@ public class MenuData {
     private static void easyLevelPvE(MyHandler handler, CharacterInt enemy, CharacterInt player) {
         handler.addObject(new EasyLevel(enemy, player));
     }
+
     private static void mediumLevelPvE(MyHandler handler, CharacterInt enemy, CharacterInt player) {
         handler.addObject(new MediumLevel(enemy, player));
     }
+
     private static void hardLevelPvE(MyHandler handler, CharacterInt enemy, CharacterInt player) {
         handler.addObject(new HardLevel(enemy, player));
     }

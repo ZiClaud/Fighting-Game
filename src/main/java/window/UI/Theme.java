@@ -11,11 +11,6 @@ public class Theme extends FlatDarkLaf {
         return setup(new Theme());
     }
 
-    @Override
-    public String getName() {
-        return "MyDarkerLaf";
-    }
-
     public static void theme() {
         UIManager.put("Button.innerFocusWidth", 0);
         UIManager.put("Button.hoverBorderColor", Color.decode("#CE2038"));
@@ -86,6 +81,11 @@ public class Theme extends FlatDarkLaf {
             if (value instanceof javax.swing.plaf.FontUIResource)
                 UIManager.put(key, f);
         }
+    }
+
+    @Override
+    public String getName() {
+        return "MyDarkerLaf";
     }
 
 }

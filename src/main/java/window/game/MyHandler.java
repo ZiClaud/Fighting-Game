@@ -10,8 +10,8 @@ import java.util.LinkedList;
  * Loops through all the objects in the game and individually update them and render them to the screen
  */
 public class MyHandler {
-    private LinkedList<GameObjectInt> objects = new LinkedList<>();
-    private LinkedList<MovingGameObjectInt> movingObjects = new LinkedList<>();
+    private final LinkedList<GameObjectInt> objects = new LinkedList<>();
+    private final LinkedList<MovingGameObjectInt> movingObjects = new LinkedList<>();
 
     public LinkedList<GameObjectInt> getObjects() {
         LinkedList<GameObjectInt> gameObjectList = new LinkedList<GameObjectInt>();

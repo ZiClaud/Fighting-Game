@@ -6,7 +6,7 @@ import java.util.HashSet;
 
 public class Action {
     private final CharacterInt player;
-    private HashSet<ActionType> actionTypeList = new HashSet<>();
+    private final HashSet<ActionType> actionTypeList = new HashSet<>();
 
     public Action(CharacterInt player) {
         this.player = player;

@@ -10,9 +10,9 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class KeyInput extends KeyAdapter {
+    private static boolean move = false;
     private final MyHandler handler;
     private boolean isAIHere = false;
-    private static boolean move = false;
 
     public KeyInput(MyHandler handler) {
         this.handler = handler;

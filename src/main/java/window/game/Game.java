@@ -10,10 +10,9 @@ import java.io.IOException;
 
 public class Game extends Canvas implements Runnable {
     private final MyHandler handler;
-    public static final int WIDTH_WINDOW = 640, HEIGHT_WINDOW = WIDTH_WINDOW / 12 * 9;
     private Thread thread;
+    public static final int WIDTH_WINDOW = 640, HEIGHT_WINDOW = WIDTH_WINDOW / 12 * 9;
     private boolean running = false;
-
     public Game() {
         handler = new MyHandler();
         KeyInput keyInput = new KeyInput(handler);
@@ -37,15 +36,6 @@ public class Game extends Canvas implements Runnable {
         running = true;
     }
 
-    /*
-    public void resetHandlerObjects() {
-        for (MovingGameObjectInt tempObject : handler.objects) {
-            handler.removeObject(tempObject);
-        }
-        setHandlerObjects();
-    }
-    */
-
     public synchronized void stop() {
         try {
             thread.join();
@@ -54,6 +44,15 @@ public class Game extends Canvas implements Runnable {
             e.printStackTrace();
         }
     }
+
+    /*
+    public void resetHandlerObjects() {
+        for (MovingGameObjectInt tempObject : handler.objects) {
+            handler.removeObject(tempObject);
+        }
+        setHandlerObjects();
+    }
+    */
 
     @Override
     public void run() {
@@ -111,4 +110,6 @@ public class Game extends Canvas implements Runnable {
         g.dispose();
         bs.show();
     }
+
+
 }

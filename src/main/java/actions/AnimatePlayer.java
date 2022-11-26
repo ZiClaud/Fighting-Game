@@ -10,8 +10,8 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 public class AnimatePlayer implements ObserverAnimation {
-    private CharacterInt player;
-    private Action action;
+    private final CharacterInt player;
+    private final Action action;
     private ArrayList<BufferedImage> currentAnimation;
     private int i = 0;
     private ActionType previousBestActionType = ActionType.Idle;
