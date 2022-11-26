@@ -1,5 +1,7 @@
 package window.UI;
 
+import AI.EasyLevel;
+import AI.HardLevel;
 import AI.MediumLevel;
 import actions.ActionType;
 import characters.CharacterInt;
@@ -50,23 +52,25 @@ public class MenuData {
 
         if (levelAI == LevelAI.PvP) {
             PvP(handler, enemy, player);
-        }
-        else if (levelAI == LevelAI.Easy) {
-            //TODO
-        }
-        else if (levelAI == LevelAI.Medium) {
-            mediumLevelPvE(handler , enemy, player);
-        }
-        else if (levelAI == LevelAI.Hard) {
-            //TODO
+        } else if (levelAI == LevelAI.Easy) {
+            easyLevelPvE(handler, enemy, player);
+        } else if (levelAI == LevelAI.Medium) {
+            mediumLevelPvE(handler, enemy, player);
+        } else if (levelAI == LevelAI.Hard) {
+            hardLevelPvE(handler, enemy, player);
         }
     }
 
-    private static void PvP(MyHandler handler, CharacterInt enemy, CharacterInt player){
-        handler.addObject(new MediumLevel(enemy, player));
+    private static void PvP(MyHandler handler, CharacterInt enemy, CharacterInt player) {
     }
 
-    private static void mediumLevelPvE(MyHandler handler, CharacterInt enemy, CharacterInt player){
+    private static void easyLevelPvE(MyHandler handler, CharacterInt enemy, CharacterInt player) {
+        handler.addObject(new EasyLevel(enemy, player));
+    }
+    private static void mediumLevelPvE(MyHandler handler, CharacterInt enemy, CharacterInt player) {
         handler.addObject(new MediumLevel(enemy, player));
+    }
+    private static void hardLevelPvE(MyHandler handler, CharacterInt enemy, CharacterInt player) {
+        handler.addObject(new HardLevel(enemy, player));
     }
 }

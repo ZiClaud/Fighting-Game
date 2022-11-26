@@ -8,20 +8,24 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MenuWindow2 extends JFrame {
-    private JButton btPVP = new JButton();
-    private JButton btEasy = new JButton();
-    private JButton btMedium = new JButton();
-    private JButton btHard = new JButton();
-    private JPanel mainPanel = new JPanel();
+public class MenuWindow extends JFrame {
 
-    public MenuWindow2() {
+    public MenuWindow() {
+        Theme.setup();
+        Theme.theme();
+
+        JPanel mainPanel = new JPanel();
+        JButton btPVP = new JButton("PvP");
+        JButton btEasy = new JButton("Easy");
+        JButton btMedium = new JButton("Medium");
+        JButton btHard = new JButton("Hard");
+
         mainPanel.add(btPVP);
         mainPanel.add(btEasy);
         mainPanel.add(btMedium);
         mainPanel.add(btHard);
 
-        JFrame frame = new JFrame("title");
+        JFrame frame = new JFrame("");
 
         frame.setPreferredSize(new Dimension(Game.WIDTH_WINDOW, Game.HEIGHT_WINDOW));
         frame.setMaximumSize(new Dimension(Game.WIDTH_WINDOW, Game.HEIGHT_WINDOW));
@@ -36,19 +40,22 @@ public class MenuWindow2 extends JFrame {
         btPVP.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                newGame(LevelAI.PvP);            }
+                newGame(LevelAI.PvP);
+            }
         });
 
         btEasy.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                newGame(LevelAI.Easy);            }
+                newGame(LevelAI.Easy);
+            }
         });
 
         btMedium.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                newGame(LevelAI.Medium);            }
+                newGame(LevelAI.Medium);
+            }
         });
 
         btHard.addActionListener(new ActionListener() {

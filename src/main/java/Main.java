@@ -1,9 +1,8 @@
-import window.UI.MenuWindow2;
-import window.game.Game;
+import window.UI.MenuWindow;
 
 public class Main {
     public static void main(String[] args) {
-        new MenuWindow2();
+        new MenuWindow();
 //        new Game();
     }
 }
