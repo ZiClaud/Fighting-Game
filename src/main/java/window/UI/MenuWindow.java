@@ -39,6 +39,11 @@ public class MenuWindow extends JFrame {
         JButton btMedium = new JButton("Medium");
         JButton btHard = new JButton("Hard");
 
+        btPVP.setFocusable(false);
+        btEasy.setFocusable(false);
+        btMedium.setFocusable(false);
+        btHard.setFocusable(false);
+
         mainPanel.add(btPVP);
         mainPanel.add(btEasy);
         mainPanel.add(btMedium);
