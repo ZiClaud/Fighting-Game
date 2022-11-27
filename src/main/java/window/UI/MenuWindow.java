@@ -129,7 +129,7 @@ public class MenuWindow extends JFrame {
         } else if (skin == Skin.Undead) {
             return ImageIO.read(new File("src/main/resources/Images/Undead/Idle/Idle_1.png"));
         } else if (skin == Skin.Devil) {
-            return ImageIO.read(new File("src/main/resources/Images/Undead/Idle/Idle_1.png"));
+            return ImageIO.read(new File("src/main/resources/Images/Devil/Idle/Idle_1.png"));
         }
         System.err.println("Skin not found");
         System.out.println("Skin not found");
