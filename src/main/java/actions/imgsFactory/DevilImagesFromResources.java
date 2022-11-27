@@ -45,11 +45,9 @@ public class DevilImagesFromResources extends CharacterImagesFromResources {
         ArrayList<BufferedImage> imageList = new ArrayList<>();
         try {
 //            imageList.add(ImageIO.read(new File("src/main/resources/Images/Devil/Attack1/Attack1_1.png")));
-//            imageList.add(ImageIO.read(new File("src/main/resources/Images/Devil/Attack1/Attack1_2.png")));
-//            imageList.add(ImageIO.read(new File("src/main/resources/Images/Devil/Attack1/Attack1_3.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Images/Devil/Attack1/Attack1_2.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Images/Devil/Attack1/Attack1_3.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Images/Devil/Attack1/Attack1_4.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Images/Devil/Attack1/Attack1_5.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Images/Devil/Attack1/Attack1_6.png")));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -119,7 +117,7 @@ public class DevilImagesFromResources extends CharacterImagesFromResources {
             imageList.add(ImageIO.read(new File("src/main/resources/Images/Devil/TakeHit/TakeHit_1.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Images/Devil/TakeHit/TakeHit_2.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Images/Devil/TakeHit/TakeHit_3.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Images/Devil/TakeHit/TakeHit_4.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Images/Devil/TakeHit/TakeHit_3.png")));
         } catch (IOException e) {
             e.printStackTrace();
         }
