@@ -113,14 +113,18 @@ public class MenuWindow extends JFrame {
     }
 
     private void newGame(LevelAI level) {
-        MenuData.setLevelAI(level);
+        if (MenuData.getPlayerSkin() != Skin.Devil && MenuData.getEnemySkin() != Skin.Devil) {
+            MenuData.setLevelAI(level);
 
-        // TODO: DO IN GAME -> AFTER COUNTDOWN
-        KeyInput.setCanMove(true);
+            // TODO: DO IN GAME -> AFTER COUNTDOWN
+            KeyInput.setCanMove(true);
 
-        new Game();
+            new Game();
 
-        frame.setVisible(false);
+            frame.setVisible(false);
+        } else {
+            JOptionPane.showMessageDialog(null, "Can't use skin Devil yet");
+        }
     }
 
     private BufferedImage getPlayerImage(Skin skin) throws IOException {

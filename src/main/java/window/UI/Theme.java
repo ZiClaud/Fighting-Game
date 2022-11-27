@@ -28,21 +28,21 @@ public class Theme extends FlatDarkLaf {
         UIManager.put("CheckBox.icon.borderColor", null);
         UIManager.put("CheckBox.icon.selectedBorderColor", null);
         UIManager.put("CheckBox.icon.checkmarkColor", null);
-        UIManager.put("Component.focusColor", Color.decode("#32AB5E"));
-        UIManager.put("ProgressBar.foreground", Color.decode("#32AB5E"));
-        UIManager.put("TextField.selectionBackground", Color.decode("#32AB5E"));
+        UIManager.put("Component.focusColor", Color.decode("#CE2038"));
+        UIManager.put("ProgressBar.foreground", Color.decode("#CE2038"));
+        UIManager.put("TextField.selectionBackground", Color.decode("#CE2038"));
         UIManager.put("List.selectionForeground", Color.decode("#FFFFFF"));
-        UIManager.put("List.selectionBackground", Color.decode("#32AB5E"));
+        UIManager.put("List.selectionBackground", Color.decode("#CE2038"));
         UIManager.put("List.selectionInactiveForeground", Color.decode("#000000"));
         UIManager.put("List.selectionInactiveBackground", Color.decode("#83D078"));
         UIManager.put("Table.selectionForeground", Color.decode("#FFFFFF"));
-        UIManager.put("Table.selectionBackground", Color.decode("#32AB5E"));
+        UIManager.put("Table.selectionBackground", Color.decode("#CE2038"));
         UIManager.put("Table.selectionInactiveForeground", Color.decode("#000000"));
         UIManager.put("Table.selectionInactiveBackground", Color.decode("#83D078"));
         UIManager.put("ComboBox.selectionForeground", Color.decode("#FFFFFF"));
-        UIManager.put("ComboBox.selectionBackground", Color.decode("#32AB5E"));
+        UIManager.put("ComboBox.selectionBackground", Color.decode("#CE2038"));
         UIManager.put("ComboBox.border", Color.decode("#000000"));
-        UIManager.put("MenuItem.selectionBackground", Color.decode("#32AB5E"));
+        UIManager.put("MenuItem.selectionBackground", Color.decode("#CE2038"));
         /*
         try {
             UIManager.setLookAndFeel(new FlatDarkLaf());
