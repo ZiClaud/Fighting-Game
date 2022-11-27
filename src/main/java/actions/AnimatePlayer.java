@@ -1,5 +1,7 @@
 package actions;
 
+import actions.imgsFactory.CharacterImagesFromResources;
+import actions.imgsFactory.ImagesFromResourcesFactory;
 import characters.CharacterInt;
 import characters.ObserverAnimation;
 import utils.Events;
@@ -15,10 +17,13 @@ public class AnimatePlayer implements ObserverAnimation {
     private ArrayList<BufferedImage> currentAnimation;
     private int i = 0;
     private ActionType previousBestActionType = ActionType.Idle;
+    private CharacterImagesFromResources characterImagesFromResources;
 
     public AnimatePlayer(CharacterInt player) {
         this.player = player;
         this.action = new Action(player);
+
+        this.characterImagesFromResources = ImagesFromResourcesFactory.createCharacterImagesFromResources2(player.getSkin());
     }
 
     public void animatePlayer() {
@@ -81,9 +86,9 @@ public class AnimatePlayer implements ObserverAnimation {
             previousBestActionType = action.getBestActionType();
         }
         if (player.getId() == ID.Player) {
-            currentAnimation = CharacterImagesFromResources.getPlayerImg(action.getBestActionType(), action.isFacingRight());
+            currentAnimation = characterImagesFromResources.getImg(action.getBestActionType(), action.isFacingRight());
         } else if (player.getId() == ID.Enemy) {
-            currentAnimation = CharacterImagesFromResources.getEnemyImg(action.getBestActionType(), action.isFacingRight());
+            currentAnimation = characterImagesFromResources.getImg(action.getBestActionType(), action.isFacingRight());
         }
     }
 }

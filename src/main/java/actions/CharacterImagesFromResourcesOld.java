@@ -1,5 +1,6 @@
 package actions;
 
+/*
 import music.SoundEffect;
 import utils.MyUtils;
 
@@ -21,7 +22,7 @@ import java.util.ArrayList;
  * WidthToRemoveFromRight: 87px <p>
  * HeightToRemoveFromBottom: 78px <p>
  * HeightToRemoveFromTop: 70px <p>
- */
+ *
 class CharacterImagesFromResources {
     public static ArrayList<BufferedImage> getPlayerImg(ActionType actionType, boolean facingRight) {
         if (facingRight) {
@@ -94,7 +95,7 @@ class CharacterImagesFromResources {
 
     /**
      * Player
-     */
+     *
     private static ArrayList<BufferedImage> PlayerImgIdle() {
         ArrayList<BufferedImage> imageList = new ArrayList<>();
         try {
@@ -211,7 +212,7 @@ class CharacterImagesFromResources {
 
     /**
      * Enemy
-     */
+     *
     private static ArrayList<BufferedImage> EnemyImgIdle() {
         ArrayList<BufferedImage> imageList = new ArrayList<>();
         try {
@@ -270,7 +271,7 @@ class CharacterImagesFromResources {
 
     /**
      * Mirror
-     */
+     *
     private static ArrayList<BufferedImage> MirrorImages(ArrayList<BufferedImage> images) {
         ArrayList<BufferedImage> imageList = new ArrayList<>();
         for (BufferedImage image : images) {
@@ -281,3 +282,4 @@ class CharacterImagesFromResources {
 
     // TODO IMPORTANT: Make sure that all the image size are the same for both Player and Enemy
 }
+*/

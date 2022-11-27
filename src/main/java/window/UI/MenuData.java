@@ -4,6 +4,7 @@ import AI.EasyLevel;
 import AI.HardLevel;
 import AI.MediumLevel;
 import actions.ActionType;
+import actions.imgsFactory.Skin;
 import characters.CharacterInt;
 import characters.Enemy;
 import characters.Player;
@@ -16,6 +17,8 @@ import window.game.MyHandler;
 
 public class MenuData {
     protected static LevelAI levelAI;
+    protected static Skin playerSkin = Skin.Spirit;
+    protected static Skin enemySkin = Skin.Undead;
 
     public MenuData() {
 
@@ -34,9 +37,25 @@ public class MenuData {
         MenuData.levelAI = levelAI;
     }
 
+    public static Skin getPlayerSkin() {
+        return playerSkin;
+    }
+
+    public static void setPlayerSkin(Skin playerSkin) {
+        MenuData.playerSkin = playerSkin;
+    }
+
+    public static Skin getEnemySkin() {
+        return enemySkin;
+    }
+
+    public static void setEnemySkin(Skin enemySkin) {
+        MenuData.enemySkin = enemySkin;
+    }
+
     public static void setHandlerObjects(MyHandler handler) {
-        CharacterInt player = new Player(50, Game.HEIGHT_WINDOW, ID.Player, 200, 200, 100, "Player");
-        CharacterInt enemy = new Enemy(Game.WIDTH_WINDOW - 50 - 163, Game.HEIGHT_WINDOW, ID.Enemy, 100, 100, 100, "Enemy");
+        CharacterInt player = new Player(50, Game.HEIGHT_WINDOW, ID.Player, 100, "Player", playerSkin);
+        CharacterInt enemy = new Enemy(Game.WIDTH_WINDOW - 50 - 163, Game.HEIGHT_WINDOW, ID.Enemy, 100, "Enemy", enemySkin);
 
         player.getAnimatePlayer().addPlayerAction(ActionType.Idle, true);
         enemy.getAnimatePlayer().addPlayerAction(ActionType.Idle, false);
@@ -51,7 +70,7 @@ public class MenuData {
         handler.addObject(new EventClass(handler));
 
         if (levelAI == LevelAI.PvP) {
-            PvP(handler, enemy, player);
+            PvP();
         } else if (levelAI == LevelAI.Easy) {
             easyLevelPvE(handler, enemy, player);
         } else if (levelAI == LevelAI.Medium) {
@@ -61,7 +80,7 @@ public class MenuData {
         }
     }
 
-    private static void PvP(MyHandler handler, CharacterInt enemy, CharacterInt player) {
+    private static void PvP() {
     }
 
     private static void easyLevelPvE(MyHandler handler, CharacterInt enemy, CharacterInt player) {
