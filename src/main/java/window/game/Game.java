@@ -100,7 +100,7 @@ public class Game extends Canvas implements Runnable {
         Graphics g = bs.getDrawGraphics();
 
         try {
-            g.drawImage(ImageIO.read(new File("src/main/resources/Background/cyberpunk-street.png")), 0, 0, WIDTH_WINDOW, HEIGHT_WINDOW, null);
+            g.drawImage(ImageIO.read(new File("src/main/resources/Images/Background/CyberpunkStreet.png")), 0, 0, WIDTH_WINDOW, HEIGHT_WINDOW, null);
 //            g.fillRect(0, 0, WIDTH, HEIGHT);
         } catch (IOException e) {
             g.setColor(Color.black);

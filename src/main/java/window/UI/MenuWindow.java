@@ -23,8 +23,8 @@ public class MenuWindow extends JFrame {
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new GridLayout(2, 4));
         try {
-            BufferedImage myPicture1 = ImageIO.read(new File("src/main/resources/Spirit/Idle/Idle_1.png"));
-            BufferedImage myPicture2 = ImageIO.read(new File("src/main/resources/Undead/Idle/Idle_1.png"));
+            BufferedImage myPicture1 = ImageIO.read(new File("src/main/resources/Images/Spirit/Idle/Idle_1.png"));
+            BufferedImage myPicture2 = ImageIO.read(new File("src/main/resources/Images/Undead/Idle/Idle_1.png"));
             myPicture2 = MyUtils.mirrorImage(myPicture2);
             mainPanel.add(new JLabel(new ImageIcon(myPicture1)));
             mainPanel.add(new JPanel());

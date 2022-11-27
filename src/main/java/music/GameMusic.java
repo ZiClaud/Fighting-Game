@@ -33,7 +33,7 @@ public class GameMusic {
         }
     }
 
-    private static void stopMusic(){
+    private static void stopMusic() {
         if (clip != null)
             clip.stop();
     }
