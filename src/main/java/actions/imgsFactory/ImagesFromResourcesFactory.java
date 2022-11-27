@@ -1,5 +1,7 @@
 package actions.imgsFactory;
 
+import utils.MyUtils;
+
 public class ImagesFromResourcesFactory {
     public static CharacterImagesFromResources createCharacterImagesFromResources2(Skin skin){
         if (skin == Skin.Spirit) {
@@ -9,10 +11,7 @@ public class ImagesFromResourcesFactory {
         } else if (skin == Skin.Devil) {
             return new DevilImagesFromResources();
         } else {
-            System.err.println("Skin not found");
-            System.out.println("Skin not found");
-            System.out.println("Skin not found");
-            System.err.println("Skin not found");
+            MyUtils.printSkinNotFound();
             return new SpiritImagesFromResources();
         }
     }

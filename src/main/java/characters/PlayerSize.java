@@ -1,5 +1,8 @@
 package characters;
 
+import actions.imgsFactory.Skin;
+import utils.MyUtils;
+
 /**
  * Image stats: <p>
  * ImgWidth: 200px <p>
@@ -14,8 +17,8 @@ package characters;
  * HeightToRemoveFromTop: 70px <p>
  */
 public class PlayerSize implements PlayerSizeInt {
-    private final int imgWidth;
-    private final int imgHeight;
+    private int imgWidth;
+    private int imgHeight;
 
     private final int actualWidth;
     private final int actualHeight;
@@ -25,10 +28,12 @@ public class PlayerSize implements PlayerSizeInt {
     private int excessiveBottom = 0;
     private int excessiveTop = 0;
 
-    public PlayerSize(int playerWidth, int playerHeight) {
-        imgWidth = playerWidth;
-        imgHeight = playerHeight;
-        if (imgWidth == 200 && imgHeight == 200) {
+    public PlayerSize(Skin skin) {
+
+        if (skin == Skin.Spirit) {
+            imgWidth = 200;
+            imgHeight = 200;
+
             actualWidth = 37;
             actualHeight = 52;
 
@@ -36,7 +41,21 @@ public class PlayerSize implements PlayerSizeInt {
             excessiveRight = 87;
             excessiveBottom = 78;
             excessiveTop = 70;
-        } else if (imgWidth == 100 && imgHeight == 100) {
+        } else if (skin == Skin.Devil) {
+            imgWidth = 200;
+            imgHeight = 200;
+
+            actualWidth = 33;
+            actualHeight = 56;
+
+            excessiveLeft = 86;
+            excessiveRight = 81;
+            excessiveBottom = 71;
+            excessiveTop = 73;
+        } else if (skin == Skin.Undead) {
+            imgWidth = 100;
+            imgHeight = 100;
+
             actualWidth = 45;
             actualHeight = 62;
 
@@ -45,8 +64,9 @@ public class PlayerSize implements PlayerSizeInt {
             excessiveBottom = 17;
             excessiveTop = 21;
         } else {
-            actualWidth = imgWidth;
-            actualHeight = imgHeight;
+            MyUtils.printSkinNotFound();
+            actualWidth = 1;
+            actualHeight = 1;
         }
     }
 

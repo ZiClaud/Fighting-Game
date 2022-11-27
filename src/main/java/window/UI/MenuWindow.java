@@ -95,21 +95,21 @@ public class MenuWindow extends JFrame {
     }
 
     private void setPlayerSkin() {
-        if (MenuData.getPlayerSkin() == Skin.Spirit)
-            MenuData.setPlayerSkin(Skin.Undead);
-        else if (MenuData.getPlayerSkin() == Skin.Undead)
-            MenuData.setPlayerSkin(Skin.Devil);
-        else if (MenuData.getPlayerSkin() == Skin.Devil)
-            MenuData.setPlayerSkin(Skin.Spirit);
+        MenuData.setPlayerSkin(cycleSkin(MenuData.getPlayerSkin()));
     }
 
     private void setEnemySkin() {
-        if (MenuData.getEnemySkin() == Skin.Spirit)
-            MenuData.setEnemySkin(Skin.Undead);
-        else if (MenuData.getEnemySkin() == Skin.Undead)
-            MenuData.setEnemySkin(Skin.Devil);
-        else if (MenuData.getEnemySkin() == Skin.Devil)
-            MenuData.setEnemySkin(Skin.Spirit);
+            MenuData.setEnemySkin(cycleSkin(MenuData.getEnemySkin()));
+    }
+
+    private Skin cycleSkin(Skin skin){
+        if (skin == Skin.Spirit)
+            return Skin.Devil;
+        else if (skin == Skin.Devil)
+            return Skin.Undead;
+        else if (skin == Skin.Undead)
+            return Skin.Spirit;
+        return null;
     }
 
     private void newGame(LevelAI level) {
@@ -134,9 +134,7 @@ public class MenuWindow extends JFrame {
         } else if (skin == Skin.Devil) {
             return ImageIO.read(new File("src/main/resources/Images/Devil/Idle/Idle_1.png"));
         }
-        System.err.println("Skin not found");
-        System.out.println("Skin not found");
-        System.err.println("Skin not found");
+        MyUtils.printSkinNotFound();
         return null;
     }
 

@@ -18,7 +18,7 @@ import window.game.MyHandler;
 public class MenuData {
     protected static LevelAI levelAI;
     protected static Skin playerSkin = Skin.Spirit;
-    protected static Skin enemySkin = Skin.Undead;
+    protected static Skin enemySkin = Skin.Devil;
 
     public MenuData() {
 

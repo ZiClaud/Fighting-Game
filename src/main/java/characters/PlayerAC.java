@@ -3,6 +3,7 @@ package characters;
 import actions.AnimatePlayer;
 import actions.imgsFactory.Skin;
 import utils.Events;
+import utils.MyUtils;
 import window.game.GameObject.ID;
 import window.game.GameObject.MovingGameObject;
 
@@ -22,16 +23,8 @@ public class PlayerAC extends MovingGameObject implements CharacterInt {
         this.username = username;
         this.skin = skin;
 
-        if (skin == Skin.Spirit || skin == Skin.Devil) {
-            this.size = new PlayerSize(200, 200);
-        } else if (skin == Skin.Undead) {
-            this.size = new PlayerSize(100, 100);
-        } else {
-            System.out.println("Skin not found");
-            System.err.println("Skin not found");
-            System.out.println("Skin not found");
-            this.size = new PlayerSize(1, 1);
-        }
+        this.size = new PlayerSize(skin);
+
         this.playerImage = new PlayerImage();
 
         this.animatePlayer = new AnimatePlayer(this);

@@ -11,4 +11,10 @@ public class MyUtils {
         AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
         return op.filter(image, null);
     }
+
+    public static void printSkinNotFound(){
+        System.out.println("Skin not found");
+        System.err.println("Skin not found");
+        System.out.println("Skin not found");
+    }
 }
