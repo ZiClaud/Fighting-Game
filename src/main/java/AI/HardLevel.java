@@ -30,11 +30,12 @@ public class HardLevel extends AI {
     }
 
     private void followPlayer() {
-        if (getAIMiddle() - 20 > getPlayerMiddle() + 20) {
+        if (getAIMiddle() - 25 > getPlayerMiddle() + 25) {
             KeyPressed.pressedA(ai.getAnimatePlayer(), ai);
-        } else if (getAIMiddle() + 20 < getPlayerMiddle() - 20) {
+        } else if (getAIMiddle() + 25 < getPlayerMiddle() - 25) {
             KeyPressed.pressedD(ai.getAnimatePlayer(), ai);
         } else {
+            facePlayer();
             if (r.nextInt(0, 10) > 8) {
                 attack();
             } else {
@@ -44,9 +45,9 @@ public class HardLevel extends AI {
     }
 
     private void escapePlayer() {
-        if (getAIMiddle() - 20 > getPlayerMiddle() + 20) {
+        if (getAIMiddle() - 40 > getPlayerMiddle() + 40) {
             KeyPressed.pressedD(ai.getAnimatePlayer(), ai);
-        } else if (ai.getSize().getMiddleX(ai.getX()) + 20 < player.getSize().getMiddleX(player.getX()) - 20) {
+        } else if (ai.getSize().getMiddleX(ai.getX()) + 40 < player.getSize().getMiddleX(player.getX()) - 40) {
             KeyPressed.pressedA(ai.getAnimatePlayer(), ai);
         } else {
             facePlayer();

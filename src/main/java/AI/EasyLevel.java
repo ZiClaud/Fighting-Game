@@ -35,6 +35,7 @@ public class EasyLevel extends AI {
         } else if (getAIMiddle() + 20 < getPlayerMiddle() - 20) {
             KeyPressed.pressedD(ai.getAnimatePlayer(), ai);
         } else {
+            facePlayer();
             if (r.nextInt(0, 10) < 3) {
                 attack();
             } else {
