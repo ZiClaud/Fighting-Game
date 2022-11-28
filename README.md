@@ -18,6 +18,8 @@ https://luizmelo.itch.io/
 
 https://darkpixel-kronovi.itch.io/undead-executioner
 
+https://ansimuz.itch.io/streets-of-fight
+
 Sound effect assets: 
 
 https://dillonbecker.itch.io/sdap

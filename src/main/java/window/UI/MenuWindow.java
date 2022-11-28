@@ -99,29 +99,34 @@ public class MenuWindow extends JFrame {
     }
 
     private void setEnemySkin() {
-            MenuData.setEnemySkin(cycleSkin(MenuData.getEnemySkin()));
+        MenuData.setEnemySkin(cycleSkin(MenuData.getEnemySkin()));
     }
 
-    private Skin cycleSkin(Skin skin){
+    private Skin cycleSkin(Skin skin) {
         if (skin == Skin.Spirit)
             return Skin.Devil;
         else if (skin == Skin.Devil)
             return Skin.Undead;
         else if (skin == Skin.Undead)
+            return Skin.Punk;
+        else if (skin == Skin.Punk)
+            return Skin.BrawlerGirl;
+        else if (skin == Skin.BrawlerGirl)
             return Skin.Spirit;
+        MyUtils.printSkinNotFound();
         return null;
     }
 
     private void newGame(LevelAI level) {
-            MenuData.setLevelAI(level);
+        MenuData.setLevelAI(level);
 
-            new Game();
-            frame.setVisible(false);
+        new Game();
+        frame.setVisible(false);
 
-            countdown();
+        countdown();
     }
 
-    private void countdown(){
+    private void countdown() {
         // TODO: DO IN GAME -> AFTER COUNTDOWN
         KeyInput.setCanMove(true);
     }
@@ -133,6 +138,10 @@ public class MenuWindow extends JFrame {
             return ImageIO.read(new File("src/main/resources/Images/Undead/Idle/Idle_1.png"));
         } else if (skin == Skin.Devil) {
             return ImageIO.read(new File("src/main/resources/Images/Devil/Idle/Idle_1.png"));
+        } else if (skin == Skin.Punk) {
+            return MyUtils.mirrorImage(ImageIO.read(new File("src/main/resources/Images/Enemy-Punk/Idle/idle1.png")));
+        } else if (skin == Skin.BrawlerGirl) {
+            return ImageIO.read(new File("src/main/resources/Images/Brawler-Girl/Idle/idle1.png"));
         }
         MyUtils.printSkinNotFound();
         return null;

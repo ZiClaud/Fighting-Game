@@ -118,8 +118,8 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         int playerHalfWidth = (player.getSize().getActualWidth() / 2);
         int enemyHalfWidth = (enemy.getSize().getActualWidth() / 2);
 
-        int playerCenter = player.getSize().getActualX(player.getX()) + player.getSize().getActualWidth() / 2;
-        int enemyCenter = enemy.getSize().getActualX(enemy.getX()) + enemy.getSize().getActualWidth() / 2;
+        int playerCenter = player.getSize().getMiddleX(player.getX());
+        int enemyCenter = enemy.getSize().getMiddleX(enemy.getX());
 
 
         boolean isPlayerLeftEnemyRight = player.getSize().getActualX(player.getX()) - playerHalfWidth <= enemy.getSize().getActualRightX(enemy.getX()) + enemyHalfWidth;

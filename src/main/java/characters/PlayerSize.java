@@ -63,6 +63,28 @@ public class PlayerSize implements PlayerSizeInt {
             excessiveRight = 21;
             excessiveBottom = 17;
             excessiveTop = 21;
+        } else if (skin == Skin.Punk) {
+            imgWidth = 96;
+            imgHeight = 63;
+
+            actualWidth = 28;
+            actualHeight = 50;
+
+            excessiveLeft = 37;
+            excessiveRight = 31;
+            excessiveBottom = 0;
+            excessiveTop = 13;
+        } else if (skin == Skin.BrawlerGirl) {
+            imgWidth = 96;
+            imgHeight = 63;
+
+            actualWidth = 24;
+            actualHeight = 46;
+
+            excessiveLeft = 33;
+            excessiveRight = 39;
+            excessiveBottom = 0;
+            excessiveTop = 17;
         } else {
             MyUtils.printSkinNotFound();
             actualWidth = 1;

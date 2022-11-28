@@ -1,6 +1,7 @@
 package AI;
 
 import characters.CharacterInt;
+import window.game.Game;
 import window.game.KeyPressed;
 
 import java.util.Random;
@@ -27,16 +28,17 @@ public class EasyLevel extends AI {
         } else {
             escapePlayer();
         }
+//        goToCenter();
     }
 
     private void followPlayer() {
         if (getAIMiddle() - 20 > getPlayerMiddle() + 20) {
             KeyPressed.pressedA(ai.getAnimatePlayer(), ai);
-        } else if (getAIMiddle() + 20 < getPlayerMiddle() - 20) {
+        } else if (getAIMiddle() + 20 < getPlayerMiddle() - 20 || getAIMiddle() < 30) {
             KeyPressed.pressedD(ai.getAnimatePlayer(), ai);
         } else {
             facePlayer();
-            if (r.nextInt(0, 10) < 3) {
+            if (r.nextInt(0, 10) <= 10) {
                 attack();
             } else {
                 jump();
@@ -52,6 +54,26 @@ public class EasyLevel extends AI {
         } else {
             facePlayer();
             followPlayer();
+        }
+    }
+
+    private boolean isOnBorder(){
+        return (isOnLeftBorder() || isOnRightBorder());
+    }
+
+    private boolean isOnRightBorder(){
+        return getAIMiddle() > Game.WIDTH_WINDOW - 30;
+    }
+
+    private boolean isOnLeftBorder(){
+        return getAIMiddle() < 30;
+    }
+
+    private void goToCenter(){
+        if (isOnRightBorder()){
+            KeyPressed.pressedA(ai.getAnimatePlayer(), ai);
+        } else if (isOnLeftBorder()) {
+            KeyPressed.pressedD(ai.getAnimatePlayer(), ai);
         }
     }
 

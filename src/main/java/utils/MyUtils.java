@@ -3,6 +3,8 @@ package utils;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class MyUtils {
     public static BufferedImage mirrorImage(BufferedImage image) {
@@ -12,7 +14,15 @@ public class MyUtils {
         return op.filter(image, null);
     }
 
-    public static void printSkinNotFound(){
+    public static ArrayList<BufferedImage> mirrorImage(ArrayList<BufferedImage> images) {
+        ArrayList<BufferedImage> ris = new ArrayList<>();
+        for (BufferedImage image : images) {
+            ris.add(mirrorImage(image));
+        }
+        return ris;
+    }
+
+    public static void printSkinNotFound() {
         System.out.println("Skin not found");
         System.err.println("Skin not found");
         System.out.println("Skin not found");

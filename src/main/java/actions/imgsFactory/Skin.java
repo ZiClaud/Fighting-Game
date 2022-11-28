@@ -3,5 +3,7 @@ package actions.imgsFactory;
 public enum Skin {
     Spirit(),
     Undead(),
-    Devil()
+    Devil(),
+    Punk(),
+    BrawlerGirl()
 }

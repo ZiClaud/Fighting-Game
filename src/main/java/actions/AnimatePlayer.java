@@ -23,7 +23,7 @@ public class AnimatePlayer implements ObserverAnimation {
         this.player = player;
         this.action = new Action(player);
 
-        this.characterImagesFromResources = ImagesFromResourcesFactory.createCharacterImagesFromResources2(player.getSkin());
+        this.characterImagesFromResources = ImagesFromResourcesFactory.createCharacterImagesFromResources(player.getSkin());
     }
 
     public void animatePlayer() {
