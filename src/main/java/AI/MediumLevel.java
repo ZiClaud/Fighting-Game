@@ -29,32 +29,6 @@ public class MediumLevel extends AI {
         }
     }
 
-    private void followPlayer() {
-        if (getAIMiddle() - 20 > getPlayerMiddle() + 20) {
-            KeyPressed.pressedA(ai.getAnimatePlayer(), ai);
-        } else if (getAIMiddle() + 20 < getPlayerMiddle() - 20) {
-            KeyPressed.pressedD(ai.getAnimatePlayer(), ai);
-        } else {
-            facePlayer();
-            if (r.nextInt(0, 10) > 8) {
-                attack();
-            } else {
-                jump();
-            }
-        }
-    }
-
-    private void escapePlayer() {
-        if (getAIMiddle() - 20 > getPlayerMiddle() + 20) {
-            KeyPressed.pressedD(ai.getAnimatePlayer(), ai);
-        } else if (ai.getSize().getMiddleX(ai.getX()) + 20 < player.getSize().getMiddleX(player.getX()) - 20) {
-            KeyPressed.pressedA(ai.getAnimatePlayer(), ai);
-        } else {
-            facePlayer();
-            followPlayer();
-        }
-    }
-
     @Override
     public void jump() {
         KeyPressed.pressedW(ai.getAnimatePlayer());

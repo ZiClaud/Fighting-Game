@@ -2,6 +2,7 @@ package AI;
 
 import actions.ActionType;
 import characters.CharacterInt;
+import utils.Events;
 import window.game.GameObject.GameObject;
 import window.game.GameObject.ID;
 import window.game.KeyInput;
@@ -39,5 +40,30 @@ public abstract class AI extends GameObject implements AIInterface {
 
     protected void facePlayer() {
         KeyPressed.changeFacing(ai.getAnimatePlayer(), getAIMiddle() <= getPlayerMiddle());
+    }
+
+    protected void followPlayer() {
+        if (Events.isXInAttackRange(ai, player)) {
+            facePlayer();
+            attack();
+        } else {
+            if (getAIMiddle() > getPlayerMiddle()) {
+                KeyPressed.pressedA(ai.getAnimatePlayer(), ai);
+            } else if (getAIMiddle() < getPlayerMiddle()) {
+                KeyPressed.pressedD(ai.getAnimatePlayer(), ai);
+            }
+        }
+    }
+
+    protected void escapePlayer() {
+        if (Events.isXInAttackRange(player, ai)) {
+            followPlayer();
+        } else {
+            if (getAIMiddle() < getPlayerMiddle()) {
+                KeyPressed.pressedA(ai.getAnimatePlayer(), ai);
+            } else if (getAIMiddle() > getPlayerMiddle()) {
+                KeyPressed.pressedD(ai.getAnimatePlayer(), ai);
+            }
+        }
     }
 }

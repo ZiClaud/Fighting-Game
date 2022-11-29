@@ -1,6 +1,7 @@
 package AI;
 
 import characters.CharacterInt;
+import utils.Events;
 import window.game.KeyPressed;
 
 import java.util.Random;
@@ -26,32 +27,6 @@ public class HardLevel extends AI {
             followPlayer();
         } else {
             escapePlayer();
-        }
-    }
-
-    private void followPlayer() {
-        if (getAIMiddle() - 25 > getPlayerMiddle() + 25) {
-            KeyPressed.pressedA(ai.getAnimatePlayer(), ai);
-        } else if (getAIMiddle() + 25 < getPlayerMiddle() - 25) {
-            KeyPressed.pressedD(ai.getAnimatePlayer(), ai);
-        } else {
-            facePlayer();
-            if (r.nextInt(0, 10) > 8) {
-                attack();
-            } else {
-                jump();
-            }
-        }
-    }
-
-    private void escapePlayer() {
-        if (getAIMiddle() - 40 > getPlayerMiddle() + 40) {
-            KeyPressed.pressedD(ai.getAnimatePlayer(), ai);
-        } else if (ai.getSize().getMiddleX(ai.getX()) + 40 < player.getSize().getMiddleX(player.getX()) - 40) {
-            KeyPressed.pressedA(ai.getAnimatePlayer(), ai);
-        } else {
-            facePlayer();
-            followPlayer();
         }
     }
 

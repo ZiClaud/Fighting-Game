@@ -73,12 +73,12 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         /**
          * Top/Bottom Wall
          */
-        if (player.getSize().getActualY(player.getY()) <= 0 || player.getSize().getActualBottomY(player.getY()) >= Game.HEIGHT_WINDOW) {
+        if (player.getSize().getActualY(player.getY()) <= 0 || player.getSize().getActualBottomY(player.getY()) >= HEIGHT_WINDOW) {
             player.setVelY(0);
             if (player.getSize().getActualY(player.getY()) <= 0) {
                 player.setY(-player.getSize().getExcessiveTop());
-            } else if (player.getSize().getActualBottomY(player.getY()) >= Game.HEIGHT_WINDOW) {
-                player.setY(Game.HEIGHT_WINDOW - player.getSize().getImgHeight() + player.getSize().getExcessiveBottom());
+            } else if (player.getSize().getActualBottomY(player.getY()) >= HEIGHT_WINDOW) {
+                player.setY(HEIGHT_WINDOW - player.getSize().getImgHeight() + player.getSize().getExcessiveBottom());
             }
         }
     }
@@ -115,39 +115,40 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
     }
 
     public static void attack(CharacterInt player, CharacterInt enemy) {
-        int playerHalfWidth = (player.getSize().getActualWidth() / 2);
-        int enemyHalfWidth = (enemy.getSize().getActualWidth() / 2);
+        if (isXInAttackRange(player, enemy)) {
+            if (player.getAnimatePlayer().getAction().getBestActionType() == ActionType.Attack1)
+                hit(player, enemy);
+        }
+        if (isXInAttackRange(enemy, player)) {
+            if (enemy.getAnimatePlayer().getAction().getBestActionType() == ActionType.Attack1)
+                hit(enemy, player);
+        }
+    }
 
-        int playerCenter = player.getSize().getMiddleX(player.getX());
-        int enemyCenter = enemy.getSize().getMiddleX(enemy.getX());
+    public static boolean isXInAttackRange(CharacterInt playerX, CharacterInt playerY) {
+        int playerHalfWidth = (playerX.getSize().getActualWidth() / 2);
+        int enemyHalfWidth = (playerY.getSize().getActualWidth() / 2);
 
+        int playerCenter = playerX.getSize().getMiddleX(playerX.getX());
+        int enemyCenter = playerY.getSize().getMiddleX(playerY.getX());
 
-        boolean isPlayerLeftEnemyRight = player.getSize().getActualX(player.getX()) - playerHalfWidth <= enemy.getSize().getActualRightX(enemy.getX()) + enemyHalfWidth;
-        boolean isPlayerRightEnemyLeft = player.getSize().getActualRightX(player.getX()) + playerHalfWidth >= enemy.getSize().getActualX(enemy.getX()) - enemyHalfWidth;
-        boolean isPlayerTopEnemyBottom = player.getSize().getActualY(player.getY()) <= enemy.getSize().getActualBottomY(enemy.getY());
-        boolean isPlayerBottomEnemyTop = player.getSize().getActualBottomY(player.getY()) >= enemy.getSize().getActualY(enemy.getY());
-
-        //System.out.println("isPlayerLeftEnemyRight? " + isPlayerLeftEnemyRight);
-        //System.out.println("isPlayerRightEnemyLeft? " + isPlayerRightEnemyLeft);
-        //System.out.println("isPlayerBottomEnemyTop? " + isPlayerBottomEnemyTop);
+        boolean isPlayerLeftEnemyRight = playerX.getSize().getActualX(playerX.getX()) - playerHalfWidth <= playerY.getSize().getActualRightX(playerY.getX()) + enemyHalfWidth;
+        boolean isPlayerRightEnemyLeft = playerX.getSize().getActualRightX(playerX.getX()) + playerHalfWidth >= playerY.getSize().getActualX(playerY.getX()) - enemyHalfWidth;
+        boolean isPlayerTopEnemyBottom = playerX.getSize().getActualY(playerX.getY()) <= playerY.getSize().getActualBottomY(playerY.getY());
+        boolean isPlayerBottomEnemyTop = playerX.getSize().getActualBottomY(playerX.getY()) >= playerY.getSize().getActualY(playerY.getY());
 
         /// Check if they have the same X
         if (isPlayerLeftEnemyRight && isPlayerRightEnemyLeft) {
             /// Check if they have the same Y
             if (isPlayerTopEnemyBottom && isPlayerBottomEnemyTop) {
-                if ((player.getAnimatePlayer().getAction().isFacingRight() && playerCenter < enemyCenter) ||
-                        (!player.getAnimatePlayer().getAction().isFacingRight() && playerCenter > enemyCenter)) {
-                    // TODO: Understand why this works
-                    if (player.getAnimatePlayer().getAction().getBestActionType() == ActionType.Attack1)
-                        hit(player, enemy);
-                }
-                if ((enemy.getAnimatePlayer().getAction().isFacingRight() && enemyCenter < playerCenter) ||
-                        (!enemy.getAnimatePlayer().getAction().isFacingRight() && enemyCenter > playerCenter)) {
-                    if (enemy.getAnimatePlayer().getAction().getBestActionType() == ActionType.Attack1)
-                        hit(enemy, player);
+                if ((playerX.getAnimatePlayer().getAction().isFacingRight() && playerCenter < enemyCenter) ||
+                        (!playerX.getAnimatePlayer().getAction().isFacingRight() && playerCenter > enemyCenter)) {
+                    return true;
                 }
             }
         }
+
+        return false;
     }
 
     private static void stopCharacter(CharacterInt player) {
@@ -248,8 +249,8 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
             loser.setX(50);
             winner.setX(Game.WIDTH_WINDOW - 50 - 163);
         }
-        winner.setY(Game.HEIGHT_WINDOW);
-        loser.setY(Game.HEIGHT_WINDOW);
+        winner.setY(HEIGHT_WINDOW);
+        loser.setY(HEIGHT_WINDOW);
 
         // TODO: Add countdown
 
