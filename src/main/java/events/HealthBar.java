@@ -20,12 +20,13 @@ public class HealthBar extends GameObject {
 
     @Override
     public void render(Graphics g) {
+        // TODO: Improve graphic
         if (id == ID.HealthBarPlayer) {
             g.setColor(Color.GREEN);
-            g.fillRect(x, y, player.getHp(), 10);
+            g.fillRect(x, y, player.getHp() * 3 / 2, 13 * 3 / 2);
         } else if (id == ID.HealthBarEnemy) {
             g.setColor(Color.RED);
-            g.fillRect(x, y, player.getHp(), 10);
+            g.fillRect(x - player.getHp() * 3 / 2, y, player.getHp() * 3 / 2, 13 * 3 / 2);
         }
     }
 }

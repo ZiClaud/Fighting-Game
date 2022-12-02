@@ -1,4 +1,3 @@
-import music.GameMusic;
 import window.UI.MenuWindow;
 
 public class Main {

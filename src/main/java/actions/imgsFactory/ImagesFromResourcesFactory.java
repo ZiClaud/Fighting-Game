@@ -3,7 +3,7 @@ package actions.imgsFactory;
 import utils.MyUtils;
 
 public class ImagesFromResourcesFactory {
-    public static CharacterImagesFromResources createCharacterImagesFromResources(Skin skin){
+    public static CharacterImagesFromResources createCharacterImagesFromResources(Skin skin) {
         if (skin == Skin.Spirit) {
             return new SpiritImagesFromResources();
         } else if (skin == Skin.Undead) {

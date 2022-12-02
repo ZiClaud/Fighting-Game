@@ -91,8 +91,10 @@ public class GirlImagesFromResources extends CharacterImagesFromResources {
             imageList.add(ImageIO.read(new File("src/main/resources/Images/Brawler-Girl/Hurt/hurt1.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Images/Brawler-Girl/Hurt/hurt1.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Images/Brawler-Girl/Hurt/hurt2.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Images/Brawler-Girl/Hurt/hurt2.png")));            imageList.add(ImageIO.read(new File("src/main/resources/Images/Brawler-Girl/Hurt/hurt1.png")));
-            imageList.add(ImageIO.read(new File("src/main/resources/Images/Brawler-Girl/Hurt/hurt2.png")));            imageList.add(ImageIO.read(new File("src/main/resources/Images/Brawler-Girl/Hurt/hurt1.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Images/Brawler-Girl/Hurt/hurt2.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Images/Brawler-Girl/Hurt/hurt1.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Images/Brawler-Girl/Hurt/hurt2.png")));
+            imageList.add(ImageIO.read(new File("src/main/resources/Images/Brawler-Girl/Hurt/hurt1.png")));
             imageList.add(ImageIO.read(new File("src/main/resources/Images/Brawler-Girl/Hurt/hurt2.png")));
 
         } catch (IOException e) {

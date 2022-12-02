@@ -1,7 +1,6 @@
 package AI;
 
 import characters.CharacterInt;
-import utils.Events;
 import window.game.KeyPressed;
 
 import java.util.Random;

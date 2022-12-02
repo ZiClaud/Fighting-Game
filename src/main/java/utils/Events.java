@@ -153,7 +153,8 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
 
     private static void stopCharacter(CharacterInt player) {
         if (player.getAnimatePlayer().getAction().getBestActionType() == ActionType.TakeHit ||
-                player.getAnimatePlayer().getAction().getBestActionType() == ActionType.Death) {
+                player.getAnimatePlayer().getAction().getBestActionType() == ActionType.Death ||
+                player.getAnimatePlayer().getAction().getBestActionType() == ActionType.Attack1) {
             player.setVelX(0);
             player.setVelY(0);
         }
@@ -222,11 +223,23 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         //     damaged.getAction().setActionType(PlayerAction.TakeHit);
         damaged.getAnimatePlayer().addPlayerAction(ActionType.TakeHit);
         damaged.setHp(damaged.getHp() - 1);
+        _knockback(damaged, hitter);
 
         if (damaged.getHp() < 0) {
             _death(damaged, hitter);
         }
     }
+
+    private static void _knockback(CharacterInt damaged, CharacterInt hitter) {
+        if (damaged.getSize().getMiddleX(damaged.getX()) >= hitter.getSize().getMiddleX(hitter.getX())) {
+            // If damaged is on right
+            damaged.setVelX(2);
+        } else {
+            // If damaged is on left
+            damaged.setVelX(-2);
+        }
+    }
+
 
     private static void _death(CharacterInt loser, CharacterInt winner) {
         /**
@@ -236,6 +249,7 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         loser.getAnimatePlayer().addPlayerAction(ActionType.Death);
 
         // TODO: Print this in game
+
         System.out.println(winner.getUsername() + " won!");
 
         // TODO: Wait until the "death" animation is over, then restart the game

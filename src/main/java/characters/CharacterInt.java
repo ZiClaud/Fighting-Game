@@ -16,6 +16,8 @@ public interface CharacterInt extends MovingGameObjectInt {
     PlayerSizeInt getSize();
 
     AnimatePlayer getAnimatePlayer();
+
     Skin getSkin();
+
     void setSkin(Skin skin);
 }

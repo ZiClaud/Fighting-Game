@@ -12,7 +12,7 @@ import java.io.IOException;
 public class Game extends Canvas implements Runnable {
     private final MyHandler handler;
     private Thread thread;
-    private boolean running = false;    public static final int WIDTH_WINDOW = 640, HEIGHT_WINDOW = WIDTH_WINDOW / 12 * 9;
+    private boolean running = false;
     public Game() {
         GameMusic.startGameMusic();
         handler = new MyHandler();
@@ -29,7 +29,7 @@ public class Game extends Canvas implements Runnable {
          */
         // TODO: Remove +37 from HEIGHT - It's there for a temporary bug fix
         new GameWindow(WIDTH_WINDOW, HEIGHT_WINDOW + 37, "Fight!", this);
-    }
+    }    public static final int WIDTH_WINDOW = 640, HEIGHT_WINDOW = WIDTH_WINDOW / 12 * 9;
 
     public synchronized void start() {
         thread = new Thread(this);
@@ -76,15 +76,6 @@ public class Game extends Canvas implements Runnable {
         stop();
     }
 
-    /*
-    public void resetHandlerObjects() {
-        for (MovingGameObjectInt tempObject : handler.objects) {
-            handler.removeObject(tempObject);
-        }
-        setHandlerObjects();
-    }
-    */
-
     private void tick() {
         handler.tick();
     }
@@ -111,8 +102,6 @@ public class Game extends Canvas implements Runnable {
         g.dispose();
         bs.show();
     }
-
-
 
 
 }

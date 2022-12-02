@@ -17,12 +17,10 @@ import utils.MyUtils;
  * HeightToRemoveFromTop: 70px <p>
  */
 public class PlayerSize implements PlayerSizeInt {
-    private int imgWidth;
-    private int imgHeight;
-
     private final int actualWidth;
     private final int actualHeight;
-
+    private int imgWidth;
+    private int imgHeight;
     private int excessiveLeft = 0;
     private int excessiveRight = 0;
     private int excessiveBottom = 0;

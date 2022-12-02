@@ -21,7 +21,6 @@ public class MenuData {
     protected static Skin enemySkin = Skin.Devil;
 
     public MenuData() {
-
         // TODO: do somewhere - menu
 
         // TODO: in menu - countdown
@@ -65,7 +64,7 @@ public class MenuData {
 //        handler.addObject(new Player(500, 300, ID.Enemy, 200, 200, 100));  // TODO: USE TO CHECK -> THERE'S NO BUG
 
         handler.addObject(new HealthBar(50, 50, ID.HealthBarPlayer, player));
-        handler.addObject(new HealthBar(Game.WIDTH_WINDOW - 50 - enemy.getHp(), 50, ID.HealthBarEnemy, enemy));
+        handler.addObject(new HealthBar(Game.WIDTH_WINDOW - 50, 50, ID.HealthBarEnemy, enemy));
 
         handler.addObject(new EventClass(handler));
 
