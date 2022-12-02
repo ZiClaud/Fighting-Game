@@ -1,6 +1,5 @@
 package events;
 
-import utils.Events;
 import window.game.GameObject.GameObject;
 import window.game.GameObject.ID;
 import window.game.MyHandler;

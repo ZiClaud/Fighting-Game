@@ -1,16 +1,28 @@
-package utils;
+package events;
 
 import actions.ActionType;
 import characters.CharacterInt;
+import window.UI.MenuWindow;
 import window.game.Game;
 import window.game.GameObject.GameObjectInt;
 import window.game.GameObject.ID;
 import window.game.MyHandler;
 
+import javax.swing.*;
+
 import static window.game.Game.HEIGHT_WINDOW;
 
 public class Events {   //TODO: Change class -> Maybe not static, maybe with just "Player" as argument, idk
     private static int fallingSpeed;
+    private static Game game;
+    private static JFrame frame;
+    private static boolean playerWon = false;
+    private static boolean enemyWon = false;
+
+    public static void setGame(Game game, JFrame frame) {
+        Events.game = game;
+        Events.frame = frame;
+    }
 
     public static void ticketeTickete(MyHandler handler) {
         for (GameObjectInt player : handler.getObjects()) {
@@ -147,7 +159,6 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
                 }
             }
         }
-
         return false;
     }
 
@@ -269,5 +280,28 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         // TODO: Add countdown
 
         loser.setHp(loser.getHp() + 100);
+
+        if (loser.getId() == ID.Player) {
+            if (enemyWon) {
+                newMenuWindow();
+            } else {
+                enemyWon = true;
+            }
+        } else if (loser.getId() == ID.Enemy) {
+            if (playerWon) {
+                newMenuWindow();
+            } else {
+                playerWon = true;
+            }
+        }
+
+    }
+
+    private static void newMenuWindow() {
+        playerWon = false;
+        enemyWon = false;
+        new MenuWindow();
+        frame.setVisible(false);
+        game.stop();
     }
 }

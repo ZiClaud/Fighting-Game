@@ -7,8 +7,8 @@ import window.game.GameObject.ID;
 import java.awt.*;
 
 public class HealthBar extends GameObject {
-    CharacterInt player;
     private final int initialHp;
+    CharacterInt player;
 
     public HealthBar(int x, int y, ID id, CharacterInt player) {
         super(x, y, id);

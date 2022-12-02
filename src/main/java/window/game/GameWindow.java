@@ -1,5 +1,7 @@
 package window.game;
 
+import events.Events;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -11,6 +13,7 @@ public class GameWindow extends Canvas {
         gDevice = gEnvironment.getDefaultScreenDevice();
 
         JFrame frame = new JFrame(title);
+        Events.setGame(game, frame);
 
         frame.setPreferredSize(new Dimension(width, height));
         frame.setMaximumSize(new Dimension(width, height));

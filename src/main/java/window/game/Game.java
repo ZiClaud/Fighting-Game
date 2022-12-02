@@ -13,6 +13,7 @@ public class Game extends Canvas implements Runnable {
     private final MyHandler handler;
     private Thread thread;
     private boolean running = false;
+
     public Game() {
         GameMusic.startGameMusic();
         handler = new MyHandler();
@@ -29,13 +30,13 @@ public class Game extends Canvas implements Runnable {
          */
         // TODO: Remove +37 from HEIGHT - It's there for a temporary bug fix
         new GameWindow(WIDTH_WINDOW, HEIGHT_WINDOW + 37, "Fight!", this);
-    }    public static final int WIDTH_WINDOW = 640, HEIGHT_WINDOW = WIDTH_WINDOW / 12 * 9;
+    }
 
     public synchronized void start() {
         thread = new Thread(this);
         thread.start();
         running = true;
-    }
+    }    public static final int WIDTH_WINDOW = 640, HEIGHT_WINDOW = WIDTH_WINDOW / 12 * 9;
 
     public synchronized void stop() {
         try {
@@ -102,6 +103,8 @@ public class Game extends Canvas implements Runnable {
         g.dispose();
         bs.show();
     }
+
+
 
 
 }

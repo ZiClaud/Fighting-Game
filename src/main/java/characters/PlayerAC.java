@@ -2,7 +2,7 @@ package characters;
 
 import actions.AnimatePlayer;
 import actions.imgsFactory.Skin;
-import utils.Events;
+import events.Events;
 import window.game.GameObject.ID;
 import window.game.GameObject.MovingGameObject;
 

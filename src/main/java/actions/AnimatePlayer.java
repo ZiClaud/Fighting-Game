@@ -4,7 +4,7 @@ import actions.imgsFactory.CharacterImagesFromResources;
 import actions.imgsFactory.ImagesFromResourcesFactory;
 import characters.CharacterInt;
 import characters.ObserverAnimation;
-import utils.Events;
+import events.Events;
 import window.game.GameObject.ID;
 
 import javax.swing.*;

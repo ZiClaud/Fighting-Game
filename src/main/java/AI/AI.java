@@ -2,7 +2,7 @@ package AI;
 
 import actions.ActionType;
 import characters.CharacterInt;
-import utils.Events;
+import events.Events;
 import window.game.Game;
 import window.game.GameObject.GameObject;
 import window.game.GameObject.ID;
