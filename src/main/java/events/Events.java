@@ -283,13 +283,13 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
 
         if (loser.getId() == ID.Player) {
             if (enemyWon) {
-                newMenuWindow();
+                endGame();
             } else {
                 enemyWon = true;
             }
         } else if (loser.getId() == ID.Enemy) {
             if (playerWon) {
-                newMenuWindow();
+                endGame();
             } else {
                 playerWon = true;
             }
@@ -297,7 +297,7 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
 
     }
 
-    private static void newMenuWindow() {
+    private static void endGame() {
         playerWon = false;
         enemyWon = false;
         new MenuWindow();
