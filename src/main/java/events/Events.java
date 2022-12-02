@@ -294,7 +294,6 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
                 playerWon = true;
             }
         }
-
     }
 
     private static void endGame() {
