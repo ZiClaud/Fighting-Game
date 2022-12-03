@@ -93,7 +93,7 @@ public class PlayerAC extends MovingGameObject implements CharacterInt {
             g.setColor(Color.red);
             if (animatePlayer.getAction().isFacingRight()) {
                 g.drawRect(size.getActualX(x), size.getActualY(y), size.getActualWidth() + size.getActualWidth() / 2, size.getActualHeight());
-                // TODO: Fix: remove orange - fix fighting sizes
+                // TODO: Fix: remove orange -1 fix fighting in Size class -2 fix public static boolean isXInAttackRange(...)
                 g.setColor(Color.orange);
                 g.drawRect(size.getActualX(x) - size.getActualWidth() / 2, size.getActualY(y), size.getActualWidth() + size.getActualWidth() / 2, size.getActualHeight());
             } else {
