@@ -51,4 +51,8 @@ public class KeyPressed {
     public static void changeFacing(ObserverAnimation playerObserverAnimation, boolean isFacingRight) {
         playerObserverAnimation.addPlayerAction(ActionType.Idle, isFacingRight);
     }
+
+    public static void pressedF3(CharacterInt tempObject) {
+        tempObject.setShowDevSquare(!tempObject.isShowDevSquare());
+    }
 }

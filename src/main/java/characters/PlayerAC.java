@@ -15,6 +15,7 @@ public class PlayerAC extends MovingGameObject implements CharacterInt {
     private final AnimatePlayer animatePlayer;
     private int hp;
     private Skin skin;
+    private boolean showDevSquare = false;
 
     public PlayerAC(int x, int y, ID id, int hp, String username, Skin skin) {
         super(x, y, id);     // TODO: x - size.removeWidth, y - size.removeHeight;
@@ -57,6 +58,16 @@ public class PlayerAC extends MovingGameObject implements CharacterInt {
     }
 
     @Override
+    public boolean isShowDevSquare() {
+        return showDevSquare;
+    }
+
+    @Override
+    public void setShowDevSquare(boolean showDevSquare) {
+        this.showDevSquare = showDevSquare;
+    }
+
+    @Override
     public void tick() {
         x += velX;
         y += velY;
@@ -69,6 +80,32 @@ public class PlayerAC extends MovingGameObject implements CharacterInt {
     @Override
     public void render(Graphics g) {
         g.drawImage(playerImage.getImg(), x, y, null);
+        if (showDevSquare) {
+            /// Image size
+            g.setColor(Color.gray);
+            g.drawRect(x, y, size.getImgWidth(), size.getImgHeight());
+
+            /// Actual image size
+            g.setColor(Color.white);
+            g.drawRect(size.getActualX(x), size.getActualY(y), size.getActualWidth(), size.getActualHeight());
+
+            /// Damage size
+            g.setColor(Color.red);
+            if (animatePlayer.getAction().isFacingRight()) {
+                g.drawRect(size.getActualX(x), size.getActualY(y), size.getActualWidth() + size.getActualWidth() / 2, size.getActualHeight());
+                // TODO: Fix: remove orange - fix fighting sizes
+                g.setColor(Color.orange);
+                g.drawRect(size.getActualX(x) - size.getActualWidth() / 2, size.getActualY(y), size.getActualWidth() + size.getActualWidth() / 2, size.getActualHeight());
+            } else {
+                g.drawRect(size.getActualX(x) - size.getActualWidth() / 2, size.getActualY(y), size.getActualWidth() + size.getActualWidth() / 2, size.getActualHeight());
+                g.setColor(Color.orange);
+                g.drawRect(size.getActualX(x), size.getActualY(y), size.getActualWidth() + size.getActualWidth() / 2, size.getActualHeight());
+            }
+
+            // Middle
+            g.setColor(Color.blue);
+            g.drawRect(size.getMiddleX(x), size.getMiddleY(y), 1, 1);
+        }
     }
 
     @Override

@@ -20,4 +20,8 @@ public interface CharacterInt extends MovingGameObjectInt {
     Skin getSkin();
 
     void setSkin(Skin skin);
+
+    boolean isShowDevSquare();
+
+    void setShowDevSquare(boolean showDevSquare);
 }

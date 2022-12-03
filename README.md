@@ -8,6 +8,8 @@ It's still a work in progress
 
 **Player2 commands:** Arrow up, down, left, right + Enter for attack
 
+**Developer commands:** F3 - Shows: ImageSize(Gray), ImageActualSize(White), DamageSize(Red), Middle(Blue dot)
+
 -------------------------------------
 
 **Credits:**

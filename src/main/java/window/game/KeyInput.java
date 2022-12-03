@@ -89,6 +89,11 @@ public class KeyInput extends KeyAdapter {
 ////                    observerAnimation.addPlayerAction(ActionType.Attack1);
                     }
                 }
+
+                // DEVELOPER
+                if (key == KeyEvent.VK_F3) {
+                    KeyPressed.pressedF3(character);
+                }
             }
         }
     }
