@@ -28,4 +28,5 @@ public interface PlayerSizeInt {
     int getMiddleX(int getActualX);
 
     int getMiddleY(int getActualY);
+    int getDamageWidth();
 }

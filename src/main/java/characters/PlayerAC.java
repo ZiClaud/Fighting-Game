@@ -102,6 +102,14 @@ public class PlayerAC extends MovingGameObject implements CharacterInt {
                 g.drawRect(size.getActualX(x), size.getActualY(y), size.getActualWidth() + size.getActualWidth() / 2, size.getActualHeight());
             }
 
+            /// Damage size V2
+            g.setColor(Color.green);
+            if (animatePlayer.getAction().isFacingRight()) {
+                g.drawRect(size.getActualX(x), size.getActualY(y), size.getActualWidth() + size.getDamageWidth(), size.getActualHeight());
+            } else {
+                g.drawRect(size.getActualX(x) - size.getDamageWidth(), size.getActualY(y), size.getActualWidth() + size.getDamageWidth(), size.getActualHeight());
+            }
+
             // Middle
             g.setColor(Color.blue);
             g.drawRect(size.getMiddleX(x), size.getMiddleY(y), 1, 1);

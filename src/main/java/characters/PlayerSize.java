@@ -4,7 +4,7 @@ import actions.imgsFactory.Skin;
 import utils.MyUtils;
 
 /**
- * Image stats: <p>
+ * Image stats: Spirit <p>
  * ImgWidth: 200px <p>
  * ImgHeight:200px <p>
  * <p>
@@ -26,8 +26,14 @@ public class PlayerSize implements PlayerSizeInt {
     private int excessiveBottom = 0;
     private int excessiveTop = 0;
 
-    public PlayerSize(Skin skin) {
+    private final int damageWidth;
 
+    private Rectangle imgRect;
+    private Rectangle actualImgRect;
+    private Rectangle damageRect;
+
+    // TODO: change DamageWidth for each skin
+    public PlayerSize(Skin skin) {
         if (skin == Skin.Spirit) {
             imgWidth = 200;
             imgHeight = 200;
@@ -39,6 +45,8 @@ public class PlayerSize implements PlayerSizeInt {
             excessiveRight = 87;
             excessiveBottom = 78;
             excessiveTop = 70;
+
+            damageWidth = 20;
         } else if (skin == Skin.Devil) {
             imgWidth = 200;
             imgHeight = 200;
@@ -50,6 +58,8 @@ public class PlayerSize implements PlayerSizeInt {
             excessiveRight = 81;
             excessiveBottom = 71;
             excessiveTop = 73;
+
+            damageWidth = 20;
         } else if (skin == Skin.Undead) {
             imgWidth = 100;
             imgHeight = 100;
@@ -61,6 +71,8 @@ public class PlayerSize implements PlayerSizeInt {
             excessiveRight = 21;
             excessiveBottom = 17;
             excessiveTop = 21;
+
+            damageWidth = 20;
         } else if (skin == Skin.Punk) {
             imgWidth = 96;
             imgHeight = 63;
@@ -72,6 +84,8 @@ public class PlayerSize implements PlayerSizeInt {
             excessiveRight = 31;
             excessiveBottom = 0;
             excessiveTop = 13;
+
+            damageWidth = 20;
         } else if (skin == Skin.BrawlerGirl) {
             imgWidth = 96;
             imgHeight = 63;
@@ -83,11 +97,40 @@ public class PlayerSize implements PlayerSizeInt {
             excessiveRight = 39;
             excessiveBottom = 0;
             excessiveTop = 17;
+
+            damageWidth = 20;
         } else {
             MyUtils.printSkinNotFound();
             actualWidth = 1;
             actualHeight = 1;
+            damageWidth = 1;
         }
+
+        imgRect = new Rectangle(0, 0, imgWidth, imgHeight);
+        actualImgRect = new Rectangle(0, 0, actualWidth, actualHeight);
+        damageRect = new Rectangle(0, 0, actualWidth + damageWidth, actualHeight);
+
+        resizeExcessiveRect();
+    }
+
+    public void moveRect(int x, int y) {
+        imgRect.moveRectangle(x, y);
+        actualImgRect.moveRectangle(x, y);
+        damageRect.moveRectangle(x, y);
+    }
+
+    public void moveRectToPos(int x, int y) {
+        imgRect.moveRectangleToPos(x, y);
+        actualImgRect.moveRectangleToPos(x, y);
+        damageRect.moveRectangleToPos(x, y);
+    }
+
+    /**
+     * Moves the rectangle in the actual position
+     */
+    private void resizeExcessiveRect() {
+        actualImgRect.moveRectangle(excessiveLeft, excessiveTop);
+        damageRect.moveRectangle(excessiveLeft, excessiveTop);
     }
 
     public int getImgWidth() {
@@ -146,6 +189,11 @@ public class PlayerSize implements PlayerSizeInt {
     @Override
     public int getMiddleY(int getActualY) {
         return (getActualY + (imgHeight / 2));
+    }
+
+    @Override
+    public int getDamageWidth() {
+        return damageWidth;
     }
 
     @Override

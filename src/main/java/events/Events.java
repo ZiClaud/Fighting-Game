@@ -10,8 +10,6 @@ import window.game.MyHandler;
 
 import javax.swing.*;
 
-import java.util.Objects;
-
 import static window.game.Game.HEIGHT_WINDOW;
 
 public class Events {   //TODO: Change class -> Maybe not static, maybe with just "Player" as argument, idk
@@ -151,15 +149,17 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         boolean isPlayerTopEnemyBottom = playerX.getSize().getActualY(playerX.getY()) <= playerY.getSize().getActualBottomY(playerY.getY());
         boolean isPlayerBottomEnemyTop = playerX.getSize().getActualBottomY(playerX.getY()) >= playerY.getSize().getActualY(playerY.getY());
 
-        //System.out.println("playerHalfWidth: " + playerHalfWidth);
-        //System.out.println("enemyHalfWidth: " + enemyHalfWidth);
+        /*
+        System.out.println("playerHalfWidth: " + playerHalfWidth);
+        System.out.println("enemyHalfWidth: " + enemyHalfWidth);
 
         if (Objects.equals(playerX.getUsername(), "Player")) {
             System.out.println("1 - isPlayerLeftEnemyRight: " + isPlayerLeftEnemyRight);
             System.out.println("2 - isPlayerRightEnemyLeft: " + isPlayerRightEnemyLeft);
-//            System.out.println("3 - isPlayerTopEnemyBottom: " + isPlayerTopEnemyBottom);
-//            System.out.println("4 - isPlayerBottomEnemyTop: " + isPlayerBottomEnemyTop);
+            System.out.println("3 - isPlayerTopEnemyBottom: " + isPlayerTopEnemyBottom);
+            System.out.println("4 - isPlayerBottomEnemyTop: " + isPlayerBottomEnemyTop);
         }
+         */
 
         /// Check if they have the same X
         if (isPlayerLeftEnemyRight && isPlayerRightEnemyLeft) {
