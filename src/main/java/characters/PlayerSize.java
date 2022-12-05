@@ -28,9 +28,10 @@ public class PlayerSize implements PlayerSizeInt {
 
     private final int damageWidth;
 
-    private Rectangle imgRect;
-    private Rectangle actualImgRect;
-    private Rectangle damageRect;
+    private CharacterWidthHeight imgWH;
+    private CharacterWidthHeight actualImgWH;
+    private CharacterWidthHeight damageWH;
+
 
     // TODO: change DamageWidth for each skin
     public PlayerSize(Skin skin) {
@@ -106,31 +107,10 @@ public class PlayerSize implements PlayerSizeInt {
             damageWidth = 1;
         }
 
-        imgRect = new Rectangle(0, 0, imgWidth, imgHeight);
-        actualImgRect = new Rectangle(0, 0, actualWidth, actualHeight);
-        damageRect = new Rectangle(0, 0, actualWidth + damageWidth, actualHeight);
+        imgWH = new CharacterWidthHeight(imgWidth, imgHeight, 0, 0);
+        actualImgWH = new CharacterWidthHeight(actualWidth, actualHeight, excessiveLeft, excessiveTop);
+        damageWH = new CharacterWidthHeight(actualWidth + damageWidth, actualHeight, excessiveLeft, excessiveTop);
 
-        resizeExcessiveRect();
-    }
-
-    public void moveRect(int x, int y) {
-        imgRect.moveRectangle(x, y);
-        actualImgRect.moveRectangle(x, y);
-        damageRect.moveRectangle(x, y);
-    }
-
-    public void moveRectToPos(int x, int y) {
-        imgRect.moveRectangleToPos(x, y);
-        actualImgRect.moveRectangleToPos(x, y);
-        damageRect.moveRectangleToPos(x, y);
-    }
-
-    /**
-     * Moves the rectangle in the actual position
-     */
-    private void resizeExcessiveRect() {
-        actualImgRect.moveRectangle(excessiveLeft, excessiveTop);
-        damageRect.moveRectangle(excessiveLeft, excessiveTop);
     }
 
     public int getImgWidth() {
