@@ -1,5 +1,7 @@
 package characters;
 
+import java.awt.*;
+
 public class CharacterWidthHeight {
     private final int width;
     private final int height;
@@ -38,15 +40,11 @@ public class CharacterWidthHeight {
         return height;
     }
 
-    @Override
-    public String toString() {
-        return "CharacterWidthHeight{" +
-//                "width=" + width +
-//                ", height=" + height +
-//                ", excessiveWidth=" + excessiveWidth +
-//                ", excessiveHeight=" + excessiveHeight +
-                ", getXPlusWidthAs0=" + getXPlusWidth(0) +
-                ", getYPlusHeightAs0=" + getYPlusHeight(0) +
-                '}';
+    public int getExcessiveWidth() {
+        return excessiveWidth;
+    }
+
+    public int getExcessiveHeight() {
+        return excessiveHeight;
     }
 }

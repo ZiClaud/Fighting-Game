@@ -2,6 +2,7 @@ package utils;
 
 import characters.CharacterWidthHeight;
 
+import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
@@ -45,55 +46,59 @@ public class MyUtils {
      */
 
     public static boolean collideW(CharacterWidthHeight c1, CharacterWidthHeight c2, int x1, int x2) {
-        // Check if they have the same X
-
-        System.out.println("c1: ");
-        drawCW(c1, x1);
-
-        System.out.println("c2: ");
-        drawCW(c2, x2);
-
         // C1 collides with C2
         if ((c1.getX(x1) >= c2.getX(x2) && c1.getX(x1) < c2.getXPlusWidth(x2)) ||
                 (c1.getXPlusWidth(x1) > c2.getX(x2) && c1.getXPlusWidth(x1) <= c2.getXPlusWidth(x2))) {
-            System.out.println("Si toccano");
             return true;
         }
         // C2 collides with C1
         if ((c2.getX(x2) >= c1.getX(x1) && c2.getX(x2) < c1.getXPlusWidth(x1)) ||
                 (c2.getXPlusWidth(x2) > c1.getX(x1) && c2.getXPlusWidth(x2) <= c1.getXPlusWidth(x1))) {
-            System.out.println("Si toccano");
             return true;
         }
-        System.out.println("Non si toccano");
         return false;
+    }
+
+    public static boolean collideH(CharacterWidthHeight c1, CharacterWidthHeight c2, int y1, int y2) {
+        // C1 collides with C2
+        if ((c1.getY(y1) >= c2.getY(y2) && c1.getY(y1) < c2.getYPlusHeight(y2)) ||
+                (c1.getYPlusHeight(y1) > c2.getY(y2) && c1.getYPlusHeight(y1) <= c2.getYPlusHeight(y2))) {
+            return true;
+        }
+        // C2 collides with C1
+        if ((c2.getY(y2) >= c1.getY(y1) && c2.getY(y2) < c1.getYPlusHeight(y1)) ||
+                (c2.getYPlusHeight(y2) > c1.getY(y1) && c2.getYPlusHeight(y2) <= c1.getYPlusHeight(y1))) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean collideWH(CharacterWidthHeight c1, int x1, int y1, CharacterWidthHeight c2, int x2, int y2) {
+        return (collideW(c1, c2, x1, x2) && collideH(c1, c2, y1, y2));
     }
 
     public static void drawCW(CharacterWidthHeight c, int x) {
         int i = 0;
-        String ris = "";
-        do {
+        StringBuilder ris = new StringBuilder();
+
+        for (int j = 0; j < c.getExcessiveWidth(); j++) {
+            ris.append(" ");
+        }
+
+        while (i < c.getXPlusWidth(x)) {
             if (x > i) {
-                ris += " ";
+                ris.append(" ");
             } else {
-                ris += "-";
+                ris.append("-");
             }
             i++;
-        } while (i < c.getXPlusWidth(x));
+        }
 
         System.out.println(ris);
     }
 
-    public static boolean collideWH(CharacterWidthHeight c1, CharacterWidthHeight c2, int x1, int y1, int x2, int y2) {
-        // Check if they have the same X
-        if ((c1.getX(x1) >= c2.getX(x2) && c1.getX(x1) <= c2.getXPlusWidth(x1)) ||
-                (c2.getX(x2) >= c1.getX(x1) && c2.getX(x2) <= c1.getXPlusWidth(x1))) {
-            // Check if they have the same Y
-            if ((c1.getY(y1) >= c2.getY(y2) && c1.getY(y1) <= c2.getYPlusHeight(y2)) ||
-                    (c2.getY(y2) >= c1.getY(y1) && c2.getY(y2) <= c1.getYPlusHeight(y1))) {
-                return true;
-            }
-        }
-        return false;
+    public static void drawRectDev(Graphics g, Color c, CharacterWidthHeight ch, int x, int y){
+        g.setColor(c);
+        g.drawRect(x + ch.getExcessiveWidth(), y + ch.getExcessiveHeight(), ch.getWidth(), ch.getHeight());
     }
 }

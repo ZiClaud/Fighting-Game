@@ -3,6 +3,7 @@ package characters;
 import actions.AnimatePlayer;
 import actions.imgsFactory.Skin;
 import events.Events;
+import utils.MyUtils;
 import window.game.GameObject.ID;
 import window.game.GameObject.MovingGameObject;
 
@@ -82,16 +83,21 @@ public class PlayerAC extends MovingGameObject implements CharacterInt {
     @Override
     public void render(Graphics g) {
         g.drawImage(playerImage.getImg(), x, y, null);
+
         if (showDevSquare) {
+            // Middle
+            g.setColor(Color.blue);
+            g.drawRect(size.getMiddleX(x), size.getMiddleY(y), 1, 1);
+
             /// Image size
-            g.setColor(Color.gray);
-            g.drawRect(x, y, size.getImgWidth(), size.getImgHeight());
+            MyUtils.drawRectDev(g, Color.gray, this.size.getImgWH(), x, y);
 
             /// Actual image size
-            g.setColor(Color.white);
-            g.drawRect(size.getActualX(x), size.getActualY(y), size.getActualWidth(), size.getActualHeight());
+            MyUtils.drawRectDev(g, Color.white, this.size.getActualImgWH(), x, y);
 
             /// Damage size
+            MyUtils.drawRectDev(g, Color.red, this.size.getDamageWH(), x, y);
+/*
             g.setColor(Color.red);
             if (animatePlayer.getAction().isFacingRight()) {
                 g.drawRect(size.getActualX(x), size.getActualY(y), size.getActualWidth() + size.getActualWidth() / 2, size.getActualHeight());
@@ -111,10 +117,7 @@ public class PlayerAC extends MovingGameObject implements CharacterInt {
             } else {
                 g.drawRect(size.getActualX(x) - size.getDamageWidth(), size.getActualY(y), size.getActualWidth() + size.getDamageWidth(), size.getActualHeight());
             }
-
-            // Middle
-            g.setColor(Color.blue);
-            g.drawRect(size.getMiddleX(x), size.getMiddleY(y), 1, 1);
+*/
         }
     }
 

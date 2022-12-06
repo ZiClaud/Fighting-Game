@@ -1,6 +1,9 @@
 package characters;
 
 public interface PlayerSizeInt {
+    CharacterWidthHeight getImgWH();
+    CharacterWidthHeight getActualImgWH();
+    CharacterWidthHeight getDamageWH();
     int getImgWidth();
 
     int getImgHeight();

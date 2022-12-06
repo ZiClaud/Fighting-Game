@@ -112,6 +112,21 @@ public class PlayerSize implements PlayerSizeInt {
         damageWH = new CharacterWidthHeight(actualWidth + damageWidth, actualHeight, excessiveLeft, excessiveTop);
     }
 
+    @Override
+    public CharacterWidthHeight getImgWH() {
+        return imgWH;
+    }
+
+    @Override
+    public CharacterWidthHeight getActualImgWH() {
+        return actualImgWH;
+    }
+
+    @Override
+    public CharacterWidthHeight getDamageWH() {
+        return damageWH;
+    }
+
     public int getImgWidth() {
         return imgWidth;
     }
