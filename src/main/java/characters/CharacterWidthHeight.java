@@ -12,10 +12,6 @@ public class CharacterWidthHeight {
         this.height = height;
         this.excessiveWidth = excessiveWidth;
         this.excessiveHeight = excessiveHeight;
-
-        if (width < excessiveWidth || height < excessiveHeight) {
-            throw new RuntimeException("Rectangle width is less than excessiveWidth or height is less than excessiveHeight");
-        }
     }
 
     public int getX(int x) {

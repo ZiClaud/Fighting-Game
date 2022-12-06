@@ -25,17 +25,6 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
     }
 
     public static void ticketeTickete(MyHandler handler) {
-        for (GameObjectInt player : handler.getObjects()) {
-            if (player.getId() == ID.Player || player.getId() == ID.Enemy) {
-                /**
-                 * Jump
-                 */
-                jump((CharacterInt) player);
-
-                stopCharacter((CharacterInt) player);
-            }
-        }
-
         /**
          * Collision
          */
@@ -174,7 +163,7 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         return false;
     }
 
-    private static void stopCharacter(CharacterInt player) {
+    public static void stopCharacter(CharacterInt player) {
         if (player.getAnimatePlayer().getAction().getBestActionType() == ActionType.TakeHit ||
                 player.getAnimatePlayer().getAction().getBestActionType() == ActionType.Death ||
                 player.getAnimatePlayer().getAction().getBestActionType() == ActionType.Attack1) {
@@ -183,7 +172,7 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         }
     }
 
-    private static void jump(CharacterInt player) {
+    public static void jump(CharacterInt player) {
         if (isOnGround(player)) {
             if (isJumping(player)) {
                 int JUMP_POWER = -5;

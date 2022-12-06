@@ -110,7 +110,6 @@ public class PlayerSize implements PlayerSizeInt {
         imgWH = new CharacterWidthHeight(imgWidth, imgHeight, 0, 0);
         actualImgWH = new CharacterWidthHeight(actualWidth, actualHeight, excessiveLeft, excessiveTop);
         damageWH = new CharacterWidthHeight(actualWidth + damageWidth, actualHeight, excessiveLeft, excessiveTop);
-
     }
 
     public int getImgWidth() {

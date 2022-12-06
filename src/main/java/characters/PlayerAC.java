@@ -24,9 +24,7 @@ public class PlayerAC extends MovingGameObject implements CharacterInt {
         this.skin = skin;
 
         this.size = new PlayerSize(skin);
-
         this.playerImage = new PlayerImage();
-
         this.animatePlayer = new AnimatePlayer(this);
 
         animatePlayer.animatePlayer();
@@ -75,6 +73,10 @@ public class PlayerAC extends MovingGameObject implements CharacterInt {
         getAnimatePlayer().getAction().act();
 
         Events.checkWall(this);
+
+        Events.jump(this);
+
+        Events.stopCharacter(this);
     }
 
     @Override
