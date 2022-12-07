@@ -2,6 +2,7 @@ package events;
 
 import actions.ActionType;
 import characters.CharacterInt;
+import utils.MyUtils;
 import window.UI.MenuWindow;
 import window.game.Game;
 import window.game.GameObject.GameObjectInt;
@@ -85,31 +86,16 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
     }
 
     public static void collision(CharacterInt player, CharacterInt enemy) {
-        int playerCenter = player.getSize().getActualX(player.getX()) + player.getSize().getActualWidth() / 2;
-        int enemyCenter = enemy.getSize().getActualX(enemy.getX()) + enemy.getSize().getActualWidth() / 2;
-
-        boolean isPlayerLeftEnemyRight = player.getSize().getActualX(player.getX()) <= enemy.getSize().getActualRightX(enemy.getX());
-        boolean isPlayerRightEnemyLeft = player.getSize().getActualRightX(player.getX()) >= enemy.getSize().getActualX(enemy.getX());
-        boolean isPlayerTopEnemyBottom = player.getSize().getActualY(player.getY()) <= enemy.getSize().getActualBottomY(enemy.getY());
-        boolean isPlayerBottomEnemyTop = player.getSize().getActualBottomY(player.getY()) >= enemy.getSize().getActualY(enemy.getY());
-        //System.out.println("isPlayerLeftEnemyRight? " + isPlayerLeftEnemyRight);
-        //System.out.println("isPlayerRightEnemyLeft? " + isPlayerRightEnemyLeft);
-        //System.out.println("isPlayerBottomEnemyTop? " + isPlayerBottomEnemyTop);
-
-        /// Check if they have the same X
-        if (isPlayerLeftEnemyRight && isPlayerRightEnemyLeft) {
-            /// Check if they have the same Y
-            if (isPlayerTopEnemyBottom && isPlayerBottomEnemyTop) {
-                /// Collision effect
-                if (player.getSize().getActualX(player.getX()) + (player.getSize().getActualWidth() / 2) <=
-                        enemy.getSize().getActualRightX(enemy.getX()) + enemy.getSize().getActualWidth() / 2) {
-                    if (playerCenter < enemyCenter) {
-                        player.setX(player.getX() - 4);
-                        enemy.setX(enemy.getX() + 4);
-                    } else {
-                        player.setX(player.getX() + 4);
-                        enemy.setX(enemy.getX() - 4);
-                    }
+        if (MyUtils.collideWH(player.getSize().getActualImgWH(), player, enemy.getSize().getActualImgWH(), enemy)) {
+            /// Collision effect
+            if (player.getSize().getActualX(player.getX()) + (player.getSize().getActualWidth() / 2) <=
+                    enemy.getSize().getActualRightX(enemy.getX()) + enemy.getSize().getActualWidth() / 2) {
+                if (player.getSize().getMiddleX(player.getX()) < enemy.getSize().getMiddleX(enemy.getX())) {
+                    player.setX(player.getX() - 5);
+                    enemy.setX(enemy.getX() + 5);
+                } else {
+                    player.setX(player.getX() + 5);
+                    enemy.setX(enemy.getX() - 5);
                 }
             }
         }

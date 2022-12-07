@@ -1,5 +1,7 @@
 package utils;
 
+import characters.CharacterInt;
+import characters.PlayerAC;
 import characters.box.CharacterWidthHeight;
 
 import java.awt.*;
@@ -75,6 +77,10 @@ public class MyUtils {
 
     public static boolean collideWH(CharacterWidthHeight c1, int x1, int y1, CharacterWidthHeight c2, int x2, int y2) {
         return (collideW(c1, c2, x1, x2) && collideH(c1, c2, y1, y2));
+    }
+
+    public static boolean collideWH(CharacterWidthHeight c1, CharacterInt p1, CharacterWidthHeight c2, CharacterInt p2) {
+        return (collideW(c1, c2, p1.getX(), p2.getX()) && collideH(c1, c2, p1.getY(), p2.getY()));
     }
 
     public static void drawCW(CharacterWidthHeight c, int x) {
