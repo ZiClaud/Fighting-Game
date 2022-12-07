@@ -86,11 +86,11 @@ public abstract class AI extends GameObject implements AIInterface {
     }
 
     private boolean isOnRightBorder() {
-        return ai.getSize().getActualRightX(ai.getX()) >= Game.WIDTH_WINDOW;
+        return ai.getSize().getActualImgWH().getXPlusWidth(ai.getX()) >= Game.WIDTH_WINDOW;
     }
 
     private boolean isOnLeftBorder() {
-        return ai.getSize().getActualX(ai.getX()) <= 0;
+        return ai.getSize().getActualImgWH().getX(ai.getX()) <= 0;
     }
 
     private void stopOnBorder() {

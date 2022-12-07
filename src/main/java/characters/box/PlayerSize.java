@@ -194,11 +194,6 @@ public class PlayerSize implements PlayerSizeInt {
     }
 
     @Override
-    public int getDamageWidth() {
-        return damageWidth;
-    }
-
-    @Override
     public String toString() {
         return "PlayerSize{" +
                 "imgWidth=" + imgWidth +
