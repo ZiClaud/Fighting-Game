@@ -34,8 +34,6 @@ public class PlayerSize implements PlayerSizeInt {
     private final CharacterWidthHeight damageLeftWH;
     private final CharacterWidthHeight damageRightWH;
 
-
-    // TODO: change DamageWidth for each skin
     public PlayerSize(Skin skin) {
         if (skin == Skin.Spirit) {
             imgWidth = 200;
@@ -49,7 +47,7 @@ public class PlayerSize implements PlayerSizeInt {
             excessiveBottom = 78;
             excessiveTop = 70;
 
-            damageWidth = 20;
+            damageWidth = 76;
         } else if (skin == Skin.Devil) {
             imgWidth = 200;
             imgHeight = 200;
@@ -62,7 +60,7 @@ public class PlayerSize implements PlayerSizeInt {
             excessiveBottom = 71;
             excessiveTop = 73;
 
-            damageWidth = 20;
+            damageWidth = 68;
         } else if (skin == Skin.Undead) {
             imgWidth = 100;
             imgHeight = 100;
@@ -75,7 +73,7 @@ public class PlayerSize implements PlayerSizeInt {
             excessiveBottom = 17;
             excessiveTop = 21;
 
-            damageWidth = 20;
+            damageWidth = 30;
         } else if (skin == Skin.Punk) {
             imgWidth = 96;
             imgHeight = 63;
@@ -88,7 +86,7 @@ public class PlayerSize implements PlayerSizeInt {
             excessiveBottom = 0;
             excessiveTop = 13;
 
-            damageWidth = 20;
+            damageWidth = 22;
         } else if (skin == Skin.BrawlerGirl) {
             imgWidth = 96;
             imgHeight = 63;
@@ -101,7 +99,7 @@ public class PlayerSize implements PlayerSizeInt {
             excessiveBottom = 0;
             excessiveTop = 17;
 
-            damageWidth = 20;
+            damageWidth = 23;
         } else {
             MyUtils.printSkinNotFound();
             actualWidth = 1;
@@ -111,8 +109,10 @@ public class PlayerSize implements PlayerSizeInt {
 
         imgWH = new CharacterWidthHeight(imgWidth, imgHeight, 0, 0);
         actualImgWH = new CharacterWidthHeight(actualWidth, actualHeight, excessiveLeft, excessiveTop);
-        damageLeftWH = new CharacterWidthHeight(actualWidth + damageWidth, actualHeight, excessiveLeft, excessiveTop);
-        damageRightWH = new CharacterWidthHeight(actualWidth + damageWidth, actualHeight, excessiveLeft - damageWidth, excessiveTop);
+        damageLeftWH = new CharacterWidthHeight(actualWidth + damageWidth, actualHeight,
+                excessiveLeft, excessiveTop);
+        damageRightWH = new CharacterWidthHeight(actualWidth + damageWidth, actualHeight,
+                excessiveLeft - damageWidth, excessiveTop);
     }
 
     @Override
