@@ -1,5 +1,7 @@
 package characters;
 
+import characters.box.CharacterWidthHeight;
+
 public interface PlayerSizeInt {
     CharacterWidthHeight getImgWH();
     CharacterWidthHeight getActualImgWH();

@@ -1,4 +1,4 @@
-import characters.CharacterWidthHeight;
+import characters.box.CharacterWidthHeight;
 import org.junit.jupiter.api.Test;
 import utils.MyUtils;
 

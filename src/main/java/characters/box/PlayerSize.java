@@ -1,6 +1,7 @@
-package characters;
+package characters.box;
 
 import actions.imgsFactory.Skin;
+import characters.PlayerSizeInt;
 import utils.MyUtils;
 
 /**

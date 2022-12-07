@@ -1,12 +1,10 @@
-package characters;
-
-import java.awt.*;
+package characters.box;
 
 public class CharacterWidthHeight {
-    private final int width;
-    private final int height;
-    private final int excessiveWidth;
-    private final int excessiveHeight;
+    protected final int width;
+    protected final int height;
+    protected final int excessiveWidth;
+    protected final int excessiveHeight;
 
 
     public CharacterWidthHeight(int width, int height, int excessiveWidth, int excessiveHeight) {

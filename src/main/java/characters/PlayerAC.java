@@ -2,6 +2,7 @@ package characters;
 
 import actions.AnimatePlayer;
 import actions.imgsFactory.Skin;
+import characters.box.PlayerSize;
 import events.Events;
 import utils.MyUtils;
 import window.game.GameObject.ID;
