@@ -97,7 +97,8 @@ public class PlayerAC extends MovingGameObject implements CharacterInt {
             MyUtils.drawRectDev(g, Color.white, this.size.getActualImgWH(), x, y);
 
             /// Damage size
-            MyUtils.drawRectDev(g, Color.red, this.size.getDamageWH(), x, y);
+            MyUtils.drawRectDev(g, Color.red, this.size.getDamageLeftWH(), x, y);
+            MyUtils.drawRectDev(g, Color.red, this.size.getDamageRightWH(), x, y);
 /*
             g.setColor(Color.red);
             if (animatePlayer.getAction().isFacingRight()) {

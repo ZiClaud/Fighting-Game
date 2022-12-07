@@ -5,7 +5,9 @@ import characters.box.CharacterWidthHeight;
 public interface PlayerSizeInt {
     CharacterWidthHeight getImgWH();
     CharacterWidthHeight getActualImgWH();
-    CharacterWidthHeight getDamageWH();
+    CharacterWidthHeight getDamageRightWH();
+    CharacterWidthHeight getDamageLeftWH();
+
     int getImgWidth();
 
     int getImgHeight();

@@ -1,7 +1,6 @@
 package utils;
 
 import characters.CharacterInt;
-import characters.PlayerAC;
 import characters.box.CharacterWidthHeight;
 
 import java.awt.*;
@@ -103,7 +102,7 @@ public class MyUtils {
         System.out.println(ris);
     }
 
-    public static void drawRectDev(Graphics g, Color c, CharacterWidthHeight ch, int x, int y){
+    public static void drawRectDev(Graphics g, Color c, CharacterWidthHeight ch, int x, int y) {
         g.setColor(c);
         g.drawRect(x + ch.getExcessiveWidth(), y + ch.getExcessiveHeight(), ch.getWidth(), ch.getHeight());
     }

@@ -29,9 +29,10 @@ public class PlayerSize implements PlayerSizeInt {
 
     private final int damageWidth;
 
-    private CharacterWidthHeight imgWH;
-    private CharacterWidthHeight actualImgWH;
-    private CharacterWidthHeight damageWH;
+    private final CharacterWidthHeight imgWH;
+    private final CharacterWidthHeight actualImgWH;
+    private final CharacterWidthHeight damageLeftWH;
+    private final CharacterWidthHeight damageRightWH;
 
 
     // TODO: change DamageWidth for each skin
@@ -110,7 +111,8 @@ public class PlayerSize implements PlayerSizeInt {
 
         imgWH = new CharacterWidthHeight(imgWidth, imgHeight, 0, 0);
         actualImgWH = new CharacterWidthHeight(actualWidth, actualHeight, excessiveLeft, excessiveTop);
-        damageWH = new CharacterWidthHeight(actualWidth + damageWidth, actualHeight, excessiveLeft, excessiveTop);
+        damageLeftWH = new CharacterWidthHeight(actualWidth + damageWidth, actualHeight, excessiveLeft, excessiveTop);
+        damageRightWH = new CharacterWidthHeight(actualWidth + damageWidth, actualHeight, excessiveLeft - damageWidth, excessiveTop);
     }
 
     @Override
@@ -124,8 +126,13 @@ public class PlayerSize implements PlayerSizeInt {
     }
 
     @Override
-    public CharacterWidthHeight getDamageWH() {
-        return damageWH;
+    public CharacterWidthHeight getDamageRightWH() {
+        return damageRightWH;
+    }
+
+    @Override
+    public CharacterWidthHeight getDamageLeftWH() {
+        return damageLeftWH;
     }
 
     public int getImgWidth() {

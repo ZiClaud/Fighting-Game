@@ -113,40 +113,11 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
     }
 
     public static boolean isXInAttackRange(CharacterInt playerX, CharacterInt playerY) {
-        int playerHalfWidth = (playerX.getSize().getActualWidth() / 2);
-        int enemyHalfWidth = (playerY.getSize().getActualWidth() / 2);
-
-        int playerCenter = playerX.getSize().getMiddleX(playerX.getX());
-        int enemyCenter = playerY.getSize().getMiddleX(playerY.getX());
-
-        boolean isPlayerLeftEnemyRight = playerX.getSize().getActualX(playerX.getX()) - playerHalfWidth <= playerY.getSize().getActualRightX(playerY.getX()) + enemyHalfWidth;
-        boolean isPlayerRightEnemyLeft = playerX.getSize().getActualRightX(playerX.getX()) + playerHalfWidth >= playerY.getSize().getActualX(playerY.getX()) - enemyHalfWidth;
-        boolean isPlayerTopEnemyBottom = playerX.getSize().getActualY(playerX.getY()) <= playerY.getSize().getActualBottomY(playerY.getY());
-        boolean isPlayerBottomEnemyTop = playerX.getSize().getActualBottomY(playerX.getY()) >= playerY.getSize().getActualY(playerY.getY());
-
-        /*
-        System.out.println("playerHalfWidth: " + playerHalfWidth);
-        System.out.println("enemyHalfWidth: " + enemyHalfWidth);
-
-        if (Objects.equals(playerX.getUsername(), "Player")) {
-            System.out.println("1 - isPlayerLeftEnemyRight: " + isPlayerLeftEnemyRight);
-            System.out.println("2 - isPlayerRightEnemyLeft: " + isPlayerRightEnemyLeft);
-            System.out.println("3 - isPlayerTopEnemyBottom: " + isPlayerTopEnemyBottom);
-            System.out.println("4 - isPlayerBottomEnemyTop: " + isPlayerBottomEnemyTop);
-        }
-         */
-
-        /// Check if they have the same X
-        if (isPlayerLeftEnemyRight && isPlayerRightEnemyLeft) {
-            /// Check if they have the same Y
-            if (isPlayerTopEnemyBottom && isPlayerBottomEnemyTop) {
-                if ((playerX.getAnimatePlayer().getAction().isFacingRight() && playerCenter < enemyCenter) ||
-                        (!playerX.getAnimatePlayer().getAction().isFacingRight() && playerCenter > enemyCenter)) {
-                    return true;
-                }
-            }
-        }
-        return false;
+         if (playerX.getAnimatePlayer().getAction().isFacingRight()) {
+             return MyUtils.collideWH(playerX.getSize().getDamageLeftWH(), playerX, playerY.getSize().getActualImgWH(), playerY);
+         } else {
+             return MyUtils.collideWH(playerX.getSize().getDamageRightWH(), playerX, playerY.getSize().getActualImgWH(), playerY);
+         }
     }
 
     public static void stopCharacter(CharacterInt player) {
