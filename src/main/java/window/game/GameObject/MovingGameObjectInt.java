@@ -1,7 +1,7 @@
 package window.game.GameObject;
 
 public interface MovingGameObjectInt extends GameObjectInt {
-
+    // TODO: Maybe move here the Gravity stuff
 
     int getVelX();
 

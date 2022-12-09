@@ -20,6 +20,11 @@ import utils.MyUtils;
 public class PlayerSize implements PlayerSizeInt {
     private final int actualWidth;
     private final int actualHeight;
+    private final int damageWidth;
+    private final CharacterWidthHeight imgWH;
+    private final CharacterWidthHeight actualImgWH;
+    private final CharacterWidthHeight damageLeftWH;
+    private final CharacterWidthHeight damageRightWH;
     private int imgWidth;
     private int imgHeight;
     private int excessiveLeft = 0;
@@ -27,40 +32,33 @@ public class PlayerSize implements PlayerSizeInt {
     private int excessiveBottom = 0;
     private int excessiveTop = 0;
 
-    private final int damageWidth;
-
-    private final CharacterWidthHeight imgWH;
-    private final CharacterWidthHeight actualImgWH;
-    private final CharacterWidthHeight damageLeftWH;
-    private final CharacterWidthHeight damageRightWH;
-
     public PlayerSize(Skin skin) {
         if (skin == Skin.Spirit) {
-            imgWidth = 200;
-            imgHeight = 200;
+            imgWidth = 200 * 2;
+            imgHeight = 200 * 2;
 
-            actualWidth = 37;
-            actualHeight = 52;
+            actualWidth = 37 * 2;
+            actualHeight = 52 * 2;
 
-            excessiveLeft = 76;
-            excessiveRight = 87;
-            excessiveBottom = 78;
-            excessiveTop = 70;
+            excessiveLeft = 76 * 2;
+            excessiveRight = 87 * 2;
+            excessiveBottom = 78 * 2;
+            excessiveTop = 70 * 2;
 
-            damageWidth = 76;
+            damageWidth = 76 * 2;
         } else if (skin == Skin.Devil) {
-            imgWidth = 200;
-            imgHeight = 200;
+            imgWidth = 200 * 2;
+            imgHeight = 200 * 2;
 
-            actualWidth = 33;
-            actualHeight = 56;
+            actualWidth = 33 * 2;
+            actualHeight = 56 * 2;
 
-            excessiveLeft = 86;
-            excessiveRight = 81;
-            excessiveBottom = 71;
-            excessiveTop = 73;
+            excessiveLeft = 86 * 2;
+            excessiveRight = 81 * 2;
+            excessiveBottom = 71 * 2;
+            excessiveTop = 73 * 2;
 
-            damageWidth = 68;
+            damageWidth = 68 * 2;
         } else if (skin == Skin.Undead) {
             imgWidth = 100;
             imgHeight = 100;

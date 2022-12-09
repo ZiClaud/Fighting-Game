@@ -115,11 +115,11 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
     }
 
     public static boolean isXInAttackRange(CharacterInt playerX, CharacterInt playerY) {
-         if (playerX.getAnimatePlayer().getAction().isFacingRight()) {
-             return MyUtils.collideWH(playerX.getSize().getDamageLeftWH(), playerX, playerY.getSize().getActualImgWH(), playerY);
-         } else {
-             return MyUtils.collideWH(playerX.getSize().getDamageRightWH(), playerX, playerY.getSize().getActualImgWH(), playerY);
-         }
+        if (playerX.getAnimatePlayer().getAction().isFacingRight()) {
+            return MyUtils.collideWH(playerX.getSize().getDamageLeftWH(), playerX, playerY.getSize().getActualImgWH(), playerY);
+        } else {
+            return MyUtils.collideWH(playerX.getSize().getDamageRightWH(), playerX, playerY.getSize().getActualImgWH(), playerY);
+        }
     }
 
     public static void stopCharacter(CharacterInt player) {

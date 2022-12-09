@@ -98,28 +98,7 @@ public class PlayerAC extends MovingGameObject implements CharacterInt {
 
             /// Damage size
             MyUtils.drawRectDev(g, Color.red, this.size.getDamageLeftWH(), x, y);
-            MyUtils.drawRectDev(g, Color.red, this.size.getDamageRightWH(), x, y);
-/*
-            g.setColor(Color.red);
-            if (animatePlayer.getAction().isFacingRight()) {
-                g.drawRect(size.getActualX(x), size.getActualY(y), size.getActualWidth() + size.getActualWidth() / 2, size.getActualHeight());
-                // TODO: Fix: remove orange -1 fix fighting in Size class -2 fix public static boolean isXInAttackRange(...)
-                g.setColor(Color.orange);
-                g.drawRect(size.getActualX(x) - size.getActualWidth() / 2, size.getActualY(y), size.getActualWidth() + size.getActualWidth() / 2, size.getActualHeight());
-            } else {
-                g.drawRect(size.getActualX(x) - size.getActualWidth() / 2, size.getActualY(y), size.getActualWidth() + size.getActualWidth() / 2, size.getActualHeight());
-                g.setColor(Color.orange);
-                g.drawRect(size.getActualX(x), size.getActualY(y), size.getActualWidth() + size.getActualWidth() / 2, size.getActualHeight());
-            }
-
-            /// Damage size V2
-            g.setColor(Color.green);
-            if (animatePlayer.getAction().isFacingRight()) {
-                g.drawRect(size.getActualX(x), size.getActualY(y), size.getActualWidth() + size.getDamageWidth(), size.getActualHeight());
-            } else {
-                g.drawRect(size.getActualX(x) - size.getDamageWidth(), size.getActualY(y), size.getActualWidth() + size.getDamageWidth(), size.getActualHeight());
-            }
-*/
+            MyUtils.drawRectDev(g, Color.orange, this.size.getDamageRightWH(), x, y);
         }
     }
 

@@ -5,6 +5,7 @@ import actions.imgsFactory.ImagesFromResourcesFactory;
 import characters.CharacterInt;
 import characters.ObserverAnimation;
 import events.Events;
+import utils.MyUtils;
 import window.game.GameObject.ID;
 
 import javax.swing.*;
@@ -17,7 +18,7 @@ public class AnimatePlayer implements ObserverAnimation {
     private ArrayList<BufferedImage> currentAnimation;
     private int i = 0;
     private ActionType previousBestActionType = ActionType.Idle;
-    private CharacterImagesFromResources characterImagesFromResources;
+    private final CharacterImagesFromResources characterImagesFromResources;
 
     public AnimatePlayer(CharacterInt player) {
         this.player = player;

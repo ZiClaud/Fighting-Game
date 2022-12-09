@@ -36,7 +36,7 @@ public class Game extends Canvas implements Runnable {
         thread = new Thread(this);
         thread.start();
         running = true;
-    }    public static final int WIDTH_WINDOW = 640, HEIGHT_WINDOW = WIDTH_WINDOW / 12 * 9;
+    }
 
     public synchronized void stop() {
         try {
@@ -45,7 +45,7 @@ public class Game extends Canvas implements Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
+    }    public static final int WIDTH_WINDOW = 640, HEIGHT_WINDOW = WIDTH_WINDOW / 12 * 9;
 
     @Override
     public void run() {

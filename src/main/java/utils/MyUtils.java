@@ -25,6 +25,25 @@ public class MyUtils {
         return ris;
     }
 
+    public static BufferedImage resize(BufferedImage img, int newW, int newH) {
+        Image tmp = img.getScaledInstance(newW, newH, Image.SCALE_SMOOTH);
+        BufferedImage dimg = new BufferedImage(newW, newH, BufferedImage.TYPE_INT_ARGB);
+
+        Graphics2D g2d = dimg.createGraphics();
+        g2d.drawImage(tmp, 0, 0, null);
+        g2d.dispose();
+
+        return dimg;
+    }
+
+    public static ArrayList<BufferedImage> resize(ArrayList<BufferedImage> images, int newW, int newH) {
+        ArrayList<BufferedImage> ris = new ArrayList<>();
+        for (BufferedImage image : images) {
+            ris.add(resize(image, newW, newH));
+        }
+        return ris;
+    }
+
     public static void printSkinNotFound() {
         System.out.println("Skin not found");
         System.err.println("Skin not found");
@@ -53,11 +72,8 @@ public class MyUtils {
             return true;
         }
         // C2 collides with C1
-        if ((c2.getX(x2) >= c1.getX(x1) && c2.getX(x2) < c1.getXPlusWidth(x1)) ||
-                (c2.getXPlusWidth(x2) > c1.getX(x1) && c2.getXPlusWidth(x2) <= c1.getXPlusWidth(x1))) {
-            return true;
-        }
-        return false;
+        return (c2.getX(x2) >= c1.getX(x1) && c2.getX(x2) < c1.getXPlusWidth(x1)) ||
+                (c2.getXPlusWidth(x2) > c1.getX(x1) && c2.getXPlusWidth(x2) <= c1.getXPlusWidth(x1));
     }
 
     public static boolean collideH(CharacterWidthHeight c1, CharacterWidthHeight c2, int y1, int y2) {
@@ -67,11 +83,8 @@ public class MyUtils {
             return true;
         }
         // C2 collides with C1
-        if ((c2.getY(y2) >= c1.getY(y1) && c2.getY(y2) < c1.getYPlusHeight(y1)) ||
-                (c2.getYPlusHeight(y2) > c1.getY(y1) && c2.getYPlusHeight(y2) <= c1.getYPlusHeight(y1))) {
-            return true;
-        }
-        return false;
+        return (c2.getY(y2) >= c1.getY(y1) && c2.getY(y2) < c1.getYPlusHeight(y1)) ||
+                (c2.getYPlusHeight(y2) > c1.getY(y1) && c2.getYPlusHeight(y2) <= c1.getYPlusHeight(y1));
     }
 
     public static boolean collideWH(CharacterWidthHeight c1, int x1, int y1, CharacterWidthHeight c2, int x2, int y2) {
