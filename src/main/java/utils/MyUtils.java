@@ -1,7 +1,7 @@
 package utils;
 
-import characters.CharacterInt;
 import actions.box.CharacterWidthHeight;
+import characters.CharacterInt;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;

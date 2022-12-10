@@ -1,7 +1,5 @@
 package actions.box;
 
-import actions.box.CharacterWidthHeight;
-
 /**
  * Image stats: Spirit <p>
  * ImgWidth: 200px <p>

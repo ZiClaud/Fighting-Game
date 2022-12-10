@@ -14,10 +14,10 @@ import java.util.ArrayList;
 public class AnimatePlayer implements ObserverAnimation {
     private final CharacterInt player;
     private final Action action;
+    private final CharacterImagesFromResources characterImagesFromResources;
     private ArrayList<BufferedImage> currentAnimation;
     private int i = 0;
     private ActionType previousBestActionType = ActionType.Idle;
-    private final CharacterImagesFromResources characterImagesFromResources;
 
     public AnimatePlayer(CharacterInt player) {
         this.player = player;

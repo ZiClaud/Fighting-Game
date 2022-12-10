@@ -45,7 +45,7 @@ public class Game extends Canvas implements Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }    public static final int WIDTH_WINDOW = 640, HEIGHT_WINDOW = WIDTH_WINDOW / 12 * 9;
+    }
 
     @Override
     public void run() {
@@ -75,7 +75,7 @@ public class Game extends Canvas implements Runnable {
             }
         }
         stop();
-    }
+    }    public static final int WIDTH_WINDOW = 640, HEIGHT_WINDOW = WIDTH_WINDOW / 12 * 9;
 
     private void tick() {
         handler.tick();
@@ -103,4 +103,6 @@ public class Game extends Canvas implements Runnable {
         g.dispose();
         bs.show();
     }
+
+
 }

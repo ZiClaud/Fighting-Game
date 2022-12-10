@@ -16,9 +16,9 @@ import windows.game.KeyInput;
 import windows.game.MyHandler;
 
 public class Data {
-    private static LevelAI levelAI;
     protected static Skin playerSkin = Skin.Spirit;
     protected static Skin enemySkin = Skin.Devil;
+    private static LevelAI levelAI;
 
     public Data() {
         // TODO: do somewhere - menu
