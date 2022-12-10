@@ -65,34 +65,34 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
         /**
          * Right/Left Wall
          */
-        if (player.getSize().getActualImgWH().getX(player.getX()) <= 0 || player.getSize().getActualImgWH().getXPlusWidth(player.getX()) >= WIDTH_WINDOW) {
+        if (player.getSkin().getActualImgWH().getX(player.getX()) <= 0 || player.getSkin().getActualImgWH().getXPlusWidth(player.getX()) >= WIDTH_WINDOW) {
             player.setVelX(0);
-            if (player.getSize().getActualImgWH().getX(player.getX()) <= 0) {
-                player.setX(-player.getSize().getExcessiveLeft());
-            } else if (player.getSize().getActualImgWH().getXPlusWidth(player.getX()) >= WIDTH_WINDOW) {
-                player.setX(WIDTH_WINDOW - player.getSize().getImgWH().getWidth() + player.getSize().getExcessiveRight());
+            if (player.getSkin().getActualImgWH().getX(player.getX()) <= 0) {
+                player.setX(-player.getSkin().getExcessiveLeft());
+            } else if (player.getSkin().getActualImgWH().getXPlusWidth(player.getX()) >= WIDTH_WINDOW) {
+                player.setX(WIDTH_WINDOW - player.getSkin().getImgWH().getWidth() + player.getSkin().getExcessiveRight());
             }
         }
 
         /**
          * Top/Bottom Wall
          */
-        if (player.getSize().getActualImgWH().getY(player.getY()) <= 0 || player.getSize().getActualImgWH().getYPlusHeight(player.getY()) >= HEIGHT_WINDOW) {
+        if (player.getSkin().getActualImgWH().getY(player.getY()) <= 0 || player.getSkin().getActualImgWH().getYPlusHeight(player.getY()) >= HEIGHT_WINDOW) {
             player.setVelY(0);
-            if (player.getSize().getActualImgWH().getY(player.getY()) <= 0) {
-                player.setY(-player.getSize().getExcessiveTop());
-            } else if (player.getSize().getActualImgWH().getYPlusHeight(player.getY()) >= HEIGHT_WINDOW) {
-                player.setY(HEIGHT_WINDOW - player.getSize().getImgWH().getHeight() + player.getSize().getExcessiveBottom());
+            if (player.getSkin().getActualImgWH().getY(player.getY()) <= 0) {
+                player.setY(-player.getSkin().getExcessiveTop());
+            } else if (player.getSkin().getActualImgWH().getYPlusHeight(player.getY()) >= HEIGHT_WINDOW) {
+                player.setY(HEIGHT_WINDOW - player.getSkin().getImgWH().getHeight() + player.getSkin().getExcessiveBottom());
             }
         }
     }
 
     public static void collision(CharacterInt player, CharacterInt enemy) {
-        if (MyUtils.collideWH(player.getSize().getActualImgWH(), player, enemy.getSize().getActualImgWH(), enemy)) {
+        if (MyUtils.collideWH(player.getSkin().getActualImgWH(), player, enemy.getSkin().getActualImgWH(), enemy)) {
             /// Collision effect
-            if (player.getSize().getActualImgWH().getX(player.getX()) + (player.getSize().getActualImgWH().getWidth() / 2) <=
-                    enemy.getSize().getActualImgWH().getXPlusWidth(enemy.getX()) + enemy.getSize().getActualImgWH().getWidth() / 2) {
-                if (player.getSize().getMiddleX(player.getX()) < enemy.getSize().getMiddleX(enemy.getX())) {
+            if (player.getSkin().getActualImgWH().getX(player.getX()) + (player.getSkin().getActualImgWH().getWidth() / 2) <=
+                    enemy.getSkin().getActualImgWH().getXPlusWidth(enemy.getX()) + enemy.getSkin().getActualImgWH().getWidth() / 2) {
+                if (player.getSkin().getMiddleX(player.getX()) < enemy.getSkin().getMiddleX(enemy.getX())) {
                     player.setX(player.getX() - 5);
                     enemy.setX(enemy.getX() + 5);
                 } else {
@@ -116,9 +116,9 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
 
     public static boolean isXInAttackRange(CharacterInt playerX, CharacterInt playerY) {
         if (playerX.getAnimatePlayer().getAction().isFacingRight()) {
-            return MyUtils.collideWH(playerX.getSize().getDamageLeftWH(), playerX, playerY.getSize().getActualImgWH(), playerY);
+            return MyUtils.collideWH(playerX.getSkin().getDamageLeftWH(), playerX, playerY.getSkin().getActualImgWH(), playerY);
         } else {
-            return MyUtils.collideWH(playerX.getSize().getDamageRightWH(), playerX, playerY.getSize().getActualImgWH(), playerY);
+            return MyUtils.collideWH(playerX.getSkin().getDamageRightWH(), playerX, playerY.getSkin().getActualImgWH(), playerY);
         }
     }
 
@@ -168,7 +168,7 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
     }
 
     private static boolean isOnGround(CharacterInt player) {
-        return player.getSize().getActualImgWH().getYPlusHeight(player.getY()) >= HEIGHT_WINDOW;
+        return player.getSkin().getActualImgWH().getYPlusHeight(player.getY()) >= HEIGHT_WINDOW;
     }
 
 
@@ -202,7 +202,7 @@ public class Events {   //TODO: Change class -> Maybe not static, maybe with jus
     }
 
     private static void _knockback(CharacterInt damaged, CharacterInt hitter) {
-        if (damaged.getSize().getMiddleX(damaged.getX()) >= hitter.getSize().getMiddleX(hitter.getX())) {
+        if (damaged.getSkin().getMiddleX(damaged.getX()) >= hitter.getSkin().getMiddleX(hitter.getX())) {
             // If damaged is on right
             damaged.setVelX(2);
         } else {

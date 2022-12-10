@@ -2,7 +2,6 @@ package characters;
 
 import actions.AnimatePlayer;
 import actions.imgsFactory.Skin;
-import characters.box.PlayerSize;
 import events.Events;
 import utils.MyUtils;
 import window.game.GameObject.ID;
@@ -13,7 +12,6 @@ import java.awt.*;
 public class PlayerAC extends MovingGameObject implements CharacterInt {
     private final String username;
     private final PlayerImage playerImage;
-    private final PlayerSizeInt size;
     private final AnimatePlayer animatePlayer;
     private int hp;
     private Skin skin;
@@ -25,7 +23,6 @@ public class PlayerAC extends MovingGameObject implements CharacterInt {
         this.username = username;
         this.skin = skin;
 
-        this.size = new PlayerSize(skin);
         this.playerImage = new PlayerImage();
         this.animatePlayer = new AnimatePlayer(this);
 
@@ -88,23 +85,18 @@ public class PlayerAC extends MovingGameObject implements CharacterInt {
         if (showDevSquare) {
             // Middle
             g.setColor(Color.blue);
-            g.drawRect(size.getMiddleX(x), size.getMiddleY(y), 1, 1);
+            g.drawRect(skin.getMiddleX(x), skin.getMiddleY(y), 1, 1);
 
             /// Image size
-            MyUtils.drawRectDev(g, Color.gray, this.size.getImgWH(), x, y);
+            MyUtils.drawRectDev(g, Color.gray, skin.getImgWH(), x, y);
 
             /// Actual image size
-            MyUtils.drawRectDev(g, Color.white, this.size.getActualImgWH(), x, y);
+            MyUtils.drawRectDev(g, Color.white, skin.getActualImgWH(), x, y);
 
             /// Damage size
-            MyUtils.drawRectDev(g, Color.red, this.size.getDamageLeftWH(), x, y);
-            MyUtils.drawRectDev(g, Color.orange, this.size.getDamageRightWH(), x, y);
+            MyUtils.drawRectDev(g, Color.red, skin.getDamageLeftWH(), x, y);
+            MyUtils.drawRectDev(g, Color.orange, skin.getDamageRightWH(), x, y);
         }
-    }
-
-    @Override
-    public PlayerSizeInt getSize() {
-        return size;
     }
 
     @Override

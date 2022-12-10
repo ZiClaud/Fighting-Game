@@ -13,8 +13,6 @@ public interface CharacterInt extends MovingGameObjectInt {
 
     String getUsername();
 
-    PlayerSizeInt getSize();
-
     AnimatePlayer getAnimatePlayer();
 
     Skin getSkin();
