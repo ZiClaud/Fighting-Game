@@ -1,5 +1,6 @@
 package actions.imgsFactory;
 
+import actions.box.Skin;
 import utils.MyUtils;
 
 public class ImagesFromResourcesFactory {

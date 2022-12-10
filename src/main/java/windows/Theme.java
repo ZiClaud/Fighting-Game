@@ -1,4 +1,4 @@
-package window.UI;
+package windows;
 
 import com.formdev.flatlaf.FlatDarkLaf;
 

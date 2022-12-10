@@ -3,11 +3,11 @@ package AI;
 import actions.ActionType;
 import characters.CharacterInt;
 import events.Events;
-import window.game.Game;
-import window.game.GameObject.GameObject;
-import window.game.GameObject.ID;
-import window.game.KeyInput;
-import window.game.KeyPressed;
+import windows.game.Game;
+import windows.game.GameObject.GameObject;
+import windows.game.GameObject.ID;
+import windows.game.KeyInput;
+import windows.game.KeyPressed;
 
 import java.awt.*;
 

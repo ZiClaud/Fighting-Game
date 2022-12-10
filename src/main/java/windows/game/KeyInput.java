@@ -1,10 +1,10 @@
-package window.game;
+package windows.game;
 
 import characters.CharacterInt;
 import characters.ObserverAnimation;
-import window.game.GameObject.GameObjectInt;
-import window.game.GameObject.ID;
-import window.game.GameObject.MovingGameObjectInt;
+import windows.game.GameObject.GameObjectInt;
+import windows.game.GameObject.ID;
+import windows.game.GameObject.MovingGameObjectInt;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;

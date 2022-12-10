@@ -1,4 +1,4 @@
-package window.game;
+package windows.game;
 
 import events.Events;
 

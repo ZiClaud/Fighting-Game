@@ -1,8 +1,8 @@
 package characters;
 
 import actions.AnimatePlayer;
-import actions.imgsFactory.Skin;
-import window.game.GameObject.MovingGameObjectInt;
+import actions.box.Skin;
+import windows.game.GameObject.MovingGameObjectInt;
 
 public interface CharacterInt extends MovingGameObjectInt {
     PlayerImage getPlayerImage();

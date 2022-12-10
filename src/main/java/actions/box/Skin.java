@@ -1,6 +1,6 @@
-package actions.imgsFactory;
+package actions.box;
 
-import characters.box.CharacterWidthHeight;
+import actions.box.CharacterWidthHeight;
 
 /**
  * Image stats: Spirit <p>

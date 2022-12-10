@@ -1,4 +1,4 @@
-package window.game.GameObject;
+package windows.game.GameObject;
 
 public interface MovingGameObjectInt extends GameObjectInt {
     // TODO: Maybe move here the Gravity stuff

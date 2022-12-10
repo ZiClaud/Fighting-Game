@@ -1,4 +1,4 @@
-package characters.box;
+package actions.box;
 
 public class CharacterWidthHeight {
     protected final int width;

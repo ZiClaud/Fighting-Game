@@ -1,11 +1,11 @@
 package characters;
 
 import actions.AnimatePlayer;
-import actions.imgsFactory.Skin;
+import actions.box.Skin;
 import events.Events;
 import utils.MyUtils;
-import window.game.GameObject.ID;
-import window.game.GameObject.MovingGameObject;
+import windows.game.GameObject.ID;
+import windows.game.GameObject.MovingGameObject;
 
 import java.awt.*;
 

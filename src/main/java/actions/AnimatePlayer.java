@@ -5,8 +5,7 @@ import actions.imgsFactory.ImagesFromResourcesFactory;
 import characters.CharacterInt;
 import characters.ObserverAnimation;
 import events.Events;
-import utils.MyUtils;
-import window.game.GameObject.ID;
+import windows.game.GameObject.ID;
 
 import javax.swing.*;
 import java.awt.image.BufferedImage;

@@ -1,8 +1,8 @@
 package events;
 
-import window.game.GameObject.GameObject;
-import window.game.GameObject.ID;
-import window.game.MyHandler;
+import windows.game.GameObject.GameObject;
+import windows.game.GameObject.ID;
+import windows.game.MyHandler;
 
 import java.awt.*;
 

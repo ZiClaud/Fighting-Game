@@ -1,7 +1,7 @@
-package window.game;
+package windows.game;
 
 import music.GameMusic;
-import window.UI.MenuData;
+import windows.Data;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -20,7 +20,7 @@ public class Game extends Canvas implements Runnable {
         KeyInput keyInput = new KeyInput(handler);
         this.addKeyListener(keyInput);
 
-        MenuData.setHandlerObjects(handler);
+        Data.setHandlerObjects(handler);
 
         // Check if it's single player or multiplayer
         keyInput.checkIfAIIsHere();
@@ -103,8 +103,4 @@ public class Game extends Canvas implements Runnable {
         g.dispose();
         bs.show();
     }
-
-
-
-
 }

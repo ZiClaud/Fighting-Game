@@ -1,26 +1,26 @@
-package window.UI;
+package windows;
 
 import AI.EasyLevel;
 import AI.HardLevel;
 import AI.MediumLevel;
 import actions.ActionType;
-import actions.imgsFactory.Skin;
+import actions.box.Skin;
 import characters.CharacterInt;
 import characters.Enemy;
 import characters.Player;
 import events.EventClass;
 import events.HealthBar;
-import window.game.Game;
-import window.game.GameObject.ID;
-import window.game.KeyInput;
-import window.game.MyHandler;
+import windows.game.Game;
+import windows.game.GameObject.ID;
+import windows.game.KeyInput;
+import windows.game.MyHandler;
 
-public class MenuData {
-    protected static LevelAI levelAI;
+public class Data {
+    private static LevelAI levelAI;
     protected static Skin playerSkin = Skin.Spirit;
     protected static Skin enemySkin = Skin.Devil;
 
-    public MenuData() {
+    public Data() {
         // TODO: do somewhere - menu
 
         // TODO: in menu - countdown
@@ -33,7 +33,7 @@ public class MenuData {
     }
 
     public static void setLevelAI(LevelAI levelAI) {
-        MenuData.levelAI = levelAI;
+        Data.levelAI = levelAI;
     }
 
     public static Skin getPlayerSkin() {
@@ -41,7 +41,7 @@ public class MenuData {
     }
 
     public static void setPlayerSkin(Skin playerSkin) {
-        MenuData.playerSkin = playerSkin;
+        Data.playerSkin = playerSkin;
     }
 
     public static Skin getEnemySkin() {
@@ -49,12 +49,12 @@ public class MenuData {
     }
 
     public static void setEnemySkin(Skin enemySkin) {
-        MenuData.enemySkin = enemySkin;
+        Data.enemySkin = enemySkin;
     }
 
     public static void setHandlerObjects(MyHandler handler) {
-        CharacterInt player = new Player(50, Game.HEIGHT_WINDOW, ID.Player, 100, "Player", playerSkin);
-        CharacterInt enemy = new Enemy(Game.WIDTH_WINDOW - 50 - 163, Game.HEIGHT_WINDOW, ID.Enemy, 100, "Enemy", enemySkin);
+        CharacterInt player = new Player(50 - playerSkin.getImgWidth() + playerSkin.getActualWidth(), Game.HEIGHT_WINDOW, ID.Player, 100, "Player", playerSkin);
+        CharacterInt enemy = new Enemy(Game.WIDTH_WINDOW - 50 - enemySkin.getActualWidth(), Game.HEIGHT_WINDOW, ID.Enemy, 100, "Enemy", enemySkin);
 
         player.getAnimatePlayer().addPlayerAction(ActionType.Idle, true);
         enemy.getAnimatePlayer().addPlayerAction(ActionType.Idle, false);
@@ -68,18 +68,19 @@ public class MenuData {
 
         handler.addObject(new EventClass(handler));
 
-        if (levelAI == LevelAI.PvP) {
-            PvP();
-        } else if (levelAI == LevelAI.Easy) {
-            easyLevelPvE(handler, enemy, player);
-        } else if (levelAI == LevelAI.Medium) {
-            mediumLevelPvE(handler, enemy, player);
-        } else if (levelAI == LevelAI.Hard) {
-            hardLevelPvE(handler, enemy, player);
+        switch (levelAI) {
+            case PvP:
+                break;
+            case Easy:
+                easyLevelPvE(handler, enemy, player);
+                break;
+            case Medium:
+                mediumLevelPvE(handler, enemy, player);
+                break;
+            case Hard:
+                hardLevelPvE(handler, enemy, player);
+                break;
         }
-    }
-
-    private static void PvP() {
     }
 
     private static void easyLevelPvE(MyHandler handler, CharacterInt enemy, CharacterInt player) {

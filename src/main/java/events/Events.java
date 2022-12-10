@@ -3,16 +3,16 @@ package events;
 import actions.ActionType;
 import characters.CharacterInt;
 import utils.MyUtils;
-import window.UI.MenuWindow;
-import window.game.Game;
-import window.game.GameObject.GameObjectInt;
-import window.game.GameObject.ID;
-import window.game.MyHandler;
+import windows.MenuWindow;
+import windows.game.Game;
+import windows.game.GameObject.GameObjectInt;
+import windows.game.GameObject.ID;
+import windows.game.MyHandler;
 
 import javax.swing.*;
 
-import static window.game.Game.HEIGHT_WINDOW;
-import static window.game.Game.WIDTH_WINDOW;
+import static windows.game.Game.HEIGHT_WINDOW;
+import static windows.game.Game.WIDTH_WINDOW;
 
 public class Events {   //TODO: Change class -> Maybe not static, maybe with just "Player" as argument, idk
     private static int fallingSpeed;

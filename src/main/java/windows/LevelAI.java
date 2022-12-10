@@ -1,4 +1,4 @@
-package window.UI;
+package windows;
 
 public enum LevelAI {
     PvP(),

@@ -1,10 +1,10 @@
-package window.UI;
+package windows;
 
-import actions.imgsFactory.Skin;
+import actions.box.Skin;
 import music.GameMusic;
 import utils.MyUtils;
-import window.game.Game;
-import window.game.KeyInput;
+import windows.game.Game;
+import windows.game.KeyInput;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -82,8 +82,8 @@ public class MenuWindow extends JFrame {
 
     private void updateSkinBt(JButton btPlayerSkin, JButton btEnemySkin, JPanel mainPanel) {
         try {
-            BufferedImage picturePlayer = getPlayerImage(MenuData.getPlayerSkin());
-            BufferedImage pictureEnemy = getEnemyImage(MenuData.getEnemySkin());
+            BufferedImage picturePlayer = getPlayerImage(Data.getPlayerSkin());
+            BufferedImage pictureEnemy = getEnemyImage(Data.getEnemySkin());
 
             btPlayerSkin.setIcon(new ImageIcon(picturePlayer));
             btEnemySkin.setIcon(new ImageIcon(pictureEnemy));
@@ -95,11 +95,11 @@ public class MenuWindow extends JFrame {
     }
 
     private void setPlayerSkin() {
-        MenuData.setPlayerSkin(cycleSkin(MenuData.getPlayerSkin()));
+        Data.setPlayerSkin(cycleSkin(Data.getPlayerSkin()));
     }
 
     private void setEnemySkin() {
-        MenuData.setEnemySkin(cycleSkin(MenuData.getEnemySkin()));
+        Data.setEnemySkin(cycleSkin(Data.getEnemySkin()));
     }
 
     private Skin cycleSkin(Skin skin) {
@@ -118,7 +118,7 @@ public class MenuWindow extends JFrame {
     }
 
     private void newGame(LevelAI level) {
-        MenuData.setLevelAI(level);
+        Data.setLevelAI(level);
 
         new Game();
         frame.setVisible(false);
